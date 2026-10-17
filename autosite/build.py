@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import links, rakuten, rank, writer
+from . import links, rakuten, rank, social, writer
 from .writer import JST
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -76,7 +76,7 @@ def main():
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
-        built.append({**cat, "top": ranked[0], "count": len(ranked)})
+        built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked})
         print(f"  {len(ranked)}件で生成しました")
 
     (DIST / "index.html").write_text(
@@ -94,6 +94,7 @@ def main():
     robots = "User-agent: *\nDisallow: /\n" if args.demo else f"User-agent: *\nAllow: /\nSitemap: {site['url']}/sitemap.xml\n"
     (DIST / "robots.txt").write_text(robots, encoding="utf-8")
     (DIST / ".nojekyll").write_text("")
+    social.run(built, site, site["url"], ROOT / "drafts.md", demo=args.demo)
     print(f"完了: {DIST}")
 
 

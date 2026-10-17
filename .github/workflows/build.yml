@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write   # AI解説のキャッシュ(data/)をコミットするため
+  issues: write     # SNS投稿案をIssueとして届けるため
   pages: write
   id-token: write
 
@@ -41,6 +42,16 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/
           git diff --cached --quiet || (git commit -m "Update content cache" && git push)
+
+      - name: Post SNS drafts as an issue
+        if: hashFiles('drafts.md') != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # 前日の投稿案は閉じて、今日の分だけを開いておく
+          gh label create sns-draft --color 1a73e8 --force
+          gh issue list --label sns-draft --state open --json number --jq '.[].number' | xargs -r -n1 gh issue close
+          gh issue create --title "SNS投稿案 $(TZ=Asia/Tokyo date +%m/%d)" --body-file drafts.md --label sns-draft
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
