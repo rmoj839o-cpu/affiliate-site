@@ -1,0 +1,45 @@
+# サイト全体の設定
+[site]
+name = "かしこく選ぶ ガジェット比較"
+description = "楽天市場の売れ筋・高評価アイテムをスペックとレビューデータで比較するサイトです。"
+# 公開URL（末尾スラッシュなし）。楽天APIのReferer認証にも使うので、楽天アプリの「許可されたWebサイト」と一致させること
+url = "https://example.github.io/affiliate-site"
+author = "サイト運営者"
+
+[build]
+items_per_page = 10        # ランキングに載せる件数
+min_review_count = 30      # これ未満のレビュー数の商品は除外
+fetch_hits = 30            # 楽天APIから取得する件数（最大30）
+ai_refresh_days = 7        # 商品ラインナップが同じなら、AI解説を再生成しない日数
+
+# ---- 比較カテゴリ ----
+# slug: URL / keyword: 楽天検索語 / ng: 除外キーワード（スペース区切り）
+[[categories]]
+slug = "wireless-earphones"
+title = "ワイヤレスイヤホン"
+keyword = "ワイヤレスイヤホン bluetooth"
+ng = "中古 ケースのみ 交換用 イヤーピース"
+
+[[categories]]
+slug = "mobile-battery"
+title = "モバイルバッテリー"
+keyword = "モバイルバッテリー"
+ng = "中古 ケース"
+
+[[categories]]
+slug = "humidifier"
+title = "加湿器"
+keyword = "加湿器"
+ng = "中古 フィルター 交換用 部品"
+
+[[categories]]
+slug = "electric-toothbrush"
+title = "電動歯ブラシ"
+keyword = "電動歯ブラシ 本体"
+ng = "替えブラシ 中古 交換用"
+
+[[categories]]
+slug = "robot-vacuum"
+title = "ロボット掃除機"
+keyword = "ロボット掃除機"
+ng = "中古 フィルター 交換用 ブラシのみ"

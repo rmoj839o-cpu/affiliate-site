@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{% block title %}{{ site.name }}{% endblock %}</title>
+<meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
+<link rel="canonical" href="{{ site.url }}{{ path }}">
+<meta property="og:title" content="{{ self.title() }}">
+<meta property="og:description" content="{{ self.description() }}">
+<meta property="og:url" content="{{ site.url }}{{ path }}">
+<meta property="og:type" content="website">
+{% if demo %}<meta name="robots" content="noindex">{% endif %}
+<link rel="stylesheet" href="{{ base }}/static/style.css">
+{% block head %}{% endblock %}
+</head>
+<body>
+<p class="pr">※本ページはプロモーション（アフィリエイト広告）を含みます。</p>
+{% if demo %}<p class="demo">デモ表示：架空のサンプルデータです</p>{% endif %}
+<header class="site-header">
+  <a class="logo" href="{{ base }}/">{{ site.name }}</a>
+  <nav>{% for c in categories %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>
+</header>
+<main>
+{% block main %}{% endblock %}
+</main>
+<footer>
+  <p><a href="{{ base }}/about/">運営者情報・広告ポリシー</a></p>
+  <p>価格・在庫・ポイントは{{ updated }}時点の楽天市場のデータです。最新情報は各商品ページでご確認ください。</p>
+  <!-- 楽天ウェブサービス利用規約で求められるクレジット表記 -->
+  <p><a href="https://developers.rakuten.com/" target="_blank" rel="noopener">Supported by Rakuten Developers</a></p>
+  <p>&copy; {{ year }} {{ site.name }}</p>
+</footer>
+</body>
+</html>

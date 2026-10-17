@@ -1,0 +1,78 @@
+"""楽天市場 商品検索API（2026年刷新後の openapi.rakuten.co.jp 版）クライアント。
+
+必要な環境変数:
+  RAKUTEN_APP_ID      … Rakuten Developers で発行した applicationId
+  RAKUTEN_ACCESS_KEY  … 同じく accessKey（新APIで必須）
+  RAKUTEN_AFFILIATE_ID… 楽天アフィリエイトID（affiliateUrl を返してもらうため）
+"""
+import os
+import time
+
+import requests
+
+ENDPOINT = os.environ.get(
+    "RAKUTEN_ENDPOINT",
+    "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601",
+)
+_last_call = 0.0
+
+
+def _wait_rate_limit():
+    # 楽天APIは1アプリあたり概ね1リクエスト/秒
+    global _last_call
+    delta = time.time() - _last_call
+    if delta < 1.1:
+        time.sleep(1.1 - delta)
+    _last_call = time.time()
+
+
+def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount"):
+    params = {
+        "applicationId": os.environ["RAKUTEN_APP_ID"],
+        "accessKey": os.environ["RAKUTEN_ACCESS_KEY"],
+        "affiliateId": os.environ.get("RAKUTEN_AFFILIATE_ID", ""),
+        "keyword": keyword,
+        "hits": hits,
+        "sort": sort,
+        "availability": 1,
+        "imageFlag": 1,
+        "formatVersion": 2,
+        "format": "json",
+    }
+    if ng_keyword:
+        params["NGKeyword"] = ng_keyword
+    # 新APIはサーバーからの呼び出しでも Referer が必要（登録済みドメインと照合される）
+    headers = {"Referer": site_url + "/", "User-Agent": "autosite/1.0"}
+
+    for attempt in range(4):
+        _wait_rate_limit()
+        res = requests.get(ENDPOINT, params=params, headers=headers, timeout=20)
+        if res.status_code == 429:
+            time.sleep(2 ** attempt * 2)
+            continue
+        if res.status_code == 403:
+            raise RuntimeError(
+                "楽天APIが403を返しました。accessKey と、楽天アプリに登録した許可ドメインが "
+                f"config.toml の site.url（{site_url}）と一致しているか確認してください。"
+            )
+        res.raise_for_status()
+        return [_normalize(i) for i in res.json().get("Items", [])]
+    raise RuntimeError("楽天APIのレート制限が解除されませんでした")
+
+
+def _normalize(raw):
+    item = raw.get("Item", raw)  # formatVersion=1 / 2 の両方に対応
+    images = item.get("mediumImageUrls") or []
+    images = [i["imageUrl"] if isinstance(i, dict) else i for i in images]
+    return {
+        "code": item["itemCode"],
+        "name": item["itemName"],
+        "price": int(item["itemPrice"]),
+        "url": item.get("affiliateUrl") or item["itemUrl"],
+        "image": images[0].replace("?_ex=128x128", "?_ex=300x300") if images else "",
+        "shop": item.get("shopName", ""),
+        "caption": item.get("itemCaption", ""),
+        "review_avg": float(item.get("reviewAverage") or 0),
+        "review_count": int(item.get("reviewCount") or 0),
+        "point_rate": int(item.get("pointRate") or 1),
+    }

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block main %}
+<h1>{{ site.name }}</h1>
+<p class="lead">{{ site.description }} データは毎日自動で更新しています（最終更新：{{ updated }}）。</p>
+<div class="cards">
+{% for c in built %}
+  <a class="card" href="{{ base }}/{{ c.slug }}/">
+    {% if c.top.image %}<img src="{{ c.top.image }}" alt="" width="120" height="120" loading="lazy">{% endif %}
+    <div>
+      <h2>{{ c.title }}</h2>
+      <p>おすすめ{{ c.count }}選・1位は★{{ "%.2f"|format(c.top.review_avg) }}（{{ "{:,}".format(c.top.review_count) }}件）</p>
+    </div>
+  </a>
+{% endfor %}
+</div>
+{% endblock %}

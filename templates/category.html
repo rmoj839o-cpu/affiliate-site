@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block title %}{{ cat.title }}のおすすめ人気ランキング{{ items|length }}選【{{ year }}年】| {{ site.name }}{% endblock %}
+{% block description %}楽天市場で評価の高い{{ cat.title }}を、レビュー件数と評価で比較。選び方のポイントや向いている人も解説します（{{ updated }}更新）。{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "{{ cat.title }}のおすすめランキング",
+  "itemListElement": [{% for i in items %}
+    {"@type": "ListItem", "position": {{ i.rank }}, "name": {{ i.name|tojson }}}{% if not loop.last %},{% endif %}{% endfor %}
+  ]
+}
+</script>
+{% endblock %}
+{% block main %}
+<article>
+  <h1>{{ cat.title }}のおすすめ人気ランキング{{ items|length }}選</h1>
+  <p class="updated">最終更新：{{ updated }}</p>
+  <p class="lead">{{ content.intro }}</p>
+
+  <h2>比較表</h2>
+  <div class="table-wrap">
+  <table class="compare">
+    <thead><tr><th>順位</th><th>商品</th><th>価格(税込)</th><th>評価</th><th>レビュー数</th><th></th></tr></thead>
+    <tbody>
+    {% for i in items %}
+    <tr>
+      <td class="rank">{{ i.rank }}</td>
+      <td><div class="name">{% if i.image %}<img src="{{ i.image }}" alt="" width="56" height="56" loading="lazy">{% endif %}<span>{{ i.name|truncate(40, True, "…") }}</span></div></td>
+      <td>{{ "{:,}".format(i.price) }}円</td>
+      <td>★{{ "%.2f"|format(i.review_avg) }}</td>
+      <td>{{ "{:,}".format(i.review_count) }}件</td>
+      <td><a class="btn small" href="{{ i.url }}" target="_blank" rel="sponsored noopener">楽天で見る</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>{{ cat.title }}の選び方</h2>
+  {% for p in content.how_to_choose %}
+  <h3>{{ loop.index }}. {{ p.point }}</h3>
+  <p>{{ p.detail }}</p>
+  {% endfor %}
+
+  <h2>おすすめランキング</h2>
+  {% for i in items %}{% set n = notes.get(i.code) %}
+  <section class="item" id="rank{{ i.rank }}">
+    <h3><span class="badge">{{ i.rank }}位</span>{{ n.headline if n else "" }}</h3>
+    <div class="item-body">
+      {% if i.image %}<a href="{{ i.url }}" target="_blank" rel="sponsored noopener"><img src="{{ i.image }}" alt="{{ i.name[:40] }}" width="200" height="200" loading="lazy"></a>{% endif %}
+      <div>
+        <p class="item-name">{{ i.name }}</p>
+        <p class="meta">{{ "{:,}".format(i.price) }}円（税込）／ ★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）／ {{ i.shop }}</p>
+        {% if n %}
+        <div class="pc">
+          <div><strong>良い点</strong><ul>{% for x in n.pros %}<li>{{ x }}</li>{% endfor %}</ul></div>
+          <div><strong>気になる点</strong><ul>{% for x in n.cons %}<li>{{ x }}</li>{% endfor %}</ul></div>
+        </div>
+        <p class="best-for">こんな人におすすめ：{{ n.best_for }}</p>
+        {% endif %}
+        <a class="btn" href="{{ i.url }}" target="_blank" rel="sponsored noopener">楽天市場で価格を見る</a>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+
+  <h2>よくある質問</h2>
+  {% for f in content.faq %}
+  <details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
+  {% endfor %}
+
+  <p class="method">ランキングの算出方法：楽天市場のレビュー平均点とレビュー件数をもとに、件数の少ない商品は全体平均に寄せて補正したスコアで順位付けしています。当サイトは実機での検証は行っておらず、紹介文は商品情報とレビュー統計に基づいて作成しています。</p>
+</article>
+{% endblock %}
