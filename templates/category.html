@@ -22,7 +22,7 @@
   <h2>比較表</h2>
   <div class="table-wrap">
   <table class="compare">
-    <thead><tr><th>順位</th><th>商品</th><th>価格(税込)</th><th>評価</th><th>レビュー数</th><th></th></tr></thead>
+    <thead><tr><th>順位</th><th>商品</th><th>楽天価格</th><th>評価</th><th>レビュー数</th><th></th></tr></thead>
     <tbody>
     {% for i in items %}
     <tr>
@@ -31,7 +31,7 @@
       <td>{{ "{:,}".format(i.price) }}円</td>
       <td>★{{ "%.2f"|format(i.review_avg) }}</td>
       <td>{{ "{:,}".format(i.review_count) }}件</td>
-      <td><a class="btn small" href="{{ i.url }}" target="_blank" rel="sponsored noopener">楽天で見る</a></td>
+      <td><a class="btn small" href="#rank{{ i.rank }}">詳しく見る</a></td>
     </tr>
     {% endfor %}
     </tbody>
@@ -52,7 +52,7 @@
       {% if i.image %}<a href="{{ i.url }}" target="_blank" rel="sponsored noopener"><img src="{{ i.image }}" alt="{{ i.name[:40] }}" width="200" height="200" loading="lazy"></a>{% endif %}
       <div>
         <p class="item-name">{{ i.name }}</p>
-        <p class="meta">{{ "{:,}".format(i.price) }}円（税込）／ ★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）／ {{ i.shop }}</p>
+        <p class="meta">楽天市場 {{ "{:,}".format(i.price) }}円（税込）／ ★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）／ {{ i.shop }}</p>
         {% if n %}
         <div class="pc">
           <div><strong>良い点</strong><ul>{% for x in n.pros %}<li>{{ x }}</li>{% endfor %}</ul></div>
@@ -60,7 +60,10 @@
         </div>
         <p class="best-for">こんな人におすすめ：{{ n.best_for }}</p>
         {% endif %}
-        <a class="btn" href="{{ i.url }}" target="_blank" rel="sponsored noopener">楽天市場で価格を見る</a>
+        <p class="shops-label">取り扱いショップで価格をチェック</p>
+        <div class="shops">
+          {% for l in i.links %}<a class="shop {{ l.store }}" href="{{ l.url }}" target="_blank" rel="{{ 'sponsored ' if l.sponsored }}noopener">{{ l.label }}</a>{% endfor %}
+        </div>
       </div>
     </div>
   </section>

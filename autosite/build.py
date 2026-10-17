@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import rakuten, rank, writer
+from . import links, rakuten, rank, writer
 from .writer import JST
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -64,6 +64,8 @@ def main():
         if not ranked:
             print("  ! 条件を満たす商品がありません")
             continue
+        for i in ranked:
+            i["links"] = links.store_links(i, cfg.get("affiliate", {}))
         content = writer.write(cat, ranked, refresh_days=bcfg["ai_refresh_days"], demo=args.demo)
         notes = {c["code"]: c for c in content["items"]}
 

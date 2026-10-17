@@ -12,6 +12,13 @@ min_review_count = 30      # これ未満のレビュー数の商品は除外
 fetch_hits = 30            # 楽天APIから取得する件数（最大30）
 ai_refresh_days = 7        # 商品ラインナップが同じなら、AI解説を再生成しない日数
 
+# ---- アフィリエイトID（公開されても問題ない値） ----
+# 空のままでもボタンは表示される（その場合は普通のリンクで、報酬は発生しない）
+[affiliate]
+amazon_tag = ""          # Amazonアソシエイトのトラッキングタグ（例: xxxx-22）
+valuecommerce_sid = ""   # Yahoo!ショッピング用（バリューコマース MyLink の sid）
+valuecommerce_pid = ""   # 同 pid
+
 # ---- 比較カテゴリ ----
 # 大きなキーワード（例:「加湿器」）は強いサイトが多いので、「ひとり暮らし×用途」に絞っている
 # slug: URL / keyword: 楽天検索語 / ng: 除外キーワード（スペース区切り）
