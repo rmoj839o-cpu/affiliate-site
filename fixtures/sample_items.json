@@ -1,9 +1,9 @@
 {
- "wireless-earphones": [
+ "desk-humidifier": [
   {
-   "code": "sample:wireless-earphones-A",
-   "name": "【サンプル】ワイヤレスイヤホン モデルA",
-   "price": 8780,
+   "code": "sample:desk-humidifier-A",
+   "name": "【サンプル】卓上加湿器 モデルA",
+   "price": 5380,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -13,9 +13,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-B",
-   "name": "【サンプル】ワイヤレスイヤホン モデルB",
-   "price": 5180,
+   "code": "sample:desk-humidifier-B",
+   "name": "【サンプル】卓上加湿器 モデルB",
+   "price": 3580,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -25,9 +25,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-C",
-   "name": "【サンプル】ワイヤレスイヤホン モデルC",
-   "price": 24980,
+   "code": "sample:desk-humidifier-C",
+   "name": "【サンプル】卓上加湿器 モデルC",
+   "price": 13480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -37,9 +37,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-D",
-   "name": "【サンプル】ワイヤレスイヤホン モデルD",
-   "price": 12680,
+   "code": "sample:desk-humidifier-D",
+   "name": "【サンプル】卓上加湿器 モデルD",
+   "price": 7280,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -49,9 +49,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-E",
-   "name": "【サンプル】ワイヤレスイヤホン モデルE",
-   "price": 21880,
+   "code": "sample:desk-humidifier-E",
+   "name": "【サンプル】卓上加湿器 モデルE",
+   "price": 11880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -61,9 +61,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-F",
-   "name": "【サンプル】ワイヤレスイヤホン モデルF",
-   "price": 2080,
+   "code": "sample:desk-humidifier-F",
+   "name": "【サンプル】卓上加湿器 モデルF",
+   "price": 1980,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -73,57 +73,45 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-G",
-   "name": "【サンプル】ワイヤレスイヤホン モデルG",
-   "price": 38880,
+   "code": "sample:desk-humidifier-G",
+   "name": "【サンプル】卓上加湿器 モデルG",
+   "price": 7780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
-   "review_avg": 4.56,
-   "review_count": 950,
-   "point_rate": 1
-  },
-  {
-   "code": "sample:wireless-earphones-H",
-   "name": "【サンプル】ワイヤレスイヤホン モデルH",
-   "price": 7180,
-   "url": "#",
-   "image": "",
-   "shop": "サンプルショップ",
-   "caption": "デモ用の架空データです。",
-   "review_avg": 4.68,
+   "review_avg": 4.31,
    "review_count": 12,
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-I",
-   "name": "【サンプル】ワイヤレスイヤホン モデルI",
-   "price": 3080,
+   "code": "sample:desk-humidifier-H",
+   "name": "【サンプル】卓上加湿器 モデルH",
+   "price": 10080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
-   "review_avg": 3.63,
-   "review_count": 950,
+   "review_avg": 3.64,
+   "review_count": 12,
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-J",
-   "name": "【サンプル】ワイヤレスイヤホン モデルJ",
-   "price": 2380,
+   "code": "sample:desk-humidifier-I",
+   "name": "【サンプル】卓上加湿器 モデルI",
+   "price": 18580,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
-   "review_avg": 4.73,
+   "review_avg": 4.25,
    "review_count": 380,
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-K",
-   "name": "【サンプル】ワイヤレスイヤホン モデルK",
-   "price": 37080,
+   "code": "sample:desk-humidifier-J",
+   "name": "【サンプル】卓上加湿器 モデルJ",
+   "price": 19480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -133,21 +121,21 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-L",
-   "name": "【サンプル】ワイヤレスイヤホン モデルL",
-   "price": 39080,
+   "code": "sample:desk-humidifier-K",
+   "name": "【サンプル】卓上加湿器 モデルK",
+   "price": 2680,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
-   "review_avg": 3.63,
-   "review_count": 45,
+   "review_avg": 4.23,
+   "review_count": 5200,
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-M",
-   "name": "【サンプル】ワイヤレスイヤホン モデルM",
-   "price": 24380,
+   "code": "sample:desk-humidifier-L",
+   "name": "【サンプル】卓上加湿器 モデルL",
+   "price": 13180,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -157,9 +145,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:wireless-earphones-N",
-   "name": "【サンプル】ワイヤレスイヤホン モデルN",
-   "price": 13880,
+   "code": "sample:desk-humidifier-M",
+   "name": "【サンプル】卓上加湿器 モデルM",
+   "price": 7880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -167,13 +155,11 @@
    "review_avg": 4.01,
    "review_count": 2400,
    "point_rate": 1
-  }
- ],
- "mobile-battery": [
+  },
   {
-   "code": "sample:mobile-battery-A",
-   "name": "【サンプル】モバイルバッテリー モデルA",
-   "price": 13180,
+   "code": "sample:desk-humidifier-N",
+   "name": "【サンプル】卓上加湿器 モデルN",
+   "price": 7580,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -181,11 +167,13 @@
    "review_avg": 4.51,
    "review_count": 120,
    "point_rate": 1
-  },
+  }
+ ],
+ "electric-blanket": [
   {
-   "code": "sample:mobile-battery-B",
-   "name": "【サンプル】モバイルバッテリー モデルB",
-   "price": 3080,
+   "code": "sample:electric-blanket-A",
+   "name": "【サンプル】電気毛布 モデルA",
+   "price": 2480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -195,9 +183,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-C",
-   "name": "【サンプル】モバイルバッテリー モデルC",
-   "price": 34780,
+   "code": "sample:electric-blanket-B",
+   "name": "【サンプル】電気毛布 モデルB",
+   "price": 18380,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -207,33 +195,21 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-D",
-   "name": "【サンプル】モバイルバッテリー モデルD",
-   "price": 38980,
+   "code": "sample:electric-blanket-C",
+   "name": "【サンプル】電気毛布 モデルC",
+   "price": 9480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
-   "review_avg": 4.63,
-   "review_count": 12,
+   "review_avg": 3.75,
+   "review_count": 120,
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-E",
-   "name": "【サンプル】モバイルバッテリー モデルE",
-   "price": 18980,
-   "url": "#",
-   "image": "",
-   "shop": "サンプルショップ",
-   "caption": "デモ用の架空データです。",
-   "review_avg": 4.67,
-   "review_count": 2400,
-   "point_rate": 1
-  },
-  {
-   "code": "sample:mobile-battery-F",
-   "name": "【サンプル】モバイルバッテリー モデルF",
-   "price": 27580,
+   "code": "sample:electric-blanket-D",
+   "name": "【サンプル】電気毛布 モデルD",
+   "price": 14780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -243,9 +219,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-G",
-   "name": "【サンプル】モバイルバッテリー モデルG",
-   "price": 27880,
+   "code": "sample:electric-blanket-E",
+   "name": "【サンプル】電気毛布 モデルE",
+   "price": 14880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -255,9 +231,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-H",
-   "name": "【サンプル】モバイルバッテリー モデルH",
-   "price": 11680,
+   "code": "sample:electric-blanket-F",
+   "name": "【サンプル】電気毛布 モデルF",
+   "price": 6780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -267,9 +243,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-I",
-   "name": "【サンプル】モバイルバッテリー モデルI",
-   "price": 27480,
+   "code": "sample:electric-blanket-G",
+   "name": "【サンプル】電気毛布 モデルG",
+   "price": 14680,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -279,9 +255,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-J",
-   "name": "【サンプル】モバイルバッテリー モデルJ",
-   "price": 22080,
+   "code": "sample:electric-blanket-H",
+   "name": "【サンプル】電気毛布 モデルH",
+   "price": 11980,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -291,9 +267,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-K",
-   "name": "【サンプル】モバイルバッテリー モデルK",
-   "price": 26480,
+   "code": "sample:electric-blanket-I",
+   "name": "【サンプル】電気毛布 モデルI",
+   "price": 14180,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -303,9 +279,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-L",
-   "name": "【サンプル】モバイルバッテリー モデルL",
-   "price": 22580,
+   "code": "sample:electric-blanket-J",
+   "name": "【サンプル】電気毛布 モデルJ",
+   "price": 12280,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -315,9 +291,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-M",
-   "name": "【サンプル】モバイルバッテリー モデルM",
-   "price": 20680,
+   "code": "sample:electric-blanket-K",
+   "name": "【サンプル】電気毛布 モデルK",
+   "price": 11280,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -327,9 +303,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:mobile-battery-N",
-   "name": "【サンプル】モバイルバッテリー モデルN",
-   "price": 36480,
+   "code": "sample:electric-blanket-L",
+   "name": "【サンプル】電気毛布 モデルL",
+   "price": 19180,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -337,13 +313,11 @@
    "review_avg": 4.49,
    "review_count": 12,
    "point_rate": 1
-  }
- ],
- "humidifier": [
+  },
   {
-   "code": "sample:humidifier-A",
-   "name": "【サンプル】加湿器 モデルA",
-   "price": 24380,
+   "code": "sample:electric-blanket-M",
+   "name": "【サンプル】電気毛布 モデルM",
+   "price": 13180,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -353,9 +327,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-B",
-   "name": "【サンプル】加湿器 モデルB",
-   "price": 10280,
+   "code": "sample:electric-blanket-N",
+   "name": "【サンプル】電気毛布 モデルN",
+   "price": 6080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -363,11 +337,13 @@
    "review_avg": 4.23,
    "review_count": 380,
    "point_rate": 1
-  },
+  }
+ ],
+ "sleep-earphones": [
   {
-   "code": "sample:humidifier-C",
-   "name": "【サンプル】加湿器 モデルC",
-   "price": 20880,
+   "code": "sample:sleep-earphones-A",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルA",
+   "price": 11380,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -377,9 +353,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-D",
-   "name": "【サンプル】加湿器 モデルD",
-   "price": 25980,
+   "code": "sample:sleep-earphones-B",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルB",
+   "price": 13980,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -389,9 +365,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-E",
-   "name": "【サンプル】加湿器 モデルE",
-   "price": 33380,
+   "code": "sample:sleep-earphones-C",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルC",
+   "price": 17680,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -401,9 +377,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-F",
-   "name": "【サンプル】加湿器 モデルF",
-   "price": 35080,
+   "code": "sample:sleep-earphones-D",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルD",
+   "price": 18480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -413,9 +389,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-G",
-   "name": "【サンプル】加湿器 モデルG",
-   "price": 13580,
+   "code": "sample:sleep-earphones-E",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルE",
+   "price": 7780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -425,9 +401,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-H",
-   "name": "【サンプル】加湿器 モデルH",
-   "price": 12180,
+   "code": "sample:sleep-earphones-F",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルF",
+   "price": 7080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -437,9 +413,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-I",
-   "name": "【サンプル】加湿器 モデルI",
-   "price": 29980,
+   "code": "sample:sleep-earphones-G",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルG",
+   "price": 15980,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -449,9 +425,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-J",
-   "name": "【サンプル】加湿器 モデルJ",
-   "price": 19580,
+   "code": "sample:sleep-earphones-H",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルH",
+   "price": 10780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -461,9 +437,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-K",
-   "name": "【サンプル】加湿器 モデルK",
-   "price": 19980,
+   "code": "sample:sleep-earphones-I",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルI",
+   "price": 10980,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -473,9 +449,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-L",
-   "name": "【サンプル】加湿器 モデルL",
-   "price": 35680,
+   "code": "sample:sleep-earphones-J",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルJ",
+   "price": 18780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -485,9 +461,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-M",
-   "name": "【サンプル】加湿器 モデルM",
-   "price": 2180,
+   "code": "sample:sleep-earphones-K",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルK",
+   "price": 2080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -497,9 +473,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:humidifier-N",
-   "name": "【サンプル】加湿器 モデルN",
-   "price": 28180,
+   "code": "sample:sleep-earphones-L",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルL",
+   "price": 15080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -507,13 +483,11 @@
    "review_avg": 4.57,
    "review_count": 950,
    "point_rate": 1
-  }
- ],
- "electric-toothbrush": [
+  },
   {
-   "code": "sample:electric-toothbrush-A",
-   "name": "【サンプル】電動歯ブラシ モデルA",
-   "price": 30680,
+   "code": "sample:sleep-earphones-M",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルM",
+   "price": 16280,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -523,9 +497,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-B",
-   "name": "【サンプル】電動歯ブラシ モデルB",
-   "price": 26580,
+   "code": "sample:sleep-earphones-N",
+   "name": "【サンプル】寝ホン（睡眠用イヤホン） モデルN",
+   "price": 14280,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -533,11 +507,13 @@
    "review_avg": 4.64,
    "review_count": 950,
    "point_rate": 1
-  },
+  }
+ ],
+ "slim-mobile-battery": [
   {
-   "code": "sample:electric-toothbrush-C",
-   "name": "【サンプル】電動歯ブラシ モデルC",
-   "price": 30280,
+   "code": "sample:slim-mobile-battery-A",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルA",
+   "price": 16080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -547,9 +523,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-D",
-   "name": "【サンプル】電動歯ブラシ モデルD",
-   "price": 23080,
+   "code": "sample:slim-mobile-battery-B",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルB",
+   "price": 12480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -559,9 +535,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-E",
-   "name": "【サンプル】電動歯ブラシ モデルE",
-   "price": 23180,
+   "code": "sample:slim-mobile-battery-C",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルC",
+   "price": 12580,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -571,9 +547,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-F",
-   "name": "【サンプル】電動歯ブラシ モデルF",
-   "price": 29580,
+   "code": "sample:slim-mobile-battery-D",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルD",
+   "price": 15780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -583,9 +559,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-G",
-   "name": "【サンプル】電動歯ブラシ モデルG",
-   "price": 18880,
+   "code": "sample:slim-mobile-battery-E",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルE",
+   "price": 10380,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -595,9 +571,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-H",
-   "name": "【サンプル】電動歯ブラシ モデルH",
-   "price": 13680,
+   "code": "sample:slim-mobile-battery-F",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルF",
+   "price": 7780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -607,9 +583,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-I",
-   "name": "【サンプル】電動歯ブラシ モデルI",
-   "price": 31880,
+   "code": "sample:slim-mobile-battery-G",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルG",
+   "price": 16880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -619,9 +595,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-J",
-   "name": "【サンプル】電動歯ブラシ モデルJ",
-   "price": 30180,
+   "code": "sample:slim-mobile-battery-H",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルH",
+   "price": 16080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -631,9 +607,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-K",
-   "name": "【サンプル】電動歯ブラシ モデルK",
-   "price": 14980,
+   "code": "sample:slim-mobile-battery-I",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルI",
+   "price": 8480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -643,9 +619,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-L",
-   "name": "【サンプル】電動歯ブラシ モデルL",
-   "price": 5580,
+   "code": "sample:slim-mobile-battery-J",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルJ",
+   "price": 3780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -655,9 +631,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-M",
-   "name": "【サンプル】電動歯ブラシ モデルM",
-   "price": 25080,
+   "code": "sample:slim-mobile-battery-K",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルK",
+   "price": 13480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -667,9 +643,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:electric-toothbrush-N",
-   "name": "【サンプル】電動歯ブラシ モデルN",
-   "price": 16280,
+   "code": "sample:slim-mobile-battery-L",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルL",
+   "price": 9080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -677,13 +653,11 @@
    "review_avg": 3.9,
    "review_count": 12,
    "point_rate": 1
-  }
- ],
- "robot-vacuum": [
+  },
   {
-   "code": "sample:robot-vacuum-A",
-   "name": "【サンプル】ロボット掃除機 モデルA",
-   "price": 33880,
+   "code": "sample:slim-mobile-battery-M",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルM",
+   "price": 17880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -693,9 +667,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-B",
-   "name": "【サンプル】ロボット掃除機 モデルB",
-   "price": 5480,
+   "code": "sample:slim-mobile-battery-N",
+   "name": "【サンプル】薄型・軽量モバイルバッテリー モデルN",
+   "price": 3680,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -703,11 +677,13 @@
    "review_avg": 3.8,
    "review_count": 120,
    "point_rate": 1
-  },
+  }
+ ],
+ "small-rice-cooker": [
   {
-   "code": "sample:robot-vacuum-C",
-   "name": "【サンプル】ロボット掃除機 モデルC",
-   "price": 28980,
+   "code": "sample:small-rice-cooker-A",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルA",
+   "price": 15480,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -717,9 +693,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-D",
-   "name": "【サンプル】ロボット掃除機 モデルD",
-   "price": 15880,
+   "code": "sample:small-rice-cooker-B",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルB",
+   "price": 8880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -729,9 +705,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-E",
-   "name": "【サンプル】ロボット掃除機 モデルE",
-   "price": 25180,
+   "code": "sample:small-rice-cooker-C",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルC",
+   "price": 13580,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -741,9 +717,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-F",
-   "name": "【サンプル】ロボット掃除機 モデルF",
-   "price": 26180,
+   "code": "sample:small-rice-cooker-D",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルD",
+   "price": 14080,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -753,9 +729,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-G",
-   "name": "【サンプル】ロボット掃除機 モデルG",
-   "price": 21680,
+   "code": "sample:small-rice-cooker-E",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルE",
+   "price": 11780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -765,9 +741,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-H",
-   "name": "【サンプル】ロボット掃除機 モデルH",
-   "price": 11580,
+   "code": "sample:small-rice-cooker-F",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルF",
+   "price": 6780,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -777,33 +753,33 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-I",
-   "name": "【サンプル】ロボット掃除機 モデルI",
-   "price": 39280,
+   "code": "sample:small-rice-cooker-G",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルG",
+   "price": 14980,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
-   "review_avg": 4.21,
-   "review_count": 45,
+   "review_avg": 4.77,
+   "review_count": 950,
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-J",
-   "name": "【サンプル】ロボット掃除機 モデルJ",
-   "price": 32980,
+   "code": "sample:small-rice-cooker-H",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルH",
+   "price": 12980,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
-   "review_avg": 4.12,
+   "review_avg": 4.58,
    "review_count": 12,
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-K",
-   "name": "【サンプル】ロボット掃除機 モデルK",
-   "price": 13480,
+   "code": "sample:small-rice-cooker-I",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルI",
+   "price": 7680,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -813,9 +789,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-L",
-   "name": "【サンプル】ロボット掃除機 モデルL",
-   "price": 3780,
+   "code": "sample:small-rice-cooker-J",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルJ",
+   "price": 2880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -825,9 +801,9 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-M",
-   "name": "【サンプル】ロボット掃除機 モデルM",
-   "price": 24780,
+   "code": "sample:small-rice-cooker-K",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルK",
+   "price": 13380,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
@@ -837,15 +813,39 @@
    "point_rate": 1
   },
   {
-   "code": "sample:robot-vacuum-N",
-   "name": "【サンプル】ロボット掃除機 モデルN",
-   "price": 23780,
+   "code": "sample:small-rice-cooker-L",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルL",
+   "price": 12880,
    "url": "#",
    "image": "",
    "shop": "サンプルショップ",
    "caption": "デモ用の架空データです。",
    "review_avg": 4.25,
    "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:small-rice-cooker-M",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルM",
+   "price": 18080,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.56,
+   "review_count": 950,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:small-rice-cooker-N",
+   "name": "【サンプル】一人暮らし向け炊飯器（3合以下） モデルN",
+   "price": 13480,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 3.87,
+   "review_count": 2400,
    "point_rate": 1
   }
  ]

@@ -1,7 +1,7 @@
 # サイト全体の設定
 [site]
-name = "かしこく選ぶ ガジェット比較"
-description = "楽天市場の売れ筋・高評価アイテムをスペックとレビューデータで比較するサイトです。"
+name = "ひとり暮らし家電えらび"
+description = "ひとり暮らしの部屋に合う家電・ガジェットを、楽天市場のレビューデータで比較するサイトです。"
 # 公開URL（末尾スラッシュなし）。楽天APIのReferer認証にも使うので、楽天アプリの「許可されたWebサイト」と一致させること
 url = "https://example.github.io/affiliate-site"
 author = "サイト運営者"
@@ -13,33 +13,34 @@ fetch_hits = 30            # 楽天APIから取得する件数（最大30）
 ai_refresh_days = 7        # 商品ラインナップが同じなら、AI解説を再生成しない日数
 
 # ---- 比較カテゴリ ----
+# 大きなキーワード（例:「加湿器」）は強いサイトが多いので、「ひとり暮らし×用途」に絞っている
 # slug: URL / keyword: 楽天検索語 / ng: 除外キーワード（スペース区切り）
 [[categories]]
-slug = "wireless-earphones"
-title = "ワイヤレスイヤホン"
-keyword = "ワイヤレスイヤホン bluetooth"
-ng = "中古 ケースのみ 交換用 イヤーピース"
+slug = "desk-humidifier"
+title = "卓上加湿器"
+keyword = "卓上加湿器"
+ng = "中古 フィルター 交換用 部品 業務用"
 
 [[categories]]
-slug = "mobile-battery"
-title = "モバイルバッテリー"
-keyword = "モバイルバッテリー"
-ng = "中古 ケース"
+slug = "electric-blanket"
+title = "電気毛布"
+keyword = "電気毛布"
+ng = "中古 カバーのみ 交換用"
 
 [[categories]]
-slug = "humidifier"
-title = "加湿器"
-keyword = "加湿器"
-ng = "中古 フィルター 交換用 部品"
+slug = "sleep-earphones"
+title = "寝ホン（睡眠用イヤホン）"
+keyword = "睡眠用 イヤホン"
+ng = "中古 イヤーピース 交換用 ケースのみ 耳栓"
 
 [[categories]]
-slug = "electric-toothbrush"
-title = "電動歯ブラシ"
-keyword = "電動歯ブラシ 本体"
-ng = "替えブラシ 中古 交換用"
+slug = "slim-mobile-battery"
+title = "薄型・軽量モバイルバッテリー"
+keyword = "モバイルバッテリー 薄型 軽量"
+ng = "中古 ケース カバー"
 
 [[categories]]
-slug = "robot-vacuum"
-title = "ロボット掃除機"
-keyword = "ロボット掃除機"
-ng = "中古 フィルター 交換用 ブラシのみ"
+slug = "small-rice-cooker"
+title = "一人暮らし向け炊飯器（3合以下）"
+keyword = "炊飯器 3合"
+ng = "中古 内釜 交換用 部品 パッキン 5合 5.5合"
