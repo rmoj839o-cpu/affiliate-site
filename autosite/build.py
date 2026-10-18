@@ -79,6 +79,10 @@ def main():
         built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked})
         print(f"  {len(ranked)}件で生成しました")
 
+    if not built:
+        # 全カテゴリ失敗（APIキー未設定など）のときは、空のサイトで上書き公開しないよう止める
+        raise SystemExit("どのカテゴリも生成できませんでした。楽天APIの設定を確認してください。")
+
     (DIST / "index.html").write_text(
         env.get_template("index.html").render(built=built, path="/"), encoding="utf-8")
     (DIST / "about").mkdir()
