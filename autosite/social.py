@@ -1,13 +1,14 @@
-"""毎日のSNS投稿案（X / Threads 向け）を作る。
+"""毎日のSNS投稿案（Instagram 向け）を作る。
 
 前日のランキングと比べて「1位が入れ替わった」「値下がりした」などの話題を拾い、
-投稿文の下書きを drafts.md に書き出す。投稿は人が内容を確認してから手動で行う前提
+紹介画像（card.py）と投稿文の下書きを作って drafts.md に書き出す。投稿は人が内容を確認してから手動で行う前提
 （自動投稿はアカウント凍結や規約違反のリスクが高いため、あえて作らない）。
 """
 import json
 import os
 from datetime import datetime
 
+from .card import make_card
 from .writer import CACHE_DIR, JST, MODEL
 
 HISTORY_FILE = CACHE_DIR / "history.json"
@@ -15,10 +16,13 @@ MAX_DRAFTS = 3
 PRICE_DROP = 0.10  # 10%以上の値下がりを話題にする
 
 SYSTEM_PROMPT = """あなたは「ひとり暮らしの家電えらび」を手伝う比較サイトのSNS担当です。
-渡された話題ごとに、X（旧Twitter）にそのまま貼れる投稿文を1つずつ書きます。
+渡された話題ごとに、Instagram の投稿に添えるキャプション（本文）を1つずつ書きます。
+投稿には、ランキング順位・評価・価格を載せた画像が付きます。
 
 守ること:
-- 全角110字以内（URLとハッシュタグは別に付けるので本文に含めない）。
+- 全角120〜200字。1文目で興味を引き、途中で適度に改行する。
+- Instagram の本文のURLは押せないので、URLは書かない（最後の誘導文とハッシュタグは別に付ける）。
+- 絵文字は2〜3個まで。
 - 親しみやすい口調。ただし「神」「最強」「絶対買い」などの誇大表現は使わない。
 - 実際に使ったかのような体験談を作らない。数字（価格・レビュー件数・評価）は渡されたものだけを使う。
 - 価格は変わることがあるので「今見たら」「〇日時点」のように時点が分かる書き方にする。"""
@@ -79,16 +83,19 @@ def find_topics(built, history, today):
 def _template_text(t, today):
     i, cat = t["item"], t["cat"]
     day = f"{today.month}/{today.day}"
+    name = _short(i["name"])
     if t["kind"] == "price_drop":
-        return (f"{day}時点で、{cat['title']}ランキング{i['rank']}位の「{_short(i['name'])}」が"
-                f"{t['old_price']:,}円→{i['price']:,}円に値下がりしていました。"
-                f"レビュー{i['review_count']:,}件・★{i['review_avg']:.2f}の人気モデルです。")
+        return (f"{cat['title']}ランキング{i['rank']}位の「{name}」が値下がりしていました📉\n"
+                f"{t['old_price']:,}円 → {i['price']:,}円（{day}時点）\n\n"
+                f"レビュー{i['review_count']:,}件・平均★{i['review_avg']:.2f}の人気モデルです。"
+                "気になっていた人はチェックしてみてください。")
     if t["kind"] == "new_top":
-        return (f"{cat['title']}ランキングの1位が入れ替わりました。"
-                f"新1位は「{_short(i['name'])}」（★{i['review_avg']:.2f}・レビュー{i['review_count']:,}件）。"
-                f"{day}時点で{i['price']:,}円です。")
-    return (f"ひとり暮らしの{cat['title']}選び、迷ったらレビューの「件数」も見るのがおすすめ。"
-            f"今いちばん評価が安定しているのは「{_short(i['name'])}」"
+        return (f"{cat['title']}のランキング1位が入れ替わりました👑\n\n"
+                f"新しい1位は「{name}」。\nレビュー{i['review_count']:,}件・平均★{i['review_avg']:.2f}で、"
+                f"{day}時点の価格は{i['price']:,}円です。")
+    return (f"ひとり暮らしの{cat['title']}、どれを選べばいいか迷いませんか？🤔\n\n"
+            "選ぶときは、レビューの「点数」だけでなく「件数」も見るのがおすすめです。\n"
+            f"今いちばん評価が安定しているのは「{name}」"
             f"（★{i['review_avg']:.2f}・{i['review_count']:,}件）でした。")
 
 
@@ -118,7 +125,12 @@ def _ai_texts(topics, today):
     return {p["topic_id"]: p["text"] for p in json.loads(text)["posts"]}
 
 
-def run(built, site, base_url, out_path, demo=False):
+def _hashtags(cat):
+    word = cat["title"].split("（")[0].replace("・", "")
+    return f"#PR #{word} #一人暮らし #ひとり暮らし #一人暮らし家電 #家電 #楽天 #楽天市場"
+
+
+def run(built, site, base_url, out_path, dist_dir, demo=False):
     today = datetime.now(JST)
     history = {} if demo or not HISTORY_FILE.exists() else json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
     topics = find_topics(built, history, today)
@@ -130,14 +142,24 @@ def run(built, site, base_url, out_path, demo=False):
         except Exception as e:  # 投稿案の失敗でサイト更新を止めない
             print(f"  ! 投稿案のAI生成に失敗: {e}")
 
-    lines = [f"# SNS投稿案 {today:%Y/%m/%d}", "",
-             "内容を確認してから、コピーして投稿してください。",
-             "**#PR は消さないでください**（アフィリエイトリンクを含む投稿には広告表記が必要です）。", ""]
+    lines = [f"# Instagram 投稿案 {today:%Y/%m/%d}", "",
+             "1. 画像を長押しして「写真に保存」",
+             "2. Instagram で新規投稿 → 保存した画像を選ぶ",
+             "3. 下の本文をコピーして貼り付け → シェア",
+             "",
+             "**#PR は消さないでください**（アフィリエイトのための投稿には広告表記が必要です）。",
+             "プロフィールのリンク欄にサイトのURLを入れておいてください。", ""]
     for n, t in enumerate(topics):
         body = ai.get(n) or _template_text(t, today)
-        url = f"{base_url}/{t['cat']['slug']}/#rank{t['item']['rank']}"
-        tag = "#" + t["cat"]["title"].split("（")[0].replace("・", "")
-        lines += [f"## 案{n + 1}：{t['note']}", "", "```", f"{body}", "", f"{url}", f"#PR {tag} #一人暮らし", "```", ""]
+        img_name = f"sns/{today:%Y%m%d}-{n + 1}.png"
+        try:
+            make_card(t, _short(t["item"]["name"], 40), site["name"], today, dist_dir / img_name)
+            image = [f"![案{n + 1}の画像]({base_url}/{img_name})", ""]
+        except Exception as e:
+            print(f"  ! 画像の作成に失敗: {e}")
+            image = []
+        lines += [f"## 案{n + 1}：{t['note']}", "", *image, "```", body, "",
+                  "くわしい比較はプロフィールのリンクから👆", "", _hashtags(t["cat"]), "```", ""]
     out_path.write_text("\n".join(lines), encoding="utf-8")
 
     if not demo:

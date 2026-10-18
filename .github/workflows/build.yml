@@ -30,6 +30,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Install Japanese font for SNS images
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
 
       - name: Build site
         env:
@@ -46,6 +48,13 @@ jobs:
           git add data/
           git diff --cached --quiet || (git commit -m "Update content cache" && git push)
 
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
       - name: Post SNS drafts as an issue
         if: hashFiles('drafts.md') != ''
         env:
@@ -55,10 +64,3 @@ jobs:
           gh label create sns-draft --color 1a73e8 --force
           gh issue list --label sns-draft --state open --json number --jq '.[].number' | xargs -r -n1 gh issue close
           gh issue create --title "SNS投稿案 $(TZ=Asia/Tokyo date +%m/%d)" --body-file drafts.md --label sns-draft
-
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: dist
-      - id: deploy
-        uses: actions/deploy-pages@v4
