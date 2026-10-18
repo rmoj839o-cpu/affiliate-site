@@ -3,7 +3,7 @@
 name = "ひとり暮らし家電えらび"
 description = "ひとり暮らしの部屋に合う家電・ガジェットを、楽天市場のレビューデータで比較するサイトです。"
 # 公開URL（末尾スラッシュなし）。楽天APIのReferer認証にも使うので、楽天アプリの「許可されたWebサイト」と一致させること
-url = "https://example.github.io/affiliate-site"
+url = "https://rmoj839o-cpu.github.io/affiliate-site"
 author = "サイト運営者"
 
 [build]
