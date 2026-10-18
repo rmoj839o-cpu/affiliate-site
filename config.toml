@@ -15,7 +15,7 @@ ai_refresh_days = 7        # 商品ラインナップが同じなら、AI解説�
 # ---- アフィリエイトID（公開されても問題ない値） ----
 # 空のままでもボタンは表示される（その場合は普通のリンクで、報酬は発生しない）
 [affiliate]
-amazon_tag = ""          # Amazonアソシエイトのトラッキングタグ（例: xxxx-22）
+amazon_tag = "hitorigura049-22"          # Amazonアソシエイトのトラッキングタグ（例: xxxx-22）
 valuecommerce_sid = ""   # Yahoo!ショッピング用（バリューコマース MyLink の sid）
 valuecommerce_pid = ""   # 同 pid
 
