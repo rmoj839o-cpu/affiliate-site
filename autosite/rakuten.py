@@ -11,10 +11,10 @@ from urllib.parse import urlparse
 
 import requests
 
-ENDPOINT = os.environ.get(
-    "RAKUTEN_ENDPOINT",
-    "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/20220601",
-)
+BASE = "https://openapi.rakuten.co.jp/ichibams/api/IchibaItem/Search/"
+# 2026年の刷新でバージョンが変わっているため、新しい順に試して通ったものを使い続ける
+VERSIONS = ["20260401", "20220601"]
+ENDPOINTS = [os.environ["RAKUTEN_ENDPOINT"]] if os.environ.get("RAKUTEN_ENDPOINT") else [BASE + v for v in VERSIONS]
 _last_call = 0.0
 
 
@@ -47,9 +47,13 @@ def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount"):
     origin = "{0.scheme}://{0.netloc}".format(urlparse(site_url))
     headers = {"Referer": site_url + "/", "Origin": origin, "User-Agent": "autosite/1.0"}
 
-    for attempt in range(4):
+    for attempt in range(4 + len(VERSIONS)):
         _wait_rate_limit()
-        res = requests.get(ENDPOINT, params=params, headers=headers, timeout=20)
+        res = requests.get(ENDPOINTS[0], params=params, headers=headers, timeout=20)
+        if res.status_code == 400 and "API Configuration not found" in res.text and len(ENDPOINTS) > 1:
+            print(f"  {ENDPOINTS[0]} は使えないため次のバージョンを試します")
+            ENDPOINTS.pop(0)
+            continue
         if res.status_code == 429:
             time.sleep(2 ** attempt * 2)
             continue
