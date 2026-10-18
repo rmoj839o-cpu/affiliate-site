@@ -6,6 +6,7 @@
 """
 import argparse
 import json
+import os
 import shutil
 import tomllib
 from datetime import datetime
@@ -59,6 +60,8 @@ def main():
             items = load_items(cat, cfg, args.demo)
         except Exception as e:  # 1カテゴリの失敗でサイト全体を止めない
             print(f"  ! 取得失敗: {e}")
+            if os.environ.get("GITHUB_ACTIONS"):  # Actions画面の注釈にも出して、原因を見つけやすくする
+                print(f"::error title={cat['title']}::{type(e).__name__}: {e}")
             continue
         ranked = rank.rank(items, limit=bcfg["items_per_page"], min_reviews=bcfg["min_review_count"])
         if not ranked:

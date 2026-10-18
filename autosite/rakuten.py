@@ -54,8 +54,10 @@ def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount"):
             raise RuntimeError(
                 "楽天APIが403を返しました。accessKey と、楽天アプリに登録した許可ドメインが "
                 f"config.toml の site.url（{site_url}）と一致しているか確認してください。"
+                f" 応答: {res.text[:300]}"
             )
-        res.raise_for_status()
+        if not res.ok:
+            raise RuntimeError(f"楽天APIエラー HTTP {res.status_code}: {res.text[:300]}")
         return [_normalize(i) for i in res.json().get("Items", [])]
     raise RuntimeError("楽天APIのレート制限が解除されませんでした")
 

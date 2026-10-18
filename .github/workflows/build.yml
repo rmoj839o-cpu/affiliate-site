@@ -4,6 +4,9 @@ on:
   schedule:
     - cron: "47 20 * * *"   # 毎日 日本時間 5:47 に自動更新
   workflow_dispatch:         # Actions画面から手動実行も可能
+  push:                      # 仕組みを更新したときもすぐ反映する
+    branches: [main]
+    paths-ignore: ["data/**", "README.md"]
 
 permissions:
   contents: write   # AI解説のキャッシュ(data/)をコミットするため
