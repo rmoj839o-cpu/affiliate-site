@@ -7,6 +7,7 @@
 """
 import os
 import time
+from urllib.parse import urlparse
 
 import requests
 
@@ -42,7 +43,9 @@ def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount"):
     if ng_keyword:
         params["NGKeyword"] = ng_keyword
     # 新APIはサーバーからの呼び出しでも Referer が必要（登録済みドメインと照合される）
-    headers = {"Referer": site_url + "/", "User-Agent": "autosite/1.0"}
+    # REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING を避けるため Origin も送る（値は許可ドメインと一致させる）
+    origin = "{0.scheme}://{0.netloc}".format(urlparse(site_url))
+    headers = {"Referer": site_url + "/", "Origin": origin, "User-Agent": "autosite/1.0"}
 
     for attempt in range(4):
         _wait_rate_limit()
