@@ -94,6 +94,14 @@ def main():
         built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked})
         print(f"  {len(ranked)}件で生成しました")
 
+    if not args.demo:
+        # 毎日のランキングを記録に残す（変な商品が混ざっていないか後から確認できるように）
+        snapshot = {c["slug"]: [{k: i[k] for k in ("rank", "name", "price", "review_avg", "review_count", "shop")}
+                                for i in c["items"]] for c in built}
+        (ROOT / "data" / "ranking.json").write_text(
+            json.dumps({"date": now.strftime("%Y-%m-%d"), "ranking": snapshot}, ensure_ascii=False, indent=1),
+            encoding="utf-8")
+
     if not built:
         # 全カテゴリ失敗（APIキー未設定など）のときは、空のサイトで上書き公開しないよう止める
         raise SystemExit("どのカテゴリも生成できませんでした。楽天APIの設定を確認してください。")
