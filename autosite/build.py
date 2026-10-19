@@ -34,6 +34,17 @@ def load_items(category, cfg, demo):
     )
 
 
+def filter_items(items, category):
+    # 検索語だけだと関係ない商品（炊飯器で検索したお米など）が混ざるので、商品名と価格でふるい落とす
+    must = category.get("must", "").split()
+    min_price = category.get("min_price", 0)
+    kept = [i for i in items
+            if (not must or any(w in i["name"] for w in must)) and i["price"] >= min_price]
+    if len(kept) < len(items):
+        print(f"  関係なさそうな商品を{len(items) - len(kept)}件除外しました")
+    return kept
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--demo", action="store_true", help="楽天APIを使わずサンプルデータで生成")
@@ -63,6 +74,7 @@ def main():
             if os.environ.get("GITHUB_ACTIONS"):  # Actions画面の注釈にも出して、原因を見つけやすくする
                 print(f"::error title={cat['title']}::{type(e).__name__}: {e}")
             continue
+        items = filter_items(items, cat)
         ranked = rank.rank(items, limit=bcfg["items_per_page"], min_reviews=bcfg["min_review_count"])
         if not ranked:
             print("  ! 条件を満たす商品がありません")

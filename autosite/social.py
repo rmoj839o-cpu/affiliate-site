@@ -93,7 +93,8 @@ def _template_text(t, today):
         return (f"{cat['title']}のランキング1位が入れ替わりました👑\n\n"
                 f"新しい1位は「{name}」。\nレビュー{i['review_count']:,}件・平均★{i['review_avg']:.2f}で、"
                 f"{day}時点の価格は{i['price']:,}円です。")
-    return (f"ひとり暮らしの{cat['title']}、どれを選べばいいか迷いませんか？🤔\n\n"
+    title = cat["title"] if "暮らし" in cat["title"] else f"ひとり暮らしの{cat['title']}"
+    return (f"{title}、どれを選べばいいか迷いませんか？🤔\n\n"
             "選ぶときは、レビューの「点数」だけでなく「件数」も見るのがおすすめです。\n"
             f"今いちばん評価が安定しているのは「{name}」"
             f"（★{i['review_avg']:.2f}・{i['review_count']:,}件）でした。")
