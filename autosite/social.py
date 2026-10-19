@@ -50,8 +50,36 @@ def _short(name, n=28):
     return q if len(q) <= n else q[:n] + "…"
 
 
-def load_history():
-    return json.loads(HISTORY_FILE.read_text(encoding="utf-8")) if HISTORY_FILE.exists() else {}
+def _read_history():
+    if not HISTORY_FILE.exists():
+        return {}
+    data = json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
+    # 古い形式（カテゴリごとのデータだけ）は「前日の記録」とみなす
+    return data if "current" in data else {"current": {"date": "", "data": data}}
+
+
+def load_history(today=None):
+    """比べる相手になる「前日までの記録」を返す。
+
+    同じ日に何回作り直しても、その日のデータ同士を比べて
+    「1位が入れ替わった」などと誤って話題にしないようにする。
+    """
+    today = (today or datetime.now(JST)).strftime("%Y-%m-%d")
+    hist = _read_history()
+    current = hist.get("current", {})
+    if current.get("date") == today:
+        return hist.get("previous", {}).get("data", {})
+    return current.get("data", {})
+
+
+def save_history(built, today):
+    baseline = load_history(today)
+    day = today.strftime("%Y-%m-%d")
+    data = {c["slug"]: {"top": c["items"][0]["code"],
+                        "prices": {i["code"]: i["price"] for i in c["items"]},
+                        "reviews": {i["code"]: i["review_count"] for i in c["items"]}} for c in built}
+    hist = {"previous": {"data": baseline}, "current": {"date": day, "data": data}}
+    HISTORY_FILE.write_text(json.dumps(hist, ensure_ascii=False, indent=1), encoding="utf-8")
 
 
 # 話題がない日の紹介の切り口。日替わりで回して、同じ投稿が続かないようにする
@@ -161,7 +189,7 @@ def _hashtags(cat):
 
 def run(built, site, base_url, out_path, dist_dir, demo=False):
     today = datetime.now(JST)
-    history = {} if demo else load_history()
+    history = {} if demo else load_history(today)
     topics = find_topics(built, history, today)
 
     ai = {}
@@ -193,9 +221,5 @@ def run(built, site, base_url, out_path, dist_dir, demo=False):
 
     if not demo:
         CACHE_DIR.mkdir(exist_ok=True)
-        HISTORY_FILE.write_text(json.dumps(
-            {c["slug"]: {"top": c["items"][0]["code"],
-                         "prices": {i["code"]: i["price"] for i in c["items"]},
-                         "reviews": {i["code"]: i["review_count"] for i in c["items"]}} for c in built},
-            ensure_ascii=False, indent=1), encoding="utf-8")
+        save_history(built, today)
     print(f"投稿案 {len(topics)}件: {out_path}")
