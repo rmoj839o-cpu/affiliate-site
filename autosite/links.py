@@ -15,10 +15,16 @@ NOISE = re.compile(
 )
 
 
-def search_query(name, max_words=4):
+def clean_name(name):
+    # 括弧書きの宣伝・セール文句・記号を取り除いた商品名
     name = re.sub(r"[【\[（(＜<《「『].*?[】\]）)＞>》」』]", " ", name)
     name = NOISE.sub(" ", name)
-    name = re.sub(r"[★☆◆◇■□●○※!！/／|｜]", " ", name)
+    name = re.sub(r"[★☆◆◇■□●○※!！/／|｜＼\\]", " ", name)
+    return " ".join(name.split())
+
+
+def search_query(name, max_words=4):
+    name = clean_name(name)
     words = [w for w in name.split() if len(w) > 1]
     return " ".join(words[:max_words]) or name.strip()[:30]
 

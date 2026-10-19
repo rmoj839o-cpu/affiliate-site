@@ -39,8 +39,10 @@ def filter_items(items, category):
     must = category.get("must", "").split()
     min_price = category.get("min_price", 0)
     max_price = category.get("max_price", float("inf"))
+    # 名前の後ろのほうに検索よけの言葉を並べた商品もあるので、宣伝文句を除いた名前の先頭付近だけを見る
     kept = [i for i in items
-            if (not must or any(w in i["name"] for w in must)) and min_price <= i["price"] <= max_price]
+            if (not must or any(w in links.clean_name(i["name"])[:40] for w in must))
+            and min_price <= i["price"] <= max_price]
     if len(kept) < len(items):
         print(f"  関係なさそうな商品を{len(items) - len(kept)}件除外しました")
     return kept
