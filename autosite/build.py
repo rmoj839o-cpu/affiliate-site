@@ -38,8 +38,9 @@ def filter_items(items, category):
     # 検索語だけだと関係ない商品（炊飯器で検索したお米など）が混ざるので、商品名と価格でふるい落とす
     must = category.get("must", "").split()
     min_price = category.get("min_price", 0)
+    max_price = category.get("max_price", float("inf"))
     kept = [i for i in items
-            if (not must or any(w in i["name"] for w in must)) and i["price"] >= min_price]
+            if (not must or any(w in i["name"] for w in must)) and min_price <= i["price"] <= max_price]
     if len(kept) < len(items):
         print(f"  関係なさそうな商品を{len(items) - len(kept)}件除外しました")
     return kept

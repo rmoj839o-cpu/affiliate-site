@@ -3,16 +3,14 @@
 単純な平均点だと「レビュー3件で★5.0」が上位に来てしまうので、
 ベイズ平均（件数が少ない商品は全体平均に寄せる）でスコア化する。
 """
-import re
+from .links import search_query
 
 PRIOR_WEIGHT = 50  # この件数ぶんの「全体平均レビュー」を仮に足して補正する
 
 
-def _base_name(name):
-    # 色違い・容量違いの同一商品を重複扱いにするための簡易キー
-    name = re.sub(r"[【\[（(].*?[】\]）)]", "", name)
-    name = re.sub(r"\s+", "", name)
-    return name[:24]
+def _base_name(item):
+    # 色違い・容量違いや、同じショップの出品違いを重複扱いにするための簡易キー
+    return item["shop"] + "|" + search_query(item["name"], max_words=3)
 
 
 def rank(items, *, limit, min_reviews):
@@ -27,7 +25,7 @@ def rank(items, *, limit, min_reviews):
 
     seen, ranked = set(), []
     for i in pool:
-        key = _base_name(i["name"])
+        key = _base_name(i)
         if key in seen:
             continue
         seen.add(key)

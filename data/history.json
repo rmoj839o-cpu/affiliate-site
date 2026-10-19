@@ -29,20 +29,6 @@
    "beneru:10000014": 4980
   }
  },
- "sleep-earphones": {
-  "top": "kurobox:10000130",
-  "prices": {
-   "kurobox:10000130": 1780,
-   "kandar-industry:10000015": 5200,
-   "elephantdailystore:10000024": 2799,
-   "anker:10002465": 29990,
-   "kandar-industry:10000107": 2799,
-   "hakkutsu-market:10001972": 1480,
-   "5tyle12345:10005172": 2280,
-   "shopkurano:10008474": 700,
-   "meisei:10002695": 1980
-  }
- },
  "slim-mobile-battery": {
   "top": "dasimon:10000020",
   "prices": {
