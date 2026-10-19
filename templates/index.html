@@ -2,13 +2,49 @@
 {% block main %}
 <h1>{{ site.name }}</h1>
 <p class="lead">{{ site.description }} データは毎日自動で更新しています（最終更新：{{ updated }}）。</p>
+
+<section class="feature">
+  <p class="feature-label">今日の特集</p>
+  <h2><a href="{{ base }}/{{ featured.slug }}/">{{ featured.title }}のおすすめTOP3</a></h2>
+  <div class="feature-items">
+    {% for i in featured["items"][:3] %}
+    <a class="feature-item" href="{{ base }}/{{ featured.slug }}/#rank{{ i.rank }}">
+      <span class="thumb">{% if i.image %}<img src="{{ i.image }}" alt="" width="160" height="160" loading="lazy">{% endif %}<span class="badge">{{ i.rank }}位</span></span>
+      <span class="fi-name">{{ i.short_name }}</span>
+      <span class="fi-meta">★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）・{{ "{:,}".format(i.price) }}円</span>
+    </a>
+    {% endfor %}
+  </div>
+  <p class="feature-more"><a href="{{ base }}/{{ featured.slug }}/">{{ featured.title }}のランキングをすべて見る →</a></p>
+</section>
+
+{% if drops %}
+<h2>値下がり情報</h2>
+<ul class="news">
+  {% for c, i, old in drops %}
+  <li><a href="{{ base }}/{{ c.slug }}/#rank{{ i.rank }}"><span class="hl-label">{{ c.title }}・{{ i.rank }}位</span>{{ i.short_name }}：{{ "{:,}".format(old) }}円 → <b>{{ "{:,}".format(i.price) }}円</b></a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+{% if trending %}
+<h2>レビュー急上昇</h2>
+<ul class="news">
+  {% for c, i, gain in trending %}
+  <li><a href="{{ base }}/{{ c.slug }}/#rank{{ i.rank }}"><span class="hl-label">{{ c.title }}・{{ i.rank }}位</span>{{ i.short_name }}：前回から +{{ gain }}件</a></li>
+  {% endfor %}
+</ul>
+{% endif %}
+
+<h2>カテゴリから探す</h2>
 <div class="cards">
 {% for c in built %}
   <a class="card" href="{{ base }}/{{ c.slug }}/">
     {% if c.top.image %}<img src="{{ c.top.image }}" alt="" width="120" height="120" loading="lazy">{% endif %}
     <div>
       <h2>{{ c.title }}</h2>
-      <p>おすすめ{{ c.count }}選・1位は★{{ "%.2f"|format(c.top.review_avg) }}（{{ "{:,}".format(c.top.review_count) }}件）</p>
+      <p>1位：{{ c.top.short_name }}</p>
+      <p>おすすめ{{ c.count }}選・★{{ "%.2f"|format(c.top.review_avg) }}（{{ "{:,}".format(c.top.review_count) }}件）</p>
     </div>
   </a>
 {% endfor %}

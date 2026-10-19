@@ -85,6 +85,7 @@ def main():
             continue
         for i in ranked:
             i["links"] = links.store_links(i, cfg.get("affiliate", {}))
+            i["short_name"] = links.search_query(i["name"], max_words=5)
         content = writer.write(cat, ranked, refresh_days=bcfg["ai_refresh_days"], demo=args.demo)
         notes = {c["code"]: c for c in content["items"]}
         hl = rank.highlights(ranked, history.get(cat["slug"], {}))
@@ -111,8 +112,14 @@ def main():
         # 全カテゴリ失敗（APIキー未設定など）のときは、空のサイトで上書き公開しないよう止める
         raise SystemExit("どのカテゴリも生成できませんでした。楽天APIの設定を確認してください。")
 
+    # トップページは毎日ちがう特集カテゴリを出して、値下がり・急上昇もまとめる
+    featured = built[now.toordinal() % len(built)]
+    drops = [(c, i, old) for c in built for i, old in c["highlights"]["drops"]]
+    trending = sorted(((c, *c["highlights"]["trending"]) for c in built if c["highlights"]["trending"]),
+                      key=lambda t: t[2], reverse=True)
     (DIST / "index.html").write_text(
-        env.get_template("index.html").render(built=built, path="/"), encoding="utf-8")
+        env.get_template("index.html").render(built=built, featured=featured, drops=drops[:8],
+                                              trending=trending[:5], path="/"), encoding="utf-8")
     (DIST / "about").mkdir()
     (DIST / "about" / "index.html").write_text(
         env.get_template("about.html").render(path="/about/"), encoding="utf-8")

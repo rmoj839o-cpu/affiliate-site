@@ -59,6 +59,22 @@ h3 { font-size: 17px; margin: 22px 0 6px; }
 details { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin: 8px 0; }
 summary { cursor: pointer; font-weight: 700; }
 .method { font-size: 13px; color: var(--muted); margin-top: 32px; }
+.feature { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 24px 0; }
+.feature h2 { margin: 4px 0 14px; }
+.feature h2 a { text-decoration: none; }
+.feature-label { margin: 0; font-size: 13px; font-weight: 700; color: var(--accent); }
+.feature-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.feature-item { position: relative; display: flex; flex-direction: column; gap: 4px; text-decoration: none; font-size: 13px; }
+.feature-item img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+.thumb { position: relative; display: block; min-height: 30px; }
+.thumb .badge { position: absolute; top: 6px; left: 6px; }
+.feature h2 { border-left: 0; padding-left: 0; }
+.fi-name { font-weight: 700; line-height: 1.4; }
+.fi-meta { color: var(--muted); font-size: 12px; }
+.feature-more { margin: 12px 0 0; font-size: 14px; }
+.news { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.news a { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; text-decoration: none; font-size: 14px; }
+.card p + p { margin-top: 2px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 20px 0; }
 .card { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; text-decoration: none; }
 .card h2 { border: 0; padding: 0; margin: 0; font-size: 17px; }
@@ -69,6 +85,8 @@ footer { margin-top: 48px; padding-top: 16px; padding-bottom: 32px; border-top: 
   .item-body { grid-template-columns: 1fr; }
   .item-body img { max-width: 220px; }
   .pc { grid-template-columns: 1fr; }
+  .feature-items { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .feature-item { font-size: 12px; }
   .shops { grid-template-columns: 1fr; gap: 6px; }
   .shop { padding: 8px 6px; }
   h1 { font-size: 22px; }
