@@ -81,7 +81,19 @@ def _lineup_hash(items):
     return hashlib.sha256("|".join(i["code"] for i in items).encode()).hexdigest()[:16]
 
 
+GUIDE_DIR = Path(__file__).resolve().parent.parent / "guides"
+
+
 def write(category, items, *, refresh_days, demo=False):
+    content = _write(category, items, refresh_days=refresh_days, demo=demo)
+    # 手書きの解説（guides/）があり、AIを使っていないときは、導入文・選び方・FAQをそちらで置き換える
+    guide = GUIDE_DIR / f"{category['slug']}.json"
+    if guide.exists() and (demo or not os.environ.get("ANTHROPIC_API_KEY")):
+        content = {**content, **json.loads(guide.read_text(encoding="utf-8"))}
+    return content
+
+
+def _write(category, items, *, refresh_days, demo):
     if demo:  # デモではAPI課金もキャッシュ書き込みもしない
         return _write_from_data(category, items)
     cache_file = CACHE_DIR / f"content-{category['slug']}.json"
