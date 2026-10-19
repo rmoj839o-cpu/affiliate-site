@@ -17,9 +17,9 @@
    "airrobo:10000003": 424,
    "tamba:10005738": 386,
    "tokyopt:10000012": 980,
-   "animestore:10000898": 702,
+   "animestore:10000898": 703,
    "meijo:10000000": 1084,
-   "milicute-himawari:10000017": 9485,
+   "milicute-himawari:10000017": 9486,
    "asukapainting:10000028": 1247,
    "importshopaqua:10000488": 4120,
    "goodcarsstyle:10000948": 612,
@@ -93,9 +93,9 @@
    "meisei:10000138": 1000
   },
   "reviews": {
-   "dasimon:10000020": 1442,
+   "dasimon:10000020": 1443,
    "zian:10000038": 3635,
-   "felice1009:10000015": 489,
+   "felice1009:10000015": 490,
    "aideall:10000056": 501,
    "tabtab:10003266": 28284,
    "zian:10000097": 2143,
@@ -160,30 +160,30 @@
   }
  },
  "electric-kettle": {
-  "top": "roomy:10011099",
+  "top": "importshopaqua:10009903",
   "prices": {
+   "importshopaqua:10009903": 18920,
    "roomy:10011099": 18920,
    "tiger-online:10003897": 4980,
-   "yamayuu:10020794": 4840,
-   "hagoogi:10000021": 15380,
    "importshopaqua:10010734": 16500,
    "najimihouse:10004363": 4080,
    "bellevie-harima:10168348": 4080,
    "bruno-official:10000373": 9900,
-   "sunshine-store:10000555": 4280,
-   "myhomeshop:10000410": 6980
+   "snailax-shop:10000152": 4580,
+   "roomy:10017792": 8800,
+   "sunshine-store:10000555": 4280
   },
   "reviews": {
+   "importshopaqua:10009903": 276,
    "roomy:10011099": 407,
    "tiger-online:10003897": 610,
-   "yamayuu:10020794": 329,
-   "hagoogi:10000021": 1008,
    "importshopaqua:10010734": 418,
    "najimihouse:10004363": 307,
    "bellevie-harima:10168348": 784,
    "bruno-official:10000373": 304,
-   "sunshine-store:10000555": 454,
-   "myhomeshop:10000410": 448
+   "snailax-shop:10000152": 298,
+   "roomy:10017792": 256,
+   "sunshine-store:10000555": 454
   }
  },
  "futon-dryer": {
