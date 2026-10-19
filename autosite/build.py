@@ -66,6 +66,7 @@ def main():
         shutil.rmtree(DIST)
     shutil.copytree(ROOT / "static", DIST / "static")
 
+    history = {} if args.demo else social.load_history()
     pages = []
     built = []
     for cat in cfg["categories"]:
@@ -86,15 +87,16 @@ def main():
             i["links"] = links.store_links(i, cfg.get("affiliate", {}))
         content = writer.write(cat, ranked, refresh_days=bcfg["ai_refresh_days"], demo=args.demo)
         notes = {c["code"]: c for c in content["items"]}
+        hl = rank.highlights(ranked, history.get(cat["slug"], {}))
 
         out = DIST / cat["slug"] / "index.html"
         out.parent.mkdir(parents=True)
         out.write_text(env.get_template("category.html").render(
-            cat=cat, items=ranked, notes=notes, content=content,
+            cat=cat, items=ranked, notes=notes, content=content, hl=hl,
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
-        built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked})
+        built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl})
         print(f"  {len(ranked)}件で生成しました")
 
     if not args.demo:

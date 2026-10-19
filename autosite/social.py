@@ -13,7 +13,6 @@ from .writer import CACHE_DIR, JST, MODEL
 
 HISTORY_FILE = CACHE_DIR / "history.json"
 MAX_DRAFTS = 3
-PRICE_DROP = 0.10  # 10%以上の値下がりを話題にする
 
 SYSTEM_PROMPT = """あなたは「ひとり暮らしの家電えらび」を手伝う比較サイトのSNS担当です。
 渡された話題ごとに、Instagram の投稿に添えるキャプション（本文）を1つずつ書きます。
@@ -51,27 +50,44 @@ def _short(name, n=28):
     return q if len(q) <= n else q[:n] + "…"
 
 
+def load_history():
+    return json.loads(HISTORY_FILE.read_text(encoding="utf-8")) if HISTORY_FILE.exists() else {}
+
+
+# 話題がない日の紹介の切り口。日替わりで回して、同じ投稿が続かないようにする
+PICKUP_ANGLES = ["pickup", "budget", "most_reviewed"]
+
+
 def find_topics(built, history, today):
-    """前回の結果と比べて話題を拾う。話題が少ない日は、日替わりでカテゴリを紹介する。"""
+    """前回の結果と比べて話題を拾う。話題が少ない日は、日替わりの切り口でカテゴリを紹介する。"""
     topics = []
     for cat in built:
         prev = history.get(cat["slug"], {})
-        prev_prices = prev.get("prices", {})
+        hl = cat["highlights"]
         top = cat["items"][0]
         if prev and prev.get("top") != top["code"]:
             topics.append({"kind": "new_top", "cat": cat, "item": top,
                            "note": f"{cat['title']}ランキングの1位が入れ替わった"})
-        for i in cat["items"][:5]:
-            old = prev_prices.get(i["code"])
-            if old and i["price"] <= old * (1 - PRICE_DROP):
+        for i, old in hl["drops"]:
+            if i["rank"] <= 5:
                 topics.append({"kind": "price_drop", "cat": cat, "item": i, "old_price": old,
                                "note": f"{old:,}円 → {i['price']:,}円に値下がり"})
+        if hl["trending"]:
+            i, gain = hl["trending"]
+            topics.append({"kind": "trending", "cat": cat, "item": i, "gain": gain,
+                           "note": f"{cat['title']}でレビューが急増中（+{gain}件）"})
     if len(topics) < MAX_DRAFTS and built:
-        cat = built[today.toordinal() % len(built)]
-        topics.append({"kind": "pickup", "cat": cat, "item": cat["items"][0],
-                       "note": f"{cat['title']}の今日のおすすめ（ランキング1位）"})
-    # 値下がりを優先し、同じ商品の重複は除く
-    topics.sort(key=lambda t: {"price_drop": 0, "new_top": 1, "pickup": 2}[t["kind"]])
+        day = today.toordinal()
+        cat = built[day % len(built)]
+        angle = PICKUP_ANGLES[day % len(PICKUP_ANGLES)]
+        item = {"pickup": cat["items"][0], "budget": cat["highlights"]["budget"],
+                "most_reviewed": cat["highlights"]["most_reviewed"]}[angle]
+        note = {"pickup": "今日のおすすめ（ランキング1位）", "budget": "予算重視ならこれ（上位10商品で最安）",
+                "most_reviewed": "レビュー数No.1"}[angle]
+        topics.append({"kind": angle, "cat": cat, "item": item, "note": f"{cat['title']}の{note}"})
+    # 値下がり → 急上昇 → 1位交代 → 日替わり紹介 の順に優先し、同じ商品の重複は除く
+    order = {"price_drop": 0, "trending": 1, "new_top": 2}
+    topics.sort(key=lambda t: order.get(t["kind"], 3))
     seen, picked = set(), []
     for t in topics:
         if t["item"]["code"] not in seen:
@@ -94,6 +110,18 @@ def _template_text(t, today):
                 f"新しい1位は「{name}」。\nレビュー{i['review_count']:,}件・平均★{i['review_avg']:.2f}で、"
                 f"{day}時点の価格は{i['price']:,}円です。")
     title = cat["title"] if "暮らし" in cat["title"] else f"ひとり暮らしの{cat['title']}"
+    if t["kind"] == "trending":
+        return (f"{title}で、今レビューが急に増えている商品があります📈\n\n"
+                f"「{name}」は前回からレビューが{t['gain']}件増えて、合計{i['review_count']:,}件（平均★{i['review_avg']:.2f}）。\n"
+                f"{day}時点の価格は{i['price']:,}円です。")
+    if t["kind"] == "budget":
+        return (f"{title}、できるだけ安く済ませたい人へ💰\n\n"
+                f"ランキング上位10商品のうち、いちばん手頃なのは「{name}」。\n"
+                f"{day}時点で{i['price']:,}円、レビューは{i['review_count']:,}件・平均★{i['review_avg']:.2f}です。")
+    if t["kind"] == "most_reviewed":
+        return (f"{title}で、いちばんレビューが多い商品はどれ？📝\n\n"
+                f"答えは「{name}」。レビュー{i['review_count']:,}件・平均★{i['review_avg']:.2f}で、"
+                f"たくさんの人に選ばれている定番です（{day}時点 {i['price']:,}円）。")
     return (f"{title}、どれを選べばいいか迷いませんか？🤔\n\n"
             "選ぶときは、レビューの「点数」だけでなく「件数」も見るのがおすすめです。\n"
             f"今いちばん評価が安定しているのは「{name}」"
@@ -133,7 +161,7 @@ def _hashtags(cat):
 
 def run(built, site, base_url, out_path, dist_dir, demo=False):
     today = datetime.now(JST)
-    history = {} if demo or not HISTORY_FILE.exists() else json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
+    history = {} if demo else load_history()
     topics = find_topics(built, history, today)
 
     ai = {}
@@ -167,6 +195,7 @@ def run(built, site, base_url, out_path, dist_dir, demo=False):
         CACHE_DIR.mkdir(exist_ok=True)
         HISTORY_FILE.write_text(json.dumps(
             {c["slug"]: {"top": c["items"][0]["code"],
-                         "prices": {i["code"]: i["price"] for i in c["items"]}} for c in built},
+                         "prices": {i["code"]: i["price"] for i in c["items"]},
+                         "reviews": {i["code"]: i["review_count"] for i in c["items"]}} for c in built},
             ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"投稿案 {len(topics)}件: {out_path}")

@@ -21,7 +21,8 @@ FONT_CANDIDATES = [
     "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
 ]
 
-LABELS = {"price_drop": "値下がり情報", "new_top": "ランキング1位が交代", "pickup": "今日のおすすめ"}
+LABELS = {"price_drop": "値下がり情報", "new_top": "ランキング1位が交代", "pickup": "今日のおすすめ",
+          "trending": "レビュー急増中", "budget": "予算重視ならこれ", "most_reviewed": "レビュー数No.1"}
 
 
 def _font(size):

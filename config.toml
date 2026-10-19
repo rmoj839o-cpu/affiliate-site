@@ -60,3 +60,28 @@ must = "炊飯器"
 min_price = 3000
 max_price = 60000
 ng = "ふるさと納税 中古 内釜 交換用 部品 パッキン 5合 5.5合 お米 玄米 精米 無洗米 白米 土鍋 萬古焼 ご飯釜 炊飯鍋 羽釜 直火 ガス火"
+
+[[categories]]
+slug = "small-ceramic-heater"
+title = "小型セラミックヒーター"
+keyword = "セラミックヒーター 小型"
+must = "セラミックヒーター ファンヒーター ヒーター"
+max_price = 20000
+ng = "中古 交換用 部品 業務用 ふるさと納税 ペット 足元パネル"
+
+[[categories]]
+slug = "electric-kettle"
+title = "電気ケトル"
+keyword = "電気ケトル"
+must = "電気ケトル ケトル"
+min_price = 1500
+ng = "中古 交換用 部品 パッキン フタのみ ふるさと納税 ガス 直火 やかん"
+
+[[categories]]
+slug = "futon-dryer"
+title = "布団乾燥機"
+keyword = "布団乾燥機"
+must = "布団乾燥機 ふとん乾燥機"
+min_price = 3000
+ng = "中古 交換用 部品 ホース アタッチメント 専用袋 ふるさと納税"
+

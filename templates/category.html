@@ -19,6 +19,18 @@
   <p class="updated">最終更新：{{ updated }}</p>
   <p class="lead">{{ content.intro }}</p>
 
+  <h2>今日の注目</h2>
+  <div class="highlights">
+    {% for i, old in hl.drops %}
+    <a class="hl drop" href="#rank{{ i.rank }}"><span class="hl-label">値下がり</span><strong>{{ i.rank }}位</strong> {{ "{:,}".format(old) }}円 → <b>{{ "{:,}".format(i.price) }}円</b></a>
+    {% endfor %}
+    {% if hl.trending %}{% set i, gain = hl.trending %}
+    <a class="hl" href="#rank{{ i.rank }}"><span class="hl-label">レビュー急増</span><strong>{{ i.rank }}位</strong> 前回から +{{ gain }}件</a>
+    {% endif %}
+    <a class="hl" href="#rank{{ hl.budget.rank }}"><span class="hl-label">予算重視なら</span><strong>{{ hl.budget.rank }}位</strong> {{ "{:,}".format(hl.budget.price) }}円（上位{{ items|length }}商品で最安）</a>
+    <a class="hl" href="#rank{{ hl.most_reviewed.rank }}"><span class="hl-label">レビュー数No.1</span><strong>{{ hl.most_reviewed.rank }}位</strong> {{ "{:,}".format(hl.most_reviewed.review_count) }}件</a>
+  </div>
+
   <h2>比較表</h2>
   <div class="table-wrap">
   <table class="compare">
