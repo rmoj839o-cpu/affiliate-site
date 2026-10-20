@@ -2,12 +2,16 @@
   {% for i in items %}{% set n = notes.get(i.code) %}
   <section class="item" id="rank{{ i.rank }}">
     <h3><span class="badge">{{ i.rank }}位</span>{{ n.headline if n else "" }}</h3>
-    <div class="item-body">
+    <div class="item-top{{ "" if i.image else " no-image" }}">
       {% if i.image %}<a href="{{ i.url }}" target="_blank" rel="sponsored noopener"><img src="{{ i.image }}" alt="{{ i.name[:40] }}" width="200" height="200" loading="lazy"></a>{% endif %}
       <div>
         {% if i.point %}<p class="point"><mark>{{ i.point }}</mark></p>{% endif %}
-        <p class="item-name">{{ i.name }}</p>
-        <p class="meta">楽天市場 {{ "{:,}".format(i.price) }}円（税込）／ ★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）／ {{ i.shop }}</p>
+        <p class="price">{{ "{:,}".format(i.price) }}円<small>（税込・楽天市場）</small></p>
+        <p class="meta">★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）</p>
+        <p class="item-name">{{ i.name }}<br>{{ i.shop }}</p>
+      </div>
+    </div>
+    <div>
         {% if n %}
         <div class="pc">
           <div><strong>良い点</strong><ul>{% for x in n.pros %}<li>{{ x }}</li>{% endfor %}</ul></div>
@@ -19,7 +23,6 @@
         <div class="shops">
           {% for l in i.links %}<a class="shop {{ l.store }}" href="{{ l.url }}" target="_blank" rel="{{ 'sponsored ' if l.sponsored }}noopener">{{ l.label }}</a>{% endfor %}
         </div>
-      </div>
     </div>
   </section>
   {% endfor %}

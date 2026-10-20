@@ -18,10 +18,8 @@
   <h1>{{ cat.title }}おすすめランキング{{ items|length }}選｜レビュー評価と件数で比較</h1>
   <p class="updated">最終更新：{{ updated }}</p>
   <p class="lead">{{ content.intro }}</p>
+{% include "_table.html" %}
 {% include "_basis.html" %}
-  {% for col in columns %}
-  <a class="banner" href="{{ base }}/column/{{ col.slug }}/"><span class="hl-label">管理人のコラム</span><strong>{{ col.title }}</strong><span>実際に使って感じた良いところ・困るところ →</span></a>
-  {% endfor %}
 
   <h2>今日の注目</h2>
   <div class="highlights">
@@ -35,14 +33,17 @@
     <a class="hl" href="#rank{{ hl.most_reviewed.rank }}"><span class="hl-label">レビュー数No.1</span><strong>{{ hl.most_reviewed.rank }}位</strong> {{ "{:,}".format(hl.most_reviewed.review_count) }}件</a>
   </div>
 
-{% include "_table.html" %}
+{% include "_items.html" %}
+
   <h2>{{ cat.title }}の選び方</h2>
   {% for p in content.how_to_choose %}
   <h3>{{ loop.index }}. {{ p.point }}</h3>
   <p>{{ p.detail }}</p>
   {% endfor %}
 
-{% include "_items.html" %}
+  {% for col in columns %}
+  <a class="banner" href="{{ base }}/column/{{ col.slug }}/"><span class="hl-label">管理人のコラム</span><strong>{{ col.title }}</strong><span>実際に使って感じた良いところ・困るところ →</span></a>
+  {% endfor %}
   {% if subpages %}
   <h2>条件で絞り込む</h2>
   <ul class="news">

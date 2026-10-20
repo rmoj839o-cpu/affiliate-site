@@ -44,7 +44,7 @@ def store_links(item, aff):
     return [
         {"store": "amazon", "label": "Amazon", "url": amazon, "sponsored": bool(aff.get("amazon_tag"))},
         {"store": "rakuten", "label": "楽天市場", "url": item["url"], "sponsored": True},
-        {"store": "yahoo", "label": "Yahoo!ショッピング", "url": yahoo, "sponsored": yahoo_aff},
+        {"store": "yahoo", "label": "Yahoo!", "url": yahoo, "sponsored": yahoo_aff},
     ]
 
 

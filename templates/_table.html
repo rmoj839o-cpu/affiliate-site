@@ -1,19 +1,15 @@
-  <h2>比較表</h2>
-  <div class="table-wrap">
-  <table class="compare">
-    <thead><tr><th>順位</th><th>商品</th><th>楽天価格</th><th>評価</th><th>レビュー数</th><th></th></tr></thead>
-    <tbody>
+  <h2>ひと目で比較</h2>
+  <ol class="quick">
     {% for i in items %}
-    <tr>
-      <td class="rank">{{ i.rank }}</td>
-      <td><div class="name">{% if i.image %}<img src="{{ i.image }}" alt="" width="56" height="56" loading="lazy">{% endif %}<span>{% if i.point %}<mark class="tag">{{ i.point }}</mark>{% endif %}{{ i.name|truncate(40, True, "…") }}</span></div></td>
-      <td>{{ "{:,}".format(i.price) }}円</td>
-      <td>★{{ "%.2f"|format(i.review_avg) }}</td>
-      <td>{{ "{:,}".format(i.review_count) }}件</td>
-      <td><a class="btn small" href="#rank{{ i.rank }}">詳しく見る</a></td>
-    </tr>
+    <li><a href="#rank{{ i.rank }}">
+      <span class="q-rank">{{ i.rank }}</span>
+      {% if i.image %}<img src="{{ i.image }}" alt="" width="56" height="56" loading="lazy">{% endif %}
+      <span class="q-body">
+        {% if i.point %}<mark class="tag">{{ i.point }}</mark>{% endif %}
+        <span class="q-name">{{ i.short_name }}</span>
+        <span class="q-meta">★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）</span>
+      </span>
+      <span class="q-price">{{ "{:,}".format(i.price) }}円</span>
+    </a></li>
     {% endfor %}
-    </tbody>
-  </table>
-  </div>
-
+  </ol>

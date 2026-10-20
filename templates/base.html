@@ -22,8 +22,21 @@
 {% if demo %}<p class="demo">デモ表示：架空のサンプルデータです</p>{% endif %}
 <header class="site-header">
   <a class="logo" href="{{ base }}/">{{ site.name }}</a>
-  <nav>{% for c in categories if c.get("group") != "food" %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>
-  <nav class="nav-food"><span>季節の特集</span>{% for c in categories if c.get("group") == "food" %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>
+  <!-- ジャンルが増えてもスマホの1画面目がメニューで埋まらないように、タップで開く形にしている -->
+  <details class="menu">
+    <summary>ジャンル一覧</summary>
+    <div class="menu-panel">
+    {% for group, label in [("kaden", "家電"), ("outdoor", "アウトドア"), ("food", "季節の特集（食べ物）")] %}
+    {% set cats = categories | selectattr("group", "undefined") | list if group == "kaden" else categories | selectattr("group", "defined") | selectattr("group", "equalto", group) | list %}
+    {% if cats %}
+    <p class="menu-label">{{ label }}</p>
+    <nav>{% for c in cats %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>
+    {% endif %}
+    {% endfor %}
+    <p class="menu-label">まとめ</p>
+    <nav><a href="{{ base }}/matome/">一人暮らしの便利家電・グッズまとめ</a></nav>
+    </div>
+  </details>
 </header>
 <main>
 {% block main %}{% endblock %}
