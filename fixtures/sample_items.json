@@ -2208,5 +2208,175 @@
    "review_count": 45,
    "point_rate": 1
   }
+ ],
+ "kerosene-fan-heater": [
+  {
+   "code": "sample:kfh-A",
+   "name": "【サンプル】石油ファンヒーター モデルA",
+   "price": 22000,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ0",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.54,
+   "review_count": 2400,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-B",
+   "name": "【サンプル】石油ファンヒーター モデルB",
+   "price": 10400,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ1",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.64,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-C",
+   "name": "【サンプル】石油ファンヒーター モデルC",
+   "price": 11600,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ2",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.7,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-D",
+   "name": "【サンプル】石油ファンヒーター モデルD",
+   "price": 28000,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ3",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.27,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-E",
+   "name": "【サンプル】石油ファンヒーター モデルE",
+   "price": 28400,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ4",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.34,
+   "review_count": 2400,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-F",
+   "name": "【サンプル】石油ファンヒーター モデルF",
+   "price": 21700,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ5",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 3.81,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-G",
+   "name": "【サンプル】石油ファンヒーター モデルG",
+   "price": 29800,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ6",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.08,
+   "review_count": 950,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-H",
+   "name": "【サンプル】石油ファンヒーター モデルH",
+   "price": 17100,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ7",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.56,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-I",
+   "name": "【サンプル】石油ファンヒーター モデルI",
+   "price": 16100,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ8",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.42,
+   "review_count": 950,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-J",
+   "name": "【サンプル】石油ファンヒーター モデルJ",
+   "price": 15400,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ9",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 3.93,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-K",
+   "name": "【サンプル】石油ファンヒーター モデルK",
+   "price": 19700,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ10",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.57,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-L",
+   "name": "【サンプル】石油ファンヒーター モデルL",
+   "price": 17500,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ11",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.09,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-M",
+   "name": "【サンプル】石油ファンヒーター モデルM",
+   "price": 36600,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ12",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.68,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:kfh-N",
+   "name": "【サンプル】石油ファンヒーター モデルN",
+   "price": 18300,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ13",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.74,
+   "review_count": 120,
+   "point_rate": 1
+  }
  ]
 }

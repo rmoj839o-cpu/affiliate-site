@@ -133,6 +133,7 @@ def main():
         shutil.rmtree(DIST)
     shutil.copytree(ROOT / "static", DIST / "static")
 
+    columns = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "columns").glob("*.json"))]
     history = {} if args.demo else social.load_history()
     pages = []
     built = []
@@ -161,6 +162,7 @@ def main():
         out.parent.mkdir(parents=True)
         out.write_text(env.get_template("category.html").render(
             cat=cat, items=ranked, notes=notes, content=content, hl=hl, subpages=subpages,
+            columns=[c for c in columns if c["category"] == cat["slug"]],
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
@@ -198,7 +200,7 @@ def main():
     trending = sorted(((c, *c["highlights"]["trending"]) for c in built if c["highlights"]["trending"]),
                       key=lambda t: t[2], reverse=True)
     (DIST / "index.html").write_text(
-        env.get_template("index.html").render(built=built, featured=featured, tip=tip, drops=drops[:8],
+        env.get_template("index.html").render(built=built, featured=featured, tip=tip, columns=columns, drops=drops[:8],
                                               trending=trending[:5], path="/"), encoding="utf-8")
     # まとめページ：全ジャンルの1位と予算重視の1品を1ページで見比べられるように
     season = {12: "冬", 1: "冬", 2: "冬", 3: "春", 4: "春", 5: "春", 6: "夏", 7: "夏", 8: "夏"}.get(now.month, "秋冬")
@@ -210,6 +212,18 @@ def main():
             built=built, season=f"{now.year}年{season}", path="/matome/",
             groups=[("kaden", "便利家電・グッズ"), ("food", "季節の食べ物")]), encoding="utf-8")
     pages.append("/matome/")
+
+    # 管理人のコラム（体験談）。該当カテゴリの今の上位3商品もあわせて載せる
+    by_slug = {c["slug"]: c for c in built}
+    for col in columns:
+        cat = by_slug.get(col["category"])
+        if not cat:
+            continue
+        out = DIST / "column" / col["slug"] / "index.html"
+        out.parent.mkdir(parents=True)
+        out.write_text(env.get_template("column.html").render(
+            col=col, cat=cat, items=cat["items"], path=f"/column/{col['slug']}/"), encoding="utf-8")
+        pages.append(f"/column/{col['slug']}/")
 
     (DIST / "about").mkdir()
     (DIST / "about" / "index.html").write_text(

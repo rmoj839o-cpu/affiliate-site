@@ -12,11 +12,11 @@
 body { margin: 0; background: var(--bg); color: var(--text);
   font: 16px/1.8 "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif; }
 a { color: inherit; }
-main, .site-header, .profile { background: var(--soft); border-radius: 12px; padding: 14px 16px; margin: 32px 0 0; font-size: 14px; }
+main, .site-header, footer { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+.profile { background: var(--soft); border-radius: 12px; padding: 14px 16px; margin: 32px 0 0; font-size: 14px; }
 .profile p { margin: 0 0 6px; }
 .profile-title { font-weight: 700; }
 .profile-link { margin: 0 !important; font-size: 13px; }
-footer { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 .pr { margin: 0; padding: 6px 16px; font-size: 12px; text-align: center; background: var(--soft); color: var(--muted); }
 .demo { margin: 0; padding: 6px; text-align: center; background: #ffd34d; color: #000; font-weight: 700; }
 .site-header { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; padding-top: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
@@ -29,6 +29,7 @@ nav a:hover { color: var(--text); }
 h1 { font-size: 26px; line-height: 1.4; margin: 28px 0 4px; }
 h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 10px; border-left: 4px solid var(--accent); }
 h3 { font-size: 17px; margin: 22px 0 6px; }
+.column p { line-height: 1.9; }
 .crumb { font-size: 13px; color: var(--muted); margin: 20px 0 0; }
 .updated { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
 .lead { font-size: 16px; }

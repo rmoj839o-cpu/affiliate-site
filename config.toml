@@ -97,6 +97,16 @@ must = "布団乾燥機 ふとん乾燥機"
 min_price = 3000
 ng = "中古 交換用 部品 ホース アタッチメント 専用袋 ふるさと納税"
 
+[[categories]]
+slug = "kerosene-fan-heater"
+bands = [15000, 25000]
+title = "石油ファンヒーター"
+keyword = "石油ファンヒーター"
+must = "石油ファンヒーター ファンヒーター"
+min_price = 8000
+max_price = 60000
+ng = "中古 交換用 部品 フィルター 給油ポンプ 灯油缶 ポリタンク 替え芯 ふるさと納税 カバー 電気 セラミック"
+
 # ---- 季節の特集（食べ物） ----
 [[categories]]
 slug = "osechi-for-one"

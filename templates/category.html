@@ -19,6 +19,9 @@
   <p class="updated">最終更新：{{ updated }}</p>
   <p class="lead">{{ content.intro }}</p>
 {% include "_basis.html" %}
+  {% for col in columns %}
+  <a class="banner" href="{{ base }}/column/{{ col.slug }}/"><span class="hl-label">管理人のコラム</span><strong>{{ col.title }}</strong><span>実際に使って感じた良いところ・困るところ →</span></a>
+  {% endfor %}
 
   <h2>今日の注目</h2>
   <div class="highlights">
