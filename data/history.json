@@ -568,20 +568,28 @@
     }
    },
    "circulator": {
-    "top": "vornado:10000000",
+    "top": "quads:10000003",
     "prices": {
+     "quads:10000003": 10800,
      "vornado:10000000": 19800,
+     "quads:10000068": 5280,
      "matsucame:10072396": 14080,
+     "duux-japan:10000073": 17800,
      "air-rhizome:10014590": 6940,
-     "insair:10001075": 2260,
-     "charmbaby:10001239": 5680
+     "siroca:10000043": 14800,
+     "threeup:10000216": 10780,
+     "eleking:10029357": 2260
     },
     "reviews": {
+     "quads:10000003": 878,
      "vornado:10000000": 215,
+     "quads:10000068": 801,
      "matsucame:10072396": 222,
+     "duux-japan:10000073": 125,
      "air-rhizome:10014590": 1173,
-     "insair:10001075": 130,
-     "charmbaby:10001239": 33
+     "siroca:10000043": 92,
+     "threeup:10000216": 147,
+     "eleking:10029357": 140
     }
    },
    "hot-sand-maker": {
