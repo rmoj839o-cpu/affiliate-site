@@ -3,7 +3,9 @@
 単純な平均点だと「レビュー3件で★5.0」が上位に来てしまうので、
 ベイズ平均（件数が少ない商品は全体平均に寄せる）でスコア化する。
 """
-from .links import search_query
+import re
+
+from .links import clean_name, search_query
 
 PRIOR_WEIGHT = 50  # この件数ぶんの「全体平均レビュー」を仮に足して補正する
 MAX_PER_SHOP = 2   # 同じショップの商品はランキングにこの数まで（いろいろなお店を比べられるように）
@@ -12,6 +14,16 @@ MAX_PER_SHOP = 2   # 同じショップの商品はランキングにこの数�
 def _base_name(item):
     # 色違い・容量違いや、同じショップの出品違いを重複扱いにするための簡易キー
     return item["shop"] + "|" + search_query(item["name"], max_words=3)
+
+
+MODEL = re.compile(r"[A-Z]{2,}\d*-[A-Z0-9]*\d[A-Z0-9]*")  # 型番（YRM-HF171 など）
+
+
+def _dup_keys(item):
+    # 同じ商品を別のショップが出品していることも多いので、ショップをまたいで名前と型番でも重複を見る
+    name = item["name"]
+    return ({_base_name(item), "name|" + search_query(name, max_words=5)}
+            | {"model|" + m for m in MODEL.findall(clean_name(name))})
 
 
 def rank(items, *, limit, min_reviews):
@@ -26,10 +38,10 @@ def rank(items, *, limit, min_reviews):
 
     seen, per_shop, ranked = set(), {}, []
     for i in pool:
-        key = _base_name(i)
-        if key in seen or per_shop.get(i["shop"], 0) >= MAX_PER_SHOP:
+        keys = _dup_keys(i)
+        if keys & seen or per_shop.get(i["shop"], 0) >= MAX_PER_SHOP:
             continue
-        seen.add(key)
+        seen |= keys
         per_shop[i["shop"]] = per_shop.get(i["shop"], 0) + 1
         ranked.append(i)
         if len(ranked) == limit:
