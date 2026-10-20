@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block title %}{{ col.title }} | {{ site.name }}{% endblock %}
 {% block description %}{{ col.description }}{% endblock %}
+{% block og_image %}{% if col.image %}{{ site.url }}/static/columns/{{ col.image }}.jpg{% else %}{{ super() }}{% endif %}{% endblock %}
 {% block main %}
 <article class="column">
   <p class="crumb"><a href="{{ base }}/column/">管理人のコラム</a> ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a></p>
   <h1>{{ col.title }}</h1>
+  {% if col.image %}<img class="col-hero" src="{{ base }}/static/columns/{{ col.image }}.webp" alt="" width="1200" height="675">{% endif %}
   <p class="updated">管理人の体験談{% if col.date %}（{{ col.date|replace("-", "/") }}）{% endif %}</p>
   {% for sec in col.sections %}
   <h2>{{ sec.h }}</h2>

@@ -7,7 +7,7 @@
   <p class="lead">ひとり暮らし歴15年の管理人が、実際に使っている家電や、これから欲しいものについて書いています。</p>
   <ul class="news">
     {% for col in columns %}
-    <li><a href="{{ base }}/column/{{ col.slug }}/"><span class="hl-label">{% if col.date %}{{ col.date|replace("-", "/") }}・{% endif %}{{ by_slug[col.category].title }}</span>{{ col.title }}</a></li>
+    <li><a class="col-item" href="{{ base }}/column/{{ col.slug }}/">{% if col.image %}<img src="{{ base }}/static/columns/{{ col.image }}-thumb.webp" alt="" width="120" height="68" loading="lazy">{% endif %}<span><span class="hl-label">{% if col.date %}{{ col.date|replace("-", "/") }}・{% endif %}{{ by_slug[col.category].title }}</span>{{ col.title }}</span></a></li>
     {% endfor %}
   </ul>
 {% include "_profile.html" %}

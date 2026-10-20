@@ -10,7 +10,7 @@
 <meta property="og:description" content="{{ self.description() }}">
 <meta property="og:url" content="{{ site.url }}{{ path }}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ site.url }}/static/og.jpg">
+<meta property="og:image" content="{% block og_image %}{{ site.url }}/static/og.jpg{% endblock %}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{{ base }}/static/icon.svg" type="image/svg+xml">
 <link rel="icon" href="{{ base }}/static/favicon-32.png" sizes="32x32" type="image/png">

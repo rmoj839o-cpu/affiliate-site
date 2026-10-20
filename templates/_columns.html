@@ -3,7 +3,7 @@
   <details class="col-box">
     <summary><span class="hl-label">管理人のコラム（{{ columns|length }}本）</span><strong>新着：{{ columns[0].title }}</strong></summary>
     <ul class="col-list">
-      {% for col in columns %}<li><a href="{{ base }}/column/{{ col.slug }}/">{% if col.date %}<span class="col-date">{{ col.date|replace("-", "/") }}</span>{% endif %}{{ col.title }}</a></li>{% endfor %}
+      {% for col in columns %}<li><a class="col-item" href="{{ base }}/column/{{ col.slug }}/">{% if col.image %}<img src="{{ base }}/static/columns/{{ col.image }}-thumb.webp" alt="" width="96" height="54" loading="lazy">{% endif %}<span>{% if col.date %}<span class="col-date">{{ col.date|replace("-", "/") }}</span>{% endif %}{{ col.title }}</span></a></li>{% endfor %}
     </ul>
     <p class="feature-more"><a href="{{ base }}/column/">コラム一覧へ →</a></p>
   </details>
