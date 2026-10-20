@@ -22,6 +22,7 @@ valuecommerce_pid = "892729383"   # 同 pid
 # ---- 比較カテゴリ ----
 # 大きなキーワード（例:「加湿器」）は強いサイトが多いので、「ひとり暮らし×用途」に絞っている
 # slug: URL / keyword: 楽天検索語 / ng: 除外キーワード（スペース区切り）
+# group: "food" は季節の特集（食べ物）として家電と分けて表示 / min_reviews: ランキングに載せる最低レビュー数（省略時は build の値）
 # must: 商品名にどれか1つは入っていないといけない言葉（関係ない商品の混入を防ぐ） / min_price・max_price: この範囲外の価格は除外
 [[categories]]
 slug = "desk-humidifier"
@@ -84,4 +85,48 @@ keyword = "布団乾燥機"
 must = "布団乾燥機 ふとん乾燥機"
 min_price = 3000
 ng = "中古 交換用 部品 ホース アタッチメント 専用袋 ふるさと納税"
+
+# ---- 季節の特集（食べ物） ----
+[[categories]]
+slug = "osechi-for-one"
+title = "一人用おせち（2027年）"
+group = "food"
+keyword = "おせち 一人前 2027"
+must = "おせち"
+min_reviews = 5
+max_price = 30000
+ng = "ふるさと納税 重箱のみ 容器 空箱 食器 飾り"
+
+[[categories]]
+slug = "frozen-bento"
+title = "冷凍弁当"
+group = "food"
+keyword = "冷凍弁当 おかず"
+must = "弁当 おかず 惣菜 ミールキット"
+ng = "ふるさと納税 容器 空容器 使い捨て ペット 犬用 猫用 弁当箱 ランチボックス"
+
+[[categories]]
+slug = "hitori-nabe"
+title = "一人鍋セット"
+group = "food"
+keyword = "鍋セット 1人前"
+must = "鍋"
+ng = "ふるさと納税 土鍋 鍋のみ IH対応 フライパン 片手鍋 卓上コンロ 器 カセットコンロ"
+
+[[categories]]
+slug = "toshikoshi-soba"
+title = "年越しそば"
+group = "food"
+keyword = "年越しそば"
+must = "そば 蕎麦"
+ng = "ふるさと納税 そば猪口 食器 ざる 箸 器 そば打ち"
+
+[[categories]]
+slug = "mikan"
+title = "みかん"
+group = "food"
+keyword = "みかん 箱"
+must = "みかん 蜜柑"
+max_price = 15000
+ng = "ふるさと納税 ジュース ゼリー 缶詰 ドライ 苗木 苗 缶 ジャム"
 

@@ -22,7 +22,8 @@
 {% if demo %}<p class="demo">デモ表示：架空のサンプルデータです</p>{% endif %}
 <header class="site-header">
   <a class="logo" href="{{ base }}/">{{ site.name }}</a>
-  <nav>{% for c in categories %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>
+  <nav>{% for c in categories if c.get("group") != "food" %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>
+  <nav class="nav-food"><span>季節の特集</span>{% for c in categories if c.get("group") == "food" %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>
 </header>
 <main>
 {% block main %}{% endblock %}

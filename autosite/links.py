@@ -46,3 +46,9 @@ def store_links(item, aff):
         {"store": "rakuten", "label": "楽天市場", "url": item["url"], "sponsored": True},
         {"store": "yahoo", "label": "Yahoo!ショッピング", "url": yahoo, "sponsored": yahoo_aff},
     ]
+
+
+def display_title(category):
+    # 「ひとり暮らしの一人用おせち」のような重なりを避けて、カテゴリ名に暮らし向けの前置きを付ける
+    title = category["title"]
+    return title if ("暮らし" in title or "一人" in title) else f"ひとり暮らしの{title}"

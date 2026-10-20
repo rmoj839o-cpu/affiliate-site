@@ -79,7 +79,7 @@ def main():
                 print(f"::error title={cat['title']}::{type(e).__name__}: {e}")
             continue
         items = filter_items(items, cat)
-        ranked = rank.rank(items, limit=bcfg["items_per_page"], min_reviews=bcfg["min_review_count"])
+        ranked = rank.rank(items, limit=bcfg["items_per_page"], min_reviews=cat.get("min_reviews", bcfg["min_review_count"]))
         if not ranked:
             print("  ! 条件を満たす商品がありません")
             continue
@@ -97,7 +97,7 @@ def main():
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
-        built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
+        built.append({**cat, "group_key": cat.get("group", "kaden"), "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
                       "tips": content["how_to_choose"]})
         print(f"  {len(ranked)}件で生成しました")
 

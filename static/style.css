@@ -19,6 +19,8 @@ main, .site-header, footer { max-width: 880px; margin: 0 auto; padding: 0 16px; 
 .logo { font-weight: 800; text-decoration: none; font-size: 18px; }
 nav { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; }
 nav a { text-decoration: none; color: var(--muted); }
+.nav-food { width: 100%; }
+.nav-food span { font-size: 12px; font-weight: 700; color: var(--accent); }
 nav a:hover { color: var(--text); }
 h1 { font-size: 26px; line-height: 1.4; margin: 28px 0 4px; }
 h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 10px; border-left: 4px solid var(--accent); }

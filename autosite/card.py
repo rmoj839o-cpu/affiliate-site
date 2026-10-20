@@ -5,6 +5,8 @@
 """
 from pathlib import Path
 
+from .links import display_title
+
 from PIL import Image, ImageDraw, ImageFont
 
 SIZE = 1080
@@ -62,7 +64,7 @@ def make_card(topic, product_name, site_name, today, path):
     d.text((SIZE - pad, 85), "#PR", font=_font(40), fill="white", anchor="rm")
 
     y = 240
-    title = cat["title"] if "暮らし" in cat["title"] else f"ひとり暮らしの{cat['title']}"
+    title = display_title(cat)
     d.text((pad, y), title, font=_fit(d, title, 46, SIZE - pad * 2), fill=MUTED)
     y += 90
     d.text((pad, y), f"ランキング {item['rank']}位", font=_font(84), fill=TEXT)

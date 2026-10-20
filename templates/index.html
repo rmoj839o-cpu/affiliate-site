@@ -43,9 +43,12 @@
 </ul>
 {% endif %}
 
-<h2>カテゴリから探す</h2>
+{% for group, label in [("kaden", "家電から探す"), ("food", "季節の特集（食べ物）")] %}
+{% set cats = built | selectattr("group_key", "equalto", group) | list %}
+{% if cats %}
+<h2>{{ label }}</h2>
 <div class="cards">
-{% for c in built %}
+{% for c in cats %}
   <a class="card" href="{{ base }}/{{ c.slug }}/">
     {% if c.top.image %}<img src="{{ c.top.image }}" alt="" width="120" height="120" loading="lazy">{% endif %}
     <div>
@@ -56,4 +59,6 @@
   </a>
 {% endfor %}
 </div>
+{% endif %}
+{% endfor %}
 {% endblock %}

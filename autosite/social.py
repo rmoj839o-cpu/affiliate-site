@@ -9,12 +9,13 @@ import os
 from datetime import datetime
 
 from .card import make_card
+from .links import display_title
 from .writer import CACHE_DIR, JST, MODEL
 
 HISTORY_FILE = CACHE_DIR / "history.json"
 MAX_DRAFTS = 3
 
-SYSTEM_PROMPT = """あなたは「ひとり暮らしの家電えらび」を手伝う比較サイトのSNS担当です。
+SYSTEM_PROMPT = """あなたは、ひとり暮らし向けの家電や季節の食べ物を比較するサイト「ひとり暮らし家電えらび」のSNS担当です。
 渡された話題ごとに、Instagram の投稿に添えるキャプション（本文）を1つずつ書きます。
 投稿には、ランキング順位・評価・価格を載せた画像が付きます。
 
@@ -137,7 +138,7 @@ def _template_text(t, today):
         return (f"{cat['title']}のランキング1位が入れ替わりました👑\n\n"
                 f"新しい1位は「{name}」。\nレビュー{i['review_count']:,}件・平均★{i['review_avg']:.2f}で、"
                 f"{day}時点の価格は{i['price']:,}円です。")
-    title = cat["title"] if "暮らし" in cat["title"] else f"ひとり暮らしの{cat['title']}"
+    title = display_title(cat)
     if t["kind"] == "trending":
         return (f"{title}で、今レビューが急に増えている商品があります📈\n\n"
                 f"「{name}」は前回からレビューが{t['gain']}件増えて、合計{i['review_count']:,}件（平均★{i['review_avg']:.2f}）。\n"
@@ -184,6 +185,8 @@ def _ai_texts(topics, today):
 
 def _hashtags(cat):
     word = cat["title"].split("（")[0].replace("・", "")
+    if cat.get("group") == "food":
+        return f"#PR #{word} #一人暮らし #ひとり暮らし #一人暮らしごはん #お取り寄せ #楽天 #楽天市場"
     return f"#PR #{word} #一人暮らし #ひとり暮らし #一人暮らし家電 #家電 #楽天 #楽天市場"
 
 
