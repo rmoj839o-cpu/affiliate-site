@@ -97,7 +97,8 @@ def main():
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
-        built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl})
+        built.append({**cat, "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
+                      "tips": content["how_to_choose"]})
         print(f"  {len(ranked)}件で生成しました")
 
     if not args.demo:
@@ -114,11 +115,12 @@ def main():
 
     # トップページは毎日ちがう特集カテゴリを出して、値下がり・急上昇もまとめる
     featured = built[now.toordinal() % len(built)]
+    tip = featured["tips"][(now.toordinal() // len(built)) % len(featured["tips"])] if featured["tips"] else None
     drops = [(c, i, old) for c in built for i, old in c["highlights"]["drops"]]
     trending = sorted(((c, *c["highlights"]["trending"]) for c in built if c["highlights"]["trending"]),
                       key=lambda t: t[2], reverse=True)
     (DIST / "index.html").write_text(
-        env.get_template("index.html").render(built=built, featured=featured, drops=drops[:8],
+        env.get_template("index.html").render(built=built, featured=featured, tip=tip, drops=drops[:8],
                                               trending=trending[:5], path="/"), encoding="utf-8")
     (DIST / "about").mkdir()
     (DIST / "about" / "index.html").write_text(

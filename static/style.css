@@ -71,6 +71,10 @@ summary { cursor: pointer; font-weight: 700; }
 .feature h2 { border-left: 0; padding-left: 0; }
 .fi-name { font-weight: 700; line-height: 1.4; }
 .fi-meta { color: var(--muted); font-size: 12px; }
+.tip { background: var(--soft); border-radius: 10px; padding: 12px 14px; margin-top: 14px; font-size: 14px; }
+.tip p { margin: 0; }
+.tip-label { font-size: 12px; font-weight: 700; color: var(--accent); }
+.tip-point { font-weight: 700; margin: 2px 0 4px !important; }
 .feature-more { margin: 12px 0 0; font-size: 14px; }
 .news { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .news a { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; text-decoration: none; font-size: 14px; }
