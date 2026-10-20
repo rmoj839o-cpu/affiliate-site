@@ -284,8 +284,7 @@
      "hakkutsu-market:10001972": 1480,
      "5tyle12345:10005172": 2280,
      "shopkurano:10008474": 700,
-     "meisei:10002695": 1980,
-     "gekiyasukan:10002059": 1980
+     "meisei:10002695": 1980
     },
     "reviews": {
      "kandar-industry:10000015": 334,
@@ -295,8 +294,7 @@
      "hakkutsu-market:10001972": 54,
      "5tyle12345:10005172": 31,
      "shopkurano:10008474": 56,
-     "meisei:10002695": 274,
-     "gekiyasukan:10002059": 77
+     "meisei:10002695": 274
     }
    },
    "slim-mobile-battery": {
@@ -334,11 +332,11 @@
      "emedama:10968015": 7680,
      "tiger-online:10004928": 11999,
      "kadenrand:10151835": 10180,
-     "emedama:10968014": 7680,
      "premoa:11090908": 3680,
      "insair:10037220": 6980,
      "enetroom:10157596": 11800,
-     "a-price:11287622": 5980
+     "a-price:11287622": 5980,
+     "enetroom:10191846": 11480
     },
     "reviews": {
      "roomy:10014664": 845,
@@ -346,11 +344,11 @@
      "emedama:10968015": 123,
      "tiger-online:10004928": 40,
      "kadenrand:10151835": 48,
-     "emedama:10968014": 144,
      "premoa:11090908": 48,
      "insair:10037220": 122,
      "enetroom:10157596": 119,
-     "a-price:11287622": 76
+     "a-price:11287622": 76,
+     "enetroom:10191846": 148
     }
    },
    "small-ceramic-heater": {
@@ -416,10 +414,10 @@
      "importshopaqua:10012459": 24200,
      "insair:10003203": 9980,
      "k-home:10066477": 9980,
-     "enetroom:10164479": 9980,
-     "alamode:10024313": 24200,
-     "roomy:10015648": 24200,
-     "k-home:10059750": 11800
+     "k-home:10059750": 11800,
+     "moosoo:10000614": 8800,
+     "irisplaza-r:10149298": 9980,
+     "tokyomicro:10000001": 12780
     },
     "reviews": {
      "enetroom:10183493": 719,
@@ -428,10 +426,10 @@
      "importshopaqua:10012459": 502,
      "insair:10003203": 493,
      "k-home:10066477": 431,
-     "enetroom:10164479": 353,
-     "alamode:10024313": 356,
-     "roomy:10015648": 942,
-     "k-home:10059750": 329
+     "k-home:10059750": 329,
+     "moosoo:10000614": 2251,
+     "irisplaza-r:10149298": 260,
+     "tokyomicro:10000001": 384
     }
    },
    "kerosene-fan-heater": {
@@ -443,10 +441,10 @@
      "townland-c:10004078": 18970,
      "townland:10007298": 43480,
      "nafco:10367786": 14800,
-     "townland:10008059": 24980,
      "e-sumail-style:10004295": 28680,
      "dainichi-webshop:10001595": 16940,
-     "r-kojima:11653941": 23800
+     "r-kojima:11653941": 23800,
+     "e-sumail-style:10004294": 35770
     },
     "reviews": {
      "e-kurashi:10004062": 79,
@@ -455,10 +453,10 @@
      "townland-c:10004078": 47,
      "townland:10007298": 45,
      "nafco:10367786": 46,
-     "townland:10008059": 65,
      "e-sumail-style:10004295": 154,
      "dainichi-webshop:10001595": 128,
-     "r-kojima:11653941": 33
+     "r-kojima:11653941": 33,
+     "e-sumail-style:10004294": 89
     }
    },
    "camp-wood-stove": {
@@ -500,7 +498,7 @@
      "e-kurashi:10043075": 11800,
      "e-kitchen:10007417": 9980,
      "kadenrand:10114138": 15800,
-     "e-kurashi:10026656": 9980
+     "k-kitchen:10000015": 9980
     },
     "reviews": {
      "twinbird:10000731": 131,
@@ -512,7 +510,7 @@
      "e-kurashi:10043075": 98,
      "e-kitchen:10007417": 575,
      "kadenrand:10114138": 117,
-     "e-kurashi:10026656": 860
+     "k-kitchen:10000015": 84
     }
    },
    "small-fridge": {
@@ -522,24 +520,24 @@
      "a-price:10994417": 26980,
      "kadenrand:10146284": 18800,
      "a-price:11052164": 29980,
-     "enetroom:10183378": 77800,
      "kadenrand:10132972": 34800,
      "enetroom:10153507": 18800,
-     "irisplaza-r:10108018": 18800,
+     "comfee-kitchen:10000217": 27800,
      "eleking:10041343": 31801,
-     "eleking:10044886": 74800
+     "e-akari:10086438": 34800,
+     "enetroom:10191828": 45800
     },
     "reviews": {
      "jimo:10000215": 170,
      "a-price:10994417": 105,
      "kadenrand:10146284": 294,
      "a-price:11052164": 86,
-     "enetroom:10183378": 58,
      "kadenrand:10132972": 217,
      "enetroom:10153507": 405,
-     "irisplaza-r:10108018": 348,
+     "comfee-kitchen:10000217": 52,
      "eleking:10041343": 357,
-     "eleking:10044886": 57
+     "e-akari:10086438": 54,
+     "enetroom:10191828": 60
     }
    },
    "cordless-vacuum": {
@@ -548,25 +546,25 @@
      "bonako-shop2:10000088": 15880,
      "sunco-direct:10000164": 13980,
      "satoudenkiya:10000011": 15980,
-     "raycop:10000521": 17820,
      "cocoa:10007103": 19800,
      "importshopaqua:10010532": 14300,
-     "sanwa-shop:10000034": 14998,
      "tokyomicro:10000003": 12580,
      "satoudenkiya:10000000": 12980,
-     "bandc:10200327": 12290
+     "sanwa-shop:10000034": 14998,
+     "bandc:10200327": 12290,
+     "dantotsu-online:10005466": 12480
     },
     "reviews": {
      "bonako-shop2:10000088": 3538,
      "sunco-direct:10000164": 530,
      "satoudenkiya:10000011": 450,
-     "raycop:10000521": 90,
      "cocoa:10007103": 39,
      "importshopaqua:10010532": 192,
-     "sanwa-shop:10000034": 32,
      "tokyomicro:10000003": 431,
      "satoudenkiya:10000000": 605,
-     "bandc:10200327": 197
+     "sanwa-shop:10000034": 32,
+     "bandc:10200327": 197,
+     "dantotsu-online:10005466": 411
     }
    },
    "circulator": {
@@ -575,25 +573,15 @@
      "vornado:10000000": 19800,
      "matsucame:10072396": 14080,
      "air-rhizome:10014590": 6940,
-     "u-denki:10000417": 2260,
-     "homeycozy:10000870": 4399,
-     "otakaratuuhan:10025129": 2380,
-     "nissin-llc:10000069": 2580,
      "insair:10001075": 2260,
-     "baibaiyishop:10008264": 3580,
-     "aurora77:10000495": 2980
+     "charmbaby:10001239": 5680
     },
     "reviews": {
      "vornado:10000000": 215,
      "matsucame:10072396": 222,
      "air-rhizome:10014590": 1173,
-     "u-denki:10000417": 162,
-     "homeycozy:10000870": 159,
-     "otakaratuuhan:10025129": 96,
-     "nissin-llc:10000069": 66,
      "insair:10001075": 130,
-     "baibaiyishop:10008264": 110,
-     "aurora77:10000495": 301
+     "charmbaby:10001239": 33
     }
    },
    "hot-sand-maker": {
@@ -603,24 +591,24 @@
      "plywood:10004077": 11000,
      "roomy:10015658": 11000,
      "galleria:10027688": 5500,
-     "apricot-r:10018496": 9900,
-     "roomy-garden:10023316": 11000,
-     "roomy:10016392": 11000,
      "kounotorinodvd:10008171": 5980,
-     "e-goods:10010621": 3300,
-     "yamasoro:10002278": 9900
+     "solemood:10000001": 4980,
+     "sinsankai:10000036": 4880,
+     "e-kitchen:10111143": 7680,
+     "e-kitchen:10111142": 6580,
+     "bruno-official:10000314": 9900
     },
     "reviews": {
      "alamode:10023202": 157,
      "plywood:10004077": 541,
      "roomy:10015658": 2837,
      "galleria:10027688": 66,
-     "apricot-r:10018496": 109,
-     "roomy-garden:10023316": 150,
-     "roomy:10016392": 1181,
      "kounotorinodvd:10008171": 62,
-     "e-goods:10010621": 31,
-     "yamasoro:10002278": 33
+     "solemood:10000001": 290,
+     "sinsankai:10000036": 131,
+     "e-kitchen:10111143": 346,
+     "e-kitchen:10111142": 34,
+     "bruno-official:10000314": 98
     }
    },
    "osechi-for-one": {
