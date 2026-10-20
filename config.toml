@@ -119,6 +119,56 @@ min_price = 8000
 max_price = 100000
 ng = "中古 煙突のみ 部品 交換用 ふるさと納税 耐熱手袋 グローブ 薪ばさみ 着火剤 灰 ガラス窓のみ ケース 収納袋 遮熱板のみ ピザパン 五徳 クッキングスタンド ハンドルセット スタンドのみ"
 
+[[categories]]
+slug = "single-microwave"
+bands = [10000, 15000]
+title = "一人暮らし向け電子レンジ"
+keyword = "電子レンジ 単機能 一人暮らし"
+must = "電子レンジ オーブンレンジ"
+min_price = 6000
+max_price = 60000
+ng = "中古 レンジ台 レンジラック ラック 収納 棚 カバー 容器 スチーマー 調理器 皿 ターンテーブルのみ 部品 交換用 ふるさと納税 レンジフード"
+
+[[categories]]
+slug = "small-fridge"
+bands = [30000, 40000]
+title = "一人暮らし向け冷蔵庫（2ドア）"
+keyword = "冷蔵庫 2ドア 一人暮らし"
+must = "冷蔵庫"
+min_price = 15000
+max_price = 100000
+ng = "中古 ポータブル 車載 保冷 ペルチェ 冷蔵庫用 シート マット ラック 棚 マグネット 収納 ワインセラー 部品 交換用 引き取り リサイクル料 ふるさと納税"
+
+[[categories]]
+slug = "cordless-vacuum"
+bands = [10000, 20000]
+title = "コードレス掃除機（軽量）"
+keyword = "コードレス掃除機 軽量 一人暮らし"
+must = "掃除機 クリーナー"
+min_price = 5000
+max_price = 80000
+ng = "中古 交換用 互換 対応品 替えブラシ フィルター 紙パック ノズル 部品 スタンドのみ ふるさと納税 ロボット 車用"
+
+[[categories]]
+slug = "circulator"
+bands = [3000, 5000]
+title = "サーキュレーター（静音・小型）"
+keyword = "サーキュレーター 静音 小型"
+must = "サーキュレーター"
+min_price = 2000
+max_price = 30000
+ng = "中古 部品 交換用 カバーのみ リモコンのみ ハンディ 首掛け ネック ふるさと納税"
+
+[[categories]]
+slug = "hot-sand-maker"
+bands = [3000, 5000]
+title = "電気ホットサンドメーカー"
+keyword = "ホットサンドメーカー 電気"
+must = "ホットサンド"
+min_price = 1500
+max_price = 20000
+ng = "中古 直火 ガス火 IH プレートのみ 交換用 部品 レシピ 本 食パン ふるさと納税"
+
 # ---- 季節の特集（食べ物） ----
 [[categories]]
 slug = "osechi-for-one"
