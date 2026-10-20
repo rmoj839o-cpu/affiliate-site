@@ -10,6 +10,11 @@
 <meta property="og:description" content="{{ self.description() }}">
 <meta property="og:url" content="{{ site.url }}{{ path }}">
 <meta property="og:type" content="website">
+<meta property="og:image" content="{{ site.url }}/static/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{{ base }}/static/icon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ base }}/static/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="{{ base }}/static/apple-touch-icon.png">
 {% if demo %}<meta name="robots" content="noindex">{% endif %}
 <meta name="google-site-verification" content="7N-lgbqXVJZWZF7O6VB485cefETE8dW2xg8KawVjkCg" />
 <link rel="stylesheet" href="{{ base }}/static/style.css">
@@ -21,7 +26,7 @@
 <p class="pr">※本ページはプロモーション（アフィリエイト広告）を含みます。</p>
 {% if demo %}<p class="demo">デモ表示：架空のサンプルデータです</p>{% endif %}
 <header class="site-header">
-  <a class="logo" href="{{ base }}/">{{ site.name }}</a>
+  <a class="logo" href="{{ base }}/"><img src="{{ base }}/static/icon.svg" alt="" width="26" height="26">{{ site.name }}</a>
   <!-- ジャンルが増えてもスマホの1画面目がメニューで埋まらないように、タップで開く形にしている -->
   <details class="menu">
     <summary>ジャンル一覧</summary>

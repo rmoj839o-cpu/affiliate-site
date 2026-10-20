@@ -1,7 +1,12 @@
 {% extends "base.html" %}
 {% block main %}
 <h1>{{ site.name }}</h1>
-<p class="lead">{{ site.description }} データは毎日自動で更新しています（最終更新：{{ updated }}）。</p>
+<div class="hero">
+  <div>
+    <p class="lead">{{ site.description }} データは毎日自動で更新しています（最終更新：{{ updated }}）。</p>
+  </div>
+  <img src="{{ base }}/static/hero.webp" alt="ひとり暮らしの部屋にある家電を虫めがねでチェックするイラスト" width="240" height="240">
+</div>
 
 <section class="feature">
   <p class="feature-label">今日の特集</p>
