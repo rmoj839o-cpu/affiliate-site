@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}一人暮らしの便利家電・グッズまとめ【{{ season }}】{{ built|length }}ジャンルのおすすめ | {{ site.name }}{% endblock %}
+{% block description %}一人暮らしにあると便利な家電・グッズと季節の食べ物を、ジャンルごとのおすすめ1位と予算重視の1品でまとめました。楽天市場のレビュー件数と評価で毎日更新しています（{{ updated }}更新）。{% endblock %}
+{% block main %}
+<article>
+  <h1>一人暮らしの便利家電・グッズまとめ【{{ season }}】</h1>
+  <p class="updated">最終更新：{{ updated }}</p>
+  <p class="lead">ひとり暮らしを始めたばかりの人も、もう少し暮らしを快適にしたい人も、「何を買えばいいか」で迷いがちです。このページでは、一人暮らしにあると便利な家電やグッズ、季節の食べ物を{{ built|length }}ジャンルに分けて、それぞれの<strong>おすすめ1位</strong>と<strong>予算重視の1品</strong>をまとめました。どれも楽天市場のレビュー件数と評価をもとに選んでいて、毎日自動で更新しています。</p>
+
+  <nav class="toc">
+    {% for group, label in groups %}{% set cats = built | selectattr("group_key", "equalto", group) | list %}{% if cats %}
+    <p class="toc-label">{{ label }}</p>
+    {% for c in cats %}<a href="#{{ c.slug }}">{{ c.title }}</a>{% endfor %}
+    {% endif %}{% endfor %}
+  </nav>
+
+  {% for group, label in groups %}{% set cats = built | selectattr("group_key", "equalto", group) | list %}{% if cats %}
+  <h2>{{ label }}</h2>
+  {% for c in cats %}{% set top = c["items"][0] %}{% set budget = c.highlights.budget %}
+  <section class="matome" id="{{ c.slug }}">
+    <h3>{{ loop.index }}. {{ c.title }}</h3>
+    {% if c.summary %}<p>{{ c.summary }}</p>{% endif %}
+    <div class="matome-picks">
+      {% set picks = [("おすすめ1位", top)] + ([("予算重視なら", budget)] if budget.code != top.code else []) %}
+      {% for label2, i in picks %}
+      <div class="pick">
+        <span class="hl-label">{{ label2 }}</span>
+        <div class="pick-body">
+          {% if i.image %}<img src="{{ i.image }}" alt="" width="96" height="96" loading="lazy">{% endif %}
+          <div>
+            <p class="pick-name">{{ i.short_name }}</p>
+            <p class="pick-meta">{{ "{:,}".format(i.price) }}円・★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）</p>
+          </div>
+        </div>
+        <div class="shops">
+          {% for l in i.links %}<a class="shop {{ l.store }}" href="{{ l.url }}" target="_blank" rel="{{ 'sponsored ' if l.sponsored }}noopener">{{ l.label }}</a>{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="feature-more"><a href="{{ base }}/{{ c.slug }}/">{{ c.title }}のランキングと選び方を見る →</a></p>
+  </section>
+  {% endfor %}
+  {% endif %}{% endfor %}
+
+  <p class="method">選び方：各ジャンルの楽天市場の商品から、レビュー平均点とレビュー件数をもとに、件数の少ない商品は全体平均に寄せて補正したスコアで順位を付けています。「予算重視なら」は、各ジャンルのランキング上位10商品のうち最も価格の安い商品です。当サイトは実機での検証は行っていません。</p>
+</article>
+{% endblock %}

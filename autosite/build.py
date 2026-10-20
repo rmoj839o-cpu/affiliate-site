@@ -159,7 +159,7 @@ def main():
             pages.append(f"/{cat['slug']}/{sp['slug']}/")
         cat_subpages = [{"slug": sp["slug"], "title": sp["title"], "count": len(sp["items"])} for sp in subpages]
         built.append({**cat, "subpages_summary": cat_subpages, "group_key": cat.get("group", "kaden"), "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
-                      "tips": content["how_to_choose"]})
+                      "tips": content["how_to_choose"], "intro": content["intro"]})
         print(f"  {len(ranked)}件で生成しました（条件別ページ {len(subpages)}件）")
 
     if not args.demo:
@@ -184,6 +184,17 @@ def main():
     (DIST / "index.html").write_text(
         env.get_template("index.html").render(built=built, featured=featured, tip=tip, drops=drops[:8],
                                               trending=trending[:5], path="/"), encoding="utf-8")
+    # まとめページ：全ジャンルの1位と予算重視の1品を1ページで見比べられるように
+    season = {12: "冬", 1: "冬", 2: "冬", 3: "春", 4: "春", 5: "春", 6: "夏", 7: "夏", 8: "夏"}.get(now.month, "秋冬")
+    for c in built:
+        c["summary"] = c["intro"].split("。")[0] + "。" if c.get("intro") else ""
+    (DIST / "matome").mkdir()
+    (DIST / "matome" / "index.html").write_text(
+        env.get_template("matome.html").render(
+            built=built, season=f"{now.year}年{season}", path="/matome/",
+            groups=[("kaden", "便利家電・グッズ"), ("food", "季節の食べ物")]), encoding="utf-8")
+    pages.append("/matome/")
+
     (DIST / "about").mkdir()
     (DIST / "about" / "index.html").write_text(
         env.get_template("about.html").render(path="/about/"), encoding="utf-8")

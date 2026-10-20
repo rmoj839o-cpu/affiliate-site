@@ -82,6 +82,20 @@ summary { cursor: pointer; font-weight: 700; }
 .news { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
 .news a { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; text-decoration: none; font-size: 14px; }
 .card p + p { margin-top: 2px; }
+.banner { display: block; background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 14px 16px; margin: 20px 0; text-decoration: none; }
+.banner strong { display: block; font-size: 17px; margin: 2px 0; }
+.banner span:last-child { font-size: 13px; color: var(--muted); }
+.toc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px 16px; margin: 16px 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 14px; }
+.toc-label { width: 100%; margin: 6px 0 0; font-size: 12px; font-weight: 700; color: var(--accent); }
+.matome { border-bottom: 1px solid var(--line); padding-bottom: 16px; }
+.matome-picks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.pick { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+.pick-body { display: flex; gap: 10px; align-items: center; margin: 6px 0 10px; }
+.pick-body img { border-radius: 8px; flex: none; }
+.pick-name { margin: 0; font-weight: 700; font-size: 14px; line-height: 1.5; }
+.pick-meta { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
+.pick .shops { grid-template-columns: 1fr; gap: 6px; }
+.pick .shop { padding: 7px 6px; font-size: 13px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 20px 0; }
 .card { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; text-decoration: none; }
 .card h2 { border: 0; padding: 0; margin: 0; font-size: 17px; }
@@ -92,6 +106,7 @@ footer { margin-top: 48px; padding-top: 16px; padding-bottom: 32px; border-top: 
   .item-body { grid-template-columns: 1fr; }
   .item-body img { max-width: 220px; }
   .pc { grid-template-columns: 1fr; }
+  .matome-picks { grid-template-columns: 1fr; }
   .feature-items { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
   .feature-item { font-size: 12px; }
   .shops { grid-template-columns: 1fr; gap: 6px; }
