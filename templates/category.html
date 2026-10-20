@@ -31,55 +31,20 @@
     <a class="hl" href="#rank{{ hl.most_reviewed.rank }}"><span class="hl-label">レビュー数No.1</span><strong>{{ hl.most_reviewed.rank }}位</strong> {{ "{:,}".format(hl.most_reviewed.review_count) }}件</a>
   </div>
 
-  <h2>比較表</h2>
-  <div class="table-wrap">
-  <table class="compare">
-    <thead><tr><th>順位</th><th>商品</th><th>楽天価格</th><th>評価</th><th>レビュー数</th><th></th></tr></thead>
-    <tbody>
-    {% for i in items %}
-    <tr>
-      <td class="rank">{{ i.rank }}</td>
-      <td><div class="name">{% if i.image %}<img src="{{ i.image }}" alt="" width="56" height="56" loading="lazy">{% endif %}<span>{{ i.name|truncate(40, True, "…") }}</span></div></td>
-      <td>{{ "{:,}".format(i.price) }}円</td>
-      <td>★{{ "%.2f"|format(i.review_avg) }}</td>
-      <td>{{ "{:,}".format(i.review_count) }}件</td>
-      <td><a class="btn small" href="#rank{{ i.rank }}">詳しく見る</a></td>
-    </tr>
-    {% endfor %}
-    </tbody>
-  </table>
-  </div>
-
+{% include "_table.html" %}
   <h2>{{ cat.title }}の選び方</h2>
   {% for p in content.how_to_choose %}
   <h3>{{ loop.index }}. {{ p.point }}</h3>
   <p>{{ p.detail }}</p>
   {% endfor %}
 
-  <h2>おすすめランキング</h2>
-  {% for i in items %}{% set n = notes.get(i.code) %}
-  <section class="item" id="rank{{ i.rank }}">
-    <h3><span class="badge">{{ i.rank }}位</span>{{ n.headline if n else "" }}</h3>
-    <div class="item-body">
-      {% if i.image %}<a href="{{ i.url }}" target="_blank" rel="sponsored noopener"><img src="{{ i.image }}" alt="{{ i.name[:40] }}" width="200" height="200" loading="lazy"></a>{% endif %}
-      <div>
-        <p class="item-name">{{ i.name }}</p>
-        <p class="meta">楽天市場 {{ "{:,}".format(i.price) }}円（税込）／ ★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）／ {{ i.shop }}</p>
-        {% if n %}
-        <div class="pc">
-          <div><strong>良い点</strong><ul>{% for x in n.pros %}<li>{{ x }}</li>{% endfor %}</ul></div>
-          <div><strong>気になる点</strong><ul>{% for x in n.cons %}<li>{{ x }}</li>{% endfor %}</ul></div>
-        </div>
-        <p class="best-for">こんな人におすすめ：{{ n.best_for }}</p>
-        {% endif %}
-        <p class="shops-label">取り扱いショップで価格をチェック</p>
-        <div class="shops">
-          {% for l in i.links %}<a class="shop {{ l.store }}" href="{{ l.url }}" target="_blank" rel="{{ 'sponsored ' if l.sponsored }}noopener">{{ l.label }}</a>{% endfor %}
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endfor %}
+{% include "_items.html" %}
+  {% if subpages %}
+  <h2>条件で絞り込む</h2>
+  <ul class="news">
+    {% for sp in subpages %}<li><a href="{{ base }}/{{ cat.slug }}/{{ sp.slug }}/">{{ sp.title }}（{{ sp["items"]|length }}選）</a></li>{% endfor %}
+  </ul>
+  {% endif %}
 
   <h2>よくある質問</h2>
   {% for f in content.faq %}

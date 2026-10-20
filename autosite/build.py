@@ -22,16 +22,67 @@ ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / "dist"
 
 
-def load_items(category, cfg, demo):
+POPULAR_REVIEWS = 1000  # 「定番」ページに載せるレビュー件数の下限
+MIN_SUBPAGE_ITEMS = 5   # これ未満しか集まらない条件のページは作らない（中身の薄いページを増やさない）
+
+
+def load_items(category, cfg, demo, max_price=None):
     if demo:
         fixtures = json.loads((ROOT / "fixtures" / "sample_items.json").read_text(encoding="utf-8"))
-        return [dict(i) for i in fixtures.get(category["slug"], [])]
+        items = [dict(i) for i in fixtures.get(category["slug"], [])]
+        return [i for i in items if not max_price or i["price"] <= max_price]
     return rakuten.search(
         category["keyword"],
         site_url=cfg["site"]["url"],
         hits=cfg["build"]["fetch_hits"],
         ng_keyword=category.get("ng", ""),
+        min_price=category.get("min_price"),
+        max_price=max_price,
     )
+
+
+def prepare(items, cfg):
+    for i in items:
+        i["links"] = links.store_links(i, cfg.get("affiliate", {}))
+        i["short_name"] = links.search_query(i["name"], max_words=5)
+    return items
+
+
+def build_subpages(cat, pool, cfg, demo):
+    """価格帯別（〇円以下）と、レビューの多い定番だけを集めたページを作る。"""
+    bcfg = cfg["build"]
+    min_reviews = cat.get("min_reviews", bcfg["min_review_count"])
+    subpages = []
+    for band in cat.get("bands", []):
+        try:
+            found = load_items(cat, cfg, demo, max_price=band)
+        except Exception as e:
+            print(f"  ! {band}円以下の取得に失敗: {e}")
+            continue
+        found = filter_items(found, {**cat, "max_price": min(band, cat.get("max_price", band))})
+        ranked = rank.rank(found, limit=bcfg["items_per_page"], min_reviews=min_reviews)
+        if len(ranked) < MIN_SUBPAGE_ITEMS:
+            continue
+        lo, hi = min(i["price"] for i in ranked), max(i["price"] for i in ranked)
+        subpages.append({
+            "slug": f"under-{band}", "title": f"{band:,}円以下の{cat['title']}", "items": prepare(ranked, cfg),
+            "description": f"{band:,}円以下で買える{cat['title']}を、楽天市場のレビュー件数と評価で比較したランキングです。",
+            "intro": (f"楽天市場で販売されている{band:,}円以下の{cat['title']}から、レビューの多い人気商品を、"
+                      f"評価と件数のバランスでランキングにしました。今回の{len(ranked)}商品の価格は"
+                      f"{lo:,}円〜{hi:,}円です。予算を決めてから選びたい人は参考にしてください。"),
+        })
+    popular = [dict(i) for i in pool if i["review_count"] >= POPULAR_REVIEWS]
+    ranked = rank.rank(popular, limit=bcfg["items_per_page"], min_reviews=POPULAR_REVIEWS)
+    if len(ranked) >= MIN_SUBPAGE_ITEMS:
+        subpages.append({
+            "slug": "popular", "title": f"レビュー{POPULAR_REVIEWS:,}件以上の定番{cat['title']}",
+            "items": prepare(ranked, cfg),
+            "description": f"楽天市場でレビューが{POPULAR_REVIEWS:,}件以上ついている定番の{cat['title']}だけを集めたランキングです。",
+            "intro": (f"楽天市場の{cat['title']}のうち、レビューが{POPULAR_REVIEWS:,}件以上ついている、"
+                      "たくさんの人に選ばれてきた定番商品だけを集めてランキングにしました。"
+                      "はじめて買うので失敗したくない、という人は参考にしてください。"),
+        })
+    return subpages
 
 
 def filter_items(items, category):
@@ -79,27 +130,36 @@ def main():
                 print(f"::error title={cat['title']}::{type(e).__name__}: {e}")
             continue
         items = filter_items(items, cat)
+        pool = [dict(i) for i in items]  # rank() が順位を書き込むので、条件別ページ用に元の状態を残す
         ranked = rank.rank(items, limit=bcfg["items_per_page"], min_reviews=cat.get("min_reviews", bcfg["min_review_count"]))
         if not ranked:
             print("  ! 条件を満たす商品がありません")
             continue
-        for i in ranked:
-            i["links"] = links.store_links(i, cfg.get("affiliate", {}))
-            i["short_name"] = links.search_query(i["name"], max_words=5)
+        prepare(ranked, cfg)
         content = writer.write(cat, ranked, refresh_days=bcfg["ai_refresh_days"], demo=args.demo)
         notes = {c["code"]: c for c in content["items"]}
         hl = rank.highlights(ranked, history.get(cat["slug"], {}))
 
+        subpages = build_subpages(cat, pool, cfg, args.demo)
         out = DIST / cat["slug"] / "index.html"
         out.parent.mkdir(parents=True)
         out.write_text(env.get_template("category.html").render(
-            cat=cat, items=ranked, notes=notes, content=content, hl=hl,
+            cat=cat, items=ranked, notes=notes, content=content, hl=hl, subpages=subpages,
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
+        for sp in subpages:
+            sp_notes = {**{c["code"]: c for c in writer.item_notes(cat, sp["items"])}, **notes}
+            sp_out = DIST / cat["slug"] / sp["slug"] / "index.html"
+            sp_out.parent.mkdir(parents=True)
+            sp_out.write_text(env.get_template("subpage.html").render(
+                cat=cat, sp=sp, items=sp["items"], notes=sp_notes,
+                siblings=[o for o in subpages if o is not sp], path=f"/{cat['slug']}/{sp['slug']}/",
+            ), encoding="utf-8")
+            pages.append(f"/{cat['slug']}/{sp['slug']}/")
         built.append({**cat, "group_key": cat.get("group", "kaden"), "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
                       "tips": content["how_to_choose"]})
-        print(f"  {len(ranked)}件で生成しました")
+        print(f"  {len(ranked)}件で生成しました（条件別ページ {len(subpages)}件）")
 
     if not args.demo:
         # 毎日のランキングを記録に残す（変な商品が混ざっていないか後から確認できるように）

@@ -1,0 +1,25 @@
+  <h2>おすすめランキング</h2>
+  {% for i in items %}{% set n = notes.get(i.code) %}
+  <section class="item" id="rank{{ i.rank }}">
+    <h3><span class="badge">{{ i.rank }}位</span>{{ n.headline if n else "" }}</h3>
+    <div class="item-body">
+      {% if i.image %}<a href="{{ i.url }}" target="_blank" rel="sponsored noopener"><img src="{{ i.image }}" alt="{{ i.name[:40] }}" width="200" height="200" loading="lazy"></a>{% endif %}
+      <div>
+        <p class="item-name">{{ i.name }}</p>
+        <p class="meta">楽天市場 {{ "{:,}".format(i.price) }}円（税込）／ ★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）／ {{ i.shop }}</p>
+        {% if n %}
+        <div class="pc">
+          <div><strong>良い点</strong><ul>{% for x in n.pros %}<li>{{ x }}</li>{% endfor %}</ul></div>
+          <div><strong>気になる点</strong><ul>{% for x in n.cons %}<li>{{ x }}</li>{% endfor %}</ul></div>
+        </div>
+        <p class="best-for">こんな人におすすめ：{{ n.best_for }}</p>
+        {% endif %}
+        <p class="shops-label">取り扱いショップで価格をチェック</p>
+        <div class="shops">
+          {% for l in i.links %}<a class="shop {{ l.store }}" href="{{ l.url }}" target="_blank" rel="{{ 'sponsored ' if l.sponsored }}noopener">{{ l.label }}</a>{% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endfor %}
+

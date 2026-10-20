@@ -27,7 +27,7 @@ def _wait_rate_limit():
     _last_call = time.time()
 
 
-def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount"):
+def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount", min_price=None, max_price=None):
     params = {
         "applicationId": os.environ["RAKUTEN_APP_ID"],
         "accessKey": os.environ["RAKUTEN_ACCESS_KEY"],
@@ -42,6 +42,10 @@ def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount"):
     }
     if ng_keyword:
         params["NGKeyword"] = ng_keyword
+    if min_price:
+        params["minPrice"] = min_price
+    if max_price:
+        params["maxPrice"] = max_price
     # 新APIはサーバーからの呼び出しでも Referer が必要（登録済みドメインと照合される）
     # REQUEST_CONTEXT_BODY_HTTP_REFERRER_MISSING を避けるため Origin も送る（値は許可ドメインと一致させる）
     origin = "{0.scheme}://{0.netloc}".format(urlparse(site_url))

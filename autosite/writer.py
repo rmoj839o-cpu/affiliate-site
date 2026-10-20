@@ -185,6 +185,11 @@ def _write_with_claude(category, items):
     return content
 
 
+def item_notes(category, items):
+    # 商品ごとの短い紹介（データから作る）
+    return _write_from_data(category, items)["items"]
+
+
 def _write_from_data(category, items):
     title = category["title"]
     prices = [i["price"] for i in items]

@@ -25,6 +25,7 @@ nav a:hover { color: var(--text); }
 h1 { font-size: 26px; line-height: 1.4; margin: 28px 0 4px; }
 h2 { font-size: 21px; margin: 40px 0 12px; padding-left: 10px; border-left: 4px solid var(--accent); }
 h3 { font-size: 17px; margin: 22px 0 6px; }
+.crumb { font-size: 13px; color: var(--muted); margin: 20px 0 0; }
 .updated { color: var(--muted); font-size: 13px; margin: 0 0 16px; }
 .lead { font-size: 16px; }
 .highlights { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
