@@ -3,9 +3,9 @@
 {% block description %}{{ col.description }}{% endblock %}
 {% block main %}
 <article class="column">
-  <p class="crumb"><a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a> ＞ 管理人のコラム</p>
+  <p class="crumb"><a href="{{ base }}/column/">管理人のコラム</a> ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a></p>
   <h1>{{ col.title }}</h1>
-  <p class="updated">管理人の体験談</p>
+  <p class="updated">管理人の体験談{% if col.date %}（{{ col.date|replace("-", "/") }}）{% endif %}</p>
   {% for sec in col.sections %}
   <h2>{{ sec.h }}</h2>
   {% for para in sec.body %}<p>{{ para }}</p>{% endfor %}

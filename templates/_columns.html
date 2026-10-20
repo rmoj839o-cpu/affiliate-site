@@ -1,0 +1,10 @@
+{% if columns %}
+  <!-- コラムは毎週増えるので、新着だけ見せて残りはタップで開く -->
+  <details class="col-box">
+    <summary><span class="hl-label">管理人のコラム（{{ columns|length }}本）</span><strong>新着：{{ columns[0].title }}</strong></summary>
+    <ul class="col-list">
+      {% for col in columns %}<li><a href="{{ base }}/column/{{ col.slug }}/">{% if col.date %}<span class="col-date">{{ col.date|replace("-", "/") }}</span>{% endif %}{{ col.title }}</a></li>{% endfor %}
+    </ul>
+    <p class="feature-more"><a href="{{ base }}/column/">コラム一覧へ →</a></p>
+  </details>
+{% endif %}

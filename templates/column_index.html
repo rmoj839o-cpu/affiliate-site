@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}管理人のコラム一覧 | {{ site.name }}{% endblock %}
+{% block description %}ひとり暮らし歴15年の管理人が、実際に使っている家電や、これから欲しいものについて書いたコラムの一覧です。{% endblock %}
+{% block main %}
+<article>
+  <h1>管理人のコラム一覧</h1>
+  <p class="lead">ひとり暮らし歴15年の管理人が、実際に使っている家電や、これから欲しいものについて書いています。</p>
+  <ul class="news">
+    {% for col in columns %}
+    <li><a href="{{ base }}/column/{{ col.slug }}/"><span class="hl-label">{% if col.date %}{{ col.date|replace("-", "/") }}・{% endif %}{{ by_slug[col.category].title }}</span>{{ col.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% include "_profile.html" %}
+</article>
+{% endblock %}

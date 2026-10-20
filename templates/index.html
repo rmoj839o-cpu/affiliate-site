@@ -27,9 +27,7 @@
 
 <a class="banner" href="{{ base }}/matome/"><span class="hl-label">まとめ</span><strong>一人暮らしの便利家電・グッズまとめ</strong><span>{{ built|length }}ジャンルのおすすめ1位と予算重視の1品を、1ページで見比べられます →</span></a>
 
-{% for col in columns %}
-<a class="banner" href="{{ base }}/column/{{ col.slug }}/"><span class="hl-label">管理人のコラム</span><strong>{{ col.title }}</strong><span>実際に使って感じた良いところ・困るところ →</span></a>
-{% endfor %}
+{% include "_columns.html" %}
 
 {% if drops %}
 <h2>値下がり情報</h2>

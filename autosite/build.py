@@ -150,7 +150,9 @@ def main():
         shutil.rmtree(DIST)
     shutil.copytree(ROOT / "static", DIST / "static")
 
-    columns = [json.loads(f.read_text(encoding="utf-8")) for f in sorted((ROOT / "columns").glob("*.json"))]
+    # 管理人のコラムは新しい順に並べる（date: "YYYY-MM-DD"）
+    columns = sorted((json.loads(f.read_text(encoding="utf-8")) for f in (ROOT / "columns").glob("*.json")),
+                     key=lambda c: c.get("date", ""), reverse=True)
     history = {} if args.demo else social.load_history()
     pages = []
     built = []
@@ -209,6 +211,9 @@ def main():
     if not built:
         # 全カテゴリ失敗（APIキー未設定など）のときは、空のサイトで上書き公開しないよう止める
         raise SystemExit("どのカテゴリも生成できませんでした。楽天APIの設定を確認してください。")
+    # 季節外れなどでカテゴリが出ていないコラムは、リンク切れにならないよう載せない
+    by_slug = {c["slug"]: c for c in built}
+    columns = [c for c in columns if c["category"] in by_slug]
 
     # トップページは毎日ちがう特集カテゴリを出して、値下がり・急上昇もまとめる
     featured = built[now.toordinal() % len(built)]
@@ -231,16 +236,18 @@ def main():
     pages.append("/matome/")
 
     # 管理人のコラム（体験談）。該当カテゴリの今の上位3商品もあわせて載せる
-    by_slug = {c["slug"]: c for c in built}
     for col in columns:
-        cat = by_slug.get(col["category"])
-        if not cat:
-            continue
+        cat = by_slug[col["category"]]
         out = DIST / "column" / col["slug"] / "index.html"
         out.parent.mkdir(parents=True)
         out.write_text(env.get_template("column.html").render(
             col=col, cat=cat, items=cat["items"], path=f"/column/{col['slug']}/"), encoding="utf-8")
         pages.append(f"/column/{col['slug']}/")
+    if columns:
+        (DIST / "column" / "index.html").write_text(
+            env.get_template("column_index.html").render(columns=columns, by_slug=by_slug, path="/column/"),
+            encoding="utf-8")
+        pages.append("/column/")
 
     (DIST / "about").mkdir()
     (DIST / "about" / "index.html").write_text(

@@ -41,9 +41,7 @@
   <p>{{ p.detail }}</p>
   {% endfor %}
 
-  {% for col in columns %}
-  <a class="banner" href="{{ base }}/column/{{ col.slug }}/"><span class="hl-label">管理人のコラム</span><strong>{{ col.title }}</strong><span>実際に使って感じた良いところ・困るところ →</span></a>
-  {% endfor %}
+{% include "_columns.html" %}
   {% if subpages %}
   <h2>条件で絞り込む</h2>
   <ul class="news">
