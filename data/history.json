@@ -465,27 +465,27 @@
     "top": "greenspoon:10000119",
     "prices": {
      "greenspoon:10000119": 9080,
-     "slc-123:10000001": 5980,
      "polar-star:10000018": 7700,
      "watami-direct:10000064": 5480,
      "polar-star:10000017": 4200,
      "nichireifoods:10000071": 7760,
      "greenspoon:10000118": 13080,
+     "magokoro-careshoku:10000117": 3780,
      "nichireifoods:10000009": 8930,
      "belluna-gourmet:10023196": 6990,
-     "wellness-dining:10000005": 6582
+     "watami-direct:10000051": 5380
     },
     "reviews": {
      "greenspoon:10000119": 214,
-     "slc-123:10000001": 4840,
      "polar-star:10000018": 318,
      "watami-direct:10000064": 143,
      "polar-star:10000017": 512,
      "nichireifoods:10000071": 153,
      "greenspoon:10000118": 201,
+     "magokoro-careshoku:10000117": 101,
      "nichireifoods:10000009": 437,
      "belluna-gourmet:10023196": 543,
-     "wellness-dining:10000005": 131
+     "watami-direct:10000051": 254
     }
    },
    "hitori-nabe": {
