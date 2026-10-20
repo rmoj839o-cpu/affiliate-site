@@ -25,7 +25,7 @@ valuecommerce_pid = "892729383"   # 同 pid
 # 大きなキーワード（例:「加湿器」）は強いサイトが多いので、「ひとり暮らし×用途」に絞っている
 # slug: URL / keyword: 楽天検索語 / ng: 除外キーワード（スペース区切り）
 # bands: この金額以下の価格帯別ページを作る（5商品以上集まったときだけ）
-# group: "food" は季節の特集（食べ物）として家電と分けて表示 / min_reviews: ランキングに載せる最低レビュー数（省略時は build の値）
+# group: "food" は季節の特集（食べ物）、"outdoor" はアウトドアとして家電と分けて表示 / min_reviews: ランキングに載せる最低レビュー数（省略時は build の値）
 # must: 商品名にどれか1つは入っていないといけない言葉（関係ない商品の混入を防ぐ） / min_price・max_price: この範囲外の価格は除外
 [[categories]]
 slug = "desk-humidifier"
@@ -106,6 +106,17 @@ must = "石油ファンヒーター ファンヒーター"
 min_price = 8000
 max_price = 60000
 ng = "中古 交換用 部品 フィルター 給油ポンプ 灯油缶 ポリタンク 替え芯 ふるさと納税 カバー 電気 セラミック"
+
+[[categories]]
+slug = "camp-wood-stove"
+bands = [20000, 30000]
+title = "キャンプ用薪ストーブ"
+group = "outdoor"
+keyword = "薪ストーブ キャンプ"
+must = "薪ストーブ"
+min_price = 8000
+max_price = 100000
+ng = "中古 煙突のみ 部品 交換用 ふるさと納税 耐熱手袋 グローブ 薪ばさみ 着火剤 灰 ガラス窓のみ ケース 収納袋 遮熱板のみ"
 
 # ---- 季節の特集（食べ物） ----
 [[categories]]

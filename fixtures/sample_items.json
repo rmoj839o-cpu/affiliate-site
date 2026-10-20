@@ -2378,5 +2378,175 @@
    "review_count": 120,
    "point_rate": 1
   }
+ ],
+ "camp-wood-stove": [
+  {
+   "code": "sample:cws-A",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルA",
+   "price": 25500,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ0",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.75,
+   "review_count": 950,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-B",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルB",
+   "price": 42300,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ1",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 3.85,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-C",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルC",
+   "price": 27700,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ2",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.38,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-D",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルD",
+   "price": 10900,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ3",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 3.89,
+   "review_count": 950,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-E",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルE",
+   "price": 12500,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ4",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.04,
+   "review_count": 950,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-F",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルF",
+   "price": 12000,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ5",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.63,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-G",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルG",
+   "price": 57500,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ6",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.02,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-H",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルH",
+   "price": 38500,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ7",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.39,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-I",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルI",
+   "price": 58900,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ8",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.02,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-J",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルJ",
+   "price": 23800,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ9",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.22,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-K",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルK",
+   "price": 38200,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ10",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.11,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-L",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルL",
+   "price": 14200,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ11",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 4.38,
+   "review_count": 120,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-M",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルM",
+   "price": 28000,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ12",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 3.9,
+   "review_count": 45,
+   "point_rate": 1
+  },
+  {
+   "code": "sample:cws-N",
+   "name": "【サンプル】キャンプ用薪ストーブ モデルN",
+   "price": 37800,
+   "url": "#",
+   "image": "",
+   "shop": "サンプルショップ13",
+   "caption": "デモ用の架空データです。",
+   "review_avg": 3.86,
+   "review_count": 120,
+   "point_rate": 1
+  }
  ]
 }
