@@ -1035,5 +1035,152 @@
     "shop": "【 くまもと風土 】"
    }
   ]
+ },
+ "subpages": {
+  "desk-humidifier": [
+   {
+    "slug": "under-2000",
+    "title": "2,000円以下の卓上加湿器",
+    "count": 10
+   },
+   {
+    "slug": "under-3000",
+    "title": "3,000円以下の卓上加湿器",
+    "count": 10
+   },
+   {
+    "slug": "popular",
+    "title": "レビュー1,000件以上の定番卓上加湿器",
+    "count": 10
+   }
+  ],
+  "electric-blanket": [
+   {
+    "slug": "under-5000",
+    "title": "5,000円以下の電気毛布",
+    "count": 10
+   },
+   {
+    "slug": "under-8000",
+    "title": "8,000円以下の電気毛布",
+    "count": 10
+   },
+   {
+    "slug": "popular",
+    "title": "レビュー1,000件以上の定番電気毛布",
+    "count": 10
+   }
+  ],
+  "sleep-earphones": [
+   {
+    "slug": "under-3000",
+    "title": "3,000円以下の寝ホン（睡眠用イヤホン）",
+    "count": 7
+   }
+  ],
+  "slim-mobile-battery": [
+   {
+    "slug": "under-2000",
+    "title": "2,000円以下の薄型・軽量モバイルバッテリー",
+    "count": 10
+   },
+   {
+    "slug": "under-3000",
+    "title": "3,000円以下の薄型・軽量モバイルバッテリー",
+    "count": 10
+   },
+   {
+    "slug": "popular",
+    "title": "レビュー1,000件以上の定番薄型・軽量モバイルバッテリー",
+    "count": 10
+   }
+  ],
+  "small-rice-cooker": [
+   {
+    "slug": "under-10000",
+    "title": "10,000円以下の一人暮らし向け炊飯器（3合以下）",
+    "count": 10
+   }
+  ],
+  "small-ceramic-heater": [
+   {
+    "slug": "under-3000",
+    "title": "3,000円以下の小型セラミックヒーター",
+    "count": 10
+   },
+   {
+    "slug": "under-5000",
+    "title": "5,000円以下の小型セラミックヒーター",
+    "count": 10
+   },
+   {
+    "slug": "popular",
+    "title": "レビュー1,000件以上の定番小型セラミックヒーター",
+    "count": 10
+   }
+  ],
+  "electric-kettle": [
+   {
+    "slug": "under-3000",
+    "title": "3,000円以下の電気ケトル",
+    "count": 10
+   },
+   {
+    "slug": "under-5000",
+    "title": "5,000円以下の電気ケトル",
+    "count": 10
+   }
+  ],
+  "futon-dryer": [
+   {
+    "slug": "under-10000",
+    "title": "10,000円以下の布団乾燥機",
+    "count": 10
+   },
+   {
+    "slug": "popular",
+    "title": "レビュー1,000件以上の定番布団乾燥機",
+    "count": 5
+   }
+  ],
+  "osechi-for-one": [
+   {
+    "slug": "under-8000",
+    "title": "8,000円以下の一人用おせち（2027年）",
+    "count": 10
+   }
+  ],
+  "frozen-bento": [
+   {
+    "slug": "under-5000",
+    "title": "5,000円以下の冷凍弁当",
+    "count": 7
+   }
+  ],
+  "hitori-nabe": [],
+  "toshikoshi-soba": [
+   {
+    "slug": "under-2000",
+    "title": "2,000円以下の年越しそば",
+    "count": 10
+   }
+  ],
+  "mikan": [
+   {
+    "slug": "under-2000",
+    "title": "2,000円以下のみかん",
+    "count": 10
+   },
+   {
+    "slug": "under-3000",
+    "title": "3,000円以下のみかん",
+    "count": 10
+   },
+   {
+    "slug": "popular",
+    "title": "レビュー1,000件以上の定番みかん",
+    "count": 9
+   }
+  ]
  }
 }
