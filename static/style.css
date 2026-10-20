@@ -14,6 +14,10 @@ body { margin: 0; background: var(--bg); color: var(--text);
 a { color: inherit; }
 main, .site-header, footer { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 .profile { background: var(--soft); border-radius: 12px; padding: 14px 16px; margin: 32px 0 0; font-size: 14px; }
+.profile-head { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
+.profile-title span { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
+.avatar { flex: none; border-radius: 50%; }
+.avatar-large { display: block; border-radius: 50%; margin: 8px 0; }
 .profile p { margin: 0 0 6px; }
 .profile-title { font-weight: 700; }
 .profile-link { margin: 0 !important; font-size: 13px; }

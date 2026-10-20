@@ -1,6 +1,9 @@
 {% if site.profile %}
   <aside class="profile">
-    <p class="profile-title">運営者について</p>
+    <div class="profile-head">
+      <img class="avatar" src="{{ base }}/static/avatar.webp" alt="運営者のイラスト" width="64" height="64" loading="lazy">
+      <p class="profile-title">運営者について<span>{{ site.author }}・ひとり暮らし歴15年</span></p>
+    </div>
     <p>{{ site.profile }}</p>
     <p class="profile-link"><a href="{{ base }}/about/">運営者情報・広告ポリシー →</a></p>
   </aside>
