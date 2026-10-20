@@ -101,6 +101,22 @@ def build_subpages(cat, pool, cfg, demo):
     return subpages
 
 
+def active_categories(categories, now):
+    """季節もの（months を指定したカテゴリ）は、その月だけ表示する。
+
+    タイトルや検索語の {new_year} は「次に迎える正月の年」に置き換える
+    （9〜12月なら翌年、1〜8月ならその年）。おせちの年号を毎年書き換えなくて済むように。
+    """
+    new_year = now.year + 1 if now.month >= 9 else now.year
+    active = []
+    for c in categories:
+        if c.get("months") and now.month not in c["months"]:
+            print(f"[{c['title']}] 季節外のためお休み")
+            continue
+        active.append({k: v.replace("{new_year}", str(new_year)) if isinstance(v, str) else v for k, v in c.items()})
+    return active
+
+
 def filter_items(items, category):
     # 検索語だけだと関係ない商品（炊飯器で検索したお米など）が混ざるので、商品名と価格でふるい落とす
     must = category.get("must", "").split()
@@ -123,6 +139,7 @@ def main():
     cfg = tomllib.loads((ROOT / "config.toml").read_text(encoding="utf-8"))
     site, bcfg = cfg["site"], cfg["build"]
     now = datetime.now(JST)
+    cfg["categories"] = active_categories(cfg["categories"], now)
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape())
     env.globals.update(site=site, updated=now.strftime("%Y年%m月%d日"), year=now.year,
