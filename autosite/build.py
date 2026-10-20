@@ -157,7 +157,8 @@ def main():
                 siblings=[o for o in subpages if o is not sp], path=f"/{cat['slug']}/{sp['slug']}/",
             ), encoding="utf-8")
             pages.append(f"/{cat['slug']}/{sp['slug']}/")
-        built.append({**cat, "group_key": cat.get("group", "kaden"), "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
+        cat_subpages = [{"slug": sp["slug"], "title": sp["title"], "count": len(sp["items"])} for sp in subpages]
+        built.append({**cat, "subpages_summary": cat_subpages, "group_key": cat.get("group", "kaden"), "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
                       "tips": content["how_to_choose"]})
         print(f"  {len(ranked)}件で生成しました（条件別ページ {len(subpages)}件）")
 
@@ -166,7 +167,8 @@ def main():
         snapshot = {c["slug"]: [{k: i[k] for k in ("rank", "name", "price", "review_avg", "review_count", "shop")}
                                 for i in c["items"]] for c in built}
         (ROOT / "data" / "ranking.json").write_text(
-            json.dumps({"date": now.strftime("%Y-%m-%d"), "ranking": snapshot}, ensure_ascii=False, indent=1),
+            json.dumps({"date": now.strftime("%Y-%m-%d"), "ranking": snapshot,
+                        "subpages": {c["slug"]: c["subpages_summary"] for c in built}}, ensure_ascii=False, indent=1),
             encoding="utf-8")
 
     if not built:
