@@ -1,10 +1,11 @@
-  <h2>おすすめランキング</h2>
+  <h2>レビュー評価×件数で選んだ{{ (sp.title if sp is defined else cat.title) }}ランキング</h2>
   {% for i in items %}{% set n = notes.get(i.code) %}
   <section class="item" id="rank{{ i.rank }}">
     <h3><span class="badge">{{ i.rank }}位</span>{{ n.headline if n else "" }}</h3>
     <div class="item-body">
       {% if i.image %}<a href="{{ i.url }}" target="_blank" rel="sponsored noopener"><img src="{{ i.image }}" alt="{{ i.name[:40] }}" width="200" height="200" loading="lazy"></a>{% endif %}
       <div>
+        {% if i.point %}<p class="point"><mark>{{ i.point }}</mark></p>{% endif %}
         <p class="item-name">{{ i.name }}</p>
         <p class="meta">楽天市場 {{ "{:,}".format(i.price) }}円（税込）／ ★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）／ {{ i.shop }}</p>
         {% if n %}

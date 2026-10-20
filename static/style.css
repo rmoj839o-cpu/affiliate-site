@@ -32,6 +32,12 @@ h3 { font-size: 17px; margin: 22px 0 6px; }
 .hl { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px; text-decoration: none; font-size: 14px; }
 .hl.drop { border-color: var(--accent); }
 .hl-label { display: block; font-size: 12px; font-weight: 700; color: var(--accent); }
+.basis { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 8px; padding: 10px 14px; margin: 16px 0; font-size: 14px; }
+.basis-title { margin: 0 0 4px; font-weight: 700; }
+.basis ul { margin: 0; padding-left: 1.2em; }
+mark { background: #fff2a8; color: #1f2328; padding: 0 4px; border-radius: 3px; font-weight: 700; }
+.point { margin: 0 0 4px; font-size: 14px; }
+mark.tag { font-size: 11px; margin-right: 6px; white-space: nowrap; }
 .table-wrap { overflow-x: auto; }
 .compare { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 14px; min-width: 640px; }
 .compare td:nth-child(2) { white-space: normal; min-width: 220px; }

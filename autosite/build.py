@@ -41,7 +41,23 @@ def load_items(category, cfg, demo, max_price=None):
     )
 
 
+def mark_points(items):
+    """各商品の「推しポイント」を、ほかの商品より優れている点から1つだけ選ぶ。"""
+    for i in items:
+        i["point"] = ""
+    candidates = [
+        ("レビュー数No.1", max(items, key=lambda i: i["review_count"])),
+        ("上位でいちばん手頃", min(items, key=lambda i: i["price"])),
+        ("評価がいちばん高い", max(items, key=lambda i: i["review_avg"])),
+    ]
+    for label, item in candidates:
+        if not item["point"]:
+            item["point"] = label
+
+
 def prepare(items, cfg):
+    if items:
+        mark_points(items)
     for i in items:
         i["links"] = links.store_links(i, cfg.get("affiliate", {}))
         i["short_name"] = links.search_query(i["name"], max_words=5)

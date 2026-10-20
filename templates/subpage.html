@@ -1,12 +1,13 @@
 {% extends "base.html" %}
-{% block title %}{{ sp.title }}おすすめ{{ items|length }}選【{{ year }}年】| {{ site.name }}{% endblock %}
+{% block title %}{{ sp.title }}おすすめ{{ items|length }}選｜レビュー評価と件数で比較【{{ year }}年】| {{ site.name }}{% endblock %}
 {% block description %}{{ sp.description }}（{{ updated }}更新）{% endblock %}
 {% block main %}
 <article>
   <p class="crumb"><a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a> ＞ {{ sp.title }}</p>
-  <h1>{{ sp.title }}おすすめ{{ items|length }}選</h1>
+  <h1>{{ sp.title }}おすすめ{{ items|length }}選｜レビュー評価と件数で比較</h1>
   <p class="updated">最終更新：{{ updated }}</p>
   <p class="lead">{{ sp.intro }}</p>
+{% include "_basis.html" %}
   <p class="lead">選び方のポイントは、<a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキングページ</a>で詳しく紹介しています。</p>
 {% include "_table.html" %}
 {% include "_items.html" %}
