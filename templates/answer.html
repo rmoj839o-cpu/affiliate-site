@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}{{ q.title }} | {{ site.name }}{% endblock %}
+{% block description %}{{ q.description }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ q.title|tojson }},
+  "datePublished": "{{ q.date }}",
+  "author": {"@type": "Person", "name": {{ site.author|tojson }}}
+}
+</script>
+{% endblock %}
+{% block main %}
+<article class="column">
+  <p class="crumb"><a href="{{ base }}/guide/">よくある疑問</a> ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a></p>
+  <h1>{{ q.title }}</h1>
+  <p class="updated">公開：{{ q.date|replace("-", "/") }}</p>
+  <div class="answer">
+    <p class="answer-label">結論</p>
+    <p>{{ q.answer }}</p>
+  </div>
+  {% for sec in q.sections %}
+  <h2>{{ sec.h }}</h2>
+  {% for para in sec.body %}<p>{{ para }}</p>{% endfor %}
+  {% if sec.table %}
+  <div class="table-scroll"><table class="qtable{{ " numeric" if sec.table.numeric }}">
+    <thead><tr>{% for h in sec.table.head %}<th>{{ h }}</th>{% endfor %}</tr></thead>
+    <tbody>{% for row in sec.table.rows %}<tr>{% for c in row %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody>
+  </table></div>
+  {% endif %}
+  {% endfor %}
+  {% if q.note %}<p class="method">{{ q.note }}</p>{% endif %}
+{% include "_picks.html" %}
+  {% if related %}
+  <h2>ほかの疑問</h2>
+  <ul class="news">{% for o in related %}<li><a href="{{ base }}/guide/{{ o.slug }}/">{{ o.title }}</a></li>{% endfor %}</ul>
+  {% endif %}
+{% include "_profile.html" %}
+</article>
+{% endblock %}

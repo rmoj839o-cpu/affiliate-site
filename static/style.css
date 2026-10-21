@@ -112,6 +112,14 @@ summary { cursor: pointer; font-weight: 700; }
 .banner { display: block; background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 14px 16px; margin: 20px 0; text-decoration: none; }
 .banner strong { display: block; font-size: 17px; margin: 2px 0; }
 .banner span:last-child { font-size: 13px; color: var(--muted); }
+.answer { background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 12px 16px; margin: 16px 0; }
+.answer p { margin: 0; }
+.answer-label { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 4px !important; }
+.table-scroll { overflow-x: auto; }
+.qtable { width: 100%; border-collapse: collapse; background: var(--surface); font-size: 14px; }
+.qtable th, .qtable td { border: 1px solid var(--line); padding: 8px 10px; text-align: left; vertical-align: top; }
+.qtable th { background: var(--soft); white-space: nowrap; }
+.qtable.numeric td { white-space: nowrap; }
 .col-box { border: 2px solid var(--accent); border-radius: 12px; padding: 12px 16px; margin: 20px 0; }
 .col-box summary { list-style: none; }
 .col-box summary::-webkit-details-marker { display: none; }
