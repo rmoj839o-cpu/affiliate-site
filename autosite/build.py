@@ -150,7 +150,7 @@ def main():
         shutil.rmtree(DIST)
     shutil.copytree(ROOT / "static", DIST / "static")
 
-    # よくある疑問（検索されやすい質問に1ページで答える）も新しい順
+    # 家電の豆知識（電気代やサイズの目安など、検索されやすい話題を1ページずつ）も新しい順
     answers = sorted((json.loads(f.read_text(encoding="utf-8")) for f in (ROOT / "answers").glob("*.json")),
                      key=lambda q: q.get("date", ""), reverse=True)
     # 管理人のコラムは新しい順に並べる（date: "YYYY-MM-DD"）

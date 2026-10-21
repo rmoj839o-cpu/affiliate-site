@@ -35,11 +35,11 @@
 {% include "_columns.html" %}
 
 {% if answers %}
-<h2>よくある疑問</h2>
+<h2>家電の豆知識</h2>
 <ul class="news">
   {% for q in answers %}<li><a href="{{ base }}/guide/{{ q.slug }}/">{{ q.title }}</a></li>{% endfor %}
 </ul>
-<p class="feature-more"><a href="{{ base }}/guide/">疑問の一覧を見る →</a></p>
+<p class="feature-more"><a href="{{ base }}/guide/">豆知識の一覧を見る →</a></p>
 {% endif %}
 
 {% if drops %}

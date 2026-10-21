@@ -14,11 +14,11 @@
 {% endblock %}
 {% block main %}
 <article class="column">
-  <p class="crumb"><a href="{{ base }}/guide/">よくある疑問</a> ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a></p>
+  <p class="crumb"><a href="{{ base }}/guide/">家電の豆知識</a> ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a></p>
   <h1>{{ q.title }}</h1>
   <p class="updated">公開：{{ q.date|replace("-", "/") }}</p>
   <div class="answer">
-    <p class="answer-label">結論</p>
+    <p class="answer-label">ポイント</p>
     <p>{{ q.answer }}</p>
   </div>
   {% for sec in q.sections %}
@@ -34,7 +34,7 @@
   {% if q.note %}<p class="method">{{ q.note }}</p>{% endif %}
 {% include "_picks.html" %}
   {% if related %}
-  <h2>ほかの疑問</h2>
+  <h2>ほかの豆知識</h2>
   <ul class="news">{% for o in related %}<li><a href="{{ base }}/guide/{{ o.slug }}/">{{ o.title }}</a></li>{% endfor %}</ul>
   {% endif %}
 {% include "_profile.html" %}
