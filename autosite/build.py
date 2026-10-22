@@ -281,7 +281,8 @@ def main():
     robots = "User-agent: *\nDisallow: /\n" if args.demo else f"User-agent: *\nAllow: /\nSitemap: {site['url']}/sitemap.xml\n"
     (DIST / "robots.txt").write_text(robots, encoding="utf-8")
     (DIST / ".nojekyll").write_text("")
-    social.run(built, site, site["url"], ROOT / "drafts.md", DIST, demo=args.demo)
+    social.run(built, site, site["url"], ROOT / "drafts.md", DIST, demo=args.demo,
+               drafts=bcfg.get("sns_drafts", True))
     print(f"完了: {DIST}")
 
 

@@ -13,6 +13,7 @@ items_per_page = 10        # ランキングに載せる件数
 min_review_count = 30      # これ未満のレビュー数の商品は除外
 fetch_hits = 30            # 楽天APIから取得する件数（最大30）
 ai_refresh_days = 7        # 商品ラインナップが同じなら、AI解説を再生成しない日数
+sns_drafts = false         # true にすると、毎日のInstagram投稿案（文章と画像）をGitHubのIssueに届ける
 
 # ---- アフィリエイトID（公開されても問題ない値） ----
 # 空のままでもボタンは表示される（その場合は普通のリンクで、報酬は発生しない）

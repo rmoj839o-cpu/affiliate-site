@@ -190,8 +190,15 @@ def _hashtags(cat):
     return f"#PR #{word} #一人暮らし #ひとり暮らし #一人暮らし家電 #家電 #楽天 #楽天市場"
 
 
-def run(built, site, base_url, out_path, dist_dir, demo=False):
+def run(built, site, base_url, out_path, dist_dir, demo=False, drafts=True):
     today = datetime.now(JST)
+    if not drafts:
+        # 投稿案を止めていても、値下がり・急上昇を出すための前日比較の記録は続ける
+        if not demo:
+            CACHE_DIR.mkdir(exist_ok=True)
+            save_history(built, today)
+        print("投稿案はオフです（config.toml の sns_drafts）")
+        return
     history = {} if demo else load_history(today)
     topics = find_topics(built, history, today)
 
