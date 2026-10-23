@@ -64,7 +64,7 @@ def search(keyword, *, site_url, hits=30, ng_keyword="", sort="-reviewCount", mi
         if res.status_code == 403:
             raise RuntimeError(
                 "楽天APIが403を返しました。accessKey と、楽天アプリに登録した許可ドメインが "
-                f"config.toml の site.url（{site_url}）と一致しているか確認してください。"
+                f"config.toml の site.rakuten_url（なければ site.url）＝{site_url} と一致しているか確認してください。"
                 f" 応答: {" ".join(res.text.split())[:400]}"
             )
         if not res.ok:

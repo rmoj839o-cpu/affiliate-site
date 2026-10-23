@@ -33,7 +33,7 @@ def load_items(category, cfg, demo, max_price=None):
         return [i for i in items if not max_price or i["price"] <= max_price]
     return rakuten.search(
         category["keyword"],
-        site_url=cfg["site"]["url"],
+        site_url=cfg["site"].get("rakuten_url", cfg["site"]["url"]),
         hits=cfg["build"]["fetch_hits"],
         ng_keyword=category.get("ng", ""),
         min_price=category.get("min_price"),
