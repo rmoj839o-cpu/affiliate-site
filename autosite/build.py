@@ -258,7 +258,8 @@ def main():
         cat = by_slug[q["category"]]
         out = DIST / "guide" / q["slug"] / "index.html"
         out.parent.mkdir(parents=True)
-        related = [o for o in answers if o is not q][:5]
+        # 同じジャンルの豆知識を先に並べる
+        related = sorted((o for o in answers if o is not q), key=lambda o: o["category"] != q["category"])[:5]
         out.write_text(env.get_template("answer.html").render(
             q=q, cat=cat, items=cat["items"], related=related, path=f"/guide/{q['slug']}/"), encoding="utf-8")
         pages.append(f"/guide/{q['slug']}/")
