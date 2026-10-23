@@ -1,0 +1,14 @@
+{% if services %}
+  <h2>{{ services.title }}</h2>
+  <p>{{ services.intro }}</p>
+  {% for s in services.services %}
+  <section class="service">
+    <p class="service-pr">PR</p>
+    <h3>{{ s.name }}</h3>
+    <p>{{ s.desc }}</p>
+    {% if s.points %}<ul>{% for p in s.points %}<li>{{ p }}</li>{% endfor %}</ul>{% endif %}
+    <p class="shops-label">くわしい内容・料金は公式サイトで確認できます</p>
+    <div class="service-ad">{{ s.html|safe }}</div>
+  </section>
+  {% endfor %}
+{% endif %}

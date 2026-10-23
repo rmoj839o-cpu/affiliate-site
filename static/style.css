@@ -112,6 +112,12 @@ summary { cursor: pointer; font-weight: 700; }
 .banner { display: block; background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 14px 16px; margin: 20px 0; text-decoration: none; }
 .banner strong { display: block; font-size: 17px; margin: 2px 0; }
 .banner span:last-child { font-size: 13px; color: var(--muted); }
+.service { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin: 14px 0; }
+.service h3 { margin: 0 0 6px; }
+.service p { margin: 0 0 6px; font-size: 15px; }
+.service ul { margin: 0 0 6px; padding-left: 1.2em; font-size: 14px; }
+.service-pr { position: absolute; top: 10px; right: 12px; font-size: 11px !important; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; }
+.service-ad { margin-top: 6px; }
 .answer { background: var(--surface); border: 2px solid var(--accent); border-radius: 12px; padding: 12px 16px; margin: 16px 0; }
 .answer p { margin: 0; }
 .answer-label { font-size: 12px; font-weight: 700; color: var(--accent); margin-bottom: 4px !important; }

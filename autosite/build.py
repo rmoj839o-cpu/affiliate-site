@@ -150,6 +150,8 @@ def main():
         shutil.rmtree(DIST)
     shutil.copytree(ROOT / "static", DIST / "static")
 
+    # A8.net などのサービス広告（services/<カテゴリのslug>.json）
+    services = {f.stem: json.loads(f.read_text(encoding="utf-8")) for f in (ROOT / "services").glob("*.json")}
     # 家電の豆知識（電気代やサイズの目安など、検索されやすい話題を1ページずつ）も新しい順
     answers = sorted((json.loads(f.read_text(encoding="utf-8")) for f in (ROOT / "answers").glob("*.json")),
                      key=lambda q: q.get("date", ""), reverse=True)
@@ -186,6 +188,7 @@ def main():
             cat=cat, items=ranked, notes=notes, content=content, hl=hl, subpages=subpages,
             columns=[c for c in columns if c["category"] == cat["slug"]],
             answers=[q for q in answers if q["category"] == cat["slug"]],
+            services=services.get(cat["slug"]),
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
