@@ -553,10 +553,10 @@
     "reviews": {
      "airrobo:10000003": 424,
      "tamba:10005738": 386,
-     "tokyopt:10000012": 989,
-     "animestore:10000898": 706,
+     "tokyopt:10000012": 990,
+     "animestore:10000898": 707,
      "meijo:10000000": 1086,
-     "milicute-himawari:10000017": 9502,
+     "milicute-himawari:10000017": 9504,
      "asukapainting:10000028": 1247,
      "importshopaqua:10000488": 4120,
      "goodcarsstyle:10000948": 612,
@@ -581,10 +581,10 @@
      "hitidear:10000192": 1216,
      "katushop:10000129": 1155,
      "nexmoov:10000071": 552,
-     "hagoogi:10000255": 582,
+     "hagoogi:10000255": 583,
      "mpowjapan:10000823": 3411,
-     "itsube-souken:10000266": 2431,
-     "kukuya:10000147": 1362,
+     "itsube-souken:10000266": 2432,
+     "kukuya:10000147": 1363,
      "migaber:10000081": 928,
      "lifejoy-shop:10000093": 1004,
      "katariyashop:10000441": 1826
@@ -628,10 +628,10 @@
      "meisei:10000138": 1000
     },
     "reviews": {
-     "dasimon:10000020": 1451,
+     "dasimon:10000020": 1452,
      "zian:10000038": 3639,
      "felice1009:10000015": 499,
-     "aideall:10000056": 501,
+     "aideall:10000056": 499,
      "tabtab:10003266": 28289,
      "zian:10000097": 2143,
      "meisei:10000142": 1701,
@@ -686,7 +686,7 @@
      "gaoye:10000000": 1161,
      "snailax-shop:10000076": 756,
      "lifeonproducts:10000359": 407,
-     "stargenius:10000061": 323,
+     "stargenius:10000061": 324,
      "hitidear:10000195": 347,
      "roomy:10016455": 709,
      "mikirona:10000063": 1202,
@@ -702,11 +702,11 @@
      "tiger-online:10003897": 4980,
      "importshopaqua:10010734": 16500,
      "najimihouse:10004363": 4280,
-     "tiger-online:10004174": 5980,
+     "snailax-shop:10000152": 4480,
      "bellevie-harima:10168348": 4158,
      "bruno-official:10000373": 9900,
-     "snailax-shop:10000152": 4480,
-     "roomy:10017792": 8800
+     "roomy:10017792": 8800,
+     "sunshine-store:10000555": 4280
     },
     "reviews": {
      "importshopaqua:10009903": 276,
@@ -714,11 +714,11 @@
      "tiger-online:10003897": 612,
      "importshopaqua:10010734": 418,
      "najimihouse:10004363": 307,
-     "tiger-online:10004174": 287,
+     "snailax-shop:10000152": 304,
      "bellevie-harima:10168348": 788,
      "bruno-official:10000373": 304,
-     "snailax-shop:10000152": 303,
-     "roomy:10017792": 257
+     "roomy:10017792": 257,
+     "sunshine-store:10000555": 458
     }
    },
    "futon-dryer": {
@@ -818,7 +818,7 @@
     },
     "reviews": {
      "twinbird:10000731": 132,
-     "rcmdse:16999046": 285,
+     "rcmdse:16999046": 286,
      "yamazenkaden:10002642": 79,
      "comfee-kitchen:10000004": 231,
      "yamazenkaden:10003579": 112,
@@ -844,7 +844,7 @@
      "e-kurashi:10037457": 29800
     },
     "reviews": {
-     "jimo:10000215": 170,
+     "jimo:10000215": 171,
      "a-price:10994417": 105,
      "kadenrand:10146284": 294,
      "a-price:11052164": 86,
@@ -981,7 +981,7 @@
     "reviews": {
      "greenspoon:10000119": 215,
      "polar-star:10000018": 318,
-     "watami-direct:10000064": 144,
+     "watami-direct:10000064": 145,
      "polar-star:10000017": 513,
      "nichireifoods:10000071": 153,
      "greenspoon:10000118": 201,
@@ -1045,25 +1045,25 @@
      "eu-oukoku:10000719": 1620,
      "eu-oukoku:10000558": 2650,
      "mikan2grazie:10000056": 3888,
-     "kuniyasu:10000021": 6580,
      "wwff:10000021": 1780,
      "muchicorofarm:10000009": 1880,
      "tsukiji-chokusoubin:10001766": 6600,
      "auc-kurashi-kaientai:10004116": 1980,
      "bundara:10002042": 1940,
-     "sanchokudayori:10004117": 3300
+     "sanchokudayori:10004117": 3300,
+     "kumamoto-food:10002669": 1444
     },
     "reviews": {
      "eu-oukoku:10000719": 3905,
      "eu-oukoku:10000558": 721,
      "mikan2grazie:10000056": 420,
-     "kuniyasu:10000021": 385,
      "wwff:10000021": 393,
      "muchicorofarm:10000009": 352,
      "tsukiji-chokusoubin:10001766": 2331,
      "auc-kurashi-kaientai:10004116": 488,
      "bundara:10002042": 673,
-     "sanchokudayori:10004117": 701
+     "sanchokudayori:10004117": 701,
+     "kumamoto-food:10002669": 16534
     }
    }
   }
