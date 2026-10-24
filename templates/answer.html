@@ -30,6 +30,7 @@
     <tbody>{% for row in sec.table.rows %}<tr>{% for c in row %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody>
   </table></div>
   {% endif %}
+  {% for para in sec.after or [] %}<p>{{ para }}</p>{% endfor %}
   {% endfor %}
   {% if q.note %}<p class="method">{{ q.note }}</p>{% endif %}
 {% include "_picks.html" %}
