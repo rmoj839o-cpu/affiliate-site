@@ -938,18 +938,30 @@
     }
    },
    "air-purifier": {
-    "top": "blueair:10000230",
+    "top": "ryohinseikatsukan:10000103",
     "prices": {
-     "blueair:10000230": 17050,
+     "ryohinseikatsukan:10000103": 12980,
+     "blueair:10000206": 27500,
+     "ryohinseikatsukan:10000113": 12580,
+     "duux-japan:10000071": 29800,
+     "kosbeauty:10000159": 10880,
+     "forjoyhome:10000304": 6180,
+     "u-denki:10012361": 14800,
+     "forjoyhome:10000315": 6180,
      "fithome:10000003": 6180,
-     "u-denki:10012725": 11800,
-     "u-denki:10012991": 13800
+     "u-denki:10012725": 11800
     },
     "reviews": {
-     "blueair:10000230": 265,
+     "ryohinseikatsukan:10000103": 937,
+     "blueair:10000206": 1621,
+     "ryohinseikatsukan:10000113": 1589,
+     "duux-japan:10000071": 65,
+     "kosbeauty:10000159": 95,
+     "forjoyhome:10000304": 1137,
+     "u-denki:10012361": 31,
+     "forjoyhome:10000315": 221,
      "fithome:10000003": 47,
-     "u-denki:10012725": 134,
-     "u-denki:10012991": 43
+     "u-denki:10012725": 134
     }
    },
    "osechi-for-one": {
