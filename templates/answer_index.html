@@ -1,13 +1,17 @@
 {% extends "base.html" %}
-{% block title %}家電の豆知識 | {{ site.name }}{% endblock %}
-{% block description %}電気代の目安や選ぶサイズ、安全な使い方など、ひとり暮らしの家電の豆知識をまとめています。{% endblock %}
+{% block title %}暮らしの豆知識 | {{ site.name }}{% endblock %}
+{% block description %}家電の電気代や選ぶサイズ、安全な使い方、季節の食べ物の選び方など、ひとり暮らしに役立つ豆知識をまとめています。{% endblock %}
 {% block main %}
 <article>
-  <h1>家電の豆知識</h1>
-  <p class="lead">電気代の目安や選ぶサイズ、安全な使い方など、知っておくと家電選びに役立つ豆知識をまとめています。</p>
-  {% for group in answers|groupby("category") %}
+  <h1>暮らしの豆知識</h1>
+  <p class="lead">家電の電気代や選ぶサイズ、安全な使い方、季節の食べ物の選び方など、知っておくとひとり暮らしに役立つ豆知識をまとめています。</p>
+  {% for label, is_food in [("家電・暮らし", false), ("季節の食べ物", true)] %}
+  {% set qs = answers | selectattr("category", "in", by_slug | dictsort | selectattr("1.group_key", "equalto", "food") | map(attribute="0") | list) | list if is_food else answers | rejectattr("category", "in", by_slug | dictsort | selectattr("1.group_key", "equalto", "food") | map(attribute="0") | list) | list %}
+  {% if qs %}<p class="toc-label">{{ label }}</p>{% endif %}
+  {% for group in qs|groupby("category") %}
   <h2>{{ by_slug[group.grouper].title }}</h2>
   <ul class="news">{% for q in group.list %}<li><a href="{{ base }}/guide/{{ q.slug }}/">{{ q.title }}</a></li>{% endfor %}</ul>
+  {% endfor %}
   {% endfor %}
 {% include "_profile.html" %}
 </article>

@@ -35,7 +35,7 @@
 {% include "_columns.html" %}
 
 {% if answers %}
-<h2>家電の豆知識</h2>
+<h2>暮らしの豆知識</h2>
 <ul class="news">
   {% for q in answers %}<li><a href="{{ base }}/guide/{{ q.slug }}/">{{ q.title }}</a></li>{% endfor %}
 </ul>
