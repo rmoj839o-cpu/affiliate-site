@@ -24,6 +24,7 @@
   {% for sec in q.sections %}
   <h2>{{ sec.h }}</h2>
   {% for para in sec.body %}<p>{{ para }}</p>{% endfor %}
+  {% if sec.list %}<ul>{% for x in sec.list %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
   {% if sec.table %}
   <div class="table-scroll"><table class="qtable{{ " numeric" if sec.table.numeric }}">
     <thead><tr>{% for h in sec.table.head %}<th>{{ h }}</th>{% endfor %}</tr></thead>
