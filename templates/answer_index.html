@@ -10,7 +10,7 @@
   {% if qs %}<p class="toc-label">{{ label }}</p>{% endif %}
   {% for group in qs|groupby("category") %}
   <h2>{{ by_slug[group.grouper].title }}</h2>
-  <ul class="news">{% for q in group.list %}<li><a href="{{ base }}/guide/{{ q.slug }}/">{{ q.title }}</a></li>{% endfor %}</ul>
+  <ul class="news">{% for q in group.list %}<li><a href="{{ base }}/guide/{{ q.slug }}/"><strong>{{ q.title }}</strong><span class="q-desc">{{ q.description }}</span></a></li>{% endfor %}</ul>
   {% endfor %}
   {% endfor %}
 {% include "_profile.html" %}
