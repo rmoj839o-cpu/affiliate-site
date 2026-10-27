@@ -117,7 +117,8 @@ summary { cursor: pointer; font-weight: 700; }
 .service p { margin: 0 0 6px; font-size: 15px; }
 .service ul { margin: 0 0 6px; padding-left: 1.2em; font-size: 14px; }
 .service-pr { position: absolute; top: 10px; right: 12px; font-size: 11px !important; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 0 6px; }
-.service-ad { margin-top: 8px; }
+.service-ad { margin-top: 8px; text-align: center; }
+.service-ad img { max-width: 100%; height: auto; }
 /* A8.net のテキスト広告はコードを変えずに、見た目だけボタンにする */
 .service-btn a { display: block; text-align: center; background: var(--accent); color: var(--accent-text); font-weight: 700; text-decoration: none; padding: 12px 10px; border-radius: 999px; line-height: 1.5; }
 .service-btn img { display: block; }

@@ -142,7 +142,7 @@ def main():
     cfg["categories"] = active_categories(cfg["categories"], now)
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape())
-    env.globals.update(site=site, updated=now.strftime("%Y年%m月%d日"), year=now.year,
+    env.globals.update(site=site, updated=now.strftime("%Y年%m月%d日"), year=now.year, today=now.strftime("%Y-%m-%d"),
                        categories=cfg["categories"], demo=args.demo,
                        base="" if args.demo else urlparse(site["url"]).path.rstrip("/"))
 
@@ -264,7 +264,8 @@ def main():
         # 同じジャンルの豆知識を先に並べる
         related = sorted((o for o in answers if o is not q), key=lambda o: o["category"] != q["category"])[:5]
         out.write_text(env.get_template("answer.html").render(
-            q=q, cat=cat, items=cat["items"], related=related, path=f"/guide/{q['slug']}/"), encoding="utf-8")
+            q=q, cat=cat, items=cat["items"], related=related, path=f"/guide/{q['slug']}/",
+            services=services.get(cat["slug"]) if q.get("show_services") else None), encoding="utf-8")
         pages.append(f"/guide/{q['slug']}/")
     if answers:
         (DIST / "guide" / "index.html").write_text(

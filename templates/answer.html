@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}{{ q.title }} | {{ site.name }}{% endblock %}
 {% block description %}{{ q.description }}{% endblock %}
+{% block og_image %}{% if q.image %}{{ site.url }}/static/{{ q.image }}.jpg{% else %}{{ super() }}{% endif %}{% endblock %}
 {% block head %}
 <script type="application/ld+json">
 {
@@ -16,6 +17,7 @@
 <article class="column">
   <p class="crumb"><a href="{{ base }}/guide/">暮らしの豆知識</a> ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a></p>
   <h1>{{ q.title }}</h1>
+  {% if q.image %}<img class="col-hero" src="{{ base }}/static/{{ q.image }}.webp" alt="" width="1200" height="675">{% endif %}
   <p class="updated">公開：{{ q.date|replace("-", "/") }}</p>
   <div class="answer">
     <p class="answer-label">ポイント</p>
@@ -33,6 +35,7 @@
   {% endif %}
   {% for para in sec.after or [] %}<p>{{ para }}</p>{% endfor %}
   {% endfor %}
+{% include "_services.html" %}
   {% if q.note %}<p class="method">{{ q.note }}</p>{% endif %}
 {% include "_picks.html" %}
   {% if related %}
