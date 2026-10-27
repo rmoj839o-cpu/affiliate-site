@@ -30,10 +30,12 @@ valuecommerce_pid = "892729383"   # 同 pid
 # bands: この金額以下の価格帯別ページを作る（5商品以上集まったときだけ）
 # months: この月だけ表示する（季節もの）。省略すると一年中 / {new_year}: 次に迎える正月の年（おせち用）
 # group: "food" は季節の特集（食べ物）、"outdoor" はアウトドアとして家電と分けて表示 / min_reviews: ランキングに載せる最低レビュー数（省略時は build の値）
+# power: [下限, 上限] を書くと、商品情報から消費電力（W）を読み取って電気代の目安を出す（範囲外の数字は無視）
 # image: ページ上部に出すイラスト（static/season/<image>.webp と .jpg）
 # must: 商品名にどれか1つは入っていないといけない言葉（関係ない商品の混入を防ぐ） / min_price・max_price: この範囲外の価格は除外
 [[categories]]
 slug = "desk-humidifier"
+power = [1, 500]
 bands = [2000, 3000]
 title = "卓上加湿器"
 keyword = "卓上加湿器"
@@ -42,6 +44,7 @@ ng = "中古 フィルター 交換用 部品 業務用 ふるさと納税"
 
 [[categories]]
 slug = "electric-blanket"
+power = [20, 200]
 bands = [5000, 8000]
 title = "電気毛布"
 keyword = "電気毛布"
@@ -77,6 +80,7 @@ ng = "ふるさと納税 中古 内釜 交換用 部品 パッキン 5合 5.5合
 
 [[categories]]
 slug = "small-ceramic-heater"
+power = [200, 1500]
 bands = [3000, 5000]
 title = "小型セラミックヒーター"
 keyword = "セラミックヒーター 小型"
@@ -95,6 +99,7 @@ ng = "中古 交換用 部品 パッキン フタのみ ふるさと納税 ガ�
 
 [[categories]]
 slug = "futon-dryer"
+power = [200, 1000]
 bands = [10000]
 title = "布団乾燥機"
 keyword = "布団乾燥機"
@@ -155,6 +160,7 @@ ng = "中古 布団クリーナー 交換用 互換 対応品 替えブラシ �
 
 [[categories]]
 slug = "circulator"
+power = [5, 100]
 bands = [3000, 5000]
 title = "サーキュレーター（静音・小型）"
 keyword = "サーキュレーター 静音"
@@ -175,6 +181,7 @@ ng = "中古 直火 ガス火 IH プレートのみ オプション 交換用 �
 
 [[categories]]
 slug = "air-purifier"
+power = [5, 200]
 bands = [10000, 20000]
 title = "一人暮らし向け空気清浄機"
 keyword = "空気清浄機 一人暮らし"

@@ -72,6 +72,10 @@ mark.tag { font-size: 11px; margin-right: 6px; white-space: nowrap; }
 .price { margin: 0; font-size: 22px; font-weight: 800; line-height: 1.4; }
 .price small { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
 .meta { font-weight: 700; margin: 0 0 6px; }
+.cost { margin: 0 0 4px; font-size: 13px; font-weight: 700; }
+.cost small { font-weight: 400; color: var(--muted); }
+.hist { margin: 0 0 6px; font-size: 12px; color: var(--muted); background: var(--soft); border-radius: 6px; padding: 4px 8px; line-height: 1.6; }
+.hist b { color: var(--text); }
 .item-name { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.6; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 .pc { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 14px; }
 .pc ul { margin: 4px 0; padding-left: 1.2em; }

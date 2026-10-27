@@ -15,7 +15,7 @@ from urllib.parse import urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from . import links, rakuten, rank, social, writer
+from . import links, power, prices, rakuten, rank, social, writer
 from .writer import JST
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -55,16 +55,19 @@ def mark_points(items):
             item["point"] = label
 
 
-def prepare(items, cfg):
+def prepare(items, cfg, category=None, price_db=None):
     if items:
         mark_points(items)
+    if category:
+        power.annotate(items, category)
     for i in items:
         i["links"] = links.store_links(i, cfg.get("affiliate", {}))
         i["short_name"] = links.search_query(i["name"], max_words=5)
+        i["price_hist"] = prices.summary(price_db, i) if price_db is not None else None
     return items
 
 
-def build_subpages(cat, pool, cfg, demo):
+def build_subpages(cat, pool, cfg, demo, price_db=None):
     """価格帯別（〇円以下）と、レビューの多い定番だけを集めたページを作る。"""
     bcfg = cfg["build"]
     min_reviews = cat.get("min_reviews", bcfg["min_review_count"])
@@ -81,7 +84,7 @@ def build_subpages(cat, pool, cfg, demo):
             continue
         lo, hi = min(i["price"] for i in ranked), max(i["price"] for i in ranked)
         subpages.append({
-            "slug": f"under-{band}", "title": f"{band:,}円以下の{cat['title']}", "items": prepare(ranked, cfg),
+            "slug": f"under-{band}", "title": f"{band:,}円以下の{cat['title']}", "items": prepare(ranked, cfg, cat, price_db),
             "description": f"{band:,}円以下で買える{cat['title']}を、楽天市場のレビュー件数と評価で比較したランキングです。",
             "intro": (f"楽天市場で販売されている{band:,}円以下の{cat['title']}から、レビューの多い人気商品を、"
                       f"評価と件数のバランスでランキングにしました。今回の{len(ranked)}商品の価格は"
@@ -92,7 +95,7 @@ def build_subpages(cat, pool, cfg, demo):
     if len(ranked) >= MIN_SUBPAGE_ITEMS:
         subpages.append({
             "slug": "popular", "title": f"レビュー{POPULAR_REVIEWS:,}件以上の定番{cat['title']}",
-            "items": prepare(ranked, cfg),
+            "items": prepare(ranked, cfg, cat, price_db),
             "description": f"楽天市場でレビューが{POPULAR_REVIEWS:,}件以上ついている定番の{cat['title']}だけを集めたランキングです。",
             "intro": (f"楽天市場の{cat['title']}のうち、レビューが{POPULAR_REVIEWS:,}件以上ついている、"
                       "たくさんの人に選ばれてきた定番商品だけを集めてランキングにしました。"
@@ -159,6 +162,10 @@ def main():
     columns = sorted((json.loads(f.read_text(encoding="utf-8")) for f in (ROOT / "columns").glob("*.json")),
                      key=lambda c: c.get("date", ""), reverse=True)
     history = {} if args.demo else social.load_history()
+    # 値段の記録。今日の値段を先に足してから、記録日数・最安値を計算する
+    price_path = ROOT / "data" / "prices.json"
+    price_db = {} if args.demo else prices.load(price_path)
+    today = now.strftime("%Y-%m-%d")
     pages = []
     built = []
     for cat in cfg["categories"]:
@@ -176,12 +183,14 @@ def main():
         if not ranked:
             print("  ! 条件を満たす商品がありません")
             continue
-        prepare(ranked, cfg)
+        if not args.demo:
+            prices.record(price_db, pool, today)  # 条件別ページの商品も含めて記録する
+        prepare(ranked, cfg, cat, price_db)
         content = writer.write(cat, ranked, refresh_days=bcfg["ai_refresh_days"], demo=args.demo)
         notes = {c["code"]: c for c in content["items"]}
         hl = rank.highlights(ranked, history.get(cat["slug"], {}))
 
-        subpages = build_subpages(cat, pool, cfg, args.demo)
+        subpages = build_subpages(cat, pool, cfg, args.demo, price_db)
         out = DIST / cat["slug"] / "index.html"
         out.parent.mkdir(parents=True)
         out.write_text(env.get_template("category.html").render(
@@ -214,6 +223,14 @@ def main():
             json.dumps({"date": now.strftime("%Y-%m-%d"), "ranking": snapshot,
                         "subpages": {c["slug"]: c["subpages_summary"] for c in built}}, ensure_ascii=False, indent=1),
             encoding="utf-8")
+
+    if not args.demo:
+        prices.prune(price_db, today)
+        prices.save(price_path, price_db)
+        # 消費電力をどれだけ読み取れたか（読み取りの精度を後から確認するための記録）
+        (ROOT / "data" / "power.json").write_text(json.dumps(
+            {c["slug"]: [[i["rank"], i.get("watts"), i["name"][:60]] for i in c["items"]] for c in built if c.get("power")},
+            ensure_ascii=False, indent=1), encoding="utf-8")
 
     if not built:
         # 全カテゴリ失敗（APIキー未設定など）のときは、空のサイトで上書き公開しないよう止める

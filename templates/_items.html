@@ -8,6 +8,8 @@
         {% if i.point %}<p class="point"><mark>{{ i.point }}</mark></p>{% endif %}
         <p class="price">{{ "{:,}".format(i.price) }}円<small>（税込・楽天市場）</small></p>
         <p class="meta">★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）</p>
+        {% if i.yen_per_hour %}<p class="cost">電気代 1時間 約{{ i.yen_per_hour }}円<small>（消費電力 {{ "{:,}".format(i.watts) }}Wの場合）</small></p>{% endif %}
+        {% if i.price_hist %}<p class="hist"><b>{{ i.price_hist.status }}</b><br>{{ i.price_hist.since }}から{{ i.price_hist.days }}日分の記録で最安 {{ "{:,}".format(i.price_hist.low) }}円（{{ i.price_hist.low_day }}）</p>{% endif %}
         <p class="item-name">{{ i.name }}<br>{{ i.shop }}</p>
       </div>
     </div>
