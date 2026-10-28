@@ -580,9 +580,9 @@
     "reviews": {
      "airrobo:10000003": 424,
      "tamba:10005738": 387,
-     "tokyopt:10000012": 1001,
-     "animestore:10000898": 707,
-     "meijo:10000000": 1087,
+     "tokyopt:10000012": 1005,
+     "animestore:10000898": 708,
+     "meijo:10000000": 1089,
      "milicute-himawari:10000017": 9525,
      "asukapainting:10000028": 1247,
      "importshopaqua:10000488": 4120,
@@ -608,10 +608,10 @@
      "hitidear:10000192": 1218,
      "nexmoov:10000071": 554,
      "katushop:10000129": 1164,
-     "hagoogi:10000255": 612,
-     "mpowjapan:10000823": 3418,
+     "hagoogi:10000255": 614,
+     "mpowjapan:10000823": 3419,
      "itsube-souken:10000266": 2435,
-     "kukuya:10000147": 1372,
+     "kukuya:10000147": 1374,
      "migaber:10000081": 932,
      "lifejoy-shop:10000093": 1005,
      "katariyashop:10000441": 1828
@@ -655,16 +655,16 @@
      "meisei:10000138": 1000
     },
     "reviews": {
-     "dasimon:10000020": 1464,
+     "dasimon:10000020": 1466,
      "zian:10000038": 3639,
-     "felice1009:10000015": 514,
+     "felice1009:10000015": 516,
      "aideall:10000056": 503,
      "tabtab:10003266": 28294,
      "zian:10000097": 2144,
      "meisei:10000142": 1704,
      "hanaro:10001563": 1625,
      "tabletpckoubou:10002193": 482,
-     "meisei:10000138": 4844
+     "meisei:10000138": 4845
     }
    },
    "small-rice-cooker": {
@@ -683,7 +683,7 @@
     },
     "reviews": {
      "roomy:10014664": 847,
-     "rcmdki:10415494": 224,
+     "rcmdki:10415494": 225,
      "emedama:10968015": 123,
      "tiger-online:10004928": 40,
      "kadenrand:10151835": 48,
@@ -711,8 +711,8 @@
     "reviews": {
      "msut:10001784": 1143,
      "gaoye:10000000": 1161,
-     "snailax-shop:10000076": 756,
-     "lifeonproducts:10000359": 409,
+     "snailax-shop:10000076": 757,
+     "lifeonproducts:10000359": 410,
      "stargenius:10000061": 329,
      "hitidear:10000195": 347,
      "roomy:10016455": 709,
@@ -738,7 +738,7 @@
     "reviews": {
      "importshopaqua:10009903": 276,
      "roomy:10011099": 407,
-     "tiger-online:10003897": 620,
+     "tiger-online:10003897": 622,
      "importshopaqua:10010734": 418,
      "najimihouse:10004363": 307,
      "snailax-shop:10000152": 307,
@@ -770,9 +770,9 @@
      "insair:10003203": 493,
      "k-home:10066477": 431,
      "k-home:10059750": 329,
-     "moosoo:10000614": 2260,
-     "irisplaza-r:10149298": 261,
-     "tokyomicro:10000001": 396
+     "moosoo:10000614": 2261,
+     "irisplaza-r:10149298": 262,
+     "tokyomicro:10000001": 397
     }
    },
    "kerosene-fan-heater": {
@@ -781,7 +781,7 @@
      "e-kurashi:10004062": 21800,
      "townland-neo:10001404": 27880,
      "e-kurashi:10047652": 26800,
-     "townland-c:10004078": 18167,
+     "townland-c:10004078": 18160,
      "townland:10007298": 42440,
      "nafco:10367786": 14800,
      "e-sumail-style:10004295": 28680,
@@ -798,7 +798,7 @@
      "nafco:10367786": 49,
      "e-sumail-style:10004295": 155,
      "r-kojima:11653941": 33,
-     "dainichi-webshop:10001595": 129,
+     "dainichi-webshop:10001595": 130,
      "e-sumail-style:10004294": 89
     }
    },
@@ -835,24 +835,24 @@
      "twinbird:10000731": 16800,
      "rcmdse:16999046": 7799,
      "yamazenkaden:10002642": 9980,
+     "comfee-kitchen:10000004": 8480,
      "yamazenkaden:10003579": 12800,
      "twinbird:10000021": 9980,
      "e-kurashi:10043075": 11800,
      "e-kitchen:10007417": 9980,
      "kadenrand:10114138": 15800,
-     "a-price:10712948": 14980,
      "k-kitchen:10000015": 9980
     },
     "reviews": {
      "twinbird:10000731": 132,
-     "rcmdse:16999046": 293,
+     "rcmdse:16999046": 294,
      "yamazenkaden:10002642": 79,
+     "comfee-kitchen:10000004": 231,
      "yamazenkaden:10003579": 113,
      "twinbird:10000021": 375,
      "e-kurashi:10043075": 98,
      "e-kitchen:10007417": 575,
      "kadenrand:10114138": 117,
-     "a-price:10712948": 75,
      "k-kitchen:10000015": 84
     }
    },
@@ -864,7 +864,7 @@
      "kadenrand:10146284": 18800,
      "a-price:11052164": 29980,
      "kadenrand:10132972": 34800,
-     "comfee-kitchen:10000217": 24800,
+     "comfee-kitchen:10000217": 23800,
      "eleking:10041343": 32800,
      "e-akari:10086438": 34800,
      "enetroom:10191828": 45800,
@@ -925,9 +925,9 @@
      "eleking:10029357": 2260
     },
     "reviews": {
-     "quads:10000003": 879,
+     "quads:10000003": 880,
      "vornado:10000000": 215,
-     "quads:10000068": 801,
+     "quads:10000068": 802,
      "matsucame:10072396": 222,
      "duux-japan:10000073": 125,
      "air-rhizome:10014590": 1184,
@@ -1027,22 +1027,22 @@
      "polar-star:10000017": 4200,
      "nichireifoods:10000071": 7760,
      "greenspoon:10000118": 13080,
-     "magokoro-careshoku:10000117": 3780,
      "nichireifoods:10000009": 8930,
      "belluna-gourmet:10025638": 14970,
-     "watami-direct:10000051": 5380
+     "watami-direct:10000051": 5380,
+     "belluna-gourmet:10025256": 6990
     },
     "reviews": {
      "greenspoon:10000119": 221,
-     "polar-star:10000018": 319,
+     "polar-star:10000018": 320,
      "watami-direct:10000064": 145,
      "polar-star:10000017": 513,
      "nichireifoods:10000071": 154,
      "greenspoon:10000118": 201,
-     "magokoro-careshoku:10000117": 108,
      "nichireifoods:10000009": 441,
      "belluna-gourmet:10025638": 148,
-     "watami-direct:10000051": 257
+     "watami-direct:10000051": 257,
+     "belluna-gourmet:10025256": 113
     }
    },
    "hitori-nabe": {
@@ -1117,7 +1117,7 @@
      "bundara:10002042": 673,
      "tsukiji-chokusoubin:10001817": 431,
      "sanchokudayori:10004117": 701,
-     "kumamoto-food:10002669": 16592
+     "kumamoto-food:10002669": 16593
     }
    }
   }
