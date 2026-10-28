@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-label="サーキュレーターあり">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8c9b8"/><stop offset="1" stop-color="#f9dcc8"/></linearGradient>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+<marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c6fb7"/></marker>
+</defs>
+<rect x="0" y="0" width="360" height="250" rx="12" fill="#fffdf8"/>
+<text x="180" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">サーキュレーターあり</text>
+<rect x="20" y="36" width="320" height="190" fill="url(#g)" stroke="#5f6670" stroke-width="3"/>
+<line x1="20" y1="226" x2="340" y2="226" stroke="#5f6670" stroke-width="5"/>
+<g font-family="Hiragino Sans, Noto Sans JP, sans-serif"><rect x="34" y="186" width="44" height="40" rx="6" fill="#ffffff" stroke="#5f6670" stroke-width="2"/><rect x="40" y="206" width="32" height="12" rx="2" fill="#f0b27a"/><text x="56" y="200" text-anchor="middle" font-size="10" fill="#1f2328">暖房</text><g transform="translate(292,226)"><rect x="-14" y="-10" width="28" height="10" rx="3" fill="#5f6670"/><rect x="-3" y="-30" width="6" height="20" fill="#5f6670"/><g transform="translate(0,-40) rotate(-20)"><circle r="14" fill="#ffffff" stroke="#5f6670" stroke-width="3"/><circle r="4" fill="#5f6670"/></g></g><text x="270" y="184" text-anchor="end" font-size="10" fill="#1f2328">サーキュ</text><text x="270" y="197" text-anchor="end" font-size="10" fill="#1f2328">レーター</text>
+<path d="M286 168 C 280 130, 276 90, 270 56" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#a)"/>
+<path d="M262 50 C 200 44, 120 44, 46 54" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#a)"/>
+<path d="M34 64 C 30 100, 30 140, 34 172" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#a)"/>
+<path d="M96 214 C 150 216, 200 216, 250 214" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#a)"/>
+<text x="166" y="98" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">天井に向けて風を送ると</text>
+<text x="166" y="118" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">暖かい空気が部屋をめぐる</text>
+<text x="170" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#b9551f">足元まで暖まる</text>
+</g>
+</svg>

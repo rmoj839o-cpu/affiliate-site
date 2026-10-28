@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-label="サーキュレーターなし">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f8c9b8"/><stop offset="1" stop-color="#cfe3f7"/></linearGradient>
+<marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0392b"/></marker>
+<marker id="b" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2c6fb7"/></marker>
+</defs>
+<rect x="0" y="0" width="360" height="250" rx="12" fill="#fffdf8"/>
+<text x="180" y="24" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">サーキュレーターなし</text>
+<rect x="20" y="36" width="320" height="190" fill="url(#g)" stroke="#5f6670" stroke-width="3"/>
+<line x1="20" y1="226" x2="340" y2="226" stroke="#5f6670" stroke-width="5"/>
+<g font-family="Hiragino Sans, Noto Sans JP, sans-serif"><rect x="34" y="186" width="44" height="40" rx="6" fill="#ffffff" stroke="#5f6670" stroke-width="2"/><rect x="40" y="206" width="32" height="12" rx="2" fill="#f0b27a"/><text x="56" y="200" text-anchor="middle" font-size="10" fill="#1f2328">暖房</text>
+<path d="M56 182 C 56 150, 60 110, 70 64" fill="none" stroke="#c0392b" stroke-width="3" marker-end="url(#a)"/>
+<path d="M78 58 C 140 48, 230 48, 320 58" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#a)"/>
+<text x="196" y="82" text-anchor="middle" font-size="13" font-weight="700" fill="#c0392b">暖かい空気が天井にたまる</text>
+<path d="M310 214 C 250 214, 180 214, 110 214" fill="none" stroke="#2c6fb7" stroke-width="3" marker-end="url(#b)"/>
+<text x="210" y="202" text-anchor="middle" font-size="13" font-weight="700" fill="#2c6fb7">足元は冷たいまま</text>
+</g>
+</svg>
