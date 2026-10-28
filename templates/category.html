@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{ cat.title }}おすすめランキング{{ items|length }}選｜レビュー評価と件数で比較【{{ year }}年】| {{ site.name }}{% endblock %}
-{% block description %}楽天市場で評価の高い{{ cat.title }}を、レビュー件数と評価で比較。選び方のポイントや向いている人も解説します（{{ updated }}更新）。{% endblock %}
+{% set compare = "口コミ評価と電気代" if cat.power else "口コミ評価と件数" %}
+{% block title %}{{ cat.title }}おすすめ{{ items|length }}選｜{{ compare }}で比較【{{ year }}年】| {{ site.name }}{% endblock %}
+{% block description %}楽天市場の口コミ（レビュー）の評価と件数で選んだ{{ cat.title }}のおすすめ{{ items|length }}選。{% if cat.power %}1時間あたりの電気代の目安つき。{% endif %}ランキングは毎日更新しています（{{ updated }}更新）。選び方のポイントも解説します。{% endblock %}
 {% block og_image %}{% if cat.image %}{{ site.url }}/static/season/{{ cat.image }}.jpg{% else %}{{ super() }}{% endif %}{% endblock %}
 {% block head %}
 <script type="application/ld+json">
@@ -16,7 +17,7 @@
 {% endblock %}
 {% block main %}
 <article>
-  <h1>{{ cat.title }}おすすめランキング{{ items|length }}選｜レビュー評価と件数で比較</h1>
+  <h1>{{ cat.title }}おすすめ{{ items|length }}選｜{{ compare }}で比較</h1>
   <p class="updated">最終更新：{{ updated }}</p>
   {% if cat.image %}<img class="col-hero" src="{{ base }}/static/season/{{ cat.image }}.webp" alt="" width="1200" height="675">{% endif %}
   <p class="lead">{{ content.intro }}</p>
