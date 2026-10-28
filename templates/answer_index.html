@@ -5,8 +5,14 @@
 <article>
   <h1>暮らしの豆知識</h1>
   <p class="lead">家電の電気代や選ぶサイズ、安全な使い方、季節の食べ物の選び方など、知っておくとひとり暮らしに役立つ豆知識をまとめています。</p>
+  {% set topics = answers | rejectattr("category") | list %}
+  {% if topics %}
+  <p class="toc-label">防災・備え</p>
+  <ul class="news">{% for q in topics %}<li><a href="{{ base }}/guide/{{ q.slug }}/"><strong>{{ q.title }}</strong><span class="q-desc">{{ q.description }}</span></a></li>{% endfor %}</ul>
+  {% endif %}
+  {% set ranked_answers = answers | selectattr("category") | list %}
   {% for label, is_food in [("家電・暮らし", false), ("季節の食べ物", true)] %}
-  {% set qs = answers | selectattr("category", "in", by_slug | dictsort | selectattr("1.group_key", "equalto", "food") | map(attribute="0") | list) | list if is_food else answers | rejectattr("category", "in", by_slug | dictsort | selectattr("1.group_key", "equalto", "food") | map(attribute="0") | list) | list %}
+  {% set qs = ranked_answers | selectattr("category", "in", by_slug | dictsort | selectattr("1.group_key", "equalto", "food") | map(attribute="0") | list) | list if is_food else ranked_answers | rejectattr("category", "in", by_slug | dictsort | selectattr("1.group_key", "equalto", "food") | map(attribute="0") | list) | list %}
   {% if qs %}<p class="toc-label">{{ label }}</p>{% endif %}
   {% for group in qs|groupby("category") %}
   <h2>{{ by_slug[group.grouper].title }}</h2>

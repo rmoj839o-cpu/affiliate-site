@@ -22,10 +22,10 @@
 <link rel="stylesheet" href="{{ base }}/static/style.css">
 {% block head %}{% endblock %}
 <!-- バリューコマース LinkSwitch（提携先へのリンクを自動でアフィリエイトリンクに変換） -->
-<script type="text/javascript" language="javascript">var vc_pid = "892729383";</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>
+{% if not no_ads %}<script type="text/javascript" language="javascript">var vc_pid = "892729383";</script><script type="text/javascript" src="//aml.valuecommerce.com/vcdal.js" async></script>{% endif %}
 </head>
 <body>
-<p class="pr">※本ページはプロモーション（アフィリエイト広告）を含みます。</p>
+{% if not no_ads %}<p class="pr">※本ページはプロモーション（アフィリエイト広告）を含みます。</p>{% endif %}
 {% if demo %}<p class="demo">デモ表示：架空のサンプルデータです</p>{% endif %}
 <header class="site-header">
   <a class="logo" href="{{ base }}/"><img src="{{ base }}/static/icon.svg" alt="" width="26" height="26">{{ site.name }}</a>

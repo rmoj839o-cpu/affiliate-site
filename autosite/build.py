@@ -238,7 +238,8 @@ def main():
     # 季節外れなどでカテゴリが出ていないコラムは、リンク切れにならないよう載せない
     by_slug = {c["slug"]: c for c in built}
     columns = [c for c in columns if c["category"] in by_slug]
-    answers = [q for q in answers if q["category"] in by_slug]
+    # category が空のページは、ランキングや広告とは結びつけない読み物（防災など）
+    answers = [q for q in answers if not q["category"] or q["category"] in by_slug]
 
     # トップページは毎日ちがう特集カテゴリを出して、値下がり・急上昇もまとめる
     featured = built[now.toordinal() % len(built)]
@@ -275,14 +276,15 @@ def main():
         pages.append("/column/")
 
     for q in answers:
-        cat = by_slug[q["category"]]
+        cat = by_slug.get(q["category"])
         out = DIST / "guide" / q["slug"] / "index.html"
         out.parent.mkdir(parents=True)
         # 同じジャンルの豆知識を先に並べる
         related = sorted((o for o in answers if o is not q), key=lambda o: o["category"] != q["category"])[:5]
         out.write_text(env.get_template("answer.html").render(
-            q=q, cat=cat, items=cat["items"], related=related, path=f"/guide/{q['slug']}/",
-            services=services.get(cat["slug"]) if q.get("show_services") else None), encoding="utf-8")
+            q=q, cat=cat, items=cat["items"] if cat else [], related=related, path=f"/guide/{q['slug']}/",
+            services=services.get(cat["slug"]) if cat and q.get("show_services") else None,
+            no_ads=not cat), encoding="utf-8")
         pages.append(f"/guide/{q['slug']}/")
     if answers:
         (DIST / "guide" / "index.html").write_text(
