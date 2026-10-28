@@ -1,0 +1,13 @@
+  <!-- ページを開いてすぐ、どんな商品が人気かが写真で分かるように -->
+  <section class="top3">
+    <p class="top3-label">今日のTOP3<span>楽天市場の口コミ評価と件数から毎日更新</span></p>
+    <div class="feature-items">
+      {% for i in items[:3] %}
+      <a class="feature-item" href="#rank{{ i.rank }}">
+        <span class="thumb">{% if i.image %}<img src="{{ i.image }}" alt="" width="160" height="160">{% endif %}<span class="badge">{{ i.rank }}位</span></span>
+        <span class="fi-name">{{ i.short_name }}</span>
+        <span class="fi-meta">{{ "{:,}".format(i.price) }}円・★{{ "%.2f"|format(i.review_avg) }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
