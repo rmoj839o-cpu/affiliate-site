@@ -99,6 +99,8 @@ mark.tag { font-size: 11px; margin-right: 6px; white-space: nowrap; }
 details { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; margin: 8px 0; }
 summary { cursor: pointer; font-weight: 700; }
 .method { font-size: 13px; color: var(--muted); margin-top: 32px; }
+.budget-links { display: flex; flex-wrap: wrap; gap: 6px 8px; align-items: center; font-size: 13px; margin: -6px 0 14px; }
+.budget-links a { text-decoration: none; font-weight: 700; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); }
 .top3 { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px; margin: 12px 0 16px; }
 .top3-label { margin: 0 0 10px; font-weight: 800; font-size: 15px; color: var(--accent); }
 .top3-label span { display: block; font-size: 11px; font-weight: 400; color: var(--muted); }

@@ -21,6 +21,8 @@
 {% with byline_note = "ランキングは毎日更新（最終更新：" ~ updated ~ "）" %}{% include "_byline.html" %}{% endwith %}
   {% if cat.image %}<img class="col-hero" src="{{ base }}/static/{{ cat.image }}.webp" alt="" width="1200" height="675">{% endif %}
 {% include "_top3.html" %}
+  {% set budget_pages = subpages | rejectattr("slug", "equalto", "popular") | list if subpages else [] %}
+  {% if budget_pages %}<p class="budget-links">予算で選ぶ：{% for sp in budget_pages %}<a href="{{ base }}/{{ cat.slug }}/{{ sp.slug }}/">{{ sp.title.split("円")[0] }}円以下</a>{% endfor %}</p>{% endif %}
   <p class="lead">{{ content.intro|mk }}</p>
 {% include "_table.html" %}
 {% include "_basis.html" %}
