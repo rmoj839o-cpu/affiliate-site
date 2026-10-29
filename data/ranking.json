@@ -1575,6 +1575,38 @@
     "review_avg": 4.52,
     "review_count": 123,
     "shop": "イワタニアイコレクト 楽天市場店"
+   },
+   {
+    "rank": 5,
+    "name": "Iwatani 【期間限定キャンペーン】 カセットガスストーブ マイ暖mini＋カセットガスパワーゴールド3本セット CBSTVMINCB2503PGSET 1S ▼741-1544",
+    "price": 10454,
+    "review_avg": 4.5,
+    "review_count": 8,
+    "shop": "プロキュアエース"
+   },
+   {
+    "rank": 6,
+    "name": "Iwatani イワタニ カセットガスストーブ デカ暖 コードレス カセット ガスストーブ 電池不要 電源不要 CB-STV-DKD CBSTVDKD CB-STV-DKD-CO",
+    "price": 14998,
+    "review_avg": 4.33,
+    "review_count": 3,
+    "shop": "TRYX3 2号店"
+   },
+   {
+    "rank": 7,
+    "name": "岩谷 カセットガスストーブ デカ暖 CB-STV-DKD",
+    "price": 14903,
+    "review_avg": 4.0,
+    "review_count": 4,
+    "shop": "Pro Tool Shop"
+   },
+   {
+    "rank": 8,
+    "name": "イワタニ カセットガスストーブ マイ暖 3 - CB-STV-MYD3 カセットボンベ 暖房 電源不要 足元 足元暖房 おしゃれ ポータブルヒーター 岩谷 ガスヒーター キッチン ポータブル 暖房機器 暖房器具 小型 コードレス 電気を使わない カセットストーブ Iwatani マイ暖 まいだん",
+    "price": 14000,
+    "review_avg": 3.75,
+    "review_count": 4,
+    "shop": "悠遊ショップ"
    }
   ],
   "bousai-set": [
@@ -2509,7 +2541,13 @@
    }
   ],
   "kerosene-stove": [],
-  "gas-stove": [],
+  "gas-stove": [
+   {
+    "slug": "under-15000",
+    "title": "15,000円以下のカセットガスストーブ",
+    "count": 6
+   }
+  ],
   "bousai-set": [
    {
     "slug": "under-10000",
