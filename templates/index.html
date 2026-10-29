@@ -64,8 +64,9 @@
 {% set cats = built | selectattr("group_key", "equalto", group) | list %}
 {% if cats %}
 <h2>{{ label }}</h2>
-{% set img = cats | selectattr("image", "defined") | map(attribute="image") | first %}
-{% if img %}<img class="col-hero" src="{{ base }}/static/season/{{ img }}.webp" alt="" width="1200" height="675" loading="lazy">{% endif %}
+{# 季節の特集だけ、見出しの下に季節のイラストを出す #}
+{% set img = cats | selectattr("image", "defined") | map(attribute="image") | list %}{% set img = (img | first) if group == "food" and img else none %}
+{% if img %}<img class="col-hero" src="{{ base }}/static/{{ img }}.webp" alt="" width="1200" height="675" loading="lazy">{% endif %}
 <div class="cards">
 {% for c in cats %}
   <a class="card" href="{{ base }}/{{ c.slug }}/">

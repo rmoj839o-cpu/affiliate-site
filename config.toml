@@ -31,7 +31,7 @@ valuecommerce_pid = "892729383"   # 同 pid
 # months: この月だけ表示する（季節もの）。省略すると一年中 / {new_year}: 次に迎える正月の年（おせち用）
 # group: "food" は季節の特集（食べ物）、"outdoor" はアウトドアとして家電と分けて表示 / min_reviews: ランキングに載せる最低レビュー数（省略時は build の値）
 # power: [下限, 上限] を書くと、商品情報から消費電力（W）を読み取って電気代の目安を出す（範囲外の数字は無視）
-# image: ページ上部に出すイラスト（static/season/<image>.webp と .jpg）
+# image: ページ上部に出すイラスト（static/<image>.webp と .jpg）
 # must: 商品名にどれか1つは入っていないといけない言葉（関係ない商品の混入を防ぐ） / min_price・max_price: この範囲外の価格は除外
 [[categories]]
 slug = "desk-humidifier"
@@ -80,6 +80,7 @@ ng = "ふるさと納税 中古 内釜 交換用 部品 パッキン 5合 5.5合
 
 [[categories]]
 slug = "small-ceramic-heater"
+image = "category/small-ceramic-heater"
 power = [200, 1500]
 bands = [3000, 5000]
 title = "小型セラミックヒーター"
@@ -193,7 +194,7 @@ ng = "中古 交換用 互換 フィルターのみ 部品 ふるさと納税 �
 # ---- 季節の特集（食べ物） ----
 [[categories]]
 slug = "osechi-for-one"
-image = "winter-table"
+image = "season/winter-table"
 months = [9, 10, 11, 12]
 bands = [8000]
 title = "一人用おせち（{new_year}年）"
@@ -215,7 +216,7 @@ ng = "ふるさと納税 容器 空容器 使い捨て ペット 犬用 猫用 �
 
 [[categories]]
 slug = "hitori-nabe"
-image = "winter-table"
+image = "season/winter-table"
 months = [10, 11, 12, 1, 2, 3]
 bands = [3000]
 title = "一人鍋セット"
@@ -226,7 +227,7 @@ ng = "ふるさと納税 土鍋 鍋のみ IH対応 フライパン 片手鍋 卓
 
 [[categories]]
 slug = "toshikoshi-soba"
-image = "winter-table"
+image = "season/winter-table"
 months = [10, 11, 12]
 bands = [2000]
 title = "年越しそば"
@@ -237,7 +238,7 @@ ng = "ふるさと納税 そば猪口 食器 ざる 箸 器 そば打ち 沖縄�
 
 [[categories]]
 slug = "mikan"
-image = "winter-table"
+image = "season/winter-table"
 months = [10, 11, 12, 1, 2]
 bands = [2000, 3000]
 title = "みかん"
