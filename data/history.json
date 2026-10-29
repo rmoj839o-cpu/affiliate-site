@@ -1050,26 +1050,26 @@
     "prices": {
      "liberty-base:10002107": 28930,
      "plywood:10019871": 24970,
-     "i-top-shop:10000834": 67000,
-     "paseco:10000008": 20900,
      "e-kurashi:10009269": 25800,
+     "paseco:10000008": 20900,
      "e-kurashi:10009552": 14800,
      "toyotomi-homeplus:10000017": 30580,
      "a-price:10771925": 41800,
      "minatodenk:10531866": 21320,
-     "importshopaqua:10006011": 36300
+     "importshopaqua:10006011": 36300,
+     "ra-kudenmart:10102034": 22700
     },
     "reviews": {
      "liberty-base:10002107": 49,
      "plywood:10019871": 503,
-     "i-top-shop:10000834": 62,
-     "paseco:10000008": 142,
      "e-kurashi:10009269": 215,
+     "paseco:10000008": 142,
      "e-kurashi:10009552": 300,
      "toyotomi-homeplus:10000017": 64,
      "a-price:10771925": 40,
      "minatodenk:10531866": 39,
-     "importshopaqua:10006011": 153
+     "importshopaqua:10006011": 153,
+     "ra-kudenmart:10102034": 53
     }
    },
    "gas-stove": {
@@ -1077,16 +1077,12 @@
     "prices": {
      "homeshop:10357089": 29800,
      "protoolshop:10228229": 9801,
-     "iwiss:10001722": 6180,
-     "iwiss:10002219": 7680,
      "i-collect:10012239": 33100,
      "i-collect:10011740": 13080
     },
     "reviews": {
      "homeshop:10357089": 32,
      "protoolshop:10228229": 12,
-     "iwiss:10001722": 85,
-     "iwiss:10002219": 20,
      "i-collect:10012239": 20,
      "i-collect:10011740": 123
     }
