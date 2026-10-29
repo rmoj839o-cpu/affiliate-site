@@ -238,7 +238,7 @@ keyword = "カセットガスストーブ"
 must = "カセットガスストーブ ガスストーブ マイ暖 風暖"
 min_price = 5000
 max_price = 40000
-min_reviews = 10
+min_reviews = 3
 ng = "中古 ボンベのみ 交換用 部品 カバー 屋外用 パティオ 連結 ガスステーション ガスユニット ふるさと納税"
 
 [[categories]]
