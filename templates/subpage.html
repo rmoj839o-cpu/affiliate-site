@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}{{ sp.title }}おすすめ{{ items|length }}選｜レビュー評価と件数で比較【{{ year }}年】| {{ site.name }}{% endblock %}
+{% block title %}{{ sp.title }}おすすめ{{ items|length }}選｜口コミ評価で比較【毎日更新】| {{ site.name }}{% endblock %}
 {% block description %}{{ sp.description }}（{{ updated }}更新）{% endblock %}
 {% block main %}
 <article>
   <p class="crumb"><a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a> ＞ {{ sp.title }}</p>
-  <h1>{{ sp.title }}おすすめ{{ items|length }}選｜レビュー評価と件数で比較</h1>
+  <h1>{{ sp.title }}おすすめ{{ items|length }}選｜口コミ評価で比較</h1>
 {% with byline_note = "ランキングは毎日更新（最終更新：" ~ updated ~ "）" %}{% include "_byline.html" %}{% endwith %}
 {% include "_top3.html" %}
   <p class="lead">{{ sp.intro }}</p>

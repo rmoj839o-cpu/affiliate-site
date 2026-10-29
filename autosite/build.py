@@ -87,7 +87,7 @@ def build_subpages(cat, pool, cfg, demo, price_db=None):
         lo, hi = min(i["price"] for i in ranked), max(i["price"] for i in ranked)
         subpages.append({
             "slug": f"under-{band}", "title": f"{band:,}円以下の{cat['title']}", "items": prepare(ranked, cfg, cat, price_db),
-            "description": f"{band:,}円以下で買える{cat['title']}を、楽天市場のレビュー件数と評価で比較したランキングです。",
+            "description": f"{band:,}円以下で買える{cat['title']}のおすすめを、楽天市場の口コミ（レビュー）の評価と件数で比較。ランキングは毎日更新しています。",
             "intro": (f"楽天市場で販売されている{band:,}円以下の{cat['title']}から、レビューの多い人気商品を、"
                       f"評価と件数のバランスでランキングにしました。今回の{len(ranked)}商品の価格は"
                       f"{lo:,}円〜{hi:,}円です。予算を決めてから選びたい人は参考にしてください。"),
