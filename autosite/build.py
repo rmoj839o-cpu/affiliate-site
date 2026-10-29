@@ -123,12 +123,14 @@ def active_categories(categories, now):
 
 
 def mark_text(text):
-    """文章の中の ==ここ== を黄色いマーカーにする（ほかの文字はふつうにエスケープ）。"""
-    return Markup(re.sub(r"==(.+?)==", r'<mark class="mk">\1</mark>', str(escape(text))))
+    """文章の中の ==ここ== を黄色いマーカーに、[文字](/サイト内のパス/) をリンクにする（ほかはふつうにエスケープ）。"""
+    html = re.sub(r"==(.+?)==", r'<mark class="mk">\1</mark>', str(escape(text)))
+    html = re.sub(r"\[(.+?)\]\((/[^)\s]*)\)", r'<a href="\2">\1</a>', html)
+    return Markup(html)
 
 
 def plain(text):
-    return text.replace("==", "")
+    return re.sub(r"\[(.+?)\]\((/[^)\s]*)\)", r"\1", text.replace("==", ""))
 
 
 def filter_items(items, category):

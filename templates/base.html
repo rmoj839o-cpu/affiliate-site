@@ -47,6 +47,7 @@
 </header>
 <main>
 {% block main %}{% endblock %}
+{% if path != "/" %}{% include "_morenav.html" %}{% endif %}
 </main>
 <footer>
   <p><a href="{{ base }}/matome/">一人暮らしの便利家電・グッズまとめ</a> ／ <a href="{{ base }}/column/">管理人のコラム</a> ／ <a href="{{ base }}/guide/">暮らしの豆知識</a> ／ <a href="{{ base }}/about/">運営者情報・広告ポリシー</a></p>

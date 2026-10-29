@@ -12,7 +12,14 @@
 body { margin: 0; background: var(--bg); color: var(--text);
   font: 16px/1.8 "Hiragino Sans", "Noto Sans JP", system-ui, sans-serif; }
 a { color: inherit; }
-main, .site-header, footer { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+main, .site-header, .morenav { margin: 40px 0 0; padding: 16px; background: var(--soft); border-radius: 12px; }
+.morenav-title { margin: 0 0 10px; font-weight: 800; font-size: 16px; }
+.morenav-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 8px; }
+.morenav-links a { display: block; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; text-decoration: none; }
+.morenav-links span { display: block; font-size: 12px; color: var(--muted); }
+.morenav-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.morenav-chips a { text-decoration: none; font-size: 13px; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+footer { max-width: 880px; margin: 0 auto; padding: 0 16px; }
 .profile { background: var(--soft); border-radius: 12px; padding: 14px 16px; margin: 32px 0 0; font-size: 14px; }
 .profile-head { display: flex; gap: 12px; align-items: center; margin-bottom: 8px; }
 .profile-title span { display: block; font-size: 12px; font-weight: 400; color: var(--muted); }
