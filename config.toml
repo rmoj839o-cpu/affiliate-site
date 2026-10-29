@@ -194,6 +194,30 @@ min_price = 5000
 max_price = 120000
 ng = "中古 交換用 互換 フィルターのみ 部品 ふるさと納税 車載 車用 USB 首掛け ネック ポータブル 携帯 レンタル"
 
+# ---- 防災・備え ----
+[[categories]]
+slug = "portable-power"
+bands = [30000, 50000]
+title = "ポータブル電源"
+group = "bousai"
+keyword = "ポータブル電源"
+must = "ポータブル電源"
+min_price = 10000
+max_price = 200000
+ng = "中古 ソーラーパネルのみ ケース 収納 カバー 交換用 部品 ケーブル 延長コード ふるさと納税 レンタル 互換"
+
+[[categories]]
+slug = "emergency-toilet"
+bands = [3000, 5000]
+title = "簡易トイレ（防災用）"
+group = "bousai"
+keyword = "簡易トイレ 防災"
+must = "簡易トイレ 携帯トイレ 非常用トイレ 防災トイレ 災害用トイレ"
+min_price = 500
+max_price = 20000
+min_reviews = 10
+ng = "中古 ペット 犬 猫 介護 ポータブルトイレ 便座 補助便座 おまる 消臭剤のみ ふるさと納税 レンタル"
+
 # ---- 季節の特集（食べ物） ----
 [[categories]]
 slug = "osechi-for-one"
