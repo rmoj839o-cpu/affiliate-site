@@ -218,6 +218,61 @@ max_price = 20000
 min_reviews = 10
 ng = "中古 ペット 犬 猫 介護 ポータブルトイレ 便座 補助便座 おまる 消臭剤のみ ふるさと納税 レンタル"
 
+[[categories]]
+slug = "bousai-set"
+bands = [10000, 20000]
+title = "防災セット（1人用）"
+group = "bousai"
+keyword = "防災セット 1人用"
+must = "防災セット 防災リュック 非常持ち出し 防災グッズセット 避難セット"
+min_price = 3000
+max_price = 50000
+ng = "中古 ペット 犬 猫 リュックのみ 中身なし ふるさと納税 収納袋のみ レンタル"
+
+[[categories]]
+slug = "hijoushoku"
+bands = [3000, 5000]
+title = "非常食セット（長期保存）"
+group = "bousai"
+keyword = "非常食 セット 長期保存"
+must = "非常食 保存食 防災食"
+min_price = 1000
+max_price = 30000
+ng = "中古 ペット 犬 猫 ドッグフード キャットフード ふるさと納税 容器 収納 ボックスのみ"
+
+[[categories]]
+slug = "hozonsui"
+bands = [3000]
+title = "長期保存水"
+group = "bousai"
+keyword = "保存水 長期保存 2L"
+must = "保存水 備蓄水 防災用 長期保存"
+min_price = 500
+max_price = 20000
+ng = "中古 ペット ふるさと納税 タンク 容器 ウォーターサーバー 浄水器 ジャグ ポリタンク"
+
+[[categories]]
+slug = "led-lantern"
+bands = [3000]
+title = "LEDランタン（充電式）"
+group = "bousai"
+keyword = "LEDランタン 充電式 防災"
+must = "ランタン"
+min_price = 1000
+max_price = 20000
+ng = "中古 ガス オイル 灯油 キャンドル 電球のみ 交換用 部品 マントル ふるさと納税 ガスランタン ケースのみ"
+
+[[categories]]
+slug = "cassette-stove"
+bands = [5000]
+title = "カセットコンロ"
+group = "bousai"
+keyword = "カセットコンロ 防災"
+must = "カセットコンロ カセットガスコンロ"
+min_price = 2000
+max_price = 30000
+ng = "中古 ボンベのみ ガス缶のみ 交換用 部品 ケースのみ 収納ケース 鍋 プレート 網 ふるさと納税"
+
 # ---- 季節の特集（食べ物） ----
 [[categories]]
 slug = "osechi-for-one"
