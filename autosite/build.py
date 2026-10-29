@@ -7,6 +7,7 @@
 import argparse
 import json
 import os
+import re
 import shutil
 import tomllib
 from datetime import datetime
@@ -14,6 +15,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup, escape
 
 from . import links, power, prices, rakuten, rank, social, writer
 from .writer import JST
@@ -120,6 +122,15 @@ def active_categories(categories, now):
     return active
 
 
+def mark_text(text):
+    """文章の中の ==ここ== を黄色いマーカーにする（ほかの文字はふつうにエスケープ）。"""
+    return Markup(re.sub(r"==(.+?)==", r'<mark class="mk">\1</mark>', str(escape(text))))
+
+
+def plain(text):
+    return text.replace("==", "")
+
+
 def filter_items(items, category):
     # 検索語だけだと関係ない商品（炊飯器で検索したお米など）が混ざるので、商品名と価格でふるい落とす
     must = category.get("must", "").split()
@@ -145,6 +156,7 @@ def main():
     cfg["categories"] = active_categories(cfg["categories"], now)
 
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape())
+    env.filters["mk"] = mark_text
     env.globals.update(site=site, updated=now.strftime("%Y年%m月%d日"), year=now.year, today=now.strftime("%Y-%m-%d"),
                        categories=cfg["categories"], demo=args.demo,
                        base="" if args.demo else urlparse(site["url"]).path.rstrip("/"))
@@ -253,7 +265,7 @@ def main():
     # まとめページ：全ジャンルの1位と予算重視の1品を1ページで見比べられるように
     season = {12: "冬", 1: "冬", 2: "冬", 3: "春", 4: "春", 5: "春", 6: "夏", 7: "夏", 8: "夏"}.get(now.month, "秋冬")
     for c in built:
-        c["summary"] = c["intro"].split("。")[0] + "。" if c.get("intro") else ""
+        c["summary"] = plain(c["intro"]).split("。")[0] + "。" if c.get("intro") else ""
     (DIST / "matome").mkdir()
     (DIST / "matome" / "index.html").write_text(
         env.get_template("matome.html").render(

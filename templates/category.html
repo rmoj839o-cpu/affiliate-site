@@ -18,10 +18,10 @@
 {% block main %}
 <article>
   <h1>{{ cat.title }}おすすめ{{ items|length }}選｜{{ compare }}で比較</h1>
-  <p class="updated">最終更新：{{ updated }}</p>
+{% with byline_note = "ランキングは毎日更新（最終更新：" ~ updated ~ "）" %}{% include "_byline.html" %}{% endwith %}
   {% if cat.image %}<img class="col-hero" src="{{ base }}/static/season/{{ cat.image }}.webp" alt="" width="1200" height="675">{% endif %}
 {% include "_top3.html" %}
-  <p class="lead">{{ content.intro }}</p>
+  <p class="lead">{{ content.intro|mk }}</p>
 {% include "_table.html" %}
 {% include "_basis.html" %}
 
@@ -43,7 +43,7 @@
   <h2>{{ cat.title }}の選び方</h2>
   {% for p in content.how_to_choose %}
   <h3>{{ loop.index }}. {{ p.point }}</h3>
-  <p>{{ p.detail }}</p>
+  <p>{{ p.detail|mk }}</p>
   {% endfor %}
 
 {% include "_columns.html" %}

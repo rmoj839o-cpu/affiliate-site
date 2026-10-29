@@ -7,19 +7,19 @@
   <p class="crumb"><a href="{{ base }}/column/">管理人のコラム</a> ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a></p>
   <h1>{{ col.title }}</h1>
   {% if col.image %}<img class="col-hero" src="{{ base }}/static/columns/{{ col.image }}.webp" alt="" width="1200" height="675">{% endif %}
-  <p class="updated">管理人の体験談{% if col.date %}（{{ col.date|replace("-", "/") }}）{% endif %}</p>
+{% with byline_note = "管理人の体験談" ~ ("・" ~ col.date|replace("-", "/") if col.date else "") %}{% include "_byline.html" %}{% endwith %}
   {% for sec in col.sections %}
   <h2>{{ sec.h }}</h2>
   {% if sec.img %}<figure class="col-photo"><img src="{{ base }}/static/photos/{{ sec.img.src }}.webp" alt="{{ sec.img.alt }}" loading="lazy"><figcaption>{{ sec.img.caption }}</figcaption></figure>{% endif %}
-  {% for para in sec.body %}<p>{{ para }}</p>{% endfor %}
-  {% if sec.list %}<ul>{% for x in sec.list %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+  {% for para in sec.body %}<p>{{ para|mk }}</p>{% endfor %}
+  {% if sec.list %}<ul>{% for x in sec.list %}<li>{{ x|mk }}</li>{% endfor %}</ul>{% endif %}
   {% if sec.table %}
   <div class="table-scroll"><table class="qtable">
     <thead><tr>{% for h in sec.table.head %}<th>{{ h }}</th>{% endfor %}</tr></thead>
     <tbody>{% for row in sec.table.rows %}<tr>{% for c in row %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody>
   </table></div>
   {% endif %}
-  {% for para in sec.after or [] %}<p>{{ para }}</p>{% endfor %}
+  {% for para in sec.after or [] %}<p>{{ para|mk }}</p>{% endfor %}
   {% endfor %}
 
 {% include "_picks.html" %}

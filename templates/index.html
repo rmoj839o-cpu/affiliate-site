@@ -24,7 +24,7 @@
   <div class="tip">
     <p class="tip-label">今日の選び方のコツ</p>
     <p class="tip-point">{{ tip.point }}</p>
-    <p>{{ tip.detail }}</p>
+    <p>{{ tip.detail|mk }}</p>
   </div>
   {% endif %}
   <p class="feature-more"><a href="{{ base }}/{{ featured.slug }}/">{{ featured.title }}のランキングをすべて見る →</a></p>
