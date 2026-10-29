@@ -110,6 +110,7 @@ ng = "中古 交換用 部品 ホース アタッチメント 専用袋 ふる�
 
 [[categories]]
 slug = "kerosene-fan-heater"
+image = "category/kerosene-fan-heater"
 bands = [15000, 25000]
 title = "石油ファンヒーター"
 keyword = "石油ファンヒーター"
@@ -131,6 +132,7 @@ ng = "中古 煙突のみ 部品 交換用 ふるさと納税 耐熱手袋 グ�
 
 [[categories]]
 slug = "single-microwave"
+image = "category/single-microwave"
 bands = [10000, 15000]
 title = "一人暮らし向け電子レンジ"
 keyword = "電子レンジ 単機能 一人暮らし"
@@ -161,6 +163,7 @@ ng = "中古 布団クリーナー 交換用 互換 対応品 替えブラシ �
 
 [[categories]]
 slug = "circulator"
+image = "category/circulator"
 power = [5, 100]
 bands = [3000, 5000]
 title = "サーキュレーター（静音・小型）"
