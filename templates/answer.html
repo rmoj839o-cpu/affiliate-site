@@ -29,7 +29,7 @@
   {% for f in sec.figs or [] %}<figure class="fig"><img src="{{ base }}/static/figures/{{ f.src }}.svg" alt="{{ f.alt }}" width="360" height="{{ f.h or 250 }}" loading="lazy">{% if f.caption %}<figcaption>{{ f.caption }}</figcaption>{% endif %}</figure>{% endfor %}
   {% if sec.list %}<ul>{% for x in sec.list %}<li>{{ x|mk }}</li>{% endfor %}</ul>{% endif %}
   {% if sec.table %}
-  <div class="table-scroll"><table class="qtable{{ " numeric" if sec.table.numeric }}">
+  <div class="table-scroll"><table class="qtable{{ " numeric" if sec.table.numeric }}{{ " labeled" if sec.table.labeled }}">
     <thead><tr>{% for h in sec.table.head %}<th>{{ h }}</th>{% endfor %}</tr></thead>
     <tbody>{% for row in sec.table.rows %}<tr>{% for c in row %}<td>{{ c }}</td>{% endfor %}</tr>{% endfor %}</tbody>
   </table></div>

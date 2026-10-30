@@ -233,3 +233,4 @@ footer { margin-top: 48px; padding-top: 16px; padding-bottom: 32px; border-top: 
 .kero-trend div { display: grid; grid-template-columns: 44px 1fr 64px; gap: 8px; align-items: center; font-size: 13px; margin: 4px 0; }
 .kero-trend i { display: block; height: 10px; background: var(--accent); border-radius: 5px; opacity: .7; }
 .kero-trend b { text-align: right; font-weight: 400; font-variant-numeric: tabular-nums; }
+.qtable.labeled td:first-child { white-space: nowrap; font-weight: 700; background: var(--soft); }

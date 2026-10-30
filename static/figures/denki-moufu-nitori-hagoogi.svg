@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 330" role="img" aria-label="ニトリとHAGOOGI、どちらが合うかの選び方">
+<rect width="360" height="330" rx="12" fill="#fffdf8"/>
+<text x="180" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">どっちが合う？かんたん診断</text>
+<rect x="10" y="44" width="200" height="62" rx="10" fill="#ffffff" stroke="#e3e3dc"/>
+<text x="110" y="71" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">店で手ざわりを確かめて、</text>
+<text x="110" y="89" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">その日に持ち帰りたい？</text>
+<path d="M212 75 H248" stroke="#5f6670" stroke-width="2" fill="none"/><path d="M243 70 L249 75 L243 80" stroke="#5f6670" stroke-width="2" fill="none"/>
+<text x="230" y="68" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">はい</text>
+<rect x="252" y="55" width="98" height="40" rx="20" fill="#bf0000"/>
+<text x="301" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="Hiragino Sans, Noto Sans JP, sans-serif">ニトリ</text>
+<path d="M110 108 V134" stroke="#5f6670" stroke-width="2" fill="none"/><path d="M105 128 L110 134 L115 128" stroke="#5f6670" stroke-width="2" fill="none"/>
+<text x="130" y="125" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">いいえ</text>
+<rect x="10" y="136" width="200" height="62" rx="10" fill="#ffffff" stroke="#e3e3dc"/>
+<text x="110" y="163" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">布団の下に敷くだけで、</text>
+<text x="110" y="181" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">とにかく安くすませたい？</text>
+<path d="M212 167 H248" stroke="#5f6670" stroke-width="2" fill="none"/><path d="M243 162 L249 167 L243 172" stroke="#5f6670" stroke-width="2" fill="none"/>
+<text x="230" y="160" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">はい</text>
+<rect x="252" y="147" width="98" height="40" rx="20" fill="#bf0000"/>
+<text x="301" y="172" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="Hiragino Sans, Noto Sans JP, sans-serif">ニトリ</text>
+<path d="M110 200 V226" stroke="#5f6670" stroke-width="2" fill="none"/><path d="M105 220 L110 226 L115 220" stroke="#5f6670" stroke-width="2" fill="none"/>
+<text x="130" y="217" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">いいえ</text>
+<rect x="10" y="228" width="200" height="62" rx="10" fill="#ffffff" stroke="#e3e3dc"/>
+<text x="110" y="255" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">温度を細かく調整したい・</text>
+<text x="110" y="273" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">サイズをえらびたい？</text>
+<path d="M212 259 H248" stroke="#5f6670" stroke-width="2" fill="none"/><path d="M243 254 L249 259 L243 264" stroke="#5f6670" stroke-width="2" fill="none"/>
+<text x="230" y="252" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">はい</text>
+<rect x="252" y="239" width="98" height="40" rx="20" fill="#2c6fb7"/>
+<text x="301" y="264" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="Hiragino Sans, Noto Sans JP, sans-serif">HAGOOGI</text>
+<path d="M110 294 V304" stroke="#5f6670" stroke-width="2" fill="none"/>
+<text x="180" y="322" text-anchor="middle" font-size="11.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">いいえ → どちらでもOK。レビューと値段で決めよう</text>
+</svg>
