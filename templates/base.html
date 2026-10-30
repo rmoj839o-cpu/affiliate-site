@@ -7,6 +7,8 @@
 <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
 <link rel="canonical" href="{{ site.url }}{{ path }}">
 <meta property="og:title" content="{{ self.title() }}">
+<meta property="og:site_name" content="{{ site.name }}">
+{% if path == "/" %}<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": {{ site.name|tojson }}, "url": "{{ site.url }}/"}</script>{% endif %}
 <meta property="og:description" content="{{ self.description() }}">
 <meta property="og:url" content="{{ site.url }}{{ path }}">
 <meta property="og:type" content="website">

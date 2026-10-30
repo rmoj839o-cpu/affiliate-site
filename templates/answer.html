@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ q.title }} | {{ site.name }}{% endblock %}
+{% block title %}{{ q.title }}{% endblock %}
 {% block description %}{{ q.description }}{% endblock %}
 {% block og_image %}{% if q.image %}{{ site.url }}/static/{{ q.image }}.jpg{% else %}{{ super() }}{% endif %}{% endblock %}
 {% block head %}
