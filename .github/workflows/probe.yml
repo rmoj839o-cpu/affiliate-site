@@ -10,28 +10,13 @@ jobs:
       - name: Fetch the kerosene price survey pages and files
         run: |
           mkdir out && cd out
-          i=0
-          for u in "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html" \
-                   "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/" \
-                   "https://oil-info.ieej.or.jp/price/price_ippan_kakaku.html" ; do
-            i=$((i+1))
-            curl -sSL -m 30 -A "Mozilla/5.0" "$u" -o page$i.html -w "$u %{http_code} %{content_type} %{url_effective}\n" >> status.txt 2>&1 || echo "$u FAIL" >> status.txt
+          B=https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007
+          for f in docx/261028.docx docx/261021.docx docx/261014.docx 261028.docx docx/261029.docx results.html index.html "" ; do
+            n=$(echo "$f" | tr '/.' '__'); [ -z "$n" ] && n=root
+            curl -sSL -m 30 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36" -H "Accept-Language: ja" "$B/$f" -o "f_$n" -w "$f %{http_code} %{content_type} %{size_download}\n" >> status.txt 2>&1 || echo "$f FAIL" >> status.txt
           done
-          python3 - <<'PY'
-          import re, glob, urllib.parse
-          links=[]
-          base={'page1.html':'https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html','page2.html':'https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/','page3.html':'https://oil-info.ieej.or.jp/price/price_ippan_kakaku.html'}
-          for f,b in base.items():
-              try: t=open(f,'rb').read().decode('utf-8','replace')
-              except Exception: continue
-              for m in re.findall(r'href="([^"]+\.(?:xlsx|xls|csv|pdf))"',t,re.I):
-                  links.append(urllib.parse.urljoin(b,m))
-          open('links.txt','w').write('\n'.join(links))
-          PY
-          n=0
-          for l in $(grep -iE '\.(xlsx|xls|csv)$' links.txt | head -4); do
-            n=$((n+1)); curl -sSL -m 60 -A "Mozilla/5.0" "$l" -o "data$n.${l##*.}" && echo "$l -> data$n" >> status.txt
-          done
+          curl -sSL -m 30 -A "Mozilla/5.0" "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/" -o f_parent -w "parent %{http_code} %{size_download}\n" >> status.txt
+          curl -sSL -m 30 -A "Mozilla/5.0" "https://oil-info.ieej.or.jp/" -o f_oilinfo -w "oilinfo %{http_code} %{size_download}\n" >> status.txt
       - name: Push to probe-out branch
         run: |
           cd out
