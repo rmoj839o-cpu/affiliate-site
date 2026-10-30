@@ -194,6 +194,69 @@ min_price = 5000
 max_price = 120000
 ng = "中古 交換用 互換 フィルターのみ 部品 ふるさと納税 車載 車用 USB 首掛け ネック ポータブル 携帯 レンタル"
 
+[[categories]]
+slug = "dehumidifier"
+bands = [15000, 25000]
+title = "衣類乾燥除湿機（部屋干し用）"
+keyword = "衣類乾燥除湿機 部屋干し"
+must = "除湿機 除湿器 衣類乾燥"
+min_price = 5000
+max_price = 80000
+power = [50, 1000]
+ng = "中古 交換用 部品 フィルター タンクのみ 除湿剤 除湿シート 乾燥剤 ふるさと納税 レンタル ハンガー"
+
+[[categories]]
+slug = "small-washer"
+bands = [30000, 50000]
+title = "一人暮らし向け洗濯機（小型）"
+keyword = "洗濯機 一人暮らし 5kg"
+must = "洗濯機"
+min_price = 15000
+max_price = 150000
+ng = "中古 ホース 部品 交換用 洗濯機ラック 洗濯機台 防水パン かさ上げ 洗濯槽クリーナー 洗剤 カバー 引き取り リサイクル料 ふるさと納税 レンタル バケツ ポータブル"
+
+[[categories]]
+slug = "hair-dryer"
+bands = [5000, 10000]
+title = "ドライヤー（速乾・軽量）"
+keyword = "ドライヤー 速乾 軽量"
+must = "ドライヤー"
+min_price = 2000
+max_price = 60000
+power = [500, 1500]
+ng = "中古 交換用 部品 フィルター ノズルのみ スタンド ホルダー 収納 ペット 犬 猫 ふるさと納税 レンタル"
+
+[[categories]]
+slug = "toaster"
+bands = [5000, 10000]
+title = "オーブントースター"
+keyword = "オーブントースター 一人暮らし"
+must = "トースター"
+min_price = 2000
+max_price = 50000
+power = [500, 1500]
+ng = "中古 交換用 部品 トレーのみ 網のみ ラック 収納 カバー ホットサンド ポップアップ ふるさと納税"
+
+[[categories]]
+slug = "pressure-cooker"
+bands = [10000, 20000]
+title = "電気圧力鍋（一人暮らし向け）"
+keyword = "電気圧力鍋 一人暮らし"
+must = "電気圧力鍋 電気調理鍋 圧力鍋"
+min_price = 5000
+max_price = 60000
+ng = "中古 交換用 部品 パッキン 内鍋のみ レシピ本 本 ガス 直火 IH対応 ふるさと納税"
+
+[[categories]]
+slug = "kiru-moufu"
+bands = [3000, 5000]
+title = "着る毛布"
+keyword = "着る毛布"
+must = "着る毛布 着るブランケット ルームウェア 部屋着 ガウン"
+min_price = 1500
+max_price = 20000
+ng = "中古 ペット 犬 猫 子供 キッズ ベビー 電気 ふるさと納税"
+
 # ---- 防災・備え ----
 [[categories]]
 slug = "portable-power"
