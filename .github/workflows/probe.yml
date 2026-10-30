@@ -1,29 +1,41 @@
 name: probe-kerosene
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths: [".github/workflows/probe.yml"]
+permissions:
+  contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: Look at the kerosene price survey pages
+      - name: Fetch the kerosene price survey pages and files
         run: |
+          mkdir out && cd out
+          i=0
           for u in "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html" \
                    "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/" \
                    "https://oil-info.ieej.or.jp/price/price_ippan_kakaku.html" ; do
-            echo "=== $u"
-            curl -sSL -m 30 -A "Mozilla/5.0" "$u" -o page.html -w "%{http_code} %{content_type}\n" || true
-            iconv -f SHIFT_JIS -t UTF-8 page.html 2>/dev/null | head -c 200 >/dev/null && enc=sjis || enc=utf8
-            python3 - <<'PY'
-          import re
-          raw=open('page.html','rb').read()
-          for e in ('utf-8','cp932','euc-jp'):
-              try: t=raw.decode(e); break
-              except: pass
-          print(len(t))
-          print(re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',t))[:1500])
-          for m in re.findall(r'href="([^"]+\.(?:xlsx|xls|csv|pdf))"',t)[:30]: print('LINK',m)
-          PY
+            i=$((i+1))
+            curl -sSL -m 30 -A "Mozilla/5.0" "$u" -o page$i.html -w "$u %{http_code} %{content_type} %{url_effective}\n" >> status.txt 2>&1 || echo "$u FAIL" >> status.txt
           done
+          python3 - <<'PY'
+          import re, glob, urllib.parse
+          links=[]
+          base={'page1.html':'https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html','page2.html':'https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/','page3.html':'https://oil-info.ieej.or.jp/price/price_ippan_kakaku.html'}
+          for f,b in base.items():
+              try: t=open(f,'rb').read().decode('utf-8','replace')
+              except Exception: continue
+              for m in re.findall(r'href="([^"]+\.(?:xlsx|xls|csv|pdf))"',t,re.I):
+                  links.append(urllib.parse.urljoin(b,m))
+          open('links.txt','w').write('\n'.join(links))
+          PY
+          n=0
+          for l in $(grep -iE '\.(xlsx|xls|csv)$' links.txt | head -4); do
+            n=$((n+1)); curl -sSL -m 60 -A "Mozilla/5.0" "$l" -o "data$n.${l##*.}" && echo "$l -> data$n" >> status.txt
+          done
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
