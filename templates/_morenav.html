@@ -7,7 +7,7 @@
     {% if not no_ads %}<a href="{{ base }}/matome/"><strong>まとめ</strong><span>全ジャンルの1位を見比べる</span></a>{% endif %}
   </div>
   {% if not no_ads %}
-  {% for group, label in [("bousai", "防災・備え"), ("kaden", "家電"), ("outdoor", "アウトドア"), ("food", "季節の特集（食べ物）")] %}
+  {% for group, label in [("bousai", "防災・備え"), ("kaden", "家電"), ("zeitaku", "小さなぜいたく"), ("outdoor", "アウトドア"), ("food", "季節の特集（食べ物）")] %}
   {% set cats = categories | selectattr("group", "undefined") | list if group == "kaden" else categories | selectattr("group", "defined") | selectattr("group", "equalto", group) | list %}
   {% if cats %}<p class="menu-label">{{ label }}</p>
   <nav class="morenav-chips">{% for c in cats %}<a href="{{ base }}/{{ c.slug }}/">{{ c.title }}</a>{% endfor %}</nav>{% endif %}

@@ -33,7 +33,7 @@
   <details class="menu">
     <summary>ジャンル一覧</summary>
     <div class="menu-panel">
-    {% for group, label in [("kaden", "家電"), ("bousai", "防災・備え"), ("outdoor", "アウトドア"), ("food", "季節の特集（食べ物）")] %}
+    {% for group, label in [("kaden", "家電"), ("bousai", "防災・備え"), ("zeitaku", "小さなぜいたく"), ("outdoor", "アウトドア"), ("food", "季節の特集（食べ物）")] %}
     {% set cats = categories | selectattr("group", "undefined") | list if group == "kaden" else categories | selectattr("group", "defined") | selectattr("group", "equalto", group) | list %}
     {% if cats %}
     <p class="menu-label">{{ label }}</p>

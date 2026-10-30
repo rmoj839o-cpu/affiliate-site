@@ -60,7 +60,7 @@
 </ul>
 {% endif %}
 
-{% for group, label in [("kaden", "家電から探す"), ("bousai", "防災・備え"), ("outdoor", "アウトドア"), ("food", "季節の特集（食べ物）")] %}
+{% for group, label in [("kaden", "家電から探す"), ("bousai", "防災・備え"), ("zeitaku", "小さなぜいたく"), ("outdoor", "アウトドア"), ("food", "季節の特集（食べ物）")] %}
 {% set cats = built | selectattr("group_key", "equalto", group) | list %}
 {% if cats %}
 <h2>{{ label }}</h2>

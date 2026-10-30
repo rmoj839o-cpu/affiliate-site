@@ -272,7 +272,7 @@ def main():
     (DIST / "matome" / "index.html").write_text(
         env.get_template("matome.html").render(
             built=built, season=f"{now.year}年{season}", path="/matome/",
-            groups=[("kaden", "便利家電・グッズ"), ("bousai", "防災・備え"), ("outdoor", "アウトドア"), ("food", "季節の食べ物")]), encoding="utf-8")
+            groups=[("kaden", "便利家電・グッズ"), ("bousai", "防災・備え"), ("zeitaku", "小さなぜいたく"), ("outdoor", "アウトドア"), ("food", "季節の食べ物")]), encoding="utf-8")
     pages.append("/matome/")
 
     # 管理人のコラム（体験談）。該当カテゴリの今の上位3商品もあわせて載せる

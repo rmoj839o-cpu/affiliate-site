@@ -258,6 +258,52 @@ min_price = 1500
 max_price = 20000
 ng = "中古 ペット 犬 猫 子供 キッズ ベビー 電気 ふるさと納税"
 
+# ---- 小さなぜいたく（自分へのごほうび） ----
+[[categories]]
+slug = "foot-massager"
+bands = [15000, 30000]
+title = "フットマッサージャー"
+group = "zeitaku"
+keyword = "フットマッサージャー"
+must = "フットマッサージャー マッサージ器 マッサージ機 足 ふくらはぎ"
+min_price = 5000
+max_price = 120000
+ng = "中古 交換用 部品 カバーのみ クッション ローラー 青竹 ツボ押し棒 ジェル クリーム オイル ふるさと納税 レンタル"
+
+[[categories]]
+slug = "coffee-maker"
+bands = [10000, 20000]
+title = "全自動コーヒーメーカー"
+group = "zeitaku"
+keyword = "全自動コーヒーメーカー ミル付き"
+must = "コーヒーメーカー"
+min_price = 5000
+max_price = 100000
+ng = "中古 交換用 部品 フィルター ペーパー 豆 コーヒー豆 ドリッパー カプセル 粉 ふるさと納税 レンタル ガラス容器のみ"
+
+[[categories]]
+slug = "mini-projector"
+bands = [20000, 40000]
+title = "小型プロジェクター（ホームシアター）"
+group = "zeitaku"
+keyword = "プロジェクター 小型 家庭用"
+must = "プロジェクター"
+min_price = 8000
+max_price = 150000
+ng = "中古 交換用 部品 スクリーン 三脚 スタンドのみ 天吊り 金具 ケース ランプ リモコンのみ ふるさと納税 レンタル 業務用"
+
+[[categories]]
+slug = "sous-vide"
+bands = [10000]
+title = "低温調理器"
+group = "zeitaku"
+keyword = "低温調理器"
+must = "低温調理器 低温調理機"
+min_price = 4000
+max_price = 50000
+min_reviews = 10
+ng = "中古 交換用 部品 容器のみ コンテナ 袋 真空パック レシピ本 ふるさと納税"
+
 # ---- 防災・備え ----
 [[categories]]
 slug = "portable-power"
