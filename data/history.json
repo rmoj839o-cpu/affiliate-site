@@ -1355,8 +1355,7 @@
      "import-garden:10002588": 22140,
      "juju-giona:10007687": 16990,
      "comoshop:10000054": 3520,
-     "pro-bousai:10000146": 18360,
-     "lock110:10088789": 3880
+     "pro-bousai:10000146": 18360
     },
     "reviews": {
      "kurashido:10000448": 388,
@@ -1366,8 +1365,7 @@
      "import-garden:10002588": 391,
      "juju-giona:10007687": 394,
      "comoshop:10000054": 3798,
-     "pro-bousai:10000146": 387,
-     "lock110:10088789": 362
+     "pro-bousai:10000146": 387
     }
    },
    "hozonsui": {
@@ -1378,11 +1376,11 @@
      "saigaitaisakuhonpo:10000024": 3670,
      "peaceup:10010683": 5179,
      "peaceup:10011285": 6350,
+     "jyonetsubatake:10000342": 1368,
      "magokoro-eshop:10001363": 3499,
      "ix-ix:10000242": 1780,
      "bousai-pro-shop:10000019": 3599,
-     "heimat:10001340": 2250,
-     "pockybear:10041157": 6804
+     "heimat:10001340": 2250
     },
     "reviews": {
      "monoroots:10000731": 103,
@@ -1390,11 +1388,11 @@
      "saigaitaisakuhonpo:10000024": 80,
      "peaceup:10010683": 98,
      "peaceup:10011285": 190,
+     "jyonetsubatake:10000342": 2272,
      "magokoro-eshop:10001363": 52,
      "ix-ix:10000242": 1935,
      "bousai-pro-shop:10000019": 44,
-     "heimat:10001340": 69,
-     "pockybear:10041157": 52
+     "heimat:10001340": 69
     }
    },
    "led-lantern": {
