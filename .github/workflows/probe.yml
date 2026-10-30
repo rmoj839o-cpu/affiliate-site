@@ -1,0 +1,29 @@
+name: probe-kerosene
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/workflows/probe.yml"]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Look at the kerosene price survey pages
+        run: |
+          for u in "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html" \
+                   "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/" \
+                   "https://oil-info.ieej.or.jp/price/price_ippan_kakaku.html" ; do
+            echo "=== $u"
+            curl -sSL -m 30 -A "Mozilla/5.0" "$u" -o page.html -w "%{http_code} %{content_type}\n" || true
+            iconv -f SHIFT_JIS -t UTF-8 page.html 2>/dev/null | head -c 200 >/dev/null && enc=sjis || enc=utf8
+            python3 - <<'PY'
+          import re
+          raw=open('page.html','rb').read()
+          for e in ('utf-8','cp932','euc-jp'):
+              try: t=raw.decode(e); break
+              except: pass
+          print(len(t))
+          print(re.sub(r'\s+',' ',re.sub(r'<[^>]+>',' ',t))[:1500])
+          for m in re.findall(r'href="([^"]+\.(?:xlsx|xls|csv|pdf))"',t)[:30]: print('LINK',m)
+          PY
+          done
