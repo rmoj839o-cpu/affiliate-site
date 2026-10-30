@@ -1379,9 +1379,8 @@
     }
    },
    "foot-massager": {
-    "top": "bodyplus:10001916",
+    "top": "atex-net:10001706",
     "prices": {
-     "bodyplus:10001916": 13750,
      "atex-net:10001706": 7700,
      "roomy:10014274": 5500,
      "atex-net:10001779": 6380,
@@ -1390,10 +1389,10 @@
      "nissoplus:10000178": 9900,
      "lazboy-q:10000000": 28800,
      "butterflyshop:10000245": 5400,
-     "souda-1959:10000003": 17800
+     "souda-1959:10000003": 17800,
+     "importshopaqua:10012723": 5500
     },
     "reviews": {
-     "bodyplus:10001916": 463,
      "atex-net:10001706": 401,
      "roomy:10014274": 1132,
      "atex-net:10001779": 1113,
@@ -1402,16 +1401,33 @@
      "nissoplus:10000178": 4458,
      "lazboy-q:10000000": 658,
      "butterflyshop:10000245": 170,
-     "souda-1959:10000003": 903
+     "souda-1959:10000003": 903,
+     "importshopaqua:10012723": 505
     }
    },
    "coffee-maker": {
-    "top": "twinbird:10000000",
+    "top": "homeshop:10340319",
     "prices": {
-     "twinbird:10000000": 41800
+     "homeshop:10340319": 29800,
+     "importshopaqua:10011993": 32800,
+     "twinbird:10000000": 41800,
+     "bellelife2016:10001645": 16980,
+     "siroca:10000003": 12980,
+     "coffeestyleucc:10001176": 13880,
+     "eleking:10001370": 11880,
+     "elmin-store:10003440": 12480,
+     "bruno-official:10002182": 11000
     },
     "reviews": {
-     "twinbird:10000000": 254
+     "homeshop:10340319": 101,
+     "importshopaqua:10011993": 168,
+     "twinbird:10000000": 254,
+     "bellelife2016:10001645": 42,
+     "siroca:10000003": 386,
+     "coffeestyleucc:10001176": 39,
+     "eleking:10001370": 186,
+     "elmin-store:10003440": 39,
+     "bruno-official:10002182": 57
     }
    },
    "mini-projector": {
@@ -1452,8 +1468,8 @@
      "bruno-official:10001370": 11000,
      "hismileshop:10000012": 14800,
      "lifeonproducts:10000240": 5610,
-     "newshinelife:10000285": 6980,
-     "completehouse:10001204": 7699
+     "completehouse:10001204": 7699,
+     "colawinwin:10000426": 7699
     },
     "reviews": {
      "tescom-japan:10000090": 185,
@@ -1464,8 +1480,8 @@
      "bruno-official:10001370": 47,
      "hismileshop:10000012": 25,
      "lifeonproducts:10000240": 129,
-     "newshinelife:10000285": 84,
-     "completehouse:10001204": 12
+     "completehouse:10001204": 12,
+     "colawinwin:10000426": 16
     }
    },
    "portable-power": {
