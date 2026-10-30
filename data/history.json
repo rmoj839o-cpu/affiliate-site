@@ -805,11 +805,11 @@
     "reviews": {
      "airrobo:10000003": 424,
      "tamba:10005738": 387,
-     "tokyopt:10000012": 1009,
+     "tokyopt:10000012": 1010,
      "animestore:10000898": 710,
      "meijo:10000000": 1089,
      "milicute-himawari:10000017": 9538,
-     "asukapainting:10000028": 1247,
+     "asukapainting:10000028": 1248,
      "importshopaqua:10000488": 4120,
      "goodcarsstyle:10000948": 612,
      "r1-shop:10000164": 617
@@ -830,12 +830,12 @@
      "katariyashop:10000441": 7480
     },
     "reviews": {
-     "hitidear:10000192": 1220,
+     "hitidear:10000192": 1221,
      "nexmoov:10000071": 554,
      "katushop:10000129": 1168,
      "hagoogi:10000255": 623,
      "mpowjapan:10000823": 3415,
-     "itsube-souken:10000266": 2439,
+     "itsube-souken:10000266": 2440,
      "kukuya:10000147": 1381,
      "migaber:10000081": 933,
      "lifejoy-shop:10000093": 1005,
@@ -880,7 +880,7 @@
      "meisei:10000138": 1000
     },
     "reviews": {
-     "dasimon:10000020": 1471,
+     "dasimon:10000020": 1472,
      "zian:10000038": 3640,
      "felice1009:10000015": 522,
      "aideall:10000056": 503,
@@ -941,7 +941,7 @@
      "stargenius:10000061": 331,
      "hitidear:10000195": 347,
      "roomy:10016455": 709,
-     "mikirona:10000063": 1207,
+     "mikirona:10000063": 1208,
      "u-denki:10035718": 313,
      "hitidear:10000121": 1114
     }
@@ -963,7 +963,7 @@
     "reviews": {
      "importshopaqua:10009903": 276,
      "roomy:10011099": 407,
-     "tiger-online:10003897": 623,
+     "tiger-online:10003897": 624,
      "importshopaqua:10010734": 418,
      "najimihouse:10004363": 307,
      "snailax-shop:10000152": 309,
@@ -1204,7 +1204,7 @@
      "fithome:10000003": 6180
     },
     "reviews": {
-     "ryohinseikatsukan:10000103": 937,
+     "ryohinseikatsukan:10000103": 938,
      "blueair:10000206": 1624,
      "ryohinseikatsukan:10000113": 1590,
      "ksk-shop:10000035": 41,
@@ -1261,7 +1261,7 @@
      "nby-online:10000040": 727,
      "scandinavie:10010116": 313,
      "twinklegoods:10000107": 282,
-     "h2brothers:10001880": 10789,
+     "h2brothers:10001880": 10790,
      "h2brothers:10001923": 229,
      "aquatalk:10000172": 505,
      "nagomilab:10000046": 439,
@@ -1275,8 +1275,8 @@
     "prices": {
      "liberty-base:10002107": 28930,
      "plywood:10019871": 24970,
-     "paseco:10000008": 20900,
      "e-kurashi:10009269": 25800,
+     "paseco:10000008": 20900,
      "e-kurashi:10009552": 17800,
      "toyotomi-homeplus:10000017": 30580,
      "a-price:10771925": 41800,
@@ -1287,8 +1287,8 @@
     "reviews": {
      "liberty-base:10002107": 49,
      "plywood:10019871": 503,
-     "paseco:10000008": 143,
      "e-kurashi:10009269": 215,
+     "paseco:10000008": 143,
      "e-kurashi:10009552": 300,
      "toyotomi-homeplus:10000017": 64,
      "a-price:10771925": 40,
@@ -1355,7 +1355,8 @@
      "import-garden:10002588": 22140,
      "juju-giona:10007687": 16990,
      "comoshop:10000054": 3520,
-     "pro-bousai:10000146": 18360
+     "pro-bousai:10000146": 18360,
+     "lock110:10088789": 3880
     },
     "reviews": {
      "kurashido:10000448": 388,
@@ -1365,7 +1366,8 @@
      "import-garden:10002588": 391,
      "juju-giona:10007687": 394,
      "comoshop:10000054": 3798,
-     "pro-bousai:10000146": 387
+     "pro-bousai:10000146": 387,
+     "lock110:10088789": 362
     }
    },
    "hozonsui": {
@@ -1376,11 +1378,11 @@
      "saigaitaisakuhonpo:10000024": 3670,
      "peaceup:10010683": 5179,
      "peaceup:10011285": 6350,
-     "jyonetsubatake:10000342": 1368,
      "magokoro-eshop:10001363": 3499,
      "ix-ix:10000242": 1780,
      "bousai-pro-shop:10000019": 3599,
-     "heimat:10001340": 2250
+     "heimat:10001340": 2250,
+     "pockybear:10041157": 6804
     },
     "reviews": {
      "monoroots:10000731": 103,
@@ -1388,11 +1390,11 @@
      "saigaitaisakuhonpo:10000024": 80,
      "peaceup:10010683": 98,
      "peaceup:10011285": 190,
-     "jyonetsubatake:10000342": 2272,
      "magokoro-eshop:10001363": 52,
      "ix-ix:10000242": 1935,
      "bousai-pro-shop:10000019": 44,
-     "heimat:10001340": 69
+     "heimat:10001340": 69,
+     "pockybear:10041157": 52
     }
    },
    "led-lantern": {
@@ -1529,7 +1531,7 @@
     "reviews": {
      "naraya-soba:10000239": 213,
      "yokogoshi:10001254": 169,
-     "smilespoon:10016166": 171,
+     "smilespoon:10016166": 172,
      "naganosoba:10000028": 418,
      "soba-haneya:10000032": 181,
      "kyono-odashi:10000221": 167,
