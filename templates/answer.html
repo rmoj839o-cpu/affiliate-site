@@ -36,13 +36,14 @@
   {% endif %}
   {% for para in sec.after or [] %}<p>{{ para|mk }}</p>{% endfor %}
   {% endfor %}
-{% include "_services.html" %}
   {% if q.note %}<p class="method">{{ q.note }}</p>{% endif %}
-{% include "_picks.html" %}
   {% if related %}
   <h2>ほかの豆知識</h2>
   <ul class="news">{% for o in related %}<li><a href="{{ base }}/guide/{{ o.slug }}/">{{ o.title }}</a></li>{% endfor %}</ul>
   {% endif %}
+  <!-- 商品と広告は、記事を読み終わったあとに -->
+{% include "_picks.html" %}
+{% include "_services.html" %}
 {% include "_profile.html" %}
 </article>
 {% endblock %}

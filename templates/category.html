@@ -27,6 +27,12 @@
 {% include "_table.html" %}
 {% include "_basis.html" %}
 
+  <h2>{{ cat.title }}の選び方</h2>
+  {% for p in content.how_to_choose %}
+  <h3>{{ loop.index }}. {{ p.point }}</h3>
+  <p>{{ p.detail|mk }}</p>
+  {% endfor %}
+
   <h2>今日の注目</h2>
   <div class="highlights">
     {% for i, old in hl.drops %}
@@ -40,13 +46,7 @@
   </div>
 
 {% include "_items.html" %}
-{% include "_services.html" %}
 
-  <h2>{{ cat.title }}の選び方</h2>
-  {% for p in content.how_to_choose %}
-  <h3>{{ loop.index }}. {{ p.point }}</h3>
-  <p>{{ p.detail|mk }}</p>
-  {% endfor %}
 
 {% include "_columns.html" %}
   {% if subpages %}
@@ -67,6 +67,9 @@
   {% for f in content.faq %}
   <details><summary>{{ f.q }}</summary><p>{{ f.a }}</p></details>
   {% endfor %}
+
+  <!-- 公式ストアなどの広告は、読みものと比較が終わったいちばん下に -->
+{% include "_services.html" %}
 
   <p class="method">ランキングの算出方法：楽天市場のレビュー平均点とレビュー件数をもとに、件数の少ない商品は全体平均に寄せて補正したスコアで順位付けしています。当サイトは実機での検証は行っておらず、紹介文は商品情報とレビュー統計に基づいて作成しています。</p>
 {% include "_profile.html" %}
