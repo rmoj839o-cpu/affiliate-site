@@ -54,6 +54,7 @@ ng = "中古 カバーのみ 交換用 ポータブル電源 モバイルバッ�
 
 [[categories]]
 slug = "sleep-earphones"
+image = "category/sleep-earphones"
 bands = [3000]
 title = "寝ホン（睡眠用イヤホン）"
 keyword = "睡眠用 イヤホン"
@@ -121,6 +122,7 @@ ng = "中古 交換用 部品 フィルター 給油ポンプ 灯油缶 ポリ�
 
 [[categories]]
 slug = "camp-wood-stove"
+image = "category/camp-wood-stove"
 bands = [20000, 30000]
 title = "キャンプ用薪ストーブ"
 group = "outdoor"
@@ -307,6 +309,7 @@ ng = "中古 炊飯器 交換用 部品 容器のみ コンテナ 袋 真空パ�
 # ---- 防災・備え ----
 [[categories]]
 slug = "portable-power"
+image = "category/portable-power"
 bands = [30000, 50000]
 title = "ポータブル電源"
 group = "bousai"
