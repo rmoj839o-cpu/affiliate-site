@@ -11,12 +11,11 @@ jobs:
         run: |
           mkdir out && cd out
           B=https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007
-          for f in docx/261028.docx docx/261021.docx docx/261014.docx 261028.docx docx/261029.docx results.html index.html "" ; do
-            n=$(echo "$f" | tr '/.' '__'); [ -z "$n" ] && n=root
-            curl -sSL -m 30 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36" -H "Accept-Language: ja" "$B/$f" -o "f_$n" -w "$f %{http_code} %{content_type} %{size_download}\n" >> status.txt 2>&1 || echo "$f FAIL" >> status.txt
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/126 Safari/537.36"
+          for f in xlsx/261028.xlsx docx/261028.docx; do
+            n=$(basename "$f")
+            curl -sSL -m 60 -A "$UA" -H "Accept-Language: ja" "$B/$f" -o "$n" -w "$f %{http_code} %{content_type} %{size_download}\n" >> status.txt 2>&1 || echo "$f FAIL" >> status.txt
           done
-          curl -sSL -m 30 -A "Mozilla/5.0" "https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/" -o f_parent -w "parent %{http_code} %{size_download}\n" >> status.txt
-          curl -sSL -m 30 -A "Mozilla/5.0" "https://oil-info.ieej.or.jp/" -o f_oilinfo -w "oilinfo %{http_code} %{size_download}\n" >> status.txt
       - name: Push to probe-out branch
         run: |
           cd out
