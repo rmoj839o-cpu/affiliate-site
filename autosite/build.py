@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup, escape
 
-from . import links, power, prices, rakuten, rank, social, writer
+from . import kerosene, links, power, prices, rakuten, rank, social, writer
 from .writer import JST
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -255,6 +255,13 @@ def main():
     # category が空のページは、ランキングや広告とは結びつけない読み物（防災など）
     answers = [q for q in answers if not q["category"] or q["category"] in by_slug]
 
+    # 都道府県別の灯油価格。週に1回の公表を、毎日の更新のついでに確かめて取りこむ
+    kero_path = ROOT / "data" / "kerosene.json"
+    kero_db = kerosene.load(kero_path)
+    if not args.demo and kerosene.update(kero_db):
+        kerosene.save(kero_path, kero_db)
+    kero = kerosene.summary(kero_db)
+
     # トップページは毎日ちがう特集カテゴリを出して、値下がり・急上昇もまとめる
     featured = built[now.toordinal() % len(built)]
     tip = featured["tips"][(now.toordinal() // len(built)) % len(featured["tips"])] if featured["tips"] else None
@@ -262,7 +269,7 @@ def main():
     trending = sorted(((c, *c["highlights"]["trending"]) for c in built if c["highlights"]["trending"]),
                       key=lambda t: t[2], reverse=True)
     (DIST / "index.html").write_text(
-        env.get_template("index.html").render(built=built, featured=featured, tip=tip, columns=columns, answers=answers[:5], drops=drops[:8],
+        env.get_template("index.html").render(built=built, featured=featured, tip=tip, columns=columns, answers=answers[:5], drops=drops[:8], kero=kero,
                                               trending=trending[:5], path="/"), encoding="utf-8")
     # まとめページ：全ジャンルの1位と予算重視の1品を1ページで見比べられるように
     season = {12: "冬", 1: "冬", 2: "冬", 3: "春", 4: "春", 5: "春", 6: "夏", 7: "夏", 8: "夏"}.get(now.month, "秋冬")
@@ -302,9 +309,18 @@ def main():
             services=services.get(cat["slug"]) if cat and q.get("show_services") else None,
             no_ads=not cat), encoding="utf-8")
         pages.append(f"/guide/{q['slug']}/")
+    if kero:
+        out = DIST / "guide" / "touyu-kakaku" / "index.html"
+        out.parent.mkdir(parents=True)
+        products = [by_slug[s] for s in ("kerosene-fan-heater", "kerosene-stove") if s in by_slug]
+        out.write_text(env.get_template("kerosene.html").render(
+            k=kero, cat=by_slug.get("kerosene-fan-heater"), path="/guide/touyu-kakaku/",
+            related=[q for q in answers if "touyu" in q["slug"] or q["category"] == "kerosene-fan-heater"][:5],
+            products=products, no_ads=not products), encoding="utf-8")
+        pages.append("/guide/touyu-kakaku/")
     if answers:
         (DIST / "guide" / "index.html").write_text(
-            env.get_template("answer_index.html").render(answers=answers, by_slug=by_slug, path="/guide/"),
+            env.get_template("answer_index.html").render(answers=answers, by_slug=by_slug, kero=kero, path="/guide/"),
             encoding="utf-8")
         pages.append("/guide/")
 

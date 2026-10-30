@@ -5,6 +5,10 @@
 <article>
   <h1>暮らしの豆知識</h1>
   <p class="lead">家電の電気代や選ぶサイズ、安全な使い方、季節の食べ物の選び方など、知っておくとひとり暮らしに役立つ豆知識をまとめています。</p>
+  {% if kero %}
+  <p class="toc-label">毎週更新のデータ</p>
+  <ul class="news"><li><a href="{{ base }}/guide/touyu-kakaku/"><strong>都道府県別の灯油価格（18L）【毎週更新】</strong><span class="q-desc">{{ kero.day_jp }}調査。全国平均は店頭{{ "{:,}".format(kero.national.store) }}円。あなたの県の値段と、安い県・高い県がわかります。</span></a></li></ul>
+  {% endif %}
   {% set topics = answers | rejectattr("category") | list %}
   {% if topics %}
   <p class="toc-label">防災・備え</p>

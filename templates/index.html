@@ -37,6 +37,7 @@
 {% if answers %}
 <h2>暮らしの豆知識</h2>
 <ul class="news">
+  {% if kero %}<li><a href="{{ base }}/guide/touyu-kakaku/">今週の灯油価格：全国平均 18L {{ "{:,}".format(kero.national.store) }}円｜都道府県別の一覧（{{ kero.md }}調査）</a></li>{% endif %}
   {% for q in answers %}<li><a href="{{ base }}/guide/{{ q.slug }}/">{{ q.title }}</a></li>{% endfor %}
 </ul>
 <p class="feature-more"><a href="{{ base }}/guide/">豆知識の一覧を見る →</a></p>
