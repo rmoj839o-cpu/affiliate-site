@@ -870,26 +870,26 @@
     "prices": {
      "dasimon:10000020": 2180,
      "zian:10000038": 3150,
-     "felice1009:10000015": 2580,
      "aideall:10000056": 1280,
      "tabtab:10003266": 1980,
      "zian:10000097": 2880,
      "meisei:10000142": 1380,
      "hanaro:10001563": 1280,
      "tabletpckoubou:10002193": 2180,
-     "meisei:10000138": 1000
+     "meisei:10000138": 1000,
+     "aiwo:10000030": 899
     },
     "reviews": {
      "dasimon:10000020": 1472,
      "zian:10000038": 3640,
-     "felice1009:10000015": 526,
      "aideall:10000056": 503,
      "tabtab:10003266": 28298,
      "zian:10000097": 2144,
      "meisei:10000142": 1704,
      "hanaro:10001563": 1625,
      "tabletpckoubou:10002193": 482,
-     "meisei:10000138": 4847
+     "meisei:10000138": 4847,
+     "aiwo:10000030": 562
     }
    },
    "small-rice-cooker": {
@@ -1714,8 +1714,8 @@
      "2-itamae:10000929": 7230,
      "selvice:10000844": 5980,
      "oiwaizen:10001452": 7650,
-     "kyousaiminomura:10000007": 7128,
-     "hisamatsu:10000048": 6780
+     "oiwaizen:10001156": 6750,
+     "kyousaiminomura:10000007": 7128
     },
     "reviews": {
      "chinagrand:10000622": 70,
@@ -1726,8 +1726,8 @@
      "2-itamae:10000929": 37,
      "selvice:10000844": 18,
      "oiwaizen:10001452": 15,
-     "kyousaiminomura:10000007": 34,
-     "hisamatsu:10000048": 581
+     "oiwaizen:10001156": 11,
+     "kyousaiminomura:10000007": 34
     }
    },
    "frozen-bento": {
