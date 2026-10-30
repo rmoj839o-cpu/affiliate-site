@@ -105,5 +105,11 @@
    ]
   }
  ],
- "note": "暖房器具・ポータブル電源の使い方や注意は、それぞれの説明書を確認してください。"
+ "note": "暖房器具・ポータブル電源の使い方や注意は、それぞれの説明書を確認してください。",
+ "products": [
+  "kerosene-stove",
+  "gas-stove",
+  "portable-power",
+  "electric-blanket"
+ ]
 }

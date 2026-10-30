@@ -180,11 +180,12 @@ summary { cursor: pointer; font-weight: 700; }
 .matome { border-bottom: 1px solid var(--line); padding-bottom: 16px; }
 .matome-picks { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .pick { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
+.pick-more { margin: 8px 0 0; font-size: 13px; }
 .pick-body { display: flex; gap: 10px; align-items: center; margin: 6px 0 10px; }
 .pick-body img { border-radius: 8px; flex: none; }
 .pick-name { margin: 0; font-weight: 700; font-size: 14px; line-height: 1.5; }
 .pick-meta { margin: 2px 0 0; font-size: 13px; color: var(--muted); }
-.pick .shops { grid-template-columns: 1fr; gap: 6px; }
+.pick .shops { grid-template-columns: repeat(3, 1fr); gap: 6px; }
 .pick .shop { padding: 7px 6px; font-size: 13px; }
 .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; margin: 20px 0; }
 .card { display: flex; gap: 12px; align-items: center; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; text-decoration: none; }

@@ -42,7 +42,7 @@
   <ul class="news">{% for o in related %}<li><a href="{{ base }}/guide/{{ o.slug }}/">{{ o.title }}</a></li>{% endfor %}</ul>
   {% endif %}
   <!-- 商品と広告は、記事を読み終わったあとに -->
-{% include "_picks.html" %}
+{% include "_article_products.html" %}
 {% include "_services.html" %}
 {% include "_profile.html" %}
 </article>

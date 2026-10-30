@@ -1,0 +1,25 @@
+{% if products %}
+  <!-- 記事に出てきたものを、ジャンルごとに今の1位だけ並べる -->
+  <h2>この記事に出てきたもの</h2>
+  <p>記事の中で紹介したものの、楽天市場で今いちばん人気の商品です（毎日更新）。くわしくは、それぞれのランキングで比較しています。</p>
+  <div class="matome-picks">
+    {% for c in products %}{% set i = c["items"][0] %}
+    <div class="pick">
+      <span class="hl-label">{{ c.title }}・1位</span>
+      <div class="pick-body">
+        {% if i.image %}<img src="{{ i.image }}" alt="" width="96" height="96" loading="lazy">{% endif %}
+        <div>
+          <p class="pick-name">{{ i.short_name }}</p>
+          <p class="pick-meta">{{ "{:,}".format(i.price) }}円・★{{ "%.2f"|format(i.review_avg) }}（{{ "{:,}".format(i.review_count) }}件）</p>
+        </div>
+      </div>
+      <div class="shops">
+        {% for l in i.links %}<a class="shop {{ l.store }}" href="{{ l.url }}" target="_blank" rel="{{ 'sponsored ' if l.sponsored }}noopener">{{ l.label }}</a>{% endfor %}
+      </div>
+      <p class="pick-more"><a href="{{ base }}/{{ c.slug }}/">{{ c.title }}のランキングを見る →</a></p>
+    </div>
+    {% endfor %}
+  </div>
+{% else %}
+{% include "_picks.html" %}
+{% endif %}

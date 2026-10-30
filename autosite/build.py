@@ -297,6 +297,8 @@ def main():
         related = sorted((o for o in answers if o is not q), key=lambda o: o["category"] != q["category"])[:5]
         out.write_text(env.get_template("answer.html").render(
             q=q, cat=cat, items=cat["items"] if cat else [], related=related, path=f"/guide/{q['slug']}/",
+            # products: 記事に出てきたジャンル（なければ記事のジャンルの上位3つ）
+            products=[by_slug[s] for s in q.get("products", []) if s in by_slug] if cat else [],
             services=services.get(cat["slug"]) if cat and q.get("show_services") else None,
             no_ads=not cat), encoding="utf-8")
         pages.append(f"/guide/{q['slug']}/")
