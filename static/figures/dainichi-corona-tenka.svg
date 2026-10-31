@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" role="img" aria-label="スイッチを押してから火がつくまでの時間">
+<rect width="360" height="250" rx="12" fill="#fffdf8"/>
+<text x="180" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">スイッチを押してから、火がつくまで</text>
+<text x="16" y="52" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">ダイニチ</text>
+<text x="96" y="52" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">保温なしから</text>
+<rect x="16" y="60" width="182" height="20" rx="5" fill="#bf0000"/>
+<text x="206.0" y="75" text-anchor="start" font-size="13" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約35秒</text>
+<text x="16" y="114" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">コロナ</text>
+<text x="96" y="114" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">通常の点火</text>
+<rect x="16" y="122" width="286" height="20" rx="5" fill="#2c6fb7"/>
+<text x="310.0" y="137" text-anchor="start" font-size="13" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約55秒</text>
+<text x="16" y="176" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">コロナ（秒速点火）</text>
+<text x="144" y="176" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">予熱しておく（電気を使う）</text>
+<rect x="16" y="184" width="36" height="20" rx="5" fill="#7aa7d9"/>
+<text x="60.4" y="199" text-anchor="start" font-size="13" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">最速 約7秒</text>
+<line x1="16.0" y1="232" x2="16.0" y2="236" stroke="#5f6670"/>
+<text x="16.0" y="247" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">0秒</text>
+<line x1="120.0" y1="232" x2="120.0" y2="236" stroke="#5f6670"/>
+<text x="120.0" y="247" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">20秒</text>
+<line x1="224.0" y1="232" x2="224.0" y2="236" stroke="#5f6670"/>
+<text x="224.0" y="247" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">40秒</text>
+<line x1="328.0" y1="232" x2="328.0" y2="236" stroke="#5f6670"/>
+<text x="328.0" y="247" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">60秒</text>
+<line x1="16" y1="232" x2="328.0" y2="232" stroke="#5f6670"/>
+</svg>
