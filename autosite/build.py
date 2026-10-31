@@ -180,6 +180,13 @@ def main():
     price_path = ROOT / "data" / "prices.json"
     price_db = {} if args.demo else prices.load(price_path)
     today = now.strftime("%Y-%m-%d")
+    # 都道府県別の灯油価格。週に1回の公表を、毎日の更新のついでに確かめて取りこむ
+    kero_path = ROOT / "data" / "kerosene.json"
+    kero_db = kerosene.load(kero_path)
+    if not args.demo and kerosene.update(kero_db):
+        kerosene.save(kero_path, kero_db)
+    kero = kerosene.summary(kero_db)
+
     pages = []
     built = []
     for cat in cfg["categories"]:
@@ -212,6 +219,7 @@ def main():
             columns=[c for c in columns if c["category"] == cat["slug"]],
             answers=[q for q in answers if q["category"] == cat["slug"]],
             services=services.get(cat["slug"]),
+            kero=kero if cat["slug"] in ("kerosene-fan-heater", "kerosene-stove") else None,
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
         pages.append(f"/{cat['slug']}/")
@@ -254,13 +262,6 @@ def main():
     columns = [c for c in columns if c["category"] in by_slug]
     # category が空のページは、ランキングや広告とは結びつけない読み物（防災など）
     answers = [q for q in answers if not q["category"] or q["category"] in by_slug]
-
-    # 都道府県別の灯油価格。週に1回の公表を、毎日の更新のついでに確かめて取りこむ
-    kero_path = ROOT / "data" / "kerosene.json"
-    kero_db = kerosene.load(kero_path)
-    if not args.demo and kerosene.update(kero_db):
-        kerosene.save(kero_path, kero_db)
-    kero = kerosene.summary(kero_db)
 
     # トップページは毎日ちがう特集カテゴリを出して、値下がり・急上昇もまとめる
     featured = built[now.toordinal() % len(built)]
