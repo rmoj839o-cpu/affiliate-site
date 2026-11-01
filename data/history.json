@@ -1075,6 +1075,33 @@
      "r1-shop:10000164": 617
     }
    },
+   "steam-humidifier": {
+    "top": "quads:10000095",
+    "prices": {
+     "quads:10000095": 19800,
+     "matsucame:10071734": 10780,
+     "roomy:10016494": 27500,
+     "roomy:10017920": 24200,
+     "duux-japan:10000100": 19800,
+     "u-denki:10039975": 14800,
+     "quads:10000127": 15400,
+     "duux-japan:10000122": 11800,
+     "importshopaqua:10013351": 18700,
+     "plywood:10020503": 27500
+    },
+    "reviews": {
+     "quads:10000095": 514,
+     "matsucame:10071734": 244,
+     "roomy:10016494": 385,
+     "roomy:10017920": 49,
+     "duux-japan:10000100": 485,
+     "u-denki:10039975": 134,
+     "quads:10000127": 31,
+     "duux-japan:10000122": 182,
+     "importshopaqua:10013351": 56,
+     "plywood:10020503": 48
+    }
+   },
    "electric-blanket": {
     "top": "hitidear:10000192",
     "prices": {
