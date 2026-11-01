@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-label="停電のとき、電気毛布を何時間使えるか">
+<rect width="360" height="280" rx="12" fill="#fffdf8"/>
+<text x="180" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">停電の夜、電気毛布は何時間使える？</text>
+<text x="180" y="46" text-anchor="middle" font-size="11" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">電気毛布を強め（50W）で使った場合の目安</text>
+<text x="16" y="74" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約250Whクラス</text>
+<text x="112" y="74" text-anchor="start" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">EcoFlow RIVER 3 など</text>
+<rect x="16" y="82" width="58" height="20" rx="5" fill="#bf0000" opacity="0.55"/>
+<text x="82.0" y="97" text-anchor="start" font-size="13" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約4時間</text>
+<text x="16" y="136" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約500Whクラス</text>
+<text x="112" y="136" text-anchor="start" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">Jackery 500 New など</text>
+<rect x="16" y="144" width="119" height="20" rx="5" fill="#bf0000" opacity="0.75"/>
+<text x="142.784" y="159" text-anchor="start" font-size="13" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約8時間</text>
+<text x="16" y="198" text-anchor="start" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約1,000Whクラス</text>
+<text x="126" y="198" text-anchor="start" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">Jackery 1000 New / EcoFlow DELTA 3 Classic</text>
+<rect x="16" y="206" width="248" height="20" rx="5" fill="#bf0000" opacity="0.95"/>
+<text x="272.24" y="221" text-anchor="start" font-size="13" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約17時間</text>
+<text x="180" y="262" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">使える電気は容量の8割で計算。弱めの温度なら、もっと長く使えます</text>
+</svg>
