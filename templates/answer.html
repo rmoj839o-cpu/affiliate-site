@@ -8,7 +8,8 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": {{ q.title|tojson }},
-  "datePublished": "{{ q.date }}",
+  "datePublished": "{{ q.date }}",{% if q.updated %}
+  "dateModified": "{{ q.updated }}",{% endif %}
   "author": {"@type": "Person", "name": {{ site.author|tojson }}}
 }
 </script>
@@ -18,7 +19,7 @@
   <p class="crumb"><a href="{{ base }}/guide/">暮らしの豆知識</a>{% if cat %} ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a>{% endif %}</p>
   <h1>{{ q.title }}</h1>
   {% if q.image %}<img class="col-hero" src="{{ base }}/static/{{ q.image }}.webp" alt="" width="1200" height="675">{% endif %}
-{% with byline_note = "公開：" ~ q.date|replace("-", "/") %}{% include "_byline.html" %}{% endwith %}
+{% with byline_note = "公開：" ~ q.date|replace("-", "/") ~ ("　更新：" ~ q.updated|replace("-", "/") if q.updated else "") %}{% include "_byline.html" %}{% endwith %}
   <div class="answer">
     <p class="answer-label">ポイント</p>
     <p>{{ q.answer|mk }}</p>
