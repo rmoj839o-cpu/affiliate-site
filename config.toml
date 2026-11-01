@@ -43,6 +43,18 @@ must = "加湿器"
 ng = "中古 フィルター 交換用 部品 業務用 ふるさと納税"
 
 [[categories]]
+slug = "steam-humidifier"
+power = [100, 1000]
+months = [10, 11, 12, 1, 2, 3]
+bands = [10000, 20000]
+title = "スチーム式加湿器"
+keyword = "スチーム式加湿器"
+must = "スチーム"
+min_price = 3000
+max_price = 60000
+ng = "中古 フィルター 交換用 部品 業務用 ふるさと納税 アロマオイル 精油 クエン酸 洗浄剤 アイロン 衣類スチーマー スチームクリーナー 美顔器 フェイススチーマー USB"
+
+[[categories]]
 slug = "electric-blanket"
 power = [20, 200]
 bands = [5000, 8000]
