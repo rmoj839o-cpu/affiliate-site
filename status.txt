@@ -1,0 +1,17 @@
+=== https://rmoj839o-cpu.github.io/affiliate-site/guide/
+HTTP/2 301 
+location: https://hitorigurashi-kaden.net/guide/
+=== https://rmoj839o-cpu.github.io/affiliate-site/
+HTTP/2 301 
+location: https://hitorigurashi-kaden.net/
+=== https://rmoj839o-cpu.github.io/affiliate-site/circulator/
+HTTP/2 301 
+location: https://hitorigurashi-kaden.net/circulator/
+=== https://hitorigurashi-kaden.net/guide/
+HTTP/2 200 
+=== https://www.hitorigurashi-kaden.net/guide/
+HTTP/2 301 
+location: https://hitorigurashi-kaden.net/guide/
+=== http://hitorigurashi-kaden.net/guide/
+HTTP/1.1 301 Moved Permanently
+Location: https://hitorigurashi-kaden.net/guide/
