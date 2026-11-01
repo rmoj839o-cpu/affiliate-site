@@ -1,0 +1,23 @@
+name: probe-redirect
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check whether the old github.io address redirects
+        run: |
+          mkdir out && cd out
+          for u in https://rmoj839o-cpu.github.io/affiliate-site/guide/ https://rmoj839o-cpu.github.io/affiliate-site/ https://rmoj839o-cpu.github.io/affiliate-site/circulator/ https://hitorigurashi-kaden.net/guide/ https://www.hitorigurashi-kaden.net/guide/ http://hitorigurashi-kaden.net/guide/; do
+            echo "=== $u" >> status.txt
+            curl -sSI -m 20 "$u" | grep -iE '^(HTTP|location)' >> status.txt 2>&1 || echo FAIL >> status.txt
+          done
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
