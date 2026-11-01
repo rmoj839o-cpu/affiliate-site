@@ -188,6 +188,7 @@ def main():
     kero = kerosene.summary(kero_db)
 
     pages = []
+    page_dates = {}  # 中身を書き足した日（記事・コラム）。毎日変わるランキングなどは今日の日付
     built = []
     for cat in cfg["categories"]:
         print(f"[{cat['title']}]")
@@ -291,6 +292,7 @@ def main():
         out.write_text(env.get_template("column.html").render(
             col=col, cat=cat, items=cat["items"], path=f"/column/{col['slug']}/"), encoding="utf-8")
         pages.append(f"/column/{col['slug']}/")
+        page_dates[f"/column/{col['slug']}/"] = col.get("updated") or col.get("date")
     if columns:
         (DIST / "column" / "index.html").write_text(
             env.get_template("column_index.html").render(columns=columns, by_slug=by_slug, path="/column/"),
@@ -310,6 +312,7 @@ def main():
             services=services.get(cat["slug"]) if cat and q.get("show_services") else None,
             no_ads=not cat), encoding="utf-8")
         pages.append(f"/guide/{q['slug']}/")
+        page_dates[f"/guide/{q['slug']}/"] = q.get("updated") or q.get("date")
     if kero:
         out = DIST / "guide" / "touyu-kakaku" / "index.html"
         out.parent.mkdir(parents=True)
@@ -319,6 +322,7 @@ def main():
             related=[q for q in answers if "touyu" in q["slug"] or q["category"] == "kerosene-fan-heater"][:5],
             products=products, no_ads=not products), encoding="utf-8")
         pages.append("/guide/touyu-kakaku/")
+        page_dates["/guide/touyu-kakaku/"] = kero["day"]
     if answers:
         (DIST / "guide" / "index.html").write_text(
             env.get_template("answer_index.html").render(answers=answers, by_slug=by_slug, kero=kero, path="/guide/"),
@@ -331,7 +335,7 @@ def main():
     pages += ["/", "/about/"]
 
     lastmod = now.strftime("%Y-%m-%d")
-    urls = "".join(f"<url><loc>{site['url']}{p}</loc><lastmod>{lastmod}</lastmod></url>" for p in pages)
+    urls = "".join(f"<url><loc>{site['url']}{p}</loc><lastmod>{page_dates.get(p) or lastmod}</lastmod></url>" for p in pages)
     (DIST / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>'
         f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>', encoding="utf-8")
