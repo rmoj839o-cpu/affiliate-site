@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 306" role="img" aria-label="暖房器具ごとの1時間あたりの費用">
+<rect width="360" height="306" rx="12" fill="#fffdf8"/>
+<text x="180" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">1時間あたりの暖房費（目安）</text>
+<text x="180" y="44" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">電気1kWh＝31円、灯油1L＝140円で計算</text>
+<line x1="128" y1="56" x2="128" y2="266" stroke="#e3e3dc"/>
+<text x="128.0" y="280" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">0円</text>
+<line x1="178" y1="56" x2="178" y2="266" stroke="#e3e3dc"/>
+<text x="178.5" y="280" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">10円</text>
+<line x1="229" y1="56" x2="229" y2="266" stroke="#e3e3dc"/>
+<text x="229.0" y="280" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">20円</text>
+<line x1="280" y1="56" x2="280" y2="266" stroke="#e3e3dc"/>
+<text x="279.5" y="280" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">30円</text>
+<line x1="330" y1="56" x2="330" y2="266" stroke="#e3e3dc"/>
+<text x="330.0" y="280" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">40円</text>
+<text x="120" y="74" text-anchor="end" font-size="11.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">電気毛布</text>
+<rect x="136" y="63" width="8" height="16" rx="8" fill="#bf0000" opacity="0.45"/>
+<text x="136.08" y="93" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約1.6円</text>
+<text x="120" y="116" text-anchor="end" font-size="11.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">エアコン</text>
+<rect x="143" y="105" width="66" height="16" rx="8" fill="#bf0000" opacity="0.57"/>
+<text x="143.15" y="135" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約3〜16円</text>
+<text x="120" y="158" text-anchor="end" font-size="11.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">こたつ</text>
+<rect x="173" y="147" width="50" height="16" rx="8" fill="#bf0000" opacity="0.69"/>
+<text x="173.45" y="177" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約9〜19円</text>
+<text x="120" y="200" text-anchor="end" font-size="11.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">石油ファンヒーター</text>
+<rect x="204" y="189" width="50" height="16" rx="8" fill="#bf0000" opacity="0.81"/>
+<text x="203.75" y="219" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約15〜25円</text>
+<text x="120" y="242" text-anchor="end" font-size="11.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">セラミックヒーター</text>
+<rect x="224" y="231" width="91" height="16" rx="8" fill="#bf0000" opacity="0.93"/>
+<text x="223.95" y="261" text-anchor="start" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約19〜37円</text>
+<text x="180" y="298" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">電気毛布とこたつは体のまわり、ほかは部屋全体を暖めます</text>
+</svg>
