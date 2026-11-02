@@ -1345,25 +1345,25 @@
      "auc-e-tradeservice:10000193": 49800,
      "auc-e-tradeservice:10000199": 63800,
      "yamakishi:10000968": 13006,
+     "os-parts:10001397": 16500,
      "yamakishi:10105398": 8980,
-     "yiprefer:10002710": 22800,
      "lazo:10000166": 39800,
+     "yiprefer:10002710": 22800,
      "ichibankanshop:11166762": 46200,
      "maxshare:10060842": 13970,
-     "minatodenk:10761244": 16800,
-     "goturefishing:10000067": 13800
+     "minatodenk:10761244": 16800
     },
     "reviews": {
      "auc-e-tradeservice:10000193": 37,
      "auc-e-tradeservice:10000199": 66,
      "yamakishi:10000968": 76,
+     "os-parts:10001397": 39,
      "yamakishi:10105398": 54,
-     "yiprefer:10002710": 50,
      "lazo:10000166": 35,
+     "yiprefer:10002710": 50,
      "ichibankanshop:11166762": 74,
      "maxshare:10060842": 33,
-     "minatodenk:10761244": 36,
-     "goturefishing:10000067": 36
+     "minatodenk:10761244": 36
     }
    },
    "single-microwave": {
@@ -2046,10 +2046,10 @@
      "watami-direct:10000064": 5480,
      "polar-star:10000017": 4200,
      "nichireifoods:10000071": 7760,
-     "greenspoon:10000118": 13080,
      "magokoro-careshoku:10000117": 3780,
      "nichireifoods:10000009": 8930,
      "belluna-gourmet:10025638": 14970,
+     "greenspoon:10000057": 7050,
      "watami-direct:10000051": 5380
     },
     "reviews": {
@@ -2058,10 +2058,10 @@
      "watami-direct:10000064": 145,
      "polar-star:10000017": 514,
      "nichireifoods:10000071": 154,
-     "greenspoon:10000118": 201,
      "magokoro-careshoku:10000117": 112,
      "nichireifoods:10000009": 442,
      "belluna-gourmet:10025638": 150,
+     "greenspoon:10000057": 131,
      "watami-direct:10000051": 260
     }
    },
