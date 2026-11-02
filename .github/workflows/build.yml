@@ -2,7 +2,7 @@ name: build-and-deploy
 
 on:
   schedule:
-    - cron: "47 20 * * *"   # 毎日 日本時間 5:47 に自動更新
+    - cron: "17 18 * * *"   # 毎日 日本時間 3:17 に自動更新（GitHubの混雑で数時間遅れることがあるので早めに）
   workflow_dispatch:         # Actions画面から手動実行も可能
   push:                      # 仕組みを更新したときもすぐ反映する
     branches: [main]
