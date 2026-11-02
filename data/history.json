@@ -1093,7 +1093,7 @@
      "tokyopt:10000012": 1021,
      "animestore:10000898": 711,
      "meijo:10000000": 1089,
-     "milicute-himawari:10000017": 9553,
+     "milicute-himawari:10000017": 9554,
      "asukapainting:10000028": 1250,
      "importshopaqua:10000488": 4120,
      "goodcarsstyle:10000948": 612,
@@ -1119,7 +1119,7 @@
      "matsucame:10071734": 244,
      "roomy:10016494": 385,
      "roomy:10017920": 49,
-     "duux-japan:10000100": 486,
+     "duux-japan:10000100": 487,
      "u-denki:10039975": 134,
      "quads:10000127": 31,
      "duux-japan:10000122": 182,
@@ -1132,8 +1132,8 @@
     "prices": {
      "hitidear:10000192": 7980,
      "katushop:10000129": 10999,
-     "nexmoov:10000071": 6980,
      "hagoogi:10000255": 8680,
+     "nexmoov:10000071": 6980,
      "mpowjapan:10000823": 8900,
      "itsube-souken:10000266": 9960,
      "kukuya:10000147": 11980,
@@ -1144,10 +1144,10 @@
     "reviews": {
      "hitidear:10000192": 1229,
      "katushop:10000129": 1171,
+     "hagoogi:10000255": 644,
      "nexmoov:10000071": 555,
-     "hagoogi:10000255": 643,
-     "mpowjapan:10000823": 3429,
-     "itsube-souken:10000266": 2457,
+     "mpowjapan:10000823": 3430,
+     "itsube-souken:10000266": 2458,
      "kukuya:10000147": 1385,
      "migaber:10000081": 937,
      "lifejoy-shop:10000093": 1006,
@@ -1192,10 +1192,10 @@
      "aiwo:10000030": 899
     },
     "reviews": {
-     "dasimon:10000020": 1483,
+     "dasimon:10000020": 1482,
      "zian:10000038": 3640,
      "aideall:10000056": 504,
-     "tabtab:10003266": 28306,
+     "tabtab:10003266": 28307,
      "zian:10000097": 2144,
      "meisei:10000142": 1704,
      "hanaro:10001563": 1625,
@@ -1240,10 +1240,10 @@
      "lifeonproducts:10000359": 4928,
      "stargenius:10000061": 3570,
      "hitidear:10000195": 18500,
+     "mikirona:10000095": 3260,
      "roomy:10016455": 11000,
      "mikirona:10000063": 3270,
-     "hitidear:10000121": 8980,
-     "enetroom:10180654": 4980
+     "hitidear:10000121": 8980
     },
     "reviews": {
      "msut:10001784": 1144,
@@ -1252,10 +1252,10 @@
      "lifeonproducts:10000359": 410,
      "stargenius:10000061": 333,
      "hitidear:10000195": 347,
+     "mikirona:10000095": 315,
      "roomy:10016455": 709,
      "mikirona:10000063": 1216,
-     "hitidear:10000121": 1115,
-     "enetroom:10180654": 324
+     "hitidear:10000121": 1115
     }
    },
    "electric-kettle": {
@@ -1297,7 +1297,7 @@
      "k-home:10059750": 11800,
      "moosoo:10000614": 12800,
      "irisplaza-r:10149298": 10800,
-     "irisplaza-r:10140541": 11800
+     "irisplaza-r:10140541": 9980
     },
     "reviews": {
      "enetroom:10183493": 719,
@@ -1307,7 +1307,7 @@
      "insair:10003203": 493,
      "k-home:10066477": 431,
      "k-home:10059750": 329,
-     "moosoo:10000614": 2277,
+     "moosoo:10000614": 2278,
      "irisplaza-r:10149298": 264,
      "irisplaza-r:10140541": 385
     }
@@ -1440,7 +1440,7 @@
      "satoudenkiya:10000011": 450,
      "cocoa:10007103": 39,
      "importshopaqua:10010532": 192,
-     "tokyomicro:10000003": 440,
+     "tokyomicro:10000003": 441,
      "sanwa-shop:10000034": 33,
      "satoudenkiya:10000000": 605,
      "bandc:10200327": 197,
@@ -1467,7 +1467,7 @@
      "quads:10000068": 802,
      "matsucame:10072396": 222,
      "duux-japan:10000073": 125,
-     "air-rhizome:10014590": 1190,
+     "air-rhizome:10014590": 1191,
      "siroca:10000043": 92,
      "threeup:10000216": 147,
      "importshopaqua:10002478": 224,
@@ -1597,13 +1597,13 @@
      "mikirona:10000085": 5980
     },
     "reviews": {
-     "iapos:10000018": 886,
+     "iapos:10000018": 887,
      "panasonic-store:10000005": 1212,
      "tescom-japan:10000036": 2547,
      "tescom-japan:10000227": 707,
      "chouchou-store:10001355": 964,
      "kukuya:10000154": 635,
-     "roomy:10016274": 695,
+     "roomy:10016274": 696,
      "kukuya:10000117": 2884,
      "chouchou-store:10001693": 790,
      "mikirona:10000085": 8748
@@ -1674,7 +1674,7 @@
      "dearcologne:10001336": 3490,
      "aooka:10000743": 3499,
      "osharewalker:10014004": 4980,
-     "nissen-r:10962779": 3999,
+     "nissen-r:10962779": 3979,
      "ran0000:10000042": 2990
     },
     "reviews": {
@@ -1686,7 +1686,7 @@
      "dearcologne:10001336": 1394,
      "aooka:10000743": 646,
      "osharewalker:10014004": 561,
-     "nissen-r:10962779": 551,
+     "nissen-r:10962779": 552,
      "ran0000:10000042": 354
     }
    },
@@ -1709,7 +1709,7 @@
      "roomy:10014274": 1132,
      "atex-net:10001779": 1115,
      "leapgrow:10000735": 513,
-     "lazboy-q:10000023": 1265,
+     "lazboy-q:10000023": 1266,
      "nissoplus:10000178": 4461,
      "lazboy-q:10000000": 658,
      "butterflyshop:10000245": 170,
@@ -1744,27 +1744,27 @@
     "top": "xgimi-store:10000066",
     "prices": {
      "xgimi-store:10000066": 69800,
-     "ueno-mono:10000046": 84800,
      "heimvision:10000333": 19999,
      "tcl-flagship:10000000": 37590,
      "jmgo-store:10000014": 89980,
      "sanwa-shop:10000013": 29999,
      "sanwa-shop:10000017": 12980,
-     "ueno-mono:10000034": 54800,
      "etoeofficial:10000004": 34999,
-     "tandc2:10000037": 9960
+     "tandc2:10000037": 9960,
+     "aquilaria:10000090": 9480,
+     "entamefactory:10000310": 9980
     },
     "reviews": {
      "xgimi-store:10000066": 219,
-     "ueno-mono:10000046": 709,
      "heimvision:10000333": 528,
      "tcl-flagship:10000000": 114,
      "jmgo-store:10000014": 61,
      "sanwa-shop:10000013": 231,
      "sanwa-shop:10000017": 62,
-     "ueno-mono:10000034": 2105,
      "etoeofficial:10000004": 3136,
-     "tandc2:10000037": 2450
+     "tandc2:10000037": 2450,
+     "aquilaria:10000090": 83,
+     "entamefactory:10000310": 5411
     }
    },
    "sous-vide": {
@@ -1826,26 +1826,26 @@
     "prices": {
      "kyo-rin:10000008": 5120,
      "scandinavie:10010116": 3980,
-     "good-balancelab:10000059": 3980,
      "twinklegoods:10000107": 1499,
      "h2brothers:10001880": 1180,
      "h2brothers:10001923": 1000,
      "aquatalk:10000172": 3520,
      "brain556:10005864": 2180,
      "mottainaiya:10001039": 2790,
-     "yukaiya:10001268": 780
+     "yukaiya:10001268": 780,
+     "aquatalk:10000314": 1800
     },
     "reviews": {
      "kyo-rin:10000008": 183,
      "scandinavie:10010116": 315,
-     "good-balancelab:10000059": 163,
      "twinklegoods:10000107": 282,
-     "h2brothers:10001880": 10822,
+     "h2brothers:10001880": 10824,
      "h2brothers:10001923": 229,
      "aquatalk:10000172": 505,
      "brain556:10005864": 185,
      "mottainaiya:10001039": 196,
-     "yukaiya:10001268": 416
+     "yukaiya:10001268": 416,
+     "aquatalk:10000314": 4091
     }
    },
    "kerosene-stove": {
@@ -1903,45 +1903,45 @@
     "prices": {
      "bousaiyouhin-oshare:10000165": 37800,
      "bousaiyouhin-oshare:10000493": 29400,
-     "liplus:10002825": 19980,
      "liplus:10000036": 15800,
+     "liplus:10000038": 32800,
      "peaceup:10001476": 5979,
      "nayami-kaiketu:10000844": 17800,
      "nayami-kaiketu:10000630": 15800,
      "nagomilab:10000048": 29800,
      "at-rescue:10000574": 19980,
-     "at-rescue:10000170": 15800
+     "kurashido:10000032": 16800
     },
     "reviews": {
      "bousaiyouhin-oshare:10000165": 342,
-     "bousaiyouhin-oshare:10000493": 240,
-     "liplus:10002825": 165,
+     "bousaiyouhin-oshare:10000493": 241,
      "liplus:10000036": 222,
+     "liplus:10000038": 190,
      "peaceup:10001476": 1000,
      "nayami-kaiketu:10000844": 195,
      "nayami-kaiketu:10000630": 3244,
      "nagomilab:10000048": 252,
      "at-rescue:10000574": 594,
-     "at-rescue:10000170": 2735
+     "kurashido:10000032": 435
     }
    },
    "hijoushoku": {
-    "top": "alphasyokuhin:10000015",
+    "top": "kurashido:10000448",
     "prices": {
+     "kurashido:10000448": 13800,
      "alphasyokuhin:10000015": 4536,
      "import-garden:10002588": 22140,
+     "peaceup:10010947": 13500,
      "juju-giona:10007687": 16990,
-     "lock110:10023900": 4200,
-     "comoshop:10000054": 3520,
-     "pro-bousai:10000146": 18360
+     "comoshop:10000054": 3520
     },
     "reviews": {
+     "kurashido:10000448": 398,
      "alphasyokuhin:10000015": 395,
      "import-garden:10002588": 391,
+     "peaceup:10010947": 594,
      "juju-giona:10007687": 394,
-     "lock110:10023900": 356,
-     "comoshop:10000054": 3799,
-     "pro-bousai:10000146": 387
+     "comoshop:10000054": 3799
     }
    },
    "hozonsui": {
@@ -1952,11 +1952,11 @@
      "saigaitaisakuhonpo:10000024": 3670,
      "peaceup:10010683": 5179,
      "peaceup:10011285": 6350,
+     "jyonetsubatake:10000342": 1368,
      "magokoro-eshop:10001363": 3499,
+     "ix-ix:10001270": 1764,
      "bousai-pro-shop:10000019": 3599,
-     "ix-ix:10000242": 1780,
-     "heimat:10001340": 2250,
-     "pockybear:10041157": 6804
+     "ix-ix:10000242": 1869
     },
     "reviews": {
      "monoroots:10000731": 103,
@@ -1964,11 +1964,11 @@
      "saigaitaisakuhonpo:10000024": 80,
      "peaceup:10010683": 98,
      "peaceup:10011285": 190,
+     "jyonetsubatake:10000342": 2279,
      "magokoro-eshop:10001363": 52,
+     "ix-ix:10001270": 264,
      "bousai-pro-shop:10000019": 44,
-     "ix-ix:10000242": 1935,
-     "heimat:10001340": 69,
-     "pockybear:10041157": 52
+     "ix-ix:10000242": 1936
     }
    },
    "led-lantern": {
@@ -1988,12 +1988,12 @@
     "reviews": {
      "roomy:10011015": 630,
      "artpiece:10000484": 1023,
-     "c-c-s:10000226": 596,
+     "c-c-s:10000226": 597,
      "dmastore:10000569": 289,
      "mtkshop:10010525": 492,
      "minatodenk:10752092": 249,
      "ashop:10004401": 316,
-     "artpiece:10000420": 1659,
+     "artpiece:10000420": 1660,
      "gmy-japan:10000003": 723,
      "axzes:10005939": 413
     }
@@ -2002,13 +2002,11 @@
     "top": "good-item:10002480",
     "prices": {
      "good-item:10002480": 5950,
-     "gaskigu-shop-r:10001093": 7200,
      "irisplaza-r:10149259": 3150,
      "insair:10051434": 3870
     },
     "reviews": {
      "good-item:10002480": 33,
-     "gaskigu-shop-r:10001093": 46,
      "irisplaza-r:10149259": 245,
      "insair:10051434": 32
     }
@@ -2024,8 +2022,8 @@
      "2-itamae:10000929": 7230,
      "selvice:10000844": 5980,
      "oiwaizen:10001452": 7650,
-     "oiwaizen:10001156": 6750,
-     "kyousaiminomura:10000007": 7128
+     "kyousaiminomura:10000007": 7128,
+     "hisamatsu:10000048": 6780
     },
     "reviews": {
      "chinagrand:10000622": 70,
@@ -2036,8 +2034,8 @@
      "2-itamae:10000929": 37,
      "selvice:10000844": 18,
      "oiwaizen:10001452": 15,
-     "oiwaizen:10001156": 11,
-     "kyousaiminomura:10000007": 34
+     "kyousaiminomura:10000007": 34,
+     "hisamatsu:10000048": 581
     }
    },
    "frozen-bento": {
@@ -2135,7 +2133,7 @@
      "wwff:10000021": 393,
      "eu-oukoku:10000721": 420,
      "tsukiji-chokusoubin:10001766": 2331,
-     "auc-kurashi-kaientai:10004116": 493,
+     "auc-kurashi-kaientai:10004116": 494,
      "bundara:10002042": 673,
      "tsukiji-chokusoubin:10001817": 431,
      "sanchokudayori:10004117": 701,
