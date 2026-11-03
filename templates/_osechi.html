@@ -6,9 +6,9 @@
     <tbody>{% for r in osechi_rows %}<tr>
       <td><a href="#rank{{ r.rank }}">{{ r.rank }}位</a><small>{{ r.short_name }}</small></td>
       <td>{{ r.early or "―" }}</td>
-      <td>{{ r.deadline or "―" }}</td>
+      <td>{% if r.deadline %}{{ r.deadline }}{% else %}<a class="osechi-check" href="#rank{{ r.rank }}">商品ページで確認</a>{% endif %}</td>
       <td>{{ [r.temp, r.servings, r.dishes] | select | join("・") or "―" }}</td>
     </tr>{% endfor %}</tbody>
   </table></div>
-  <p class="method">商品名と説明文から読み取った目安です（{{ updated }}時点）。早割や締め切りは売り切れなどで早まることがあるので、必ず商品ページで確認してください。「―」は読み取れなかったものです。</p>
+  <p class="method">商品名と説明文から読み取った目安です（{{ updated }}時点）。早割や締め切りは売り切れなどで早まることがあるので、必ず商品ページで確認してください。「―」や「商品ページで確認」は、商品名と説明文に書かれていなかったものです。</p>
 {% endif %}
