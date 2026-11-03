@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 290" role="img" aria-label="ひとり暮らしの電気代の平均（2025年・3か月ごと）">
+<rect width="360" height="290" rx="12" fill="#fffdf8"/>
+<text x="180" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">ひとり暮らしの電気代（1か月の平均）</text>
+<text x="180" y="44" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">総務省「家計調査」2025年・単身世帯（1年の平均は7,337円）</text>
+<rect x="40" y="101" width="52" height="139" rx="6" fill="#bf0000"/>
+<text x="66" y="92.57500000000002" text-anchor="middle" font-size="12.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">9,295円</text>
+<text x="66" y="258" text-anchor="middle" font-size="12" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">1〜3月</text>
+<rect x="116" y="139" width="52" height="101" rx="6" fill="#9aa3ad"/>
+<text x="142" y="130.85500000000002" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">6,743円</text>
+<text x="142" y="258" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">4〜6月</text>
+<rect x="192" y="138" width="52" height="102" rx="6" fill="#9aa3ad"/>
+<text x="218" y="129.67000000000002" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">6,822円</text>
+<text x="218" y="258" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">7〜9月</text>
+<rect x="268" y="139" width="52" height="101" rx="6" fill="#9aa3ad"/>
+<text x="294" y="131.44" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">6,704円</text>
+<text x="294" y="258" text-anchor="middle" font-size="12" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">10〜12月</text>
+<text x="180" y="276" text-anchor="middle" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">冬（1〜3月）は、ほかの季節より月2,500円くらい高い</text>
+</svg>
