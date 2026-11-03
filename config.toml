@@ -429,6 +429,7 @@ image = "season/winter-table"
 months = [9, 10, 11, 12]
 bands = [8000]
 title = "一人用おせち（{new_year}年）"
+osechi_table = true   # 早割・締め切り・中身の早見表を出す
 group = "food"
 keyword = "おせち 一人前 {new_year}"
 must = "おせち"

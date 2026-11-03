@@ -17,7 +17,7 @@ from urllib.parse import urlparse
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 from markupsafe import Markup, escape
 
-from . import kerosene, links, power, prices, rakuten, rank, social, writer
+from . import kerosene, links, osechi, power, prices, rakuten, rank, social, writer
 from .writer import JST
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -213,13 +213,19 @@ def main():
         hl = rank.highlights(ranked, history.get(cat["slug"], {}))
 
         subpages = build_subpages(cat, pool, cfg, args.demo, price_db)
+        # おせちは「早割・締め切り・冷凍か冷蔵か・何人前で何品か」を表にする
+        osechi_rows = osechi.rows(ranked) if cat.get("osechi_table") else None
+        if osechi_rows and not args.demo:
+            (ROOT / "data" / "osechi.json").write_text(json.dumps(
+                {"date": today, "rows": osechi_rows, "evidence": [osechi.evidence(i.get("caption", "")) for i in ranked]},
+                ensure_ascii=False, indent=1), encoding="utf-8")
         out = DIST / cat["slug"] / "index.html"
         out.parent.mkdir(parents=True)
         out.write_text(env.get_template("category.html").render(
             cat=cat, items=ranked, notes=notes, content=content, hl=hl, subpages=subpages,
             columns=[c for c in columns if c["category"] == cat["slug"]],
             answers=[q for q in answers if q["category"] == cat["slug"]],
-            services=services.get(cat["slug"]),
+            services=services.get(cat["slug"]), osechi_rows=osechi_rows,
             kero=kero if cat["slug"] in ("kerosene-fan-heater", "kerosene-stove") else None,
             path=f"/{cat['slug']}/",
         ), encoding="utf-8")
@@ -230,6 +236,7 @@ def main():
             sp_out.parent.mkdir(parents=True)
             sp_out.write_text(env.get_template("subpage.html").render(
                 cat=cat, sp=sp, items=sp["items"], notes=sp_notes,
+                osechi_rows=osechi.rows(sp["items"]) if cat.get("osechi_table") else None,
                 siblings=[o for o in subpages if o is not sp], path=f"/{cat['slug']}/{sp['slug']}/",
             ), encoding="utf-8")
             pages.append(f"/{cat['slug']}/{sp['slug']}/")

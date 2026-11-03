@@ -25,6 +25,7 @@
   {% if budget_pages %}<p class="budget-links">予算で選ぶ：{% for sp in budget_pages %}<a href="{{ base }}/{{ cat.slug }}/{{ sp.slug }}/">{{ sp.title.split("円")[0] }}円以下</a>{% endfor %}</p>{% endif %}
   <p class="lead">{{ content.intro|mk }}</p>
 {% include "_table.html" %}
+{% include "_osechi.html" %}
 {% include "_basis.html" %}
 
   <h2>{{ cat.title }}の選び方</h2>

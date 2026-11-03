@@ -1,0 +1,14 @@
+{% if osechi_rows %}
+  <!-- おせちの早割・締め切り・中身の早見表（商品名と説明文から毎日読み取る） -->
+  <h2>早割・締め切り・中身の早見表</h2>
+  <div class="table-scroll"><table class="qtable osechi-table">
+    <thead><tr><th>順位</th><th>早割</th><th>注文の締め切り</th><th>中身</th></tr></thead>
+    <tbody>{% for r in osechi_rows %}<tr>
+      <td><a href="#rank{{ r.rank }}">{{ r.rank }}位</a><small>{{ r.short_name }}</small></td>
+      <td>{{ r.early or "―" }}</td>
+      <td>{{ r.deadline or "―" }}</td>
+      <td>{{ [r.temp, r.servings, r.dishes] | select | join("・") or "―" }}</td>
+    </tr>{% endfor %}</tbody>
+  </table></div>
+  <p class="method">商品名と説明文から読み取った目安です（{{ updated }}時点）。早割や締め切りは売り切れなどで早まることがあるので、必ず商品ページで確認してください。「―」は読み取れなかったものです。</p>
+{% endif %}
