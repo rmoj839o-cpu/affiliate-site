@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" role="img" aria-label="外出する時間で、エアコン暖房をつけっぱなしにするか消すかを決める目安">
+<rect width="360" height="230" rx="12" fill="#fffdf8"/>
+<text x="180" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">出かける時間で決める</text>
+<text x="180" y="44" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">エアコン暖房の目安</text>
+<text x="68.0" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">〜30分</text>
+<rect x="16" y="88" width="104" height="44" rx="8" fill="#bf0000"/>
+<text x="68.0" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="Hiragino Sans, Noto Sans JP, sans-serif">つけっぱなし</text>
+<text x="176.0" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">30分〜1時間</text>
+<rect x="124" y="88" width="104" height="44" rx="8" fill="#e8b4b4"/>
+<text x="176.0" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">どちらでも</text>
+<text x="288.0" y="78" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">1時間〜</text>
+<rect x="232" y="88" width="112" height="44" rx="8" fill="#5f6670"/>
+<text x="288.0" y="116" text-anchor="middle" font-size="13" font-weight="700" fill="#fff" font-family="Hiragino Sans, Noto Sans JP, sans-serif">消す</text>
+<text x="70" y="154" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">例：ゴミ出し</text>
+<text x="176" y="154" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">例：近所で買い物</text>
+<text x="288" y="154" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">例：仕事に行く</text>
+<text x="180" y="186" text-anchor="middle" font-size="11.5" font-weight="400" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">暖まるまでのあいだが、いちばん電気を使うから</text>
+<text x="180" y="206" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">ダイキンの実験では、30分の外出ならつけっぱなしがお得</text>
+</svg>
