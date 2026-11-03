@@ -64,6 +64,14 @@ jobs:
       - id: deploy
         uses: actions/deploy-pages@v4
 
+      - name: Tell Bing about updated pages (IndexNow)
+        # 今日公開・更新した記事だけを知らせる。失敗してもサイトの公開には関係ない
+        if: hashFiles('indexnow.json') != ''
+        continue-on-error: true
+        run: |
+          curl -sS -m 30 -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" --data @indexnow.json -w "IndexNow: HTTP %{http_code}\n"
+
       - name: Post SNS drafts as an issue
         if: hashFiles('drafts.md') != ''
         env:

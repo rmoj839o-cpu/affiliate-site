@@ -342,6 +342,17 @@ def main():
     robots = "User-agent: *\nDisallow: /\n" if args.demo else f"User-agent: *\nAllow: /\nSitemap: {site['url']}/sitemap.xml\n"
     (DIST / "robots.txt").write_text(robots, encoding="utf-8")
     (DIST / ".nojekyll").write_text("")
+    # IndexNow：今日書いた・育てた記事を、公開のあとで Bing などに知らせる（送るのは workflow の最後）
+    key = bcfg.get("indexnow_key")
+    notify = ROOT / "indexnow.json"
+    notify.unlink(missing_ok=True)
+    if key and not args.demo:
+        (DIST / f"{key}.txt").write_text(key, encoding="utf-8")
+        fresh = [f"{site['url']}{p}" for p in pages if page_dates.get(p) == lastmod]
+        if fresh:
+            notify.write_text(json.dumps({"host": urlparse(site["url"]).netloc, "key": key,
+                                          "keyLocation": f"{site['url']}/{key}.txt", "urlList": fresh}), encoding="utf-8")
+            print(f"IndexNow: {len(fresh)}ページを知らせます")
     social.run(built, site, site["url"], ROOT / "drafts.md", DIST, demo=args.demo,
                drafts=bcfg.get("sns_drafts", True))
     print(f"完了: {DIST}")
