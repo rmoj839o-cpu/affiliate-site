@@ -56,6 +56,17 @@ max_price = 60000
 ng = "中古 フィルター 交換用 部品 業務用 ふるさと納税 アロマオイル 精油 クエン酸 洗浄剤 アイロン 衣類スチーマー スチームクリーナー 美顔器 フェイススチーマー USB"
 
 [[categories]]
+slug = "window-insulation"
+months = [10, 11, 12, 1, 2, 3]
+bands = [1000, 2000]
+title = "窓の断熱シート"
+keyword = "窓 断熱シート"
+must = "断熱"
+min_price = 300
+max_price = 10000
+ng = "中古 ふるさと納税 業務用 車 カー用品 サンシェード フロントガラス 寝袋 ラグ マット 床 レジャー 保冷 クーラーバッグ"
+
+[[categories]]
 slug = "electric-blanket"
 power = [20, 200]
 bands = [5000, 8000]
