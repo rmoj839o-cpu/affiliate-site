@@ -309,7 +309,7 @@ def main():
             q=q, cat=cat, items=cat["items"] if cat else [], related=related, path=f"/guide/{q['slug']}/",
             # products: 記事に出てきたジャンル（なければ記事のジャンルの上位3つ）
             products=[by_slug[s] for s in q.get("products", []) if s in by_slug] if cat else [],
-            services=services.get(cat["slug"]) if cat and q.get("show_services") else None,
+            services=services.get(q.get("service") or cat["slug"]) if cat and q.get("show_services") else None,  # service: ジャンルとは別の広告を選ぶとき（services/<名前>.json）
             no_ads=not cat), encoding="utf-8")
         pages.append(f"/guide/{q['slug']}/")
         page_dates[f"/guide/{q['slug']}/"] = q.get("updated") or q.get("date")
