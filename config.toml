@@ -67,6 +67,18 @@ max_price = 10000
 ng = "中古 ふるさと納税 業務用 車 カー用品 サンシェード フロントガラス 寝袋 ラグ マット 床 レジャー 保冷 クーラーバッグ 防犯 超遮光 日よけ 西日 すりガラス 曇りガラス"
 
 [[categories]]
+slug = "desk-panel-heater"
+power = [30, 400]
+months = [10, 11, 12, 1, 2, 3]
+bands = [5000, 8000]
+title = "デスク下パネルヒーター"
+keyword = "パネルヒーター デスク 足元"
+must = "パネルヒーター デスクヒーター 足元ヒーター"
+min_price = 2000
+max_price = 30000
+ng = "中古 ふるさと納税 業務用 ペット 犬 猫 爬虫類 ケージ 育苗 オイルヒーター 交換用 カバーのみ"
+
+[[categories]]
 slug = "electric-blanket"
 power = [20, 200]
 bands = [5000, 8000]
