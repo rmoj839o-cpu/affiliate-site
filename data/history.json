@@ -1204,6 +1204,29 @@
      "premium-interior:10004116": 1458
     }
    },
+   "smart-remote": {
+    "top": "tplinkdirect:10001558",
+    "prices": {
+     "tplinkdirect:10001558": 6000,
+     "switchbot:10000076": 7980,
+     "switchbot:10000280": 13580,
+     "linkjapan-iot:10000001": 4980,
+     "nature-remo:10000022": 7980,
+     "kitcut-ps:10130570": 7980,
+     "dmastore:10000962": 2990,
+     "dmastore:10001098": 1980
+    },
+    "reviews": {
+     "tplinkdirect:10001558": 324,
+     "switchbot:10000076": 1987,
+     "switchbot:10000280": 122,
+     "linkjapan-iot:10000001": 119,
+     "nature-remo:10000022": 126,
+     "kitcut-ps:10130570": 106,
+     "dmastore:10000962": 572,
+     "dmastore:10001098": 118
+    }
+   },
    "electric-blanket": {
     "top": "hitidear:10000192",
     "prices": {
@@ -1344,10 +1367,10 @@
      "importshopaqua:10010734": 16500,
      "najimihouse:10004363": 4280,
      "snailax-shop:10000152": 4480,
-     "bellevie-harima:10168348": 4158,
      "bruno-official:10000373": 9900,
      "roomy:10017792": 8800,
-     "sunshine-store:10000555": 4180
+     "sunshine-store:10000555": 4180,
+     "myhomeshop:10000410": 4980
     },
     "reviews": {
      "importshopaqua:10009903": 276,
@@ -1356,10 +1379,10 @@
      "importshopaqua:10010734": 419,
      "najimihouse:10004363": 307,
      "snailax-shop:10000152": 316,
-     "bellevie-harima:10168348": 800,
      "bruno-official:10000373": 304,
      "roomy:10017792": 265,
-     "sunshine-store:10000555": 467
+     "sunshine-store:10000555": 467,
+     "myhomeshop:10000410": 450
     }
    },
    "futon-dryer": {
@@ -1899,10 +1922,9 @@
     }
    },
    "emergency-toilet": {
-    "top": "kyo-rin:10000008",
+    "top": "scandinavie:10010116",
     "prices": {
-     "kyo-rin:10000008": 5120,
-     "scandinavie:10010116": 3980,
+     "scandinavie:10010116": 5980,
      "h2brothers:10001880": 1180,
      "twinklegoods:10000107": 1499,
      "h2brothers:10001923": 1000,
@@ -1910,10 +1932,10 @@
      "brain556:10005864": 2180,
      "mottainaiya:10001039": 2790,
      "yukaiya:10001268": 780,
-     "aquatalk:10000314": 1800
+     "aquatalk:10000314": 1800,
+     "easyjoy-shop:10000338": 1699
     },
     "reviews": {
-     "kyo-rin:10000008": 183,
      "scandinavie:10010116": 315,
      "h2brothers:10001880": 10849,
      "twinklegoods:10000107": 285,
@@ -1922,7 +1944,8 @@
      "brain556:10005864": 185,
      "mottainaiya:10001039": 197,
      "yukaiya:10001268": 418,
-     "aquatalk:10000314": 4095
+     "aquatalk:10000314": 4095,
+     "easyjoy-shop:10000338": 589
     }
    },
    "kerosene-stove": {
