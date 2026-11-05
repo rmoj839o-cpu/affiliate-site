@@ -1188,7 +1188,7 @@
      "importshopaqua:10012850": 11880
     },
     "reviews": {
-     "quads:10000095": 525,
+     "quads:10000095": 526,
      "matsucame:10071734": 244,
      "roomy:10016494": 387,
      "roomy:10017920": 51,
@@ -1295,9 +1295,9 @@
      "hitidear:10000192": 1239,
      "katushop:10000129": 1180,
      "nexmoov:10000071": 555,
-     "hagoogi:10000255": 676,
+     "hagoogi:10000255": 677,
      "mpowjapan:10000823": 3447,
-     "itsube-souken:10000266": 2476,
+     "itsube-souken:10000266": 2477,
      "kukuya:10000147": 1398,
      "migaber:10000081": 942,
      "lifejoy-shop:10000093": 1009,
@@ -1767,8 +1767,8 @@
      "patie:10112294": 5500,
      "twinbird:10000930": 29800,
      "cocoa:10008007": 22220,
-     "toffy:10007143": 7920,
      "toffy:10008554": 5500,
+     "toffy:10007143": 7920,
      "yamazenkaden:10002094": 2980,
      "comfee-kitchen:10000063": 3180,
      "e-kurashi:10008024": 3980
@@ -1779,8 +1779,8 @@
      "patie:10112294": 96,
      "twinbird:10000930": 77,
      "cocoa:10008007": 107,
+     "toffy:10008554": 102,
      "toffy:10007143": 260,
-     "toffy:10008554": 101,
      "yamazenkaden:10002094": 269,
      "comfee-kitchen:10000063": 563,
      "e-kurashi:10008024": 499
@@ -2281,7 +2281,7 @@
      "bundara:10002042": 673,
      "tsukiji-chokusoubin:10001817": 431,
      "sanchokudayori:10004117": 703,
-     "kumamoto-food:10002669": 16657
+     "kumamoto-food:10002669": 16658
     }
    }
   }
