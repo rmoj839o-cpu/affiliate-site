@@ -79,6 +79,16 @@ max_price = 30000
 ng = "中古 ふるさと納税 業務用 ペット 犬 猫 爬虫類 ケージ 育苗 オイルヒーター 交換用 カバーのみ"
 
 [[categories]]
+slug = "smart-remote"
+bands = [3000, 5000]
+title = "スマートリモコン"
+keyword = "スマートリモコン"
+must = "スマートリモコン"
+min_price = 1500
+max_price = 20000
+ng = "中古 ふるさと納税 交換用 ケース カバー 電池 汎用リモコン 純正リモコン 互換リモコン"
+
+[[categories]]
 slug = "electric-blanket"
 power = [20, 200]
 bands = [5000, 8000]
