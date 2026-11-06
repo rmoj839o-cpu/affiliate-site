@@ -122,10 +122,17 @@ def active_categories(categories, now):
     return active
 
 
+# 文章の中に置ける広告（services/*.json の "inline": "名前" がついたテキスト広告）。広告主のコードはそのまま使う
+INLINE_ADS = {}
+
+
 def mark_text(text):
-    """文章の中の ==ここ== を黄色いマーカーに、[文字](/サイト内のパス/) をリンクにする（ほかはふつうにエスケープ）。"""
+    """文章の中の ==ここ== を黄色いマーカーに、[文字](/サイト内のパス/) をリンクに、[[ad:名前]] を広告にする（ほかはふつうにエスケープ）。"""
     html = re.sub(r"==(.+?)==", r'<mark class="mk">\1</mark>', str(escape(text)))
-    html = re.sub(r"\[(.+?)\]\((/[^)\s]*)\)", r'<a href="\2">\1</a>', html)
+    html = re.sub(r"\[\[ad:([a-z0-9-]+)\]\]", lambda m: (
+        f'<span class="inline-ad"><span class="inline-ad-pr">PR</span>{INLINE_ADS[m.group(1)]}</span>'
+        if m.group(1) in INLINE_ADS else ""), html)
+    html = re.sub(r"\[([^\[\]]+?)\]\((/[^)\s]*)\)", r'<a href="\2">\1</a>', html)
     return Markup(html)
 
 
@@ -169,6 +176,8 @@ def main():
 
     # A8.net などのサービス広告（services/<カテゴリのslug>.json）
     services = {f.stem: json.loads(f.read_text(encoding="utf-8")) for f in (ROOT / "services").glob("*.json")}
+    INLINE_ADS.update({x["inline"]: x["text_html"] for v in services.values() for x in v.get("services", [])
+                       if x.get("inline") and x.get("text_html")})
     # 家電の豆知識（電気代やサイズの目安など、検索されやすい話題を1ページずつ）も新しい順
     answers = sorted((json.loads(f.read_text(encoding="utf-8")) for f in (ROOT / "answers").glob("*.json")),
                      key=lambda q: q.get("date", ""), reverse=True)

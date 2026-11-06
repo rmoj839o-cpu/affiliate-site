@@ -242,3 +242,7 @@ footer { margin-top: 48px; padding-top: 16px; padding-bottom: 32px; border-top: 
 .osechi-table td small { display: block; font-size: 11px; color: var(--muted); max-width: 9em; }
 .osechi-table td { font-size: 13px; }
 .osechi-table .osechi-check { font-size: 11px; color: var(--muted); }
+/* 文章の中の広告。広告だとわかるように PR をつける */
+.inline-ad { white-space: nowrap; }
+.inline-ad a { font-weight: 700; }
+.inline-ad-pr { display: inline-block; font-size: 10px; line-height: 1; padding: 2px 4px; margin: 0 4px 0 2px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); vertical-align: middle; }
