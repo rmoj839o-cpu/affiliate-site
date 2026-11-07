@@ -316,6 +316,8 @@ def main():
         pages.append("/column/")
 
     for q in answers:
+        if q.get("kero_fill") and kero:
+            q = kerosene.fill(q, kero)  # {K_STORE} などを、今週の灯油価格に置きかえる
         cat = by_slug.get(q["category"])
         out = DIST / "guide" / q["slug"] / "index.html"
         out.parent.mkdir(parents=True)

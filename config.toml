@@ -93,6 +93,7 @@ slug = "touyu-polytank"
 months = [10, 11, 12, 1, 2, 3]
 bands = [2000]
 title = "灯油ポリタンク"
+min_reviews = 10
 keyword = "灯油 ポリタンク 18L"
 must = "ポリタンク 灯油缶"
 min_price = 500

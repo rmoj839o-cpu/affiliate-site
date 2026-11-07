@@ -132,3 +132,22 @@ def summary(db):
         "trend": trend,
         "trend_max": max(t["store"] for t in trend), "trend_min": min(t["store"] for t in trend),
     }
+
+
+def fill(obj, k):
+    """記事の中の {K_STORE} などの目印を、今週の灯油価格に置きかえる（毎週、自動で最新の数字になる）。"""
+    nat = k["national"]
+    diff = nat["deliv"] - nat["store"]
+    d = datetime.strptime(k["day"], "%Y-%m-%d")
+    tokens = {
+        "{K_DAY}": f"{d.month}月{d.day}日",
+        "{K_STORE}": f"{nat['store']:,}", "{K_DELIV}": f"{nat['deliv']:,}", "{K_DIFF}": f"{diff:,}",
+        "{K_LITER}": f"{nat['liter']}", "{K_DLITER}": f"{round(nat['deliv'] / 18, 1)}",
+        "{K_CHEAP_PREF}": k["cheap"][0]["pref"], "{K_CHEAP}": f"{k['cheap'][0]['store']:,}",
+        "{K_DEAR_PREF}": k["dear"][0]["pref"], "{K_DEAR}": f"{k['dear'][0]['store']:,}",
+        "{K_D75}": f"{round(diff * 7.5, -1):,.0f}", "{K_D10}": f"{diff * 10:,}", "{K_D15}": f"{diff * 15:,}",
+    }
+    text = json.dumps(obj, ensure_ascii=False)
+    for key, value in tokens.items():
+        text = text.replace(key, value)
+    return json.loads(text)
