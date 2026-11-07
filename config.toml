@@ -93,17 +93,18 @@ slug = "touyu-polytank"
 months = [10, 11, 12, 1, 2, 3]
 bands = [2000]
 title = "灯油ポリタンク"
-keyword = "灯油 ポリタンク"
+keyword = "灯油 ポリタンク 18L"
 must = "ポリタンク 灯油缶"
 min_price = 500
 max_price = 8000
-ng = "中古 ふるさと納税 水用 ウォータータンク 給水 飲料水 雨水 カバーのみ キャップのみ ノズルのみ 業務用"
+ng = "中古 ふるさと納税 水用 ウォータータンク 給水 飲料水 雨水 カバーのみ キャップのみ ノズルのみ 業務用 ポンプ 収納 ボックス BOX 宅配 物置"
 
 [[categories]]
 slug = "touyu-pump"
 months = [10, 11, 12, 1, 2, 3]
 bands = [1000]
 title = "灯油ポンプ"
+min_reviews = 10
 keyword = "灯油ポンプ"
 must = "ポンプ"
 min_price = 300
