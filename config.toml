@@ -89,6 +89,28 @@ max_price = 20000
 ng = "中古 ふるさと納税 交換用 ケース カバー 電池 汎用リモコン 純正リモコン 互換リモコン"
 
 [[categories]]
+slug = "touyu-polytank"
+months = [10, 11, 12, 1, 2, 3]
+bands = [2000]
+title = "灯油ポリタンク"
+keyword = "灯油 ポリタンク"
+must = "ポリタンク 灯油缶"
+min_price = 500
+max_price = 8000
+ng = "中古 ふるさと納税 水用 ウォータータンク 給水 飲料水 雨水 カバーのみ キャップのみ ノズルのみ 業務用"
+
+[[categories]]
+slug = "touyu-pump"
+months = [10, 11, 12, 1, 2, 3]
+bands = [1000]
+title = "灯油ポンプ"
+keyword = "灯油ポンプ"
+must = "ポンプ"
+min_price = 300
+max_price = 5000
+ng = "中古 ふるさと納税 交換用 部品 ホースのみ 空気入れ 水槽 熱帯魚 お風呂 浴槽 洗濯 バスポンプ 業務用 ドラム缶"
+
+[[categories]]
 slug = "electric-blanket"
 power = [20, 200]
 bands = [5000, 8000]
