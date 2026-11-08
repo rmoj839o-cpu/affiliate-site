@@ -113,6 +113,16 @@ max_price = 5000
 ng = "中古 ふるさと納税 交換用 部品 ホースのみ 空気入れ 水槽 熱帯魚 お風呂 浴槽 洗濯 バスポンプ 業務用 ドラム缶"
 
 [[categories]]
+slug = "setsuden-tap"
+bands = [1500]
+title = "節電タップ（個別スイッチ付き電源タップ）"
+keyword = "電源タップ 個別スイッチ 節電"
+must = "タップ"
+min_price = 500
+max_price = 6000
+ng = "中古 ふるさと納税 業務用 延長コードのみ 交換用 部品 スマートプラグ 防水 屋外"
+
+[[categories]]
 slug = "electric-blanket"
 power = [20, 200]
 bands = [5000, 8000]
