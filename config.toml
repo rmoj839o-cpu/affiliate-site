@@ -479,6 +479,39 @@ max_price = 20000
 ng = "中古 ガス オイル 灯油 キャンドル 電球のみ 交換用 部品 マントル ふるさと納税 ガスランタン ケースのみ"
 
 [[categories]]
+slug = "kagu-tentou-boushi"
+bands = [2000]
+title = "家具の転倒防止グッズ"
+group = "bousai"
+keyword = "家具 転倒防止 突っ張り棒 地震対策"
+must = "転倒防止 耐震"
+min_price = 500
+max_price = 10000
+ng = "中古 ふるさと納税 業務用 カーテン 物干し ラック 棚 収納 ベビー フェンス ゲート テレビ台"
+
+[[categories]]
+slug = "bousai-radio"
+bands = [3000]
+title = "防災ラジオ（手回し・ソーラー）"
+group = "bousai"
+keyword = "防災ラジオ 手回し ソーラー"
+must = "ラジオ"
+min_price = 1000
+max_price = 15000
+ng = "中古 ふるさと納税 交換用 部品 ケースのみ アンテナのみ 業務用 無線機"
+
+[[categories]]
+slug = "headlight"
+bands = [2000]
+title = "ヘッドライト（防災用）"
+group = "bousai"
+keyword = "ヘッドライト 充電式 防災"
+must = "ヘッドライト ヘッドランプ"
+min_price = 800
+max_price = 10000
+ng = "中古 ふるさと納税 車 バイク 自転車 カー用品 バルブ H4 HID 交換用 部品 フォグ"
+
+[[categories]]
 slug = "cassette-stove"
 bands = [5000]
 title = "カセットコンロ"
