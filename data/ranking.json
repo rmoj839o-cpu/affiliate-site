@@ -4052,29 +4052,12 @@
     "slug": "under-30000",
     "title": "30,000円以下の一人暮らし向け冷蔵庫（2ドア）",
     "count": 9
-   },
-   {
-    "slug": "under-40000",
-    "title": "40,000円以下の一人暮らし向け冷蔵庫（2ドア）",
-    "count": 10
    }
   ],
-  "cordless-vacuum": [
-   {
-    "slug": "under-20000",
-    "title": "20,000円以下のコードレス掃除機（軽量）",
-    "count": 10
-   }
-  ],
+  "cordless-vacuum": [],
   "circulator": [],
   "hot-sand-maker": [],
-  "air-purifier": [
-   {
-    "slug": "under-20000",
-    "title": "20,000円以下の一人暮らし向け空気清浄機",
-    "count": 10
-   }
-  ],
+  "air-purifier": [],
   "dehumidifier": [
    {
     "slug": "under-15000",
@@ -4087,18 +4070,7 @@
     "count": 10
    }
   ],
-  "small-washer": [
-   {
-    "slug": "under-30000",
-    "title": "30,000円以下の一人暮らし向け洗濯機（小型）",
-    "count": 10
-   },
-   {
-    "slug": "under-50000",
-    "title": "50,000円以下の一人暮らし向け洗濯機（小型）",
-    "count": 10
-   }
-  ],
+  "small-washer": [],
   "hair-dryer": [
    {
     "slug": "under-5000",
@@ -4142,11 +4114,6 @@
     "count": 10
    },
    {
-    "slug": "under-5000",
-    "title": "5,000円以下の着る毛布",
-    "count": 10
-   },
-   {
     "slug": "popular",
     "title": "レビュー1,000件以上の定番着る毛布",
     "count": 5
@@ -4156,11 +4123,6 @@
    {
     "slug": "under-15000",
     "title": "15,000円以下のフットマッサージャー",
-    "count": 10
-   },
-   {
-    "slug": "under-30000",
-    "title": "30,000円以下のフットマッサージャー",
     "count": 10
    }
   ],
