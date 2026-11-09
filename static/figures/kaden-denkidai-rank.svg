@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 394" role="img" aria-label="ひとり暮らしの家電、1か月の電気代の目安">
+<rect width="360" height="394" rx="12" fill="#fffdf8"/>
+<text x="180" y="26" text-anchor="middle" font-size="15" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">冬の家電、1か月の電気代</text>
+<text x="180" y="44" text-anchor="middle" font-size="10.5" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">1kWh＝31円で計算した目安</text>
+<line x1="16" y1="56" x2="16" y2="360" stroke="#e3e3dc"/>
+<text x="16.0" y="374" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">0円</text>
+<line x1="121" y1="56" x2="121" y2="360" stroke="#e3e3dc"/>
+<text x="120.66666666666667" y="374" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">1,000円</text>
+<line x1="225" y1="56" x2="225" y2="360" stroke="#e3e3dc"/>
+<text x="225.33333333333334" y="374" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">2,000円</text>
+<line x1="330" y1="56" x2="330" y2="360" stroke="#e3e3dc"/>
+<text x="330.0" y="374" text-anchor="middle" font-size="10" font-weight="400" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">3,000円</text>
+<text x="16" y="69" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">こたつ（1日5時間）</text>
+<text x="330" y="69" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約1,400〜2,800円</text>
+<rect x="163" y="75" width="147" height="10" rx="5" fill="#bf0000"/>
+<text x="16" y="107" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">エアコン暖房（1日5時間）</text>
+<text x="330" y="107" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約500〜2,300円</text>
+<rect x="68" y="113" width="188" height="10" rx="5" fill="#bf0000"/>
+<text x="16" y="145" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">セラミックヒーター（1日2時間）</text>
+<text x="330" y="145" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約1,100〜2,230円</text>
+<rect x="131" y="151" width="118" height="10" rx="5" fill="#bf0000"/>
+<text x="16" y="183" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">スチーム式加湿器（1日8時間）</text>
+<text x="330" y="183" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">最大 約1,860円</text>
+<rect x="16" y="189" width="195" height="10" rx="5" fill="#bf0000"/>
+<text x="16" y="221" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">電気毛布（1日8時間）</text>
+<text x="330" y="221" text-anchor="end" font-size="10.5" font-weight="700" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約370円</text>
+<rect x="55" y="227" width="6" height="10" rx="5" fill="#9aa3ad"/>
+<text x="16" y="259" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">炊飯器の保温（1日12時間）</text>
+<text x="330" y="259" text-anchor="end" font-size="10.5" font-weight="700" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約200円</text>
+<rect x="37" y="265" width="6" height="10" rx="5" fill="#9aa3ad"/>
+<text x="16" y="297" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">電子レンジ</text>
+<text x="330" y="297" text-anchor="end" font-size="10.5" font-weight="700" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約190円</text>
+<rect x="36" y="303" width="6" height="10" rx="5" fill="#9aa3ad"/>
+<text x="16" y="335" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">卓上加湿器（1日8時間）</text>
+<text x="330" y="335" text-anchor="end" font-size="10.5" font-weight="700" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約15〜40円</text>
+<rect x="18" y="341" width="6" height="10" rx="5" fill="#9aa3ad"/>
+</svg>
