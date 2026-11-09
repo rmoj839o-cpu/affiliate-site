@@ -1,12 +1,12 @@
 {% extends "base.html" %}
-{% block title %}灯油価格 都道府県別ランキング【毎週更新】18Lの店頭・配達価格｜{{ k.md }}調査{% endblock %}
-{% block description %}{{ k.day_jp }}調査の灯油価格を47都道府県で一覧にしました。全国平均は18Lあたり{{ "{:,}".format(k.national.store) }}円（1L {{ k.national.liter }}円）。いちばん安い県・高い県、前週からの値動き、配達価格もわかります。資源エネルギー庁の調査をもとに毎週更新。{% endblock %}
+{% block title %}灯油18Lいくら？今週の灯油価格と安い県ランキング【毎週更新・{{ k.md }}調査】{% endblock %}
+{% block description %}灯油18Lは今いくら？{{ k.day_jp }}調査の全国平均は店頭{{ "{:,}".format(k.national.store) }}円（1L {{ k.national.liter }}円）、配達{{ "{:,}".format(k.national.deliv) }}円。いちばん安い県は{{ k.cheap[0].pref }}。47都道府県の灯油価格と、灯油が安い所（買う場所）のちがいを、資源エネルギー庁の調査をもとに毎週更新しています。{% endblock %}
 {% block head %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "灯油価格 都道府県別ランキング",
+  "headline": "灯油18Lいくら？今週の灯油価格と安い県ランキング",
   "dateModified": "{{ k.day }}",
   "author": {"@type": "Person", "name": {{ site.author|tojson }}}
 }
@@ -15,13 +15,15 @@
 {% block main %}
 <article class="column">
   <p class="crumb"><a href="{{ base }}/guide/">暮らしの豆知識</a>{% if cat %} ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a>{% endif %}</p>
-  <h1>都道府県別の灯油価格（18L）【毎週更新】</h1>
+  <h1>灯油18Lはいくら？今週の灯油価格と安い県ランキング【毎週更新】</h1>
 {% with byline_note = k.day_jp ~ "調査" %}{% include "_byline.html" %}{% endwith %}
   <div class="answer">
     <p class="answer-label">今週の全国平均（店頭）</p>
     <p class="kero-big">18L {{ "{:,}".format(k.national.store) }}円<span>1Lあたり {{ k.national.liter }}円</span></p>
     <p>{% if k.national.diff %}前の週より<strong>{{ "%+d"|format(k.national.diff) }}円</strong>。{% elif k.national.diff == 0 %}前の週と同じ値段です。{% endif %}いちばん安いのは<strong>{{ k.cheap[0].pref }}（{{ "{:,}".format(k.cheap[0].store) }}円）</strong>、いちばん高いのは<strong>{{ k.dear[0].pref }}（{{ "{:,}".format(k.dear[0].store) }}円）</strong>で、{{ "{:,}".format(k.dear[0].store - k.cheap[0].store) }}円の差があります。</p>
+    <p>灯油が安い所は、<strong>自分で買いに行くガソリンスタンドやホームセンター</strong>です。配達は全国平均で18L {{ "{:,}".format(k.national.deliv) }}円と、店頭より{{ "{:,}".format(k.national.deliv - k.national.store) }}円高くなります。</p>
   </div>
+  <p>近くの安い店の探し方や、買う場所ごとのちがいは<a href="{{ base }}/guide/touyu-yasuku-kau/">灯油はどこで買うのが安い？</a>にまとめています。</p>
 
   <h2>あなたの県はいくら？</h2>
   <div class="kero-pick">
