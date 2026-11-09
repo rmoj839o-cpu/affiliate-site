@@ -2298,14 +2298,14 @@
     "top": "kurashido:10000448",
     "prices": {
      "kurashido:10000448": 13800,
+     "noza-mart:10000108": 2380,
      "alphasyokuhin:10000015": 4536,
-     "juju-giona:10007687": 16990,
      "comoshop:10000054": 3520
     },
     "reviews": {
      "kurashido:10000448": 407,
+     "noza-mart:10000108": 668,
      "alphasyokuhin:10000015": 395,
-     "juju-giona:10007687": 395,
      "comoshop:10000054": 3803
     }
    },
