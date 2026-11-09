@@ -26,6 +26,7 @@
   </div>
   {% for sec in q.sections %}
   <h2>{{ sec.h }}</h2>
+  {% if sec.img %}<figure class="col-photo"><img src="{{ base }}/static/photos/{{ sec.img.src }}.webp" alt="{{ sec.img.alt }}" loading="lazy">{% if sec.img.caption %}<figcaption>{{ sec.img.caption }}</figcaption>{% endif %}</figure>{% endif %}
   {% for para in sec.body %}<p>{{ para|mk }}</p>{% endfor %}
   {% for f in sec.figs or [] %}<figure class="fig"><img src="{{ base }}/static/figures/{{ f.src }}.svg" alt="{{ f.alt }}" width="360" height="{{ f.h or 250 }}" loading="lazy">{% if f.caption %}<figcaption>{{ f.caption }}</figcaption>{% endif %}</figure>{% endfor %}
   {% if sec.list %}<ul>{% for x in sec.list %}<li>{{ x|mk }}</li>{% endfor %}</ul>{% endif %}
