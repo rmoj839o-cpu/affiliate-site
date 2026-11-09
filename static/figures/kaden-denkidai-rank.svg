@@ -16,12 +16,12 @@
 <text x="16" y="107" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">セラミックヒーター（1日2時間）</text>
 <text x="330" y="107" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約1,100〜2,230円</text>
 <rect x="131" y="113" width="118" height="10" rx="5" fill="#bf0000"/>
-<text x="16" y="145" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">スチーム式加湿器（1日8時間）</text>
-<text x="330" y="145" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">最大 約1,860円</text>
-<rect x="16" y="151" width="195" height="10" rx="5" fill="#bf0000"/>
-<text x="16" y="183" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">エアコン暖房・設定20℃（1日5時間）</text>
-<text x="330" y="183" text-anchor="end" font-size="10.5" font-weight="700" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約700〜800円</text>
-<rect x="89" y="189" width="10" height="10" rx="5" fill="#9aa3ad"/>
+<text x="16" y="145" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">エアコン暖房・設定20℃（1日5時間）</text>
+<text x="330" y="145" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約700〜2,200円</text>
+<rect x="89" y="151" width="157" height="10" rx="5" fill="#bf0000"/>
+<text x="16" y="183" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">スチーム式加湿器（1日8時間）</text>
+<text x="330" y="183" text-anchor="end" font-size="10.5" font-weight="700" fill="#bf0000" font-family="Hiragino Sans, Noto Sans JP, sans-serif">最大 約1,860円</text>
+<rect x="16" y="189" width="195" height="10" rx="5" fill="#bf0000"/>
 <text x="16" y="221" text-anchor="start" font-size="11" font-weight="700" fill="#1f2328" font-family="Hiragino Sans, Noto Sans JP, sans-serif">電気毛布（1日8時間）</text>
 <text x="330" y="221" text-anchor="end" font-size="10.5" font-weight="700" fill="#5f6670" font-family="Hiragino Sans, Noto Sans JP, sans-serif">約370円</text>
 <rect x="55" y="227" width="6" height="10" rx="5" fill="#9aa3ad"/>
