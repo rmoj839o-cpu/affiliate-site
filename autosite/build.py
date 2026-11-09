@@ -26,6 +26,7 @@ DIST = ROOT / "dist"
 
 POPULAR_REVIEWS = 1000  # 「定番」ページに載せるレビュー件数の下限
 MIN_SUBPAGE_ITEMS = 5   # これ未満しか集まらない条件のページは作らない（中身の薄いページを増やさない）
+SAME_AS_MAIN = 8        # 元のランキングとこの数以上同じ商品なら、条件別ページは作らない（ほぼ同じページを増やさない）
 
 
 def load_items(category, cfg, demo, max_price=None):
@@ -69,9 +70,24 @@ def prepare(items, cfg, category=None, price_db=None):
     return items
 
 
-def build_subpages(cat, pool, cfg, demo, price_db=None):
-    """価格帯別（〇円以下）と、レビューの多い定番だけを集めたページを作る。"""
+def build_subpages(cat, pool, cfg, demo, price_db=None, main_codes=(), skipped=None):
+    """価格帯別（〇円以下）と、レビューの多い定番だけを集めたページを作る。
+
+    中身が元のランキングとほぼ同じになったページは作らず、skipped に入れる
+    （検索で表示されているページは config の build.keep_subpages に書いて残す）。
+    """
     bcfg = cfg["build"]
+    keep = set(bcfg.get("keep_subpages", []))
+
+    def same_as_main(slug, ranked):
+        if f"{cat['slug']}/{slug}" in keep:
+            return False
+        if sum(1 for i in ranked if i["code"] in main_codes) >= SAME_AS_MAIN:
+            if skipped is not None:
+                skipped.append(slug)
+            return True
+        return False
+
     min_reviews = cat.get("min_reviews", bcfg["min_review_count"])
     subpages = []
     for band in cat.get("bands", []):
@@ -82,7 +98,7 @@ def build_subpages(cat, pool, cfg, demo, price_db=None):
             continue
         found = filter_items(found, {**cat, "max_price": min(band, cat.get("max_price", band))})
         ranked = rank.rank(found, limit=bcfg["items_per_page"], min_reviews=min_reviews)
-        if len(ranked) < MIN_SUBPAGE_ITEMS:
+        if len(ranked) < MIN_SUBPAGE_ITEMS or same_as_main(f"under-{band}", ranked):
             continue
         lo, hi = min(i["price"] for i in ranked), max(i["price"] for i in ranked)
         subpages.append({
@@ -94,7 +110,7 @@ def build_subpages(cat, pool, cfg, demo, price_db=None):
         })
     popular = [dict(i) for i in pool if i["review_count"] >= POPULAR_REVIEWS]
     ranked = rank.rank(popular, limit=bcfg["items_per_page"], min_reviews=POPULAR_REVIEWS)
-    if len(ranked) >= MIN_SUBPAGE_ITEMS:
+    if len(ranked) >= MIN_SUBPAGE_ITEMS and not same_as_main("popular", ranked):
         subpages.append({
             "slug": "popular", "title": f"レビュー{POPULAR_REVIEWS:,}件以上の定番{cat['title']}",
             "items": prepare(ranked, cfg, cat, price_db),
@@ -222,7 +238,19 @@ def main():
         notes = {c["code"]: c for c in content["items"]}
         hl = rank.highlights(ranked, history.get(cat["slug"], {}))
 
-        subpages = build_subpages(cat, pool, cfg, args.demo, price_db)
+        skipped = []
+        subpages = build_subpages(cat, pool, cfg, args.demo, price_db,
+                                  main_codes={i["code"] for i in ranked}, skipped=skipped)
+        # 作らなくなったページは、元のランキングへ案内するだけのページにする（サイトマップには載せない）
+        for slug in skipped:
+            stub = DIST / cat["slug"] / slug / "index.html"
+            stub.parent.mkdir(parents=True, exist_ok=True)
+            to = f"{site['url']}/{cat['slug']}/"
+            stub.write_text(f'<!doctype html><meta charset="utf-8"><meta name="robots" content="noindex">'
+                            f'<link rel="canonical" href="{to}"><meta http-equiv="refresh" content="0; url={to}">'
+                            f'<p><a href="{to}">{cat["title"]}のランキングへ</a></p>', encoding="utf-8")
+        if skipped:
+            print(f"  元のランキングとほぼ同じなので作らない: {', '.join(skipped)}")
         # おせちは「早割・締め切り・冷凍か冷蔵か・何人前で何品か」を表にする
         osechi_rows = osechi.rows(ranked) if cat.get("osechi_table") else None
         if osechi_rows and not args.demo:
@@ -230,7 +258,7 @@ def main():
                 {"date": today, "rows": osechi_rows, "evidence": [osechi.evidence(i.get("caption", "")) for i in ranked]},
                 ensure_ascii=False, indent=1), encoding="utf-8")
         out = DIST / cat["slug"] / "index.html"
-        out.parent.mkdir(parents=True)
+        out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(env.get_template("category.html").render(
             cat=cat, items=ranked, notes=notes, content=content, hl=hl, subpages=subpages,
             columns=[c for c in columns if c["category"] == cat["slug"]],
