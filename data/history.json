@@ -2226,7 +2226,7 @@
      "liberty-base:10002107": 27483,
      "e-kurashi:10009269": 24800,
      "paseco:10000008": 20900,
-     "e-kurashi:10009552": 14800,
+     "e-kurashi:10009552": 17800,
      "toyotomi-homeplus:10000017": 29480,
      "a-price:10771925": 40800,
      "minatodenk:10531866": 22150,
@@ -2485,9 +2485,8 @@
     }
    },
    "frozen-bento": {
-    "top": "greenspoon:10000119",
+    "top": "polar-star:10000018",
     "prices": {
-     "greenspoon:10000119": 5538,
      "polar-star:10000018": 7700,
      "watami-direct:10000064": 5480,
      "polar-star:10000017": 4200,
@@ -2496,10 +2495,10 @@
      "magokoro-careshoku:10000117": 3780,
      "nichireifoods:10000009": 8930,
      "belluna-gourmet:10025638": 14970,
+     "greenspoon:10000117": 9080,
      "watami-direct:10000051": 5380
     },
     "reviews": {
-     "greenspoon:10000119": 229,
      "polar-star:10000018": 321,
      "watami-direct:10000064": 146,
      "polar-star:10000017": 515,
@@ -2508,6 +2507,7 @@
      "magokoro-careshoku:10000117": 117,
      "nichireifoods:10000009": 445,
      "belluna-gourmet:10025638": 151,
+     "greenspoon:10000117": 170,
      "watami-direct:10000051": 260
     }
    },
