@@ -195,6 +195,7 @@ def main():
     if not args.demo and kerosene.update(kero_db):
         kerosene.save(kero_path, kero_db)
     kero = kerosene.summary(kero_db)
+    gas = kerosene.gas_summary(kero_db)  # ガソリン価格も、同じ国の調査のExcelから
 
     pages = []
     page_dates = {}  # 中身を書き足した日（記事・コラム）。毎日変わるランキングなどは今日の日付
@@ -287,7 +288,7 @@ def main():
     trending = sorted(((c, *c["highlights"]["trending"]) for c in built if c["highlights"]["trending"]),
                       key=lambda t: t[2], reverse=True)
     (DIST / "index.html").write_text(
-        env.get_template("index.html").render(built=built, featured=featured, tip=tip, columns=columns, answers=answers[:5], drops=drops[:8], kero=kero,
+        env.get_template("index.html").render(built=built, featured=featured, tip=tip, columns=columns, answers=answers[:5], drops=drops[:8], kero=kero, gas=gas,
                                               trending=trending[:5], path="/"), encoding="utf-8")
     # まとめページ：全ジャンルの1位と予算重視の1品を1ページで見比べられるように
     season = {12: "冬", 1: "冬", 2: "冬", 3: "春", 4: "春", 5: "春", 6: "夏", 7: "夏", 8: "夏"}.get(now.month, "秋冬")
@@ -336,14 +337,23 @@ def main():
         out.parent.mkdir(parents=True)
         products = [by_slug[s] for s in ("kerosene-fan-heater", "kerosene-stove") if s in by_slug]
         out.write_text(env.get_template("kerosene.html").render(
-            k=kero, cat=by_slug.get("kerosene-fan-heater"), path="/guide/touyu-kakaku/",
+            k=kero, gas=gas, cat=by_slug.get("kerosene-fan-heater"), path="/guide/touyu-kakaku/",
             related=[q for q in answers if "touyu" in q["slug"] or q["category"] == "kerosene-fan-heater"][:5],
             products=products, no_ads=not products), encoding="utf-8")
         pages.append("/guide/touyu-kakaku/")
         page_dates["/guide/touyu-kakaku/"] = kero["day"]
+    if gas:
+        out = DIST / "guide" / "gasoline-kakaku" / "index.html"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(env.get_template("gasoline.html").render(
+            g=gas, kero=kero, path="/guide/gasoline-kakaku/",
+            related=[q for q in answers if "touyu" in q["slug"] or "denkidai" in q["slug"]][:5],
+            products=[]), encoding="utf-8")
+        pages.append("/guide/gasoline-kakaku/")
+        page_dates["/guide/gasoline-kakaku/"] = gas["day"]
     if answers:
         (DIST / "guide" / "index.html").write_text(
-            env.get_template("answer_index.html").render(answers=answers, by_slug=by_slug, kero=kero, path="/guide/"),
+            env.get_template("answer_index.html").render(answers=answers, by_slug=by_slug, kero=kero, gas=gas, path="/guide/"),
             encoding="utf-8")
         pages.append("/guide/")
 

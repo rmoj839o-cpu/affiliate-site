@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}ガソリン価格 都道府県別ランキング｜レギュラー1Lいくら？今週の安い県【毎週更新・{{ g.md }}調査】{% endblock %}
+{% block description %}ガソリン1Lは今いくら？{{ g.day_jp }}調査のレギュラーの全国平均は{{ "%.1f"|format(g.national.reg) }}円、ハイオク{{ "%.1f"|format(g.national.hi) }}円、軽油{{ "%.1f"|format(g.national.diesel) }}円。いちばん安い県は{{ g.cheap[0].pref }}（{{ "%.1f"|format(g.cheap[0].reg) }}円）。47都道府県のガソリン価格を、資源エネルギー庁の調査をもとに毎週更新しています。{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "ガソリン価格 都道府県別ランキング",
+  "dateModified": "{{ g.day }}",
+  "author": {"@type": "Person", "name": {{ site.author|tojson }}}
+}
+</script>
+{% endblock %}
+{% block main %}
+<article class="column">
+  <p class="crumb"><a href="{{ base }}/guide/">暮らしの豆知識</a></p>
+  <h1>ガソリン価格 都道府県別ランキング｜レギュラー1Lはいくら？【毎週更新】</h1>
+{% with byline_note = g.day_jp ~ "調査" %}{% include "_byline.html" %}{% endwith %}
+  <div class="answer">
+    <p class="answer-label">今週の全国平均（レギュラー）</p>
+    <p class="kero-big">1L {{ "%.1f"|format(g.national.reg) }}円<span>ハイオク {{ "%.1f"|format(g.national.hi) }}円 ／ 軽油 {{ "%.1f"|format(g.national.diesel) }}円</span></p>
+    <p>{% if g.national.diff %}前の週より<strong>{{ "%+.1f"|format(g.national.diff) }}円</strong>。{% elif g.national.diff == 0 %}前の週と同じ値段です。{% endif %}いちばん安いのは<strong>{{ g.cheap[0].pref }}（{{ "%.1f"|format(g.cheap[0].reg) }}円）</strong>、いちばん高いのは<strong>{{ g.dear[0].pref }}（{{ "%.1f"|format(g.dear[0].reg) }}円）</strong>。40L満タンにすると、<strong>{{ "{:,}".format(((g.dear[0].reg - g.cheap[0].reg) * 40)|round|int) }}円</strong>の差になります。</p>
+  </div>
+
+  <h2>あなたの県はいくら？</h2>
+  <div class="kero-pick">
+    <label for="gas-pref">都道府県をえらぶ</label>
+    <select id="gas-pref">
+      <option value="">えらんでください</option>
+      {% for r in g.rows %}<option value="{{ loop.index0 }}">{{ r.pref }}</option>{% endfor %}
+    </select>
+    <div id="gas-result" class="kero-result" hidden></div>
+  </div>
+  <noscript><p>下の一覧表から、お住まいの都道府県を探してください。</p></noscript>
+
+  <h2>安い県・高い県 ベスト5（レギュラー）</h2>
+  <div class="kero-rank">
+    <div><p class="toc-label">安い順</p><ol>{% for r in g.cheap %}<li>{{ r.pref }}<span>{{ "%.1f"|format(r.reg) }}円</span></li>{% endfor %}</ol></div>
+    <div><p class="toc-label">高い順</p><ol>{% for r in g.dear %}<li>{{ r.pref }}<span>{{ "%.1f"|format(r.reg) }}円</span></li>{% endfor %}</ol></div>
+  </div>
+
+  <h2>47都道府県の一覧</h2>
+  <p>どれも1Lあたりの店頭の現金価格（税込）です。前週比はレギュラーの値段の変化です。</p>
+  {% for name, rows in g.regions %}
+  <p class="toc-label">{{ name }}</p>
+  <div class="table-scroll"><table class="qtable numeric kero-table">
+    <thead><tr><th>都道府県</th><th>レギュラー</th><th>前週比</th><th>ハイオク</th><th>軽油</th></tr></thead>
+    <tbody>{% for r in rows %}<tr><td>{{ r.pref }}</td><td>{{ "%.1f"|format(r.reg) }}円</td><td class="{{ 'up' if r.diff and r.diff > 0 else 'down' if r.diff and r.diff < 0 }}">{{ "%+.1f"|format(r.diff) ~ "円" if r.diff else ("±0" if r.diff == 0 else "-") }}</td><td>{{ "%.1f"|format(r.hi) }}円</td><td>{{ "%.1f"|format(r.diesel) }}円</td></tr>{% endfor %}</tbody>
+  </table></div>
+  {% endfor %}
+
+  {% if g.trend|length >= 3 %}
+  <h2>全国平均の動き（レギュラー）</h2>
+  <p>この表は毎週の調査がたまるほど長くなります。</p>
+  <div class="kero-trend">
+    {% for t in g.trend %}<div><span>{{ t.day[5:]|replace("-", "/") }}</span><i style="width:{{ 30 + 70 * (t.reg - g.trend_min) / ((g.trend_max - g.trend_min) or 1) }}%"></i><b>{{ "%.1f"|format(t.reg) }}円</b></div>{% endfor %}
+  </div>
+  {% endif %}
+
+  <h2>満タンにすると、いくら？</h2>
+  <p>全国平均のレギュラー{{ "%.1f"|format(g.national.reg) }}円で計算すると、30Lで約{{ "{:,}".format((g.national.reg * 30)|round|int) }}円、40Lで約{{ "{:,}".format((g.national.reg * 40)|round|int) }}円、50Lで約{{ "{:,}".format((g.national.reg * 50)|round|int) }}円です。お店ごとの値段は、この平均とちがうことがあります。</p>
+  {% if kero %}<p>冬の灯油の値段は<a href="{{ base }}/guide/touyu-kakaku/">都道府県別の灯油価格</a>（今週の全国平均は18L {{ "{:,}".format(kero.national.store) }}円）でまとめています。</p>{% endif %}
+
+  <p class="method">出典：資源エネルギー庁「石油製品価格調査」（<a href="https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html" target="_blank" rel="noopener">調査の結果</a>）。毎週月曜日に調査、水曜日に公表される店頭の現金価格（消費税込み）を、このサイトで47都道府県の表にまとめています。</p>
+  {% if related %}
+  <h2>ほかの豆知識</h2>
+  <ul class="news">{% for o in related %}<li><a href="{{ base }}/guide/{{ o.slug }}/">{{ o.title }}</a></li>{% endfor %}</ul>
+  {% endif %}
+{% include "_article_products.html" %}
+{% include "_profile.html" %}
+</article>
+<script>
+(function () {
+  var rows = {{ g.rows | tojson }}, nat = {{ g.national | tojson }};
+  var sel = document.getElementById("gas-pref"), out = document.getElementById("gas-result");
+  function yen(n) { return Math.round(n).toLocaleString("ja-JP") + "円"; }
+  function show() {
+    var r = rows[sel.value];
+    if (!r) { out.hidden = true; return; }
+    var gap = Math.round((r.reg - nat.reg) * 10) / 10;
+    out.innerHTML = "<p class=\"kero-big\">レギュラー 1L " + r.reg.toFixed(1) + "円<span>ハイオク " + r.hi.toFixed(1) + "円 ／ 軽油 " + r.diesel.toFixed(1) + "円</span></p>" +
+      "<p>全国で安いほうから <strong>" + r.rank + "位</strong>（47都道府県中）</p>" +
+      "<p>全国平均より <strong>" + (gap > 0 ? "+" : "") + gap.toFixed(1) + "円</strong>" + (r.diff != null ? "、前の週より " + (r.diff > 0 ? "+" : "") + r.diff.toFixed(1) + "円" : "") + "</p>" +
+      "<p class=\"kero-month\">40L満タンで <strong>約" + yen(r.reg * 40) + "</strong>（レギュラー）</p>";
+    out.hidden = false;
+    try { localStorage.setItem("gas-pref", sel.value); } catch (e) {}
+  }
+  sel.addEventListener("change", show);
+  try { var saved = localStorage.getItem("gas-pref"); if (saved && rows[saved]) { sel.value = saved; show(); } } catch (e) {}
+})();
+</script>
+{% endblock %}

@@ -64,6 +64,7 @@
   <p>18Lを1回配達してもらうと、自分で買いに行くより全国平均で{{ "{:,}".format(k.national.deliv - k.national.store) }}円高くなります。ひと冬に10回買うなら、{{ "{:,}".format((k.national.deliv - k.national.store) * 10) }}円ほどの差です。重いポリタンクを運ぶ手間と、どちらを取るかですね。</p>
   <p>灯油を安く買うコツや、ポリタンクの選び方は<a href="{{ base }}/guide/touyu-yasuku-kau/">灯油を安く買う方法</a>にまとめています。石油ファンヒーターで1か月いくらになるかは<a href="{{ base }}/guide/sekiyu-fan-heater-touyudai/">灯油代の早見表</a>で計算できます。</p>
 
+  {% if gas %}<p>ガソリンの値段は<a href="{{ base }}/guide/gasoline-kakaku/">都道府県別のガソリン価格</a>（今週のレギュラー全国平均は1L {{ "%.1f"|format(gas.national.reg) }}円）でまとめています。</p>{% endif %}
   <p class="method">出典：資源エネルギー庁「石油製品価格調査」（<a href="https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html" target="_blank" rel="noopener">調査の結果</a>）。毎週月曜日に調査、水曜日に公表される現金価格（消費税込み）を、このサイトで47都道府県の表にまとめています。お店ごとの値段は、この平均とちがうことがあります。</p>
   {% if related %}
   <h2>ほかの豆知識</h2>

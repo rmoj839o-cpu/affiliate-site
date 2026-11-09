@@ -38,21 +38,25 @@ def load(path: Path):
 
 def save(path: Path, db):
     weeks = dict(sorted(db["weeks"].items())[-KEEP_WEEKS:])
-    path.write_text(json.dumps({**db, "weeks": weeks}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    gas = dict(sorted(db.get("gas_weeks", {}).items())[-KEEP_WEEKS:])
+    path.write_text(json.dumps({**db, "weeks": weeks, "gas_weeks": gas}, ensure_ascii=False, separators=(",", ":")),
+                    encoding="utf-8")
 
 
 def parse(data: bytes):
-    """結果詳細版Excelの「都道府県別」シートから {調査日: {県名: [店頭, 配達]}} を返す（前週と今週の2週分）。"""
+    """結果詳細版Excelの「都道府県別」シートから、前週と今週の2週分を返す。
+    灯油は {調査日: {県名: [店頭, 配達]}}、ガソリンは {調査日: {県名: [レギュラー, ハイオク, 軽油]}}（1Lあたり）。"""
     import openpyxl
     wb = openpyxl.load_workbook(io.BytesIO(data), data_only=True)
     ws = next(s for s in wb.worksheets if "都道府県" in s.title)
-    dates, out = None, {}
+    dates, out, gas = None, {}, {}
     for row in ws.iter_rows(values_only=True):
         ds = [c for c in row if isinstance(c, datetime)]
         if len(ds) >= 10 and dates is None:
             # 列の並び：ハイオク・レギュラー・軽油・灯油店頭・灯油配達が、それぞれ前週・今週の順
             dates = [d.strftime("%Y-%m-%d") for d in ds[6:8]]
             out = {d: {} for d in dates}
+            gas = {d: {} for d in dates}
             continue
         texts = [c for c in row if isinstance(c, str)]
         if not dates or not texts:
@@ -73,9 +77,11 @@ def parse(data: bytes):
             continue
         for d, store, deliv in ((dates[0], nums[6], nums[8]), (dates[1], nums[7], nums[9])):
             out[d][key] = [round(store), round(deliv)]
+        for d, i in ((dates[0], 0), (dates[1], 1)):
+            gas[d][key] = [round(nums[2 + i], 1), round(nums[0 + i], 1), round(nums[4 + i], 1)]
     if not out or any(len(v) != len(PREFS) + 1 for v in out.values()):
         raise ValueError(f"都道府県の数が合いません: { {d: len(v) for d, v in out.items()} }")
-    return out
+    return out, gas
 
 
 def update(db):
@@ -87,12 +93,14 @@ def update(db):
         if not m:
             print("  ! 灯油価格: 結果詳細版のリンクが見つかりません")
             return False
-        if db.get("file") == m.group(1):
+        if db.get("file") == m.group(1) and db.get("gas_file") == m.group(1):
             return False
         r = requests.get(BASE_URL + m.group(1), headers=HEADERS, timeout=60)
         r.raise_for_status()
-        db["weeks"].update(parse(r.content))
-        db["file"] = m.group(1)
+        kero, gas = parse(r.content)
+        db["weeks"].update(kero)
+        db.setdefault("gas_weeks", {}).update(gas)
+        db["file"] = db["gas_file"] = m.group(1)
         print(f"  灯油価格: {m.group(1)} を取りこみました")
         return True
     except Exception as e:  # 灯油価格が取れなくても、サイトの更新は止めない
@@ -151,3 +159,36 @@ def fill(obj, k):
     for key, value in tokens.items():
         text = text.replace(key, value)
     return json.loads(text)
+
+
+def gas_summary(db):
+    """ガソリン価格のページに出す形にまとめる。記録がなければ None。"""
+    weeks = sorted(db.get("gas_weeks", {}).items())
+    if not weeks:
+        return None
+    day, cur = weeks[-1]
+    prev = weeks[-2][1] if len(weeks) >= 2 else {}
+    rows = []
+    for p in PREFS:
+        if p not in cur:
+            continue
+        reg, hi, diesel = cur[p]
+        before = prev.get(p)
+        rows.append({"pref": p, "reg": reg, "hi": hi, "diesel": diesel,
+                     "diff": round(reg - before[0], 1) if before else None})
+    by_price = sorted(rows, key=lambda r: r["reg"])
+    for n, r in enumerate(by_price, 1):
+        r["rank"] = n
+    nat = cur.get("全国")
+    nat_prev = prev.get("全国")
+    d = datetime.strptime(day, "%Y-%m-%d")
+    trend = [{"day": k, "reg": v["全国"][0]} for k, v in weeks if "全国" in v][-12:]
+    return {
+        "day": day, "day_jp": f"{d.year}年{d.month}月{d.day}日", "md": f"{d.month}/{d.day}",
+        "rows": rows, "cheap": by_price[:5], "dear": by_price[::-1][:5],
+        "regions": [(name, rows[a:b]) for name, a, b in REGIONS],
+        "national": {"reg": nat[0], "hi": nat[1], "diesel": nat[2],
+                     "diff": round(nat[0] - nat_prev[0], 1) if nat_prev else None} if nat else None,
+        "trend": trend,
+        "trend_max": max(t["reg"] for t in trend), "trend_min": min(t["reg"] for t in trend),
+    }
