@@ -1318,8 +1318,8 @@
      "tokyopt:10000012": 1072,
      "animestore:10000898": 735,
      "meijo:10000000": 1092,
-     "milicute-himawari:10000017": 9621,
-     "asukapainting:10000028": 1253,
+     "milicute-himawari:10000017": 9623,
+     "asukapainting:10000028": 1254,
      "importshopaqua:10000488": 4120,
      "goodcarsstyle:10000948": 612,
      "r1-shop:10000164": 617
@@ -1364,7 +1364,7 @@
      "ra-must:10031463": 3780,
      "colorfulbox:10069299": 1170,
      "livingut:10102566": 1380,
-     "moresmileshop:10001552": 1480
+     "sukizuki:10001828": 1080
     },
     "reviews": {
      "store-marufuku:10004619": 1190,
@@ -1376,7 +1376,7 @@
      "ra-must:10031463": 71,
      "colorfulbox:10069299": 42,
      "livingut:10102566": 42,
-     "moresmileshop:10001552": 173
+     "sukizuki:10001828": 141
     }
    },
    "desk-panel-heater": {
@@ -1693,9 +1693,9 @@
      "e-kurashi:10004062": 21800,
      "townland-neo:10001404": 27798,
      "e-kurashi:10047652": 26800,
-     "nafco:10367786": 14800,
      "townland-c:10004078": 18300,
      "townland:10007298": 42396,
+     "nafco:10367786": 14800,
      "e-sumail-style:10004295": 27900,
      "dainichi-webshop:10001595": 15950,
      "e-sumail-style:10004294": 35066
@@ -1704,9 +1704,9 @@
      "e-kurashi:10004062": 80,
      "townland-neo:10001404": 56,
      "e-kurashi:10047652": 30,
-     "nafco:10367786": 50,
      "townland-c:10004078": 47,
      "townland:10007298": 45,
+     "nafco:10367786": 51,
      "e-sumail-style:10004295": 156,
      "dainichi-webshop:10001595": 136,
      "e-sumail-style:10004294": 89
@@ -1840,7 +1840,7 @@
      "quads:10000068": 803,
      "matsucame:10072396": 222,
      "duux-japan:10000073": 125,
-     "air-rhizome:10014590": 1211,
+     "air-rhizome:10014590": 1212,
      "threeup:10000216": 148,
      "siroca:10000043": 92,
      "eleking:10029357": 140,
@@ -1898,7 +1898,7 @@
      "forjoyhome:10000304": 1151,
      "emedama:11066170": 43,
      "u-denki:10012361": 31,
-     "forjoyhome:10000315": 227
+     "forjoyhome:10000315": 228
     }
    },
    "dehumidifier": {
@@ -2059,7 +2059,7 @@
      "dearcologne:10001336": 1397,
      "bedroom:10068337": 304,
      "aooka:10000743": 648,
-     "nissen-r:10962779": 568,
+     "nissen-r:10962779": 569,
      "osharewalker:10014004": 562
     }
    },
@@ -2081,7 +2081,7 @@
      "atex-net:10001706": 403,
      "roomy:10014274": 1136,
      "leapgrow:10000735": 515,
-     "atex-net:10001779": 1123,
+     "atex-net:10001779": 1124,
      "lazboy-q:10000023": 1267,
      "souda-1959:10000071": 281,
      "roomy:10017646": 647,
@@ -2217,7 +2217,7 @@
      "aquatalk:10000172": 505,
      "brain556:10005864": 185,
      "mottainaiya:10001039": 197,
-     "yukaiya:10001268": 426,
+     "yukaiya:10001268": 427,
      "aquatalk:10000314": 4100
     }
    },
@@ -2583,7 +2583,7 @@
      "bundara:10002042": 673,
      "tsukiji-chokusoubin:10001817": 431,
      "sanchokudayori:10004117": 707,
-     "kumamoto-food:10002669": 16685,
+     "kumamoto-food:10002669": 16686,
      "medakastory:10002029": 1869,
      "empirica:10000741": 1416
     }
