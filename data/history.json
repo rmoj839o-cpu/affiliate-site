@@ -1328,7 +1328,7 @@
    "steam-humidifier": {
     "top": "quads:10000095",
     "prices": {
-     "quads:10000095": 19800,
+     "quads:10000095": 20900,
      "matsucame:10071734": 10780,
      "roomy:10017920": 24200,
      "roomy:10016494": 27500,
@@ -1397,7 +1397,7 @@
      "joisafakey:10000038": 791,
      "dearcologne:10000961": 362,
      "tripleshop:10000214": 218,
-     "auc-risecreation:10004620": 6639,
+     "auc-risecreation:10004620": 6640,
      "myhomeshop:10000492": 549,
      "baieitenfashionnigou:10000372": 193,
      "stargenius:10000003": 773,
@@ -1419,7 +1419,7 @@
      "dmastore:10001098": 1980
     },
     "reviews": {
-     "tplinkdirect:10001558": 324,
+     "tplinkdirect:10001558": 325,
      "switchbot:10000076": 1987,
      "switchbot:10000280": 122,
      "linkjapan-iot:10000001": 119,
@@ -1521,7 +1521,7 @@
      "nexmoov:10000071": 558,
      "katushop:10000129": 1203,
      "hagoogi:10000255": 727,
-     "mpowjapan:10000823": 3481,
+     "mpowjapan:10000823": 3483,
      "itsube-souken:10000266": 2520,
      "kukuya:10000147": 1428,
      "lifejoy-shop:10000093": 1013,
@@ -1642,10 +1642,10 @@
      "importshopaqua:10010734": 16500,
      "najimihouse:10004363": 4480,
      "snailax-shop:10000152": 4480,
+     "tiger-online:10004174": 5980,
      "bellevie-harima:10168348": 4199,
      "bruno-official:10000373": 9900,
-     "roomy:10017792": 8800,
-     "sunshine-store:10000555": 4180
+     "roomy:10017792": 8800
     },
     "reviews": {
      "importshopaqua:10009903": 276,
@@ -1654,10 +1654,10 @@
      "importshopaqua:10010734": 419,
      "najimihouse:10004363": 308,
      "snailax-shop:10000152": 318,
-     "bellevie-harima:10168348": 813,
+     "tiger-online:10004174": 290,
+     "bellevie-harima:10168348": 814,
      "bruno-official:10000373": 305,
-     "roomy:10017792": 273,
-     "sunshine-store:10000555": 469
+     "roomy:10017792": 273
     }
    },
    "futon-dryer": {
@@ -1682,7 +1682,7 @@
      "insair:10003203": 493,
      "k-home:10066477": 431,
      "k-home:10059750": 329,
-     "moosoo:10000614": 2300,
+     "moosoo:10000614": 2301,
      "irisplaza-r:10140541": 391,
      "irisplaza-r:10149298": 269
     }
@@ -2148,9 +2148,9 @@
      "tsunagu-marche:10000001": 15980,
      "bruno-official:10001370": 11000,
      "hismileshop:10000012": 14800,
-     "maxshare:10060492": 6820,
      "lifeonproducts:10000240": 5610,
-     "happy11:10015222": 6820
+     "completehouse:10001204": 7699,
+     "colawinwin:10000426": 7699
     },
     "reviews": {
      "tescom-japan:10000090": 185,
@@ -2160,9 +2160,9 @@
      "tsunagu-marche:10000001": 1300,
      "bruno-official:10001370": 47,
      "hismileshop:10000012": 25,
-     "maxshare:10060492": 284,
      "lifeonproducts:10000240": 129,
-     "happy11:10015222": 10
+     "completehouse:10001204": 12,
+     "colawinwin:10000426": 16
     }
    },
    "portable-power": {
@@ -2201,8 +2201,8 @@
      "twinklegoods:10000107": 1499,
      "h2brothers:10001923": 1000,
      "aquatalk:10000172": 3520,
-     "brain556:10005864": 2180,
      "mottainaiya:10001039": 2640,
+     "hacono:10000227": 6980,
      "yukaiya:10001268": 780,
      "aquatalk:10000314": 1800
     },
@@ -2213,8 +2213,8 @@
      "twinklegoods:10000107": 287,
      "h2brothers:10001923": 229,
      "aquatalk:10000172": 505,
-     "brain556:10005864": 185,
      "mottainaiya:10001039": 197,
+     "hacono:10000227": 732,
      "yukaiya:10001268": 427,
      "aquatalk:10000314": 4101
     }
@@ -2226,7 +2226,7 @@
      "liberty-base:10002107": 27483,
      "e-kurashi:10009269": 24800,
      "paseco:10000008": 20900,
-     "e-kurashi:10009552": 14800,
+     "e-kurashi:10009552": 17800,
      "toyotomi-homeplus:10000017": 29480,
      "a-price:10771925": 40800,
      "minatodenk:10531866": 22150,
@@ -2407,7 +2407,7 @@
      "kinokokinoko:10010605": 645,
      "matsucame:10073782": 66,
      "sunport125:10000344": 135,
-     "kotsubame:10000013": 222,
+     "kotsubame:10000013": 223,
      "keynice:10000014": 837,
      "astera:10000121": 194,
      "kurashido:10000072": 798,
