@@ -1,0 +1,39 @@
+  <!-- ご飯1杯の値段の計算ツール（お米は炊くと重さ約2.2倍） -->
+  <div class="kero-pick calc" id="rice-calc">
+    <div class="calc-grid">
+      <label>お米5kgの値段<span><input id="r-price" type="number" inputmode="numeric" min="0" step="10" value="2816"> 円</span></label>
+      <label>ご飯1杯の量<span><select id="r-bowl">
+        <option value="100">100g（小盛り）</option>
+        <option value="150" selected>150g（ふつう）</option>
+        <option value="200">200g（大盛り）</option>
+        <option value="250">250g（どんぶり）</option>
+      </select></span></label>
+      <label>1日に食べる杯数<span><input id="r-cups" type="number" inputmode="decimal" min="0" step="0.5" value="2"> 杯</span></label>
+      <label>くらべる食パン（6枚切り2枚）<span><input id="r-bread" type="number" inputmode="numeric" min="0" step="1" value="68"> 円</span></label>
+    </div>
+    <div id="r-result" class="kero-result" aria-live="polite"></div>
+  </div>
+  <p class="method">お米は炊くと重さが約2.2倍になるとして計算しています（1杯150gなら、お米は約68g）。炊くときの電気代や水道代は入っていません。</p>
+  <script>
+  (function () {
+    function $(id) { return document.getElementById(id); }
+    function num(id) { var v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : 0; }
+    function yen(n) { return Math.round(n).toLocaleString("ja-JP") + "円"; }
+    function calc() {
+      var price = num("r-price"), bowl = parseFloat($("r-bowl").value), cups = num("r-cups"), bread = num("r-bread");
+      var raw = bowl / 2.2, perBowl = price / 5000 * raw, bowls = 5000 / raw;
+      var month = perBowl * cups * 30, diff = (bread - perBowl) * cups * 30;
+      var days = cups > 0 ? Math.round(bowls / cups) : 0;
+      $("r-result").innerHTML =
+        "<p class=\"kero-big\">ご飯1杯 約" + (Math.round(perBowl * 10) / 10) + "円<span>5kgで 約" + Math.floor(bowls) + "杯" + (days ? "（1日" + cups + "杯なら 約" + days + "日分）" : "") + "</span></p>" +
+        "<p>1か月（30日）のお米代：<strong>約" + yen(month) + "</strong></p>" +
+        "<p class=\"kero-month\">同じ回数を食パン（6枚切り2枚）にすると、1か月で " +
+        (diff >= 0 ? "<strong>ご飯のほうが約" + yen(diff) + "安い</strong>" : "<strong>食パンのほうが約" + yen(-diff) + "安い</strong>") +
+        "（1年で 約" + yen(Math.abs(diff) * 12) + "）</p>";
+      try { localStorage.setItem("rice-calc", JSON.stringify([price, $("r-bowl").value, cups, bread])); } catch (e) {}
+    }
+    try { var a = JSON.parse(localStorage.getItem("rice-calc") || "null"); if (a) { $("r-price").value = a[0]; $("r-bowl").value = a[1]; $("r-cups").value = a[2]; $("r-bread").value = a[3]; } } catch (e) {}
+    ["r-price", "r-bowl", "r-cups", "r-bread"].forEach(function (id) { $(id).addEventListener("input", calc); $(id).addEventListener("change", calc); });
+    calc();
+  })();
+  </script>

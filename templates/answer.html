@@ -37,6 +37,7 @@
   </table></div>
   {% endif %}
   {% for para in sec.after or [] %}<p>{{ para|mk }}</p>{% endfor %}
+  {% if sec.calc %}{% include "_calc_" ~ sec.calc ~ ".html" %}{% endif %}
   {% if sec.cases %}<div class="cases">{% for c in sec.cases %}<div class="case"><p class="case-if">もしも、{{ c["if"] }}なら</p><p>{{ c.then|mk }}</p></div>{% endfor %}</div>{% endif %}
   {% endfor %}
   {% if q.note %}<p class="method">{{ q.note }}</p>{% endif %}

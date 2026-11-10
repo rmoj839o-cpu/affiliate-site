@@ -76,6 +76,9 @@
    "body": [
     "ひとり暮らしなら、炊飯器は3合炊きくらいが使いやすいです。一度に2〜3合炊いて冷凍しておけば、炊く回数も減らせます。何合炊きがいいかは[ひとり暮らしの炊飯器は何合？](/guide/hitorigurashi-suihanki-gou/)にまとめています。",
     "冷凍ごはんをよく食べるなら、冷凍室の大きさも大事です。[ひとり暮らしの冷蔵庫の大きさ](/guide/hitorigurashi-reizouko-size/)も参考にしてください。"
+   ],
+   "after": [
+    "ご飯1杯がいくらになるか、パンや麺とくらべた値段は[ご飯1杯はいくら？](/guide/gohan-ippai-ikura/)にまとめています（計算ツールつき）。"
    ]
   }
  ],
@@ -84,5 +87,6 @@
   "small-rice-cooker",
   "single-microwave",
   "small-fridge"
- ]
+ ],
+ "updated": "2026-11-11"
 }
