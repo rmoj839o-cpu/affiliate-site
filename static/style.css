@@ -246,3 +246,9 @@ footer { margin-top: 48px; padding-top: 16px; padding-bottom: 32px; border-top: 
 .inline-ad { white-space: nowrap; }
 .inline-ad a { font-weight: 700; }
 .inline-ad-pr { display: inline-block; font-size: 10px; line-height: 1; padding: 2px 4px; margin: 0 4px 0 2px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); vertical-align: middle; }
+/* 計算ツール */
+.calc select { margin-bottom: 4px; }
+.calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.calc-grid label { margin: 0; }
+.calc-grid label span { display: flex; align-items: center; gap: 6px; margin-top: 4px; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.calc-grid input, .calc-grid select { width: 100%; min-width: 0; font-size: 16px; padding: 8px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); }

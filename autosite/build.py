@@ -379,6 +379,14 @@ def main():
             products=[]), encoding="utf-8")
         pages.append("/guide/gasoline-kakaku/")
         page_dates["/guide/gasoline-kakaku/"] = gas["day"]
+    # 電気代・灯油代の計算ツール（灯油の値段は今週の都道府県別の数字を使う）
+    out = DIST / "guide" / "denkidai-keisan" / "index.html"
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(env.get_template("calc.html").render(
+        kero=kero, path="/guide/denkidai-keisan/",
+        products=[by_slug[s] for s in ("electric-blanket", "setsuden-tap", "kerosene-fan-heater") if s in by_slug]),
+        encoding="utf-8")
+    pages.append("/guide/denkidai-keisan/")
     if answers:
         (DIST / "guide" / "index.html").write_text(
             env.get_template("answer_index.html").render(answers=answers, by_slug=by_slug, kero=kero, gas=gas, path="/guide/"),

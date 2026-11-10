@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block title %}電気代・灯油代の計算ツール｜家電の1時間・1か月・ひと冬の電気代がすぐわかる{% endblock %}
+{% block description %}家電の消費電力（W）と使う時間を入れると、1時間・1日・1か月・ひと冬の電気代がすぐわかります。石油ファンヒーターの灯油代も、お住まいの県の今週の灯油価格で計算できます。電気毛布・こたつ・エアコン・セラミックヒーター・加湿器の目安もえらべます。{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "電気代・灯油代の計算ツール",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "All",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "JPY"}
+}
+</script>
+{% endblock %}
+{% block main %}
+<article class="column">
+  <p class="crumb"><a href="{{ base }}/guide/">暮らしの豆知識</a></p>
+  <h1>電気代・灯油代の計算ツール</h1>
+{% with byline_note = "数字を入れるだけで、すぐ計算できます" %}{% include "_byline.html" %}{% endwith %}
+  <div class="answer">
+    <p class="answer-label">使い方</p>
+    <p>家電の<strong>消費電力（W）</strong>と<strong>使う時間</strong>を入れると、電気代がすぐ出ます。消費電力は、本体のシールや説明書に「定格消費電力 〇〇W」と書いてあります。わからないときは、下の「家電をえらぶ」から目安をえらんでください。</p>
+  </div>
+
+  <h2>電気代を計算する</h2>
+  <div class="kero-pick calc">
+    <label for="c-preset">家電をえらぶ（目安）</label>
+    <select id="c-preset">
+      <option value="">えらぶ、または下に数字を入れる</option>
+      <option value="50">電気毛布（50W）</option>
+      <option value="300">こたつ・弱め（300W）</option>
+      <option value="600">こたつ・強め（600W）</option>
+      <option value="600">セラミックヒーター・弱（600W）</option>
+      <option value="1200">セラミックヒーター・強（1200W）</option>
+      <option value="470">エアコン暖房 6畳用・ふつうの運転（470W）</option>
+      <option value="250">スチーム式加湿器（250W）</option>
+      <option value="5">卓上加湿器・USB（5W）</option>
+      <option value="150">デスク下パネルヒーター（150W）</option>
+      <option value="30">サーキュレーター（30W）</option>
+    </select>
+    <div class="calc-grid">
+      <label>消費電力<span><input id="c-watt" type="number" inputmode="decimal" min="0" step="1" value="50"> W</span></label>
+      <label>1日に使う時間<span><input id="c-hours" type="number" inputmode="decimal" min="0" max="24" step="0.5" value="8"> 時間</span></label>
+      <label>1か月に使う日数<span><input id="c-days" type="number" inputmode="numeric" min="0" max="31" step="1" value="30"> 日</span></label>
+      <label>電気の値段<span><input id="c-price" type="number" inputmode="decimal" min="0" step="0.1" value="31"> 円/kWh</span></label>
+    </div>
+    <div id="c-result" class="kero-result" aria-live="polite"></div>
+  </div>
+  <p class="method">電気の値段は、家電の電気代のめやすによく使われる1kWh＝31円にしています。検針票の「電力量料金」の単価に変えると、より近い数字になります。エアコンは、部屋が暖まると電気を少なくするので、実際は計算より少なくなることが多いです。</p>
+
+  <h2>石油ファンヒーターの灯油代を計算する</h2>
+  <div class="kero-pick calc">
+    {% if kero %}
+    <label for="k-pref">お住まいの都道府県（今週の灯油価格を使う）</label>
+    <select id="k-pref">
+      <option value="">全国平均（1L 約{{ kero.national.liter }}円）</option>
+      {% for r in kero.rows %}<option value="{{ r.liter }}">{{ r.pref }}（1L 約{{ r.liter }}円）</option>{% endfor %}
+    </select>
+    {% endif %}
+    <div class="calc-grid">
+      <label>1時間に使う灯油<span><select id="k-use">
+        <option value="0.10">0.10L（小さめ・弱め）</option>
+        <option value="0.15" selected>0.15L（ふつう）</option>
+        <option value="0.20">0.20L（大きめ）</option>
+        <option value="0.311">0.311L（管理人の機種・最大）</option>
+      </select></span></label>
+      <label>1日に使う時間<span><input id="k-hours" type="number" inputmode="decimal" min="0" max="24" step="0.5" value="5"> 時間</span></label>
+      <label>1か月に使う日数<span><input id="k-days" type="number" inputmode="numeric" min="0" max="31" step="1" value="30"> 日</span></label>
+      <label>灯油の値段<span><input id="k-price" type="number" inputmode="decimal" min="0" step="0.1" value="{{ kero.national.liter if kero else 140 }}"> 円/L</span></label>
+    </div>
+    <div id="k-result" class="kero-result" aria-live="polite"></div>
+  </div>
+  <p class="method">1時間に使う灯油の量は、説明書の「燃料消費量（L/h）」に書いてあります。部屋が暖まると火が弱くなるので、実際は計算より少なくなることが多いです。{% if kero %}灯油の値段は、資源エネルギー庁の{{ kero.day_jp }}調査（店頭・18Lを1Lあたりにしたもの）です。{% endif %}</p>
+
+  <h2>計算のしかた</h2>
+  <ul>
+    <li>電気代 ＝ 消費電力（W）÷ 1000 × 使った時間 × 電気の値段（円/kWh）</li>
+    <li>灯油代 ＝ 1時間に使う灯油（L）× 使った時間 × 灯油の値段（円/L）</li>
+    <li>ひと冬は、11月〜3月の5か月で計算しています</li>
+  </ul>
+
+  <h2>くわしく知りたいとき</h2>
+  <ul class="news">
+    <li><a href="{{ base }}/guide/kaden-denkidai-ranking/">ひとり暮らしで電気代が高い家電ランキング</a></li>
+    <li><a href="{{ base }}/guide/hitorigurashi-danbou-yasui/">ひとり暮らしの暖房、いちばん安いのはどれ？</a></li>
+    <li><a href="{{ base }}/guide/sekiyu-fan-heater-touyudai/">石油ファンヒーターの灯油代は1か月いくら？</a></li>
+    <li><a href="{{ base }}/guide/touyu-kakaku/">都道府県別の灯油価格（毎週更新）</a></li>
+    <li><a href="{{ base }}/guide/hitorigurashi-fuyu-denkidai-heikin/">ひとり暮らしの冬の電気代、平均はいくら？</a></li>
+  </ul>
+{% include "_article_products.html" %}
+{% include "_profile.html" %}
+</article>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  function num(id) { var v = parseFloat($(id).value); return isFinite(v) && v >= 0 ? v : 0; }
+  function yen(n) { return n < 10 ? (Math.round(n * 10) / 10) + "円" : Math.round(n).toLocaleString("ja-JP") + "円"; }
+  function save(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function load(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+
+  function elec() {
+    var w = num("c-watt"), h = num("c-hours"), d = num("c-days"), p = num("c-price");
+    var hour = w / 1000 * p, day = hour * h, month = day * d;
+    $("c-result").innerHTML =
+      "<p class=\"kero-big\">1か月 約" + yen(month) + "<span>1時間 約" + yen(hour) + " ／ 1日 約" + yen(day) + "</span></p>" +
+      "<p class=\"kero-month\">ひと冬（5か月）で 約<strong>" + yen(month * 5) + "</strong>、1年中なら 約" + yen(day * 365) + "</p>";
+    save("calc-elec", JSON.stringify([w, h, d, p]));
+  }
+  function kero() {
+    var u = parseFloat($("k-use").value), h = num("k-hours"), d = num("k-days"), p = num("k-price");
+    var liters = u * h * d, month = liters * p;
+    $("k-result").innerHTML =
+      "<p class=\"kero-big\">1か月 約" + yen(month) + "<span>灯油 約" + (Math.round(liters * 10) / 10) + "L（18Lのポリタンク 約" + (Math.round(liters / 18 * 10) / 10) + "本）</span></p>" +
+      "<p class=\"kero-month\">1時間 約" + yen(u * p) + " ／ ひと冬（5か月）で 約<strong>" + yen(month * 5) + "</strong></p>";
+  }
+
+  $("c-preset").addEventListener("change", function () { if (this.value) { $("c-watt").value = this.value; elec(); } });
+  ["c-watt", "c-hours", "c-days", "c-price"].forEach(function (id) { $(id).addEventListener("input", elec); });
+  ["k-use", "k-hours", "k-days", "k-price"].forEach(function (id) { $(id).addEventListener("input", kero); $(id).addEventListener("change", kero); });
+  var pref = $("k-pref"), natLiter = {{ (kero.national.liter if kero else 140)|tojson }};
+  if (pref) pref.addEventListener("change", function () { $("k-price").value = this.value || natLiter; kero(); });
+
+  var saved = load("calc-elec");
+  if (saved) { try { var a = JSON.parse(saved); ["c-watt", "c-hours", "c-days", "c-price"].forEach(function (id, i) { if (isFinite(a[i])) $(id).value = a[i]; }); } catch (e) {} }
+  elec(); kero();
+})();
+</script>
+{% endblock %}
