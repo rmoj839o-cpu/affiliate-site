@@ -1,5 +1,5 @@
 {
- "date": "2026-11-10",
+ "date": "2026-11-11",
  "rows": [
   {
    "rank": 1,
@@ -75,21 +75,21 @@
   },
   {
    "rank": 9,
+   "short_name": "おせち 2027 プレミアム和風おせち 1〜2人前 19品",
+   "early": "11/30まで",
+   "deadline": null,
+   "temp": "冷凍",
+   "servings": "1〜2人前",
+   "dishes": "19品"
+  },
+  {
+   "rank": 10,
    "short_name": "エントリーで 本格京風おせち料理 京菜味のむら 2027 2026",
    "early": null,
    "deadline": null,
    "temp": "冷凍",
    "servings": "1人前",
    "dishes": "31品"
-  },
-  {
-   "rank": 10,
-   "short_name": "おせち 早割 博多久松 2027 1人前",
-   "early": null,
-   "deadline": null,
-   "temp": "冷凍",
-   "servings": "1人前",
-   "dishes": "18品"
   }
  ],
  "evidence": [
