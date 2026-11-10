@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "灯油18Lいくら？今週の灯油価格と安い県ランキング",
-  "dateModified": "{{ k.day }}",
+  "dateModified": "{{ k.pub }}",
   "author": {"@type": "Person", "name": {{ site.author|tojson }}}
 }
 </script>
@@ -16,7 +16,7 @@
 <article class="column">
   <p class="crumb"><a href="{{ base }}/guide/">暮らしの豆知識</a>{% if cat %} ＞ <a href="{{ base }}/{{ cat.slug }}/">{{ cat.title }}のランキング</a>{% endif %}</p>
   <h1>灯油18Lはいくら？今週の灯油価格と安い県ランキング【毎週更新】</h1>
-{% with byline_note = k.day_jp ~ "調査" %}{% include "_byline.html" %}{% endwith %}
+{% with byline_note = k.day_jp ~ "調査（" ~ k.pub_jp ~ "発表）" %}{% include "_byline.html" %}{% endwith %}
   <div class="answer">
     <p class="answer-label">今週の全国平均（店頭）</p>
     <p class="kero-big">18L {{ "{:,}".format(k.national.store) }}円<span>1Lあたり {{ k.national.liter }}円</span></p>

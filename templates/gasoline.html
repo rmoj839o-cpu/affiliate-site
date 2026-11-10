@@ -7,7 +7,7 @@
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ガソリン価格 都道府県別ランキング",
-  "dateModified": "{{ g.day }}",
+  "dateModified": "{{ g.pub }}",
   "author": {"@type": "Person", "name": {{ site.author|tojson }}}
 }
 </script>
@@ -16,7 +16,7 @@
 <article class="column">
   <p class="crumb"><a href="{{ base }}/guide/">暮らしの豆知識</a></p>
   <h1>ガソリン価格 都道府県別ランキング｜レギュラー1Lはいくら？【毎週更新】</h1>
-{% with byline_note = g.day_jp ~ "調査" %}{% include "_byline.html" %}{% endwith %}
+{% with byline_note = g.day_jp ~ "調査（" ~ g.pub_jp ~ "発表）" %}{% include "_byline.html" %}{% endwith %}
   <div class="answer">
     <p class="answer-label">今週の全国平均（レギュラー）</p>
     <p class="kero-big">1L {{ "%.1f"|format(g.national.reg) }}円<span>ハイオク {{ "%.1f"|format(g.national.hi) }}円 ／ 軽油 {{ "%.1f"|format(g.national.diesel) }}円</span></p>

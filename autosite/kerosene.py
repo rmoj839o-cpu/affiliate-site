@@ -108,6 +108,16 @@ def update(db):
         return False
 
 
+def _pub(db, key, day):
+    """公表日。Excelのファイル名（xlsx/YYMMDD.xlsx）が公表された日。祝日の週は木曜になることがある。"""
+    m = re.search(r"(\d{2})(\d{2})(\d{2})\.xlsx", db.get(key) or "")
+    pub = f"20{m.group(1)}-{m.group(2)}-{m.group(3)}" if m else day
+    if pub < day:  # ファイル名が読めない・古いときは調査日を使う
+        pub = day
+    p = datetime.strptime(pub, "%Y-%m-%d")
+    return {"pub": pub, "pub_jp": f"{p.month}月{p.day}日", "pub_md": f"{p.month}/{p.day}"}
+
+
 def summary(db):
     """ページに出す形にまとめる。記録がなければ None。"""
     weeks = sorted(db.get("weeks", {}).items())
@@ -139,6 +149,7 @@ def summary(db):
                      "diff": nat[0] - nat_prev[0] if nat_prev else None} if nat else None,
         "trend": trend,
         "trend_max": max(t["store"] for t in trend), "trend_min": min(t["store"] for t in trend),
+        **_pub(db, "file", day),
     }
 
 
@@ -191,4 +202,5 @@ def gas_summary(db):
                      "diff": round(nat[0] - nat_prev[0], 1) if nat_prev else None} if nat else None,
         "trend": trend,
         "trend_max": max(t["reg"] for t in trend), "trend_min": min(t["reg"] for t in trend),
+        **_pub(db, "gas_file", day),
     }

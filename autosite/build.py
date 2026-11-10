@@ -369,7 +369,7 @@ def main():
             related=[q for q in answers if "touyu" in q["slug"] or q["category"] == "kerosene-fan-heater"][:5],
             products=products, no_ads=not products), encoding="utf-8")
         pages.append("/guide/touyu-kakaku/")
-        page_dates["/guide/touyu-kakaku/"] = kero["day"]
+        page_dates["/guide/touyu-kakaku/"] = kero["pub"]
     if gas:
         out = DIST / "guide" / "gasoline-kakaku" / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
@@ -378,7 +378,7 @@ def main():
             related=[q for q in answers if "touyu" in q["slug"] or "denkidai" in q["slug"]][:5],
             products=[]), encoding="utf-8")
         pages.append("/guide/gasoline-kakaku/")
-        page_dates["/guide/gasoline-kakaku/"] = gas["day"]
+        page_dates["/guide/gasoline-kakaku/"] = gas["pub"]
     # 電気代・灯油代の計算ツール（灯油の値段は今週の都道府県別の数字を使う）
     out = DIST / "guide" / "denkidai-keisan" / "index.html"
     out.parent.mkdir(parents=True, exist_ok=True)
