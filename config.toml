@@ -7,6 +7,7 @@ url = "https://hitorigurashi-kaden.net"
 # 楽天APIのReferer認証に使うURL。楽天アプリの「許可されたWebサイト」を変えるまでは、旧URLのままにしておく（省略時は url）
 rakuten_url = "https://rmoj839o-cpu.github.io/affiliate-site"
 author = "管理人"
+ga_id = "G-S19GVKC6N7"  # Googleアナリティクスの測定ID（ページに書きこむもので、秘密ではない）
 # 運営者プロフィール（トップ・各ページ下・運営者情報ページに表示）
 profile = "ひとり暮らし歴15年。毎年冬になると、新しい暖房器具をつい探してしまいます。技術の進歩で毎年のように新しいモデルが出るので、レビューを読み比べて選ぶのが楽しみのひとつです。このサイトでは、その「読み比べ」を、楽天市場のデータを使って毎日自動でやっています。"
 

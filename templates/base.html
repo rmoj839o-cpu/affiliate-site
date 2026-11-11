@@ -2,6 +2,9 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
+{% if site.ga_id and not demo %}<!-- Googleアナリティクス（どこから何人来たかを数える） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "{{ site.ga_id }}");</script>{% endif %}
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{% block title %}{{ site.name }}{% endblock %}</title>
 <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
