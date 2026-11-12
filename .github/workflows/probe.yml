@@ -1,0 +1,30 @@
+name: probe-site
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live pages
+        run: |
+          mkdir out && cd out
+          S=https://hitorigurashi-kaden.net
+          UA="Mozilla/5.0 (Linux; Android 6.0.1; Nexus 5X Build/MMB29P) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Mobile Safari/537.36 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+          curl -sS -m 30 "$S/robots.txt" -o robots.txt -w "robots %{http_code}\n" >> status.txt
+          curl -sS -m 30 "$S/sitemap.xml" -o sitemap.xml -w "sitemap %{http_code} %{size_download}\n" >> status.txt
+          for p in / /guide/ /guide/touyu-kakaku/ /guide/touyu-yasuku-kau/ /guide/zaitaku-ashimoto-danbou/ /kerosene-fan-heater/ /desk-panel-heater/ /about/; do
+            f=$(echo "$p" | tr '/' '_').html
+            curl -sSL -m 30 -A "$UA" "$S$p" -o "$f" -w "$p %{http_code} %{size_download} %{url_effective}\n" >> status.txt
+            echo "== $p" >> meta.txt
+            grep -o '<meta name="robots"[^>]*>\|<link rel="canonical"[^>]*>\|<meta http-equiv="refresh"[^>]*>\|<title>[^<]*\|googletagmanager[^"]*' "$f" >> meta.txt || true
+          done
+          grep -c "<loc>" sitemap.xml >> status.txt
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
