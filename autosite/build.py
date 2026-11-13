@@ -272,12 +272,16 @@ def main():
             sp_notes = {**{c["code"]: c for c in writer.item_notes(cat, sp["items"])}, **notes}
             sp_out = DIST / cat["slug"] / sp["slug"] / "index.html"
             sp_out.parent.mkdir(parents=True)
+            # 条件別ページは元のランキングと中身が近いので、検索には出さない（noindex）。
+            # 検索で表示されているページだけ、config の build.keep_subpages に書いて残す
+            indexable = f"{cat['slug']}/{sp['slug']}" in set(bcfg.get("keep_subpages", []))
             sp_out.write_text(env.get_template("subpage.html").render(
-                cat=cat, sp=sp, items=sp["items"], notes=sp_notes,
+                cat=cat, sp=sp, items=sp["items"], notes=sp_notes, noindex=not indexable,
                 osechi_rows=osechi.rows(sp["items"]) if cat.get("osechi_table") else None,
                 siblings=[o for o in subpages if o is not sp], path=f"/{cat['slug']}/{sp['slug']}/",
             ), encoding="utf-8")
-            pages.append(f"/{cat['slug']}/{sp['slug']}/")
+            if indexable:  # 検索に出さないページは、サイトマップにも入れない
+                pages.append(f"/{cat['slug']}/{sp['slug']}/")
         cat_subpages = [{"slug": sp["slug"], "title": sp["title"], "count": len(sp["items"])} for sp in subpages]
         built.append({**cat, "subpages_summary": cat_subpages, "group_key": cat.get("group", "kaden"), "top": ranked[0], "count": len(ranked), "items": ranked, "highlights": hl,
                       "tips": content["how_to_choose"], "intro": content["intro"]})
