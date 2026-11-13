@@ -1,0 +1,26 @@
+name: probe-site
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check live pages
+        run: |
+          mkdir out && cd out
+          S=https://hitorigurashi-kaden.net
+          curl -sS -m 30 "$S/sitemap.xml" -o sitemap.xml -w "sitemap %{http_code} %{size_download}\n" >> status.txt
+          for p in / /single-microwave/ /single-microwave/under-15000/ /kerosene-fan-heater/under-25000/ /sleep-earphones/popular/ /guide/touyu-18l-nannichi/ /desk-panel-heater/; do
+            f=$(echo "$p" | tr '/' '_').html
+            curl -sSL -m 30 "$S$p" -o "$f" -w "$p %{http_code}\n" >> status.txt
+            echo "== $p $(grep -o '<meta name="robots"[^>]*>' "$f")" >> meta.txt
+          done
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
