@@ -1,0 +1,2 @@
+pana_spec.html 200 179514 https://panasonic.jp/pot/products/NC-KT083/spec.html
+pana_top.html 200 204533 https://panasonic.jp/pot/products/NC-KT083.html
