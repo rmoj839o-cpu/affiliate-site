@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}アクセス解析の設定 | {{ site.name }}{% endblock %}
+{% block main %}
+<article class="column">
+<h1>アクセス解析の設定（管理人用）</h1>
+<div class="answer">
+  <p class="answer-label">このブラウザの状態</p>
+  <p class="kero-big" id="nt-status">確認中…</p>
+</div>
+<p>このページを開くと、<strong>今使っているブラウザでの訪問は、Googleアナリティクスに数えられなくなります</strong>。管理人が自分のサイトを見た分を数えないための設定です。</p>
+<p>ブラウザごとの設定なので、Safariと、アプリの中のブラウザでは、それぞれ1回ずつ開いてください。</p>
+<p><button type="button" id="nt-off" class="nt-btn">元にもどす（数えるようにする）</button></p>
+<p><a href="{{ base }}/">トップページへ</a></p>
+</article>
+<script>
+(function () {
+  var st = document.getElementById("nt-status");
+  function show() {
+    var on = false;
+    try { on = localStorage.getItem("ga-notrack") === "1"; } catch (e) {}
+    st.textContent = on ? "数えない設定になっています" : "数える設定です";
+  }
+  try { localStorage.setItem("ga-notrack", "1"); } catch (e) { st.textContent = "このブラウザでは設定できませんでした"; return; }
+  show();
+  document.getElementById("nt-off").addEventListener("click", function () {
+    try { localStorage.removeItem("ga-notrack"); } catch (e) {}
+    show();
+  });
+})();
+</script>
+{% endblock %}

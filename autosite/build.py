@@ -397,6 +397,10 @@ def main():
             encoding="utf-8")
         pages.append("/guide/")
 
+    # 管理人が自分の訪問をアナリティクスに数えないようにするページ（検索に出さない・サイトマップに入れない）
+    (DIST / "notrack").mkdir()
+    (DIST / "notrack" / "index.html").write_text(
+        env.get_template("notrack.html").render(path="/notrack/", noindex=True, no_ads=True, skip_ga=True), encoding="utf-8")
     (DIST / "about").mkdir()
     (DIST / "about" / "index.html").write_text(
         env.get_template("about.html").render(path="/about/"), encoding="utf-8")
