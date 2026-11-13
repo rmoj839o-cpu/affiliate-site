@@ -12,14 +12,8 @@ jobs:
           mkdir out && cd out
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
           get() { curl -sSL -m 40 -A "$UA" -H "Accept-Language: ja" "$2" -o "$1" -w "$1 %{http_code} %{size_download} %{url_effective}\n" >> status.txt || echo "$1 FAIL $2" >> status.txt; }
-          get enecho_kitchen.html https://www.enecho.meti.go.jp/category/saving_and_new/saving/general/howto/kitchen/index.html
-          get enecho_kitchen2.html https://www.enecho.meti.go.jp/category/saving_and_new/saving/general/howto/kitchen/
-          get zoji1.html https://www.zojirushi.co.jp/syohin/electricpot/ckdc/
-          get zoji2.html https://www.zojirushi.co.jp/syohin/kettle/ckdc/
-          get zoji3.html "https://www.zojirushi.co.jp/search/?q=CK-DC10"
-          get ks.html https://www.ksdenki.com/shop/g/g4974305230959/
-          get saga.pdf https://www.city.saga.lg.jp/material/files/group/36/p1bla28jonuti0me7a1mmki3j8.pdf
-          get hama.pdf https://www.city.hamamatsu.shizuoka.jp/documents/165200/202503-p12.pdf
+          get pana_spec.html https://panasonic.jp/pot/products/NC-KT083/spec.html
+          get pana_top.html https://panasonic.jp/pot/products/NC-KT083.html
           sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
           for f in *.pdf; do pdftotext -layout "$f" "${f%.pdf}.txt" 2>/dev/null || true; done
           for f in *.html; do python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'<[^>]+>','\n',t);t=html.unescape(t);print(re.sub(r'\n\s*\n+','\n',t))" "$f" > "${f%.html}.txt"; done
