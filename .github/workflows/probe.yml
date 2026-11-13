@@ -1,0 +1,32 @@
+name: probe-pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pages
+        run: |
+          mkdir out && cd out
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          get() { curl -sSL -m 40 -A "$UA" -H "Accept-Language: ja" "$2" -o "$1" -w "$1 %{http_code} %{size_download} $2\n" >> status.txt || echo "$1 FAIL $2" >> status.txt; }
+          get tokyo.pdf https://www.bousai.metro.tokyo.lg.jp/_res/common/bichiku/pamph_r6_7.pdf
+          get bunkyo.html https://www.city.bunkyo.lg.jp/b009/p000047.html
+          n=0
+          for q in 携帯トイレ アルミブランケット ホイッスル ポリ袋 ウェットティッシュ 軍手 ラップ LEDライト 給水袋 防災; do
+            n=$((n+1)); get "d$n.json" "https://jp.daisonet.com/search/suggest.json?q=$(python3 -c "import urllib.parse,sys;print(urllib.parse.quote(sys.argv[1]))" "$q")&resources%5Btype%5D=product&resources%5Blimit%5D=10"
+            echo "d$n $q" >> queries.txt
+          done
+          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
+          for f in *.pdf; do pdftotext -layout "$f" "${f%.pdf}.txt" 2>/dev/null || true; done
+          for f in *.html; do python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'<[^>]+>','\n',t);t=html.unescape(t);print(re.sub(r'\n\s*\n+','\n',t))" "$f" > "${f%.html}.txt"; done
+          rm -f *.pdf *.html
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
