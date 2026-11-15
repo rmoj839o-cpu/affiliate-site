@@ -1347,7 +1347,7 @@
      "quads:10000095": 550,
      "roomy:10017920": 59,
      "matsucame:10071734": 247,
-     "roomy:10016494": 392,
+     "roomy:10016494": 393,
      "duux-japan:10000100": 528,
      "u-denki:10039975": 135,
      "importshopaqua:10013351": 57,
@@ -1402,7 +1402,7 @@
      "dearcologne:10000961": 362,
      "eunicedress:10001896": 167,
      "tripleshop:10000214": 262,
-     "auc-risecreation:10004620": 6722,
+     "auc-risecreation:10004620": 6723,
      "myhomeshop:10000492": 549,
      "stargenius:10000003": 795,
      "baieitenfashionnigou:10000372": 196,
@@ -1523,8 +1523,8 @@
     "reviews": {
      "hitidear:10000192": 1270,
      "nexmoov:10000071": 570,
-     "katushop:10000129": 1221,
-     "hagoogi:10000255": 786,
+     "katushop:10000129": 1222,
+     "hagoogi:10000255": 787,
      "mpowjapan:10000823": 3512,
      "itsube-souken:10000266": 2576,
      "kukuya:10000147": 1443,
@@ -1574,7 +1574,7 @@
      "dasimon:10000020": 1536,
      "zian:10000038": 3643,
      "aideall:10000056": 510,
-     "tabtab:10003266": 28334,
+     "tabtab:10003266": 28335,
      "zian:10000097": 2146,
      "meisei:10000142": 1707,
      "hanaro:10001563": 1627,
@@ -1618,7 +1618,7 @@
      "snailax-shop:10000076": 3180,
      "lifeonproducts:10000359": 4928,
      "stargenius:10000061": 3570,
-     "hitidear:10000195": 18300,
+     "hitidear:10000195": 18500,
      "mikirona:10000095": 3260,
      "mikirona:10000063": 3270,
      "roomy:10016455": 11000,
@@ -1697,7 +1697,7 @@
      "e-kurashi:10004062": 21800,
      "townland-neo:10001404": 27698,
      "e-kurashi:10047652": 26800,
-     "townland:10007298": 42380,
+     "townland:10007298": 42298,
      "e-sumail-style:10004295": 27900,
      "townland-c:10004078": 18280,
      "dainichi-webshop:10001595": 15950,
@@ -1974,7 +1974,7 @@
     "reviews": {
      "iapos:10000018": 947,
      "panasonic-store:10000005": 1239,
-     "tescom-japan:10000036": 2576,
+     "tescom-japan:10000036": 2577,
      "tescom-japan:10000227": 718,
      "mtgec-beauty:10002056": 1310,
      "chouchou-store:10001355": 964,
@@ -2053,7 +2053,7 @@
      "osharewalker:10014004": 4980
     },
     "reviews": {
-     "bedroom:10066948": 759,
+     "bedroom:10066948": 760,
      "shirohato:10189881": 318,
      "aroma-room:10000997": 3349,
      "aroma-room:10001933": 2279,
@@ -2077,7 +2077,7 @@
      "roomy:10017646": 6900,
      "nissoplus:10000178": 9900,
      "lazboy-q:10000000": 28800,
-     "butterflyshop:10000245": 5350
+     "butterflyshop:10000245": 5400
     },
     "reviews": {
      "atex-net:10001706": 403,
@@ -2200,25 +2200,25 @@
     "top": "bos-shop:10000148",
     "prices": {
      "bos-shop:10000148": 8690,
-     "nby-online:10000040": 3980,
      "bos-shop:10000070": 9770,
      "scandinavie:10010116": 3980,
      "twinklegoods:10000107": 1499,
      "h2brothers:10001880": 1180,
      "h2brothers:10001923": 1000,
      "aquatalk:10000172": 3520,
+     "mottainaiya:10001039": 2790,
      "yukaiya:10001268": 780,
      "aquatalk:10000314": 1800
     },
     "reviews": {
      "bos-shop:10000148": 548,
-     "nby-online:10000040": 731,
      "bos-shop:10000070": 236,
      "scandinavie:10010116": 323,
      "twinklegoods:10000107": 289,
-     "h2brothers:10001880": 10953,
+     "h2brothers:10001880": 10957,
      "h2brothers:10001923": 229,
      "aquatalk:10000172": 506,
+     "mottainaiya:10001039": 199,
      "yukaiya:10001268": 428,
      "aquatalk:10000314": 4104
     }
@@ -2403,26 +2403,26 @@
     "prices": {
      "torreya-shop:10000057": 7980,
      "kinokokinoko:10010605": 4820,
+     "matsucame:10073782": 7700,
      "kotsubame:10000013": 2710,
      "sunport125:10000344": 7980,
      "keynice:10000014": 4280,
      "vanilla-vague:10522107": 5680,
      "astera:10000121": 2780,
      "keynice:10000077": 6480,
-     "kurashido:10000072": 5940,
-     "lock110:10120293": 7130
+     "kurashido:10000072": 5940
     },
     "reviews": {
      "torreya-shop:10000057": 4314,
      "kinokokinoko:10010605": 645,
+     "matsucame:10073782": 66,
      "kotsubame:10000013": 233,
      "sunport125:10000344": 135,
-     "keynice:10000014": 840,
+     "keynice:10000014": 841,
      "vanilla-vague:10522107": 492,
      "astera:10000121": 194,
      "keynice:10000077": 150,
-     "kurashido:10000072": 798,
-     "lock110:10120293": 73
+     "kurashido:10000072": 798
     }
    },
    "headlight": {
