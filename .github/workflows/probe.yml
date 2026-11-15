@@ -12,11 +12,9 @@ jobs:
           mkdir out && cd out
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
           get() { curl -sSL -m 40 -A "$UA" -H "Accept-Language: ja" "$2" -o "$1" -w "$1 %{http_code} %{size_download} %{url_effective}\n" >> status.txt || echo "$1 FAIL $2" >> status.txt; }
-          get enecho_bath.html https://www.enecho.meti.go.jp/category/saving_and_new/saving/general/howto/bathtoilet/
-          get kenet_sleep.html https://kennet.mhlw.go.jp/information/information/heart/k-01-004
-          get jst.html https://scienceportal.jst.go.jp/newsflash/20230814_n01/
-          get chiba.pdf https://cpms.chiba-u.jp/images/news/2024/20241028.pdf
-          get caa.html https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_068/
+          get caa009.html https://www.caa.go.jp/policies/policy/consumer_safety/caution/caution_009/
+          get mhlw_sleep.pdf https://www.mhlw.go.jp/content/001288005.pdf
+          get kenet_pdf.pdf https://kennet.mhlw.go.jp/tools/pdf/guide-sleep.pdf
           sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
           for f in *.pdf; do pdftotext -layout "$f" "${f%.pdf}.txt" 2>/dev/null || true; done
           for f in *.html; do python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'<[^>]+>','\n',t);t=html.unescape(t);print(re.sub(r'\n\s*\n+','\n',t))" "$f" > "${f%.html}.txt"; done
