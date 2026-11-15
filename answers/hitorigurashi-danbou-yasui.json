@@ -183,7 +183,10 @@
     "[電気毛布とこたつ、電気代が安いのはどっち？](/guide/denki-moufu-vs-kotatsu/)",
     "[石油ファンヒーターの灯油代の早見表](/guide/sekiyu-fan-heater-touyudai/)",
     "[セラミックヒーターの電気代](/guide/ceramic-heater-denkidai/)",
-    "[加湿器の電気代](/guide/kashitsuki-denkidai/)"
+    "[加湿器の電気代](/guide/kashitsuki-denkidai/)",
+    "[足元が寒い在宅ワーク、いちばん安い暖め方は？](/guide/zaitaku-ashimoto-danbou/)",
+    "[デスク下パネルヒーターの電気代](/guide/desk-panel-heater-denkidai/)",
+    "[灯油18Lは何日もつ？](/guide/touyu-18l-nannichi/)"
    ],
    "after": []
   }
@@ -196,5 +199,5 @@
  ],
  "show_services": true,
  "service": "denki-minaoshi",
- "updated": "2026-11-12"
+ "updated": "2026-11-15"
 }
