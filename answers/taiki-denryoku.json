@@ -156,7 +156,8 @@
     "抜き差しが面倒なら、スイッチ付きの[節電タップ](/setsuden-tap/)で"
    ],
    "after": [
-    "冬の電気代全体のことは[ひとり暮らしの冬の電気代、平均はいくら？](/guide/hitorigurashi-fuyu-denkidai-heikin/)、炊飯器の保温については[炊飯器の保温と冷凍ごはん](/guide/suihanki-hoon-reitou/)にまとめています。"
+    "冬の電気代全体のことは[ひとり暮らしの冬の電気代、平均はいくら？](/guide/hitorigurashi-fuyu-denkidai-heikin/)、炊飯器の保温については[炊飯器の保温と冷凍ごはん](/guide/suihanki-hoon-reitou/)にまとめています。",
+    "温水洗浄便座は、使わないときにフタを閉めるだけで年間 約910円の節約になります。くわしくは[温水洗浄便座の電気代](/guide/benza-denkidai/)へ。"
    ]
   }
  ],
@@ -164,5 +165,6 @@
  "products": [
   "setsuden-tap",
   "smart-remote"
- ]
+ ],
+ "updated": "2026-11-16"
 }
