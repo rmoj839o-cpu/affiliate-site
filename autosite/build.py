@@ -180,6 +180,9 @@ def main():
     # ランキングのページに出す「管理人が実際に使っている機種」
     owners_path = ROOT / "owners.json"
     owners = json.loads(owners_path.read_text(encoding="utf-8")) if owners_path.exists() else {}
+    # ランキングのページに出す「選び方に迷ったら」の案内
+    guides_path = ROOT / "guides.json"
+    guides = json.loads(guides_path.read_text(encoding="utf-8")) if guides_path.exists() else {}
     now = datetime.now(JST)
     cfg["categories"] = active_categories(cfg["categories"], now)
 
@@ -263,7 +266,7 @@ def main():
         out = DIST / cat["slug"] / "index.html"
         out.parent.mkdir(parents=True, exist_ok=True)
         out.write_text(env.get_template("category.html").render(
-            cat=cat, items=ranked, notes=notes, content=content, hl=hl, subpages=subpages, owner=owners.get(cat["slug"]),
+            cat=cat, items=ranked, notes=notes, content=content, hl=hl, subpages=subpages, owner=owners.get(cat["slug"]), guide=guides.get(cat["slug"]),
             columns=[c for c in columns if c["category"] == cat["slug"]],
             answers=[q for q in answers if q["category"] == cat["slug"]],
             services=services.get(cat["slug"]), osechi_rows=osechi_rows,

@@ -24,6 +24,13 @@
   {% set budget_pages = subpages | rejectattr("slug", "equalto", "popular") | list if subpages else [] %}
   {% if budget_pages %}<p class="budget-links">予算で選ぶ：{% for sp in budget_pages %}<a href="{{ base }}/{{ cat.slug }}/{{ sp.slug }}/">{{ sp.title.split("円")[0] }}円以下</a>{% endfor %}</p>{% endif %}
   <p class="lead">{{ content.intro|mk }}</p>
+  {% if guide %}
+  <div class="answer guide-box">
+    <p class="answer-label">選び方に迷ったら</p>
+    <p>{{ guide.text|mk }}</p>
+    <ul>{% for t, u in guide.links %}<li><a href="{{ base }}{{ u }}">{{ t }}</a></li>{% endfor %}</ul>
+  </div>
+  {% endif %}
   {% if owner %}
   <div class="answer owner-box">
     <p class="answer-label">管理人が実際に使っている機種</p>
