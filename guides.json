@@ -3,17 +3,135 @@
  "window-insulation": {
   "text": "冬の暖房の熱は、==約58%が窓などから逃げる==という資料があります。窓に貼る断熱シート、窓の下に立てる冷気パネル、カーテンライナーのどれが部屋に合うかは、記事にまとめています。",
   "links": [
-   ["窓の断熱シートは効果ある？シート・パネル・カーテンの選び方", "/guide/mado-dannetsu-sheet/"],
-   ["暖房の設定温度、1℃下げるといくら節約？", "/guide/danbou-settei-ondo/"]
+   [
+    "窓の断熱シートは効果ある？シート・パネル・カーテンの選び方",
+    "/guide/mado-dannetsu-sheet/"
+   ],
+   [
+    "暖房の設定温度、1℃下げるといくら節約？",
+    "/guide/danbou-settei-ondo/"
+   ]
   ]
  },
  "electric-blanket": {
   "text": "電気毛布の電気代は、50Wなら==1時間 約1.6円==、ひと晩（8時間）でも約12円です。こたつとの使い分けや、ニトリとHAGOOGIのくらべも記事にまとめています。",
   "links": [
-   ["電気毛布の電気代は1時間いくら？", "/guide/denki-moufu-denkidai/"],
-   ["電気毛布とこたつ、電気代が安いのはどっち？", "/guide/denki-moufu-vs-kotatsu/"],
-   ["電気毛布はニトリとHAGOOGIどっちがおすすめ？", "/guide/denki-moufu-nitori-hagoogi/"],
-   ["足元が寒い在宅ワーク、いちばん安い暖め方は？", "/guide/zaitaku-ashimoto-danbou/"]
+   [
+    "電気毛布の電気代は1時間いくら？",
+    "/guide/denki-moufu-denkidai/"
+   ],
+   [
+    "電気毛布とこたつ、電気代が安いのはどっち？",
+    "/guide/denki-moufu-vs-kotatsu/"
+   ],
+   [
+    "電気毛布はニトリとHAGOOGIどっちがおすすめ？",
+    "/guide/denki-moufu-nitori-hagoogi/"
+   ],
+   [
+    "足元が寒い在宅ワーク、いちばん安い暖め方は？",
+    "/guide/zaitaku-ashimoto-danbou/"
+   ]
+  ]
+ },
+ "desk-panel-heater": {
+  "text": "デスク下パネルヒーターの電気代は、メーカーの公表値で==1時間 約2〜5円==。在宅ワークで1日8時間・月22日使っても、1か月 約370〜920円です。",
+  "links": [
+   [
+    "デスク下パネルヒーターの電気代は1か月いくら？",
+    "/guide/desk-panel-heater-denkidai/"
+   ],
+   [
+    "足元が寒い在宅ワーク、いちばん安い暖め方は？",
+    "/guide/zaitaku-ashimoto-danbou/"
+   ]
+  ]
+ },
+ "desk-humidifier": {
+  "text": "卓上加湿器の加湿量は1時間 約50mLで、いちばん小さい部屋用の==4分の1==。部屋全体ではなく、デスクや枕元など顔のまわり向きです。電気代は1日8時間で月 約19円です。",
+  "links": [
+   [
+    "卓上加湿器は効果ある？部屋用と加湿量をくらべました",
+    "/guide/takujou-kashitsuki-kouka/"
+   ],
+   [
+    "加湿器の電気代は1時間いくら？方式ごとの目安",
+    "/guide/kashitsuki-denkidai/"
+   ]
+  ]
+ },
+ "electric-kettle": {
+  "text": "電気ケトルでお湯をわかす電気代は、==カップ1杯で約0.4円から、1Lで約3円から==。冬は水が冷たいぶん2割くらい高くなります。",
+  "links": [
+   [
+    "電気ケトルの電気代は1回いくら？電気ポットの保温とくらべました",
+    "/guide/denki-kettle-denkidai/"
+   ]
+  ]
+ },
+ "hair-dryer": {
+  "text": "1200Wのドライヤーは、==1回10分で約6円==、毎日でも月 約190円です。1000W以上なので、電気ケトルなどと同じ延長コードで同時に使わないでください。",
+  "links": [
+   [
+    "ドライヤーの電気代は1回いくら？",
+    "/guide/dryer-denkidai/"
+   ]
+  ]
+ },
+ "single-microwave": {
+  "text": "温め時間はワット数に反比例します。==500Wで2分なら、600Wで約1分40秒==。冷凍食品の温め方も記事にまとめています。",
+  "links": [
+   [
+    "電子レンジ500Wと600Wの時間の換算表",
+    "/guide/renji-watt-kansan/"
+   ]
+  ]
+ },
+ "small-fridge": {
+  "text": "ときどき自炊するなら==150L前後==がひとつの目安です。使い方では、温度設定を「中」→「弱」にするだけで年間 約1,970円の節約になります（資源エネルギー庁）。",
+  "links": [
+   [
+    "一人暮らしの冷蔵庫は何リットルがいい？",
+    "/guide/hitorigurashi-reizouko-size/"
+   ],
+   [
+    "冷蔵庫の電気代を下げる5つの方法",
+    "/guide/reizouko-setsuden/"
+   ],
+   [
+    "停電したら冷蔵庫は何時間もつ？",
+    "/guide/teiden-reizouko-nanjikan/"
+   ]
+  ]
+ },
+ "small-rice-cooker": {
+  "text": "1回に炊くのが1〜2合なら、==3合炊きで十分==です。ご飯1杯（150g）は、今のお米の値段で約38円。保温より冷凍のほうが安くなることもあります。",
+  "links": [
+   [
+    "一人暮らしの炊飯器は何合炊きがいい？",
+    "/guide/hitorigurashi-suihanki-gou/"
+   ],
+   [
+    "ご飯1杯はいくら？（計算ツールつき）",
+    "/guide/gohan-ippai-ikura/"
+   ],
+   [
+    "炊飯器の保温と冷凍ごはん、どっちが安い？",
+    "/guide/suihanki-hoon-reitou/"
+   ]
+  ]
+ },
+ "small-ceramic-heater": {
+  "text": "セラミックヒーターは強運転で==1時間 約37円==。部屋全体を長く暖めるより、脱衣所や足元を短い時間だけ暖める使い方に向いています（脱衣所を10分なら約6円）。",
+  "links": [
+   [
+    "セラミックヒーターの電気代は高い？",
+    "/guide/ceramic-heater-denkidai/"
+   ],
+   [
+    "ひとり暮らしのお風呂、湯船とシャワーどっちがいい？",
+    "/guide/yubune-shower-dotchi/"
+   ]
   ]
  }
 }
