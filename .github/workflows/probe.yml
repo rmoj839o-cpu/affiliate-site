@@ -12,7 +12,7 @@ jobs:
           mkdir out && cd out
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
           B=https://www.enecho.meti.go.jp/category/saving_and_new/saving/general/howto
-          for p in lighting tv laundry cleaner; do
+          for p in cleaning entertainment airconditioning; do
             curl -sSL -m 40 -A "$UA" "$B/$p/" -o $p.html -w "$p %{http_code} %{size_download}\n" >> status.txt
             python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'<[^>]+>','\n',t);t=html.unescape(t);print(re.sub(r'\s*\n\s*',' ',t))" $p.html > $p.txt
           done
