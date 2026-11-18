@@ -105,7 +105,8 @@
     "電気ケトルは1000Wをこえる家電なので、ドライヤーなどと同じ延長コードで同時に使わない（くわしくは[ドライヤーの電気代](/guide/dryer-denkidai/)の記事に書いています）"
    ],
    "after": [
-    "冬の家電の電気代は[電気代が高い家電ランキング](/guide/kaden-denkidai-ranking/)で、自分の家電の電気代は[電気代・灯油代の計算ツール](/guide/denkidai-keisan/)でくらべられます。"
+    "冬の家電の電気代は[電気代が高い家電ランキング](/guide/kaden-denkidai-ranking/)で、自分の家電の電気代は[電気代・灯油代の計算ツール](/guide/denkidai-keisan/)でくらべられます。",
+    "ガスでお湯を使う台所の節約は[食器洗いのお湯、1日1分短くするだけで年間約5,230円](/guide/shokki-arai-oyu/)にまとめています。"
    ]
   },
   {
@@ -140,5 +141,5 @@
  "products": [
   "electric-kettle"
  ],
- "updated": "2026-11-15"
+ "updated": "2026-11-19"
 }
