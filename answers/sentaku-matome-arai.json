@@ -77,6 +77,7 @@
    "list": [
     "洗濯物どうしの間をあけて、風が通るように干す",
     "エアコンや暖房をつけている部屋に干すと、かわきやすい",
+    "ただし、==石油ストーブや電気ストーブの近くには干さない==。NITEは、暖房器具に洗濯物がふれたり落ちたりして火が出る事故があるとして、「洗濯物は乾かさない」とよびかけています（くわしくは[暖房器具の事故は12月がピーク](/guide/danbou-jiko-boushi/)）",
     "サーキュレーターで、洗濯物に風をあてる（サーキュレーターの冬の置き方は[冬のサーキュレーターの使い方](/guide/circulator-fuyu-tsukaikata/)）"
    ],
    "after": [
@@ -117,5 +118,6 @@
   "circulator"
  ],
  "show_services": true,
- "service": "denki-minaoshi"
+ "service": "denki-minaoshi",
+ "updated": "2026-11-20"
 }
