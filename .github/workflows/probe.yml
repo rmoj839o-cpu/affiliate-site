@@ -1,0 +1,26 @@
+name: probe-pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pages
+        run: |
+          mkdir out && cd out
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          curl -sSL -m 60 -A "$UA" "https://www.fdma.go.jp/laws/tutatsu/items/tutibunn20260609.pdf" -o t26.pdf -w "t26 %{http_code} %{size_download}\n" >> status.txt
+          curl -sSL -m 60 -A "$UA" "https://www.fdma.go.jp/publication/ugoki/items/rei_0710_18.pdf" -o u07.pdf -w "u07 %{http_code} %{size_download}\n" >> status.txt
+          curl -sSL -m 60 -A "$UA" "https://www.fdma.go.jp/laws/tutatsu/items/houdou.pdf" -o h.pdf -w "h %{http_code} %{size_download}\n" >> status.txt
+          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
+          for f in *.pdf; do pdftotext -layout "$f" "${f%.pdf}.txt" 2>/dev/null || true; done
+          rm -f *.pdf
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
