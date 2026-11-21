@@ -1716,7 +1716,7 @@
      "townland:10007298": 46,
      "townland-c:10004078": 49,
      "e-sumail-style:10004295": 156,
-     "dainichi-webshop:10001595": 141,
+     "dainichi-webshop:10001595": 142,
      "e-sumail-style:10004294": 89
     }
    },
@@ -2218,7 +2218,7 @@
      "bos-shop:10000148": 552,
      "bos-shop:10000070": 238,
      "scandinavie:10010116": 326,
-     "h2brothers:10001880": 11041,
+     "h2brothers:10001880": 11042,
      "twinklegoods:10000107": 291,
      "h2brothers:10001923": 232,
      "aquatalk:10000172": 507,
@@ -2581,6 +2581,7 @@
     "top": "eu-oukoku:10000558",
     "prices": {
      "eu-oukoku:10000558": 2650,
+     "eu-oukoku:10000721": 2100,
      "tsukiji-chokusoubin:10001766": 6600,
      "auc-kurashi-kaientai:10004116": 1980,
      "bundara:10002042": 1940,
@@ -2588,11 +2589,11 @@
      "sanchokudayori:10004117": 3300,
      "kumamoto-food:10002669": 1444,
      "medakastory:10002029": 3180,
-     "amachan:10000003": 2780,
-     "empirica:10000741": 1680
+     "amachan:10000003": 2780
     },
     "reviews": {
      "eu-oukoku:10000558": 739,
+     "eu-oukoku:10000721": 429,
      "tsukiji-chokusoubin:10001766": 2333,
      "auc-kurashi-kaientai:10004116": 503,
      "bundara:10002042": 673,
@@ -2600,8 +2601,7 @@
      "sanchokudayori:10004117": 728,
      "kumamoto-food:10002669": 16758,
      "medakastory:10002029": 1915,
-     "amachan:10000003": 703,
-     "empirica:10000741": 1418
+     "amachan:10000003": 703
     }
    }
   }
