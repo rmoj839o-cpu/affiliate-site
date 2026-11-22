@@ -146,5 +146,148 @@
     "/guide/sentaku-matome-arai/"
    ]
   ]
+ },
+ "kerosene-fan-heater": {
+  "text": "今週の灯油の全国平均や、18Lが何日もつか、使い始めの点検は記事にまとめています。暖房器具の事故は==12月がピーク==なので、使い始めに一度点検しておくと安心です（NITE）。",
+  "links": [
+   [
+    "灯油18Lいくら？今週の灯油価格（毎週更新）",
+    "/guide/touyu-kakaku/"
+   ],
+   [
+    "灯油18Lは何日もつ？",
+    "/guide/touyu-18l-nannichi/"
+   ],
+   [
+    "石油ファンヒーターの灯油代は1か月いくら？",
+    "/guide/sekiyu-fan-heater-touyudai/"
+   ],
+   [
+    "暖房器具の事故は12月がピーク（点検ポイント）",
+    "/guide/danbou-jiko-boushi/"
+   ]
+  ]
+ },
+ "kerosene-stove": {
+  "text": "石油ストーブは電気を使わないので、==停電しても暖まれる==のがいちばんの強みです。ひとり暮らしのワンルームなら、木造8〜9畳くらいの小さめの反射形が使いやすいです。",
+  "links": [
+   [
+    "石油ストーブはコロナ・トヨトミ・アラジンどれがいい？",
+    "/guide/sekiyu-stove-maker/"
+   ],
+   [
+    "冬に停電したときの寒さ対策",
+    "/guide/teiden-samusa-taisaku/"
+   ]
+  ]
+ },
+ "circulator": {
+  "text": "冬のサーキュレーターは、==天井に向けて風を送る==のが基本です。天井にたまった暖かい空気を部屋に回すと、足元の寒さがやわらぎます。",
+  "links": [
+   [
+    "サーキュレーターの冬の使い方",
+    "/guide/circulator-fuyu-tsukaikata/"
+   ],
+   [
+    "エアコン暖房はつけっぱなしとこまめに消す、どっちが安い？",
+    "/guide/aircon-tsukeppanashi/"
+   ]
+  ]
+ },
+ "emergency-toilet": {
+  "text": "簡易トイレは、ひとり分で1日5回くらいがめやすで、==3日分なら15回分、1週間分なら35回分==です。",
+  "links": [
+   [
+    "簡易トイレの使い方と、何回分あればいい？",
+    "/guide/kani-toilet-tsukaikata/"
+   ],
+   [
+    "予算1万円で、ひとり暮らし3日分の備蓄",
+    "/guide/bichiku-yosan-ichiman/"
+   ]
+  ]
+ },
+ "hozonsui": {
+  "text": "水の備蓄は==1人1日3L==がめやすです。ひとり暮らしなら、3日分で2Lペットボトル5本、1週間分で11本です。",
+  "links": [
+   [
+    "水の備蓄は何本？保存水は何年ものがお得？",
+    "/guide/mizu-bichiku-nanbon/"
+   ]
+  ]
+ },
+ "hijoushoku": {
+  "text": "ひとり暮らしなら、まずは==1人3日分（9食）==から。ふだん食べるものを少し多めに置いて、食べた分だけ買い足す「ローリングストック」も手軽です。",
+  "links": [
+   [
+    "非常食は尾西と安心米どっちがいい？",
+    "/guide/onishi-anshinmai-dotchi/"
+   ],
+   [
+    "ローリングストックのやり方（ひとり暮らし3日分9食）",
+    "/guide/rolling-stock-hitorigurashi/"
+   ],
+   [
+    "予算1万円で、ひとり暮らし3日分の備蓄",
+    "/guide/bichiku-yosan-ichiman/"
+   ]
+  ]
+ },
+ "kagu-tentou-boushi": {
+  "text": "賃貸で壁に穴をあけられなくても、==突っ張り棒とストッパーを組み合わせれば、ネジでとめるのと同じくらいの効果==があると東京消防庁は紹介しています。まずは寝る場所のまわりから。",
+  "links": [
+   [
+    "賃貸のひとり暮らしでもできる家具の転倒防止",
+    "/guide/kagu-tentou-boushi-chintai/"
+   ]
+  ]
+ },
+ "cassette-stove": {
+  "text": "カセットボンベ1本は、==強火でおよそ75分==もちます。停電や地震の備えには、1人1週間 約6本がめやすです。",
+  "links": [
+   [
+    "カセットコンロのガス代は1回いくら？何本いる？",
+    "/guide/cassette-gas-dai/"
+   ]
+  ]
+ },
+ "portable-power": {
+  "text": "ひとり暮らしの停電対策なら、スマホ・ライト・電気毛布を一晩使える==500Whくらいから==が目安です。",
+  "links": [
+   [
+    "ポータブル電源はJackeryとEcoFlowどっちがいい？",
+    "/guide/jackery-ecoflow-dotchi/"
+   ],
+   [
+    "停電したら冷蔵庫は何時間もつ？",
+    "/guide/teiden-reizouko-nanjikan/"
+   ]
+  ]
+ },
+ "setsuden-tap": {
+  "text": "待機電力は、家庭の電気の約5%です。節約の効果が大きい順は、食器洗いのお湯を1日1分短く（年間 約5,230円）、まとめ洗い（約4,690円）など。",
+  "links": [
+   [
+    "ひとり暮らしの節約、効果が大きい順ランキング",
+    "/guide/fuyu-setsuyaku-ranking/"
+   ],
+   [
+    "待機電力っていくら？",
+    "/guide/taiki-denryoku/"
+   ]
+  ]
+ },
+ "bousai-set": {
+  "text": "防災セットとあわせて、住宅用火災警報器が鳴るかも確かめておきましょう。==10年を過ぎた警報器は約35.1%==あります（消防庁 2026年）。",
+  "links": [
+   [
+    "住宅用火災警報器、10年たったら交換を",
+    "/guide/juukeiki-10nen/"
+   ],
+   [
+    "ひとり暮らしの備蓄リスト",
+    "/guide/hitorigurashi-bichiku-list/"
+   ]
+  ]
  }
 }
