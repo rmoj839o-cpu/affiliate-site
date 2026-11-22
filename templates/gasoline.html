@@ -62,6 +62,7 @@
   <p>全国平均のレギュラー{{ "%.1f"|format(g.national.reg) }}円で計算すると、30Lで約{{ "{:,}".format((g.national.reg * 30)|round|int) }}円、40Lで約{{ "{:,}".format((g.national.reg * 40)|round|int) }}円、50Lで約{{ "{:,}".format((g.national.reg * 50)|round|int) }}円です。お店ごとの値段は、この平均とちがうことがあります。</p>
   {% if kero %}<p>冬の灯油の値段は<a href="{{ base }}/guide/touyu-kakaku/">都道府県別の灯油価格</a>（今週の全国平均は18L {{ "{:,}".format(kero.national.store) }}円）でまとめています。</p>{% endif %}
 
+  <p>運転のしかたでガソリン代を節約するなら、ふんわりアクセルだけで年間 約14,370円という国の試算があります（<a href="{{ base }}/guide/eco-drive-setsuyaku/">エコドライブでガソリン代はいくら節約？</a>）。</p>
   <p class="method">出典：資源エネルギー庁「石油製品価格調査」（<a href="https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl007/results.html" target="_blank" rel="noopener">調査の結果</a>）。毎週月曜日に調査、水曜日に公表される店頭の現金価格（消費税込み）を、このサイトで47都道府県の表にまとめています。</p>
   {% if related %}
   <h2>ほかの豆知識</h2>
