@@ -40,6 +40,9 @@
 <h2>暮らしの豆知識</h2>
 <ul class="news">
   <li><a href="{{ base }}/guide/denkidai-keisan/">電気代・灯油代の計算ツール｜家電の1か月の電気代がすぐわかる</a></li>
+  <li><a href="{{ base }}/guide/fuyu-setsuyaku-ranking/">ひとり暮らしの節約、効果が大きい順ランキング｜今日からできる18の方法と年間の節約額</a></li>
+  <li><a href="{{ base }}/guide/hitorigurashi-danbou-yasui/">ひとり暮らしの暖房、いちばん安いのはどれ？1時間・1か月の暖房費ランキング</a></li>
+  <li><a href="{{ base }}/guide/hitorigurashi-seikatsuhi-heikin/">ひとり暮らしの生活費、1か月の平均は17万3,042円（2025年・総務省）</a></li>
   {% if kero %}<li><a href="{{ base }}/guide/touyu-kakaku/">今週の灯油価格：全国平均 18L {{ "{:,}".format(kero.national.store) }}円｜都道府県別の一覧（{{ kero.md }}調査）</a></li>{% endif %}
   {% if gas %}<li><a href="{{ base }}/guide/gasoline-kakaku/">今週のガソリン価格：レギュラー全国平均 1L {{ "%.1f"|format(gas.national.reg) }}円｜都道府県別の一覧（{{ gas.md }}調査）</a></li>{% endif %}
   {% for q in answers %}<li><a href="{{ base }}/guide/{{ q.slug }}/">{{ q.title }}</a></li>{% endfor %}

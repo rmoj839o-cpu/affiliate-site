@@ -7,7 +7,7 @@
   <p class="lead">家電の電気代や選ぶサイズ、安全な使い方、季節の食べ物の選び方など、知っておくとひとり暮らしに役立つ豆知識をまとめています。</p>
   {% if kero %}
   <p class="toc-label">毎週更新のデータ・計算ツール</p>
-  <ul class="news"><li><a href="{{ base }}/guide/denkidai-keisan/"><strong>電気代・灯油代の計算ツール</strong><span class="q-desc">消費電力と使う時間を入れるだけで、1時間・1か月・ひと冬の電気代がわかります。灯油代はお住まいの県の今週の値段で計算。</span></a></li><li><a href="{{ base }}/guide/touyu-kakaku/"><strong>都道府県別の灯油価格（18L）【毎週更新】</strong><span class="q-desc">{{ kero.day_jp }}調査。全国平均は店頭{{ "{:,}".format(kero.national.store) }}円。あなたの県の値段と、安い県・高い県がわかります。</span></a></li>{% if gas %}<li><a href="{{ base }}/guide/gasoline-kakaku/"><strong>ガソリン価格 都道府県別ランキング【毎週更新】</strong><span class="q-desc">{{ gas.day_jp }}調査。レギュラーの全国平均は1L {{ "%.1f"|format(gas.national.reg) }}円。いちばん安い県は{{ gas.cheap[0].pref }}。</span></a></li>{% endif %}</ul>
+  <ul class="news"><li><a href="{{ base }}/guide/fuyu-setsuyaku-ranking/"><strong>ひとり暮らしの節約、効果が大きい順ランキング</strong><span class="q-desc">食器洗いのお湯を1日1分短く（年間 約5,230円）、まとめ洗い（約4,690円）など、今日からできる18の方法を、資源エネルギー庁の試算で大きい順に。</span></a></li><li><a href="{{ base }}/guide/denkidai-keisan/"><strong>電気代・灯油代の計算ツール</strong><span class="q-desc">消費電力と使う時間を入れるだけで、1時間・1か月・ひと冬の電気代がわかります。灯油代はお住まいの県の今週の値段で計算。</span></a></li><li><a href="{{ base }}/guide/touyu-kakaku/"><strong>都道府県別の灯油価格（18L）【毎週更新】</strong><span class="q-desc">{{ kero.day_jp }}調査。全国平均は店頭{{ "{:,}".format(kero.national.store) }}円。あなたの県の値段と、安い県・高い県がわかります。</span></a></li>{% if gas %}<li><a href="{{ base }}/guide/gasoline-kakaku/"><strong>ガソリン価格 都道府県別ランキング【毎週更新】</strong><span class="q-desc">{{ gas.day_jp }}調査。レギュラーの全国平均は1L {{ "%.1f"|format(gas.national.reg) }}円。いちばん安い県は{{ gas.cheap[0].pref }}。</span></a></li>{% endif %}</ul>
   {% endif %}
   {% set topics = answers | rejectattr("category") | list %}
   {% if topics %}
