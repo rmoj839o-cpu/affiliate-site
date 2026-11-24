@@ -11,13 +11,14 @@ jobs:
         run: |
           mkdir out && cd out
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
-          curl -sSL -m 60 -A "$UA" https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl008/LPG_kakakusuii.pdf -o k.pdf -w "kakaku %{http_code} %{size_download}\n" >> status.txt
-          curl -sSL -m 40 -A "$UA" https://oil-info.ieej.or.jp/price/price.html -o o.html -w "oil %{http_code} %{size_download}\n" >> status.txt
-          curl -sSL -m 40 -A "$UA" https://oil-info.ieej.or.jp/ -o top.html -w "top %{http_code} %{size_download}\n" >> status.txt
+          B=https://oil-info.ieej.or.jp
+          curl -sSL -m 60 -A "$UA" $B/price/price_ippan_lp_maitsuki.html -o m.html -w "maitsuki %{http_code} %{size_download}\n" >> status.txt
+          curl -sSL -m 60 -A "$UA" $B/price/price_ippan_lp_gusu.html -o g.html -w "gusu %{http_code} %{size_download}\n" >> status.txt
+          curl -sSL -m 60 -A "$UA" $B/documents/data/LPGPRICE.pdf -o p.pdf -w "pdf %{http_code} %{size_download}\n" >> status.txt
           sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
-          pdftotext -layout k.pdf k.txt 2>/dev/null || true
-          for f in o top; do python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');print(re.sub(r'\n\s*\n+','\n',html.unescape(re.sub(r'<[^>]+>','\n',re.sub(r'(?s)<(script|style).*?</\1>','',t)))))" $f.html > $f.txt; grep -o 'href="[^"]*"' $f.html | grep -i "lp\|ガス\|price" > $f.links.txt || true; done
-          rm -f k.pdf *.html
+          pdftotext -layout p.pdf p.txt 2>/dev/null || true
+          for f in m g; do python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'</t[dh]>',' | ',t);t=re.sub(r'<[^>]+>','\n',t);print(re.sub(r'\n\s*\n+','\n',html.unescape(t)))" $f.html > $f.txt; grep -o 'href="[^"]*\.\(xls\|xlsx\|pdf\|csv\)"' $f.html > $f.links.txt || true; done
+          rm -f *.pdf *.html
       - name: Push to probe-out branch
         run: |
           cd out
