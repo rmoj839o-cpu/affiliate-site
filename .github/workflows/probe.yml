@@ -1,0 +1,27 @@
+name: probe-pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pages
+        run: |
+          mkdir out && cd out
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          curl -sSL -m 60 -A "$UA" https://www.enecho.meti.go.jp/statistics/petroleum_and_lpgas/pl008/LPG_kakakusuii.pdf -o k.pdf -w "kakaku %{http_code} %{size_download}\n" >> status.txt
+          curl -sSL -m 40 -A "$UA" https://oil-info.ieej.or.jp/price/price.html -o o.html -w "oil %{http_code} %{size_download}\n" >> status.txt
+          curl -sSL -m 40 -A "$UA" https://oil-info.ieej.or.jp/ -o top.html -w "top %{http_code} %{size_download}\n" >> status.txt
+          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
+          pdftotext -layout k.pdf k.txt 2>/dev/null || true
+          for f in o top; do python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');print(re.sub(r'\n\s*\n+','\n',html.unescape(re.sub(r'<[^>]+>','\n',re.sub(r'(?s)<(script|style).*?</\1>','',t)))))" $f.html > $f.txt; grep -o 'href="[^"]*"' $f.html | grep -i "lp\|ガス\|price" > $f.links.txt || true; done
+          rm -f k.pdf *.html
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
