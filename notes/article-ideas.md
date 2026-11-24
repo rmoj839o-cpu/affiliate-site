@@ -174,3 +174,4 @@
 - 11/24 昼：大雪の停電のニュース記事（ooyuki-teiden-20261124・CBC/NHK/中京テレビ/福島民友で確認）公開。ニュース記事なので広告なし
 - 公開（deploy-pages）が「Fetching artifact metadata failed」で失敗したとき：作ったサイト（github-pages の artifact）は残っているので、gh api -X POST repos/rmoj839o-cpu/affiliate-site/actions/runs/<run_id>/rerun-failed-jobs で公開だけやり直すと通った（11/24）
 - 2026年12月のコアアップデートが予告された（11/24 日本時間0時ごろ、Search Status Dashboard）：「関連する内容の理解とランキングの改善（長い・複雑な質問もふくむ）」と「パーソナライズの改善」。12月中に始まる予定。11月の振り返り（12/1ごろ）は、12月のアップデートが始まる前の数字で見る
+- 11/25 朝：お餅の窒息事故は1月がいちばん多い（mochi-chissoku・東京消防庁 2025/12/12更新）公開ずみ。広告なし。おせちの選び方の記事からリンク
