@@ -1,0 +1,29 @@
+name: probe-pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pages
+        run: |
+          mkdir out && cd out
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          get() { curl -sSL -m 40 -A "$UA" -H "Accept-Language: ja" "$2" -o "$1.raw" -w "$1 %{http_code} %{size_download} %{content_type}\n" >> status.txt; }
+          B=https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato
+          get about "$B/about/"
+          get mechanism "$B/about/mechanism.html"
+          get deduction "$B/about/deduction.html"
+          get onestop "$B/about/onestop.html"
+          get faq "$B/about/faq.html"
+          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
+          for f in *.raw; do n=${f%.raw}; if head -c 4 "$f" | grep -q "%PDF"; then mv "$f" "$n.pdf"; pdftotext -layout "$n.pdf" "$n.txt"; rm "$n.pdf"; else python3 -c "import re,sys,html;t=open(sys.argv[1],'rb').read().decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'</t[dh]>',' | ',t);t=re.sub(r'<[^>]+>','\n',t);print(re.sub(r'\n\s*\n+','\n',html.unescape(t)))" "$f" > "$n.txt"; grep -o 'href="[^"]*\.pdf"' "$f" > "$n.links.txt" || true; rm "$f"; fi; done
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
