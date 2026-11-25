@@ -1323,8 +1323,8 @@
     "reviews": {
      "airrobo:10000003": 429,
      "tamba:10005738": 396,
-     "tokyopt:10000012": 1168,
-     "animestore:10000898": 850,
+     "tokyopt:10000012": 1170,
+     "animestore:10000898": 851,
      "meijo:10000000": 1097,
      "milicute-himawari:10000017": 9917,
      "asukapainting:10000028": 1264,
@@ -1392,8 +1392,8 @@
     "prices": {
      "joisafakey:10000038": 6380,
      "dearcologne:10000961": 4980,
-     "eunicedress:10001896": 8980,
      "tripleshop:10000214": 4980,
+     "eunicedress:10001896": 8980,
      "santaku:10000085": 7980,
      "auc-risecreation:10004620": 8980,
      "myhomeshop:10000492": 10800,
@@ -1404,8 +1404,8 @@
     "reviews": {
      "joisafakey:10000038": 796,
      "dearcologne:10000961": 366,
-     "eunicedress:10001896": 169,
      "tripleshop:10000214": 335,
+     "eunicedress:10001896": 169,
      "santaku:10000085": 150,
      "auc-risecreation:10004620": 6778,
      "myhomeshop:10000492": 549,
@@ -1526,9 +1526,9 @@
      "hitidear:10000192": 1287,
      "nexmoov:10000071": 593,
      "katushop:10000129": 1257,
-     "hagoogi:10000255": 906,
+     "hagoogi:10000255": 907,
      "mpowjapan:10000823": 3582,
-     "itsube-souken:10000266": 2706,
+     "itsube-souken:10000266": 2711,
      "kukuya:10000147": 1504,
      "momokashop:10000504": 521,
      "lifejoy-shop:10000093": 1020,
@@ -1565,9 +1565,9 @@
     "prices": {
      "dasimon:10000020": 2180,
      "zian:10000038": 3150,
+     "aideall:10000056": 1280,
      "tabtab:10003266": 1980,
      "zian:10000097": 2880,
-     "aideall:10000056": 1280,
      "meisei:10000142": 1380,
      "aidort:10002663": 5980,
      "tabletpckoubou:10002193": 2180,
@@ -1577,9 +1577,9 @@
     "reviews": {
      "dasimon:10000020": 1593,
      "zian:10000038": 3648,
+     "aideall:10000056": 510,
      "tabtab:10003266": 28360,
      "zian:10000097": 2147,
-     "aideall:10000056": 511,
      "meisei:10000142": 1710,
      "aidort:10002663": 447,
      "tabletpckoubou:10002193": 482,
@@ -1631,7 +1631,7 @@
     "reviews": {
      "gaoye:10000000": 1176,
      "msut:10001784": 1152,
-     "snailax-shop:10000076": 783,
+     "snailax-shop:10000076": 784,
      "lifeonproducts:10000359": 446,
      "stargenius:10000061": 388,
      "mikirona:10000063": 1315,
@@ -1692,7 +1692,7 @@
      "enetroom:10164479": 358,
      "k-home:10059750": 329,
      "moosoo:10000614": 2347,
-     "irisplaza-r:10149298": 274
+     "irisplaza-r:10149298": 275
     }
    },
    "kerosene-fan-heater": {
@@ -1763,13 +1763,13 @@
      "twinbird:10000731": 134,
      "rcmdse:16999046": 318,
      "yamazenkaden:10002642": 80,
-     "comfee-kitchen:10000004": 232,
+     "comfee-kitchen:10000004": 233,
      "yamazenkaden:10003579": 114,
      "twinbird:10000021": 380,
      "e-kurashi:10043075": 98,
      "e-kitchen:10007417": 575,
      "kadenrand:10114138": 119,
-     "a-price:10712948": 76
+     "a-price:10712948": 77
     }
    },
    "small-fridge": {
@@ -1830,6 +1830,7 @@
     "top": "quads:10000003",
     "prices": {
      "quads:10000003": 11800,
+     "vornado:10000000": 19800,
      "quads:10000068": 6480,
      "matsucame:10072396": 14080,
      "duux-japan:10000073": 17800,
@@ -1841,6 +1842,7 @@
     },
     "reviews": {
      "quads:10000003": 886,
+     "vornado:10000000": 215,
      "quads:10000068": 804,
      "matsucame:10072396": 222,
      "duux-japan:10000073": 125,
@@ -1894,7 +1896,7 @@
     },
     "reviews": {
      "ryohinseikatsukan:10000103": 949,
-     "blueair:10000206": 1669,
+     "blueair:10000206": 1671,
      "ryohinseikatsukan:10000113": 1607,
      "ksk-shop:10000035": 41,
      "duux-japan:10000071": 65,
@@ -1902,7 +1904,7 @@
      "forjoyhome:10000304": 1169,
      "emedama:11066170": 43,
      "u-denki:10012361": 31,
-     "forjoyhome:10000315": 232
+     "forjoyhome:10000315": 233
     }
    },
    "dehumidifier": {
@@ -1980,7 +1982,7 @@
      "tescom-japan:10000227": 725,
      "chouchou-store:10001355": 964,
      "kukuya:10000154": 678,
-     "roomy:10016274": 702,
+     "roomy:10016274": 703,
      "kukuya:10000117": 2889,
      "chouchou-store:10001693": 791,
      "mikirona:10000085": 8836
@@ -2090,7 +2092,7 @@
      "souda-1959:10000071": 288,
      "nissoplus:10000178": 4510,
      "lazboy-q:10000000": 659,
-     "butterflyshop:10000245": 177,
+     "butterflyshop:10000245": 176,
      "souda-1959:10000003": 909
     }
    },
@@ -2123,7 +2125,7 @@
      "xgimi-store:10000066": 69800,
      "ueno-mono:10000046": 84800,
      "heimvision:10000333": 19999,
-     "tcl-flagship:10000000": 27990,
+     "tcl-flagship:10000000": 37590,
      "sanwa-shop:10000013": 29999,
      "sanwa-shop:10000017": 12980,
      "ueno-mono:10000022": 39800,
@@ -2261,8 +2263,8 @@
      "protoolshop:10228229": 10480,
      "try3-2:10010511": 19980,
      "emedama:11321724": 12980,
-     "e-kurashi:10036321": 35000,
-     "resolvemart1:10027614": 6100
+     "e-den-shop:10115565": 12800,
+     "e-kurashi:10036321": 35000
     },
     "reviews": {
      "homeshop:10357089": 34,
@@ -2273,8 +2275,8 @@
      "protoolshop:10228229": 22,
      "try3-2:10010511": 7,
      "emedama:11321724": 5,
-     "e-kurashi:10036321": 17,
-     "resolvemart1:10027614": 3
+     "e-den-shop:10115565": 3,
+     "e-kurashi:10036321": 17
     }
    },
    "bousai-set": {
@@ -2316,7 +2318,7 @@
     },
     "reviews": {
      "kurashido:10000448": 427,
-     "noza-mart:10000108": 702,
+     "noza-mart:10000108": 703,
      "alphasyokuhin:10000015": 402,
      "juju-giona:10007687": 399,
      "peaceup:10010947": 611,
@@ -2417,7 +2419,7 @@
      "kurashido:10000072": 5940
     },
     "reviews": {
-     "torreya-shop:10000057": 4327,
+     "torreya-shop:10000057": 4328,
      "kinokokinoko:10010605": 645,
      "matsucame:10073782": 70,
      "kotsubame:10000013": 241,
@@ -2597,8 +2599,8 @@
      "bundara:10002042": 674,
      "tsukiji-chokusoubin:10001817": 431,
      "sanchokudayori:10004117": 739,
-     "kumamoto-food:10002669": 16766,
-     "medakastory:10002029": 1925,
+     "kumamoto-food:10002669": 16767,
+     "medakastory:10002029": 1926,
      "amachan:10000003": 716
     }
    }
