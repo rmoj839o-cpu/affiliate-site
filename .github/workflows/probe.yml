@@ -13,8 +13,11 @@ jobs:
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
           get() { curl -sSL -m 40 -A "$UA" -H "Accept-Language: ja" "$2" -o "$1.raw" -w "$1 %{http_code} %{size_download} %{content_type}\n" >> status.txt; }
           B=https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/about
-          get about "$B/"
-          for p in $(grep -o 'href="[^"#]*"' about.raw | sed 's/href="//;s/"//' | grep -v "^http" | grep -v "\.\(pdf\|css\|js\|png\|jpg\)$" | sort -u | head -15); do n=$(echo "$p" | tr '/.' '__'); get "p$n" "$B/$p"; done
+          M=https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/furusato/mechanism
+          get about "$M/about.html"
+          get procedure "$M/procedure.html"
+          get deduction "$M/deduction.html"
+          get faq "$B/../faq/"
           sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
           for f in *.raw; do n=${f%.raw}; python3 -c "import re,sys,html;b=open(sys.argv[1],'rb').read();t=b.decode('cp932','replace') if b'Shift_JIS' in b[:2000] or b'shift_jis' in b[:2000] else b.decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'</t[dh]>',' | ',t);t=re.sub(r'<[^>]+>','\n',t);print(re.sub(r'\n\s*\n+','\n',html.unescape(t)))" "$f" > "$n.txt"; grep -o 'href="[^"]*"' "$f" > "$n.links.txt" || true; rm "$f"; done
       - name: Push to probe-out branch
