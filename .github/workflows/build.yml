@@ -61,8 +61,22 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-      - id: deploy
+      # GitHub側の一時的な不具合で「Fetching artifact metadata failed」になることがあるので、
+      # 失敗したら少し待って、もう一度だけ公開する
+      - id: deploy_first
         uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - name: Wait before retrying deploy
+        if: steps.deploy_first.outcome == 'failure'
+        run: sleep 60
+      - id: deploy_retry
+        if: steps.deploy_first.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+      - id: deploy
+        name: Deploy result
+        run: |
+          url="${{ steps.deploy_first.outputs.page_url }}${{ steps.deploy_retry.outputs.page_url }}"
+          echo "page_url=$url" >> "$GITHUB_OUTPUT"
 
       - name: Tell Bing about updated pages (IndexNow)
         # 今日公開・更新した記事だけを知らせる。失敗してもサイトの公開には関係ない

@@ -173,6 +173,6 @@
 - 気象庁の3か月予報（12〜2月）は11/25ごろ発表予定 → 発表されたら「この冬は寒い？」の記事に（2025〜26年冬は全国的に暖冬・歴代5位の高温、1月下旬〜2月上旬は強い寒気で低温＝気象庁2026年3月の資料。本文で確かめてから）
 - 11/24 夜：プロパンガス（LPガス）の料金、10m³で全国平均9,829円（lpgas-ryokin-heikin）公開ずみ。食器洗い・お風呂の記事からリンク。毎月更新のページにする案もあり（石油情報センターのHTMLは毎月更新）
 - 11/24 昼：大雪の停電のニュース記事（ooyuki-teiden-20261124・CBC/NHK/中京テレビ/福島民友で確認）公開。ニュース記事なので広告なし
-- 公開（deploy-pages）が「Fetching artifact metadata failed」で失敗したとき：作ったサイト（github-pages の artifact）は残っているので、gh api -X POST repos/rmoj839o-cpu/affiliate-site/actions/runs/<run_id>/rerun-failed-jobs で公開だけやり直すと通った（11/24）
+- 11/25：build.yml に、公開が失敗したら60秒待ってもう一度だけ公開する仕組みを足した。それでも失敗したとき：作ったサイト（github-pages の artifact）は残っているので、gh api -X POST repos/rmoj839o-cpu/affiliate-site/actions/runs/<run_id>/rerun-failed-jobs で公開だけやり直すと通った（11/24）
 - 2026年12月のコアアップデートが予告された（11/24 日本時間0時ごろ、Search Status Dashboard）：「関連する内容の理解とランキングの改善（長い・複雑な質問もふくむ）」と「パーソナライズの改善」。12月中に始まる予定。11月の振り返り（12/1ごろ）は、12月のアップデートが始まる前の数字で見る
 - 11/25 朝：お餅の窒息事故は1月がいちばん多い（mochi-chissoku・東京消防庁 2025/12/12更新）公開ずみ。広告なし。おせちの選び方の記事からリンク
