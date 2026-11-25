@@ -103,7 +103,8 @@
    ],
    "after": [
     "食料や水、トイレの備えについては、[世界で広がる「備蓄」の呼びかけ](/guide/hitorigurashi-bichiku-list/)にまとめています。",
-    "停電したときの冷蔵庫の中身のことは[停電したら冷蔵庫は何時間もつ？](/guide/teiden-reizouko-nanjikan/)にまとめています。"
+    "停電したときの冷蔵庫の中身のことは[停電したら冷蔵庫は何時間もつ？](/guide/teiden-reizouko-nanjikan/)にまとめています。",
+    "2026年11月には、大雪で岐阜県などの停電が5日以上続いたところもありました（[11月の大雪で停電が長引く](/guide/ooyuki-teiden-20261124/)）。"
    ]
   }
  ],
@@ -113,5 +114,6 @@
   "gas-stove",
   "portable-power",
   "electric-blanket"
- ]
+ ],
+ "updated": "2026-11-25"
 }
