@@ -1,0 +1,26 @@
+name: probe-pages
+on:
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch pages
+        run: |
+          mkdir out && cd out
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"
+          for d in 20261124 20261125; do curl -sSL -m 60 -A "$UA" "https://www.data.jma.go.jp/fukuoka/gyomu/file/rpc_3mf_$d.pdf" -o f$d.pdf -w "f$d %{http_code} %{size_download} %{content_type}\n" >> status.txt; done
+          curl -sSL -m 60 -A "$UA" "https://www.data.jma.go.jp/cpd/longfcst/kaisetsu/?term=P3M" -o k.html -w "kaisetsu %{http_code} %{size_download}\n" >> status.txt
+          sudo apt-get install -y -qq poppler-utils >/dev/null 2>&1 || true
+          for f in *.pdf; do pdftotext -layout "$f" "${f%.pdf}.txt" 2>/dev/null || true; done
+          python3 -c "import re,html;t=open('k.html','rb').read().decode('utf-8','replace');t=re.sub(r'(?s)<(script|style).*?</\1>','',t);t=re.sub(r'<[^>]+>','\n',t);print(re.sub(r'\n\s*\n+','\n',html.unescape(t)))" > k.txt
+          rm -f *.pdf k.html
+      - name: Push to probe-out branch
+        run: |
+          cd out
+          git init -q -b probe-out
+          git config user.name probe; git config user.email probe@example.com
+          git add -A; git commit -qm probe
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" probe-out
