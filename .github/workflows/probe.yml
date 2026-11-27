@@ -7,14 +7,21 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: PageSpeed Insights
+      - name: Lighthouse
         run: |
           mkdir out && cd out
           S=https://hitorigurashi-kaden.net
           for p in / /guide/hitorigurashi-danbou-yasui/ /kerosene-fan-heater/ /guide/touyu-kakaku/; do
             n=$(echo "$p" | tr '/' '_')
-            curl -sS -m 120 "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=$S$p&strategy=mobile&category=performance&category=seo&category=accessibility&category=best-practices" -o "psi$n.json" -w "$p %{http_code} %{size_download}\n" >> status.txt
-            sleep 5
+            npx -y lighthouse@12 "$S$p" --form-factor=mobile --screenEmulation.mobile --only-categories=performance,seo,accessibility,best-practices --output=json --output-path="lh$n.json" --chrome-flags="--headless=new --no-sandbox" --quiet || echo "fail $p" >> status.txt
+            python3 -c "
+import json,sys
+d=json.load(open(sys.argv[1]))
+c=d['categories']; a=d['audits']
+print(sys.argv[2], {k:round(v['score']*100) for k,v in c.items()}, 'LCP', a['largest-contentful-paint']['displayValue'], 'CLS', a['cumulative-layout-shift']['displayValue'], 'TBT', a['total-blocking-time']['displayValue'])
+fails=[ (k,v['title']) for k,v in a.items() if v.get('score') is not None and v['score']<0.9 and v.get('scoreDisplayMode') in ('binary','numeric','metricSavings')]
+for k,t in fails[:15]: print('   -',k,':',t)
+" "lh$n.json" "$p" >> summary.txt
           done
       - name: Push to probe-out branch
         run: |
