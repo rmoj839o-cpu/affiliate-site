@@ -1,0 +1,63 @@
+/ {'performance': 91, 'accessibility': 100, 'best-practices': 79, 'seo': 100} LCP 1.1 s CLS 0 TBT 370 ms
+   - total-blocking-time : Total Blocking Time | 370 ms
+   - max-potential-fid : Max Potential First Input Delay | 210 ms
+   - interactive : Time to Interactive | 4.5 s
+   - third-party-cookies : Uses third-party cookies | 1 cookie found
+   - third-party-summary : Reduce the impact of third-party code | Third-party code blocked the main thread for 340 ms
+   - uses-long-cache-ttl : Serve static assets with an efficient cache policy | 18 resources found
+   - render-blocking-resources : Eliminate render-blocking resources | Est savings of 60 ms
+   - unused-javascript : Reduce unused JavaScript | Est savings of 75 KiB
+   - uses-text-compression : Enable text compression | Est savings of 23 KiB
+   - uses-responsive-images : Properly size images | Est savings of 210 KiB
+   - legacy-javascript : Avoid serving legacy JavaScript to modern browsers | 
+   - inspector-issues : Issues were logged in the `Issues` panel in Chrome Devtools | 
+   - cache-insight : Use efficient cache lifetimes | Est savings of 275 KiB
+   - image-delivery-insight : Improve image delivery | Est savings of 271 KiB
+   - network-dependency-tree-insight : Network dependency tree | 
+   - render-blocking-insight : Render blocking requests | Est savings of 140 ms
+/guide/hitorigurashi-danbou-yasui/ {'performance': 100, 'accessibility': 93, 'best-practices': 79, 'seo': 100} LCP 1.7 s CLS 0 TBT 30 ms
+   - interactive : Time to Interactive | 4.5 s
+   - third-party-cookies : Uses third-party cookies | 1 cookie found
+   - link-name : Links do not have a discernible name | 
+   - td-has-header : `<td>` elements in a large `<table>` do not have table headers. | 
+   - uses-long-cache-ttl : Serve static assets with an efficient cache policy | 9 resources found
+   - offscreen-images : Defer offscreen images | Est savings of 239 KiB
+   - render-blocking-resources : Eliminate render-blocking resources | Est savings of 150 ms
+   - unused-javascript : Reduce unused JavaScript | Est savings of 75 KiB
+   - modern-image-formats : Serve images in next-gen formats | Est savings of 161 KiB
+   - uses-text-compression : Enable text compression | Est savings of 23 KiB
+   - uses-responsive-images : Properly size images | Est savings of 77 KiB
+   - legacy-javascript : Avoid serving legacy JavaScript to modern browsers | 
+   - inspector-issues : Issues were logged in the `Issues` panel in Chrome Devtools | 
+   - cache-insight : Use efficient cache lifetimes | Est savings of 60 KiB
+   - image-delivery-insight : Improve image delivery | Est savings of 238 KiB
+   - network-dependency-tree-insight : Network dependency tree | 
+   - render-blocking-insight : Render blocking requests | Est savings of 150 ms
+/kerosene-fan-heater/ {'performance': 99, 'accessibility': 100, 'best-practices': 79, 'seo': 100} LCP 2.0 s CLS 0 TBT 20 ms
+   - interactive : Time to Interactive | 4.3 s
+   - third-party-cookies : Uses third-party cookies | 1 cookie found
+   - uses-long-cache-ttl : Serve static assets with an efficient cache policy | 13 resources found
+   - render-blocking-resources : Eliminate render-blocking resources | Est savings of 0 ms
+   - unused-javascript : Reduce unused JavaScript | Est savings of 75 KiB
+   - uses-text-compression : Enable text compression | Est savings of 23 KiB
+   - uses-responsive-images : Properly size images | Est savings of 131 KiB
+   - legacy-javascript : Avoid serving legacy JavaScript to modern browsers | 
+   - inspector-issues : Issues were logged in the `Issues` panel in Chrome Devtools | 
+   - cache-insight : Use efficient cache lifetimes | Est savings of 212 KiB
+   - image-delivery-insight : Improve image delivery | Est savings of 182 KiB
+   - lcp-discovery-insight : LCP request discovery | 
+   - network-dependency-tree-insight : Network dependency tree | 
+   - render-blocking-insight : Render blocking requests | Est savings of 150 ms
+/guide/touyu-kakaku/ {'performance': 100, 'accessibility': 100, 'best-practices': 79, 'seo': 100} LCP 1.7 s CLS 0 TBT 30 ms
+   - third-party-cookies : Uses third-party cookies | 1 cookie found
+   - uses-long-cache-ttl : Serve static assets with an efficient cache policy | 4 resources found
+   - render-blocking-resources : Eliminate render-blocking resources | Est savings of 50 ms
+   - unused-javascript : Reduce unused JavaScript | Est savings of 75 KiB
+   - uses-text-compression : Enable text compression | Est savings of 23 KiB
+   - uses-responsive-images : Properly size images | Est savings of 21 KiB
+   - legacy-javascript : Avoid serving legacy JavaScript to modern browsers | 
+   - inspector-issues : Issues were logged in the `Issues` panel in Chrome Devtools | 
+   - cache-insight : Use efficient cache lifetimes | Est savings of 59 KiB
+   - image-delivery-insight : Improve image delivery | Est savings of 23 KiB
+   - network-dependency-tree-insight : Network dependency tree | 
+   - render-blocking-insight : Render blocking requests | Est savings of 50 ms
